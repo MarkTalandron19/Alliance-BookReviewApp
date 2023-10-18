@@ -3806,11 +3806,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\usjr\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj",
+      "projectUniqueName": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\Alliance-BookReviewApp\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj",
       "projectName": "ASI.Basecode.Services",
-      "projectPath": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\usjr\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj",
+      "projectPath": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\Alliance-BookReviewApp\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj",
       "packagesPath": "C:\\Users\\Mark Allen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\usjr\\ASI.Basecode.Services\\obj\\",
+      "outputPath": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\Alliance-BookReviewApp\\ASI.Basecode.Services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Mark Allen\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3827,11 +3827,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Mark Allen\\Documents\\C# Projects\\usjr\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj": {
-              "projectPath": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\usjr\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj"
+            "C:\\Users\\Mark Allen\\Documents\\C# Projects\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj": {
+              "projectPath": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj"
             },
-            "C:\\Users\\Mark Allen\\Documents\\C# Projects\\usjr\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj": {
-              "projectPath": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\usjr\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj"
+            "C:\\Users\\Mark Allen\\Documents\\C# Projects\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj": {
+              "projectPath": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj"
             }
           }
         }

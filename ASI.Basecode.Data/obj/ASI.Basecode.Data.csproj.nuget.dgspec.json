@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mark Allen\\Documents\\C# Projects\\usjr\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj": {}
+    "C:\\Users\\Mark Allen\\Documents\\C# Projects\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mark Allen\\Documents\\C# Projects\\usjr\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj": {
+    "C:\\Users\\Mark Allen\\Documents\\C# Projects\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\usjr\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj",
         "projectName": "ASI.Basecode.Data",
-        "projectPath": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\usjr\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj",
+        "projectPath": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj",
         "packagesPath": "C:\\Users\\Mark Allen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\usjr\\ASI.Basecode.Data\\obj\\",
+        "outputPath": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\Alliance-BookReviewApp\\ASI.Basecode.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mark Allen\\AppData\\Roaming\\NuGet\\NuGet.Config",

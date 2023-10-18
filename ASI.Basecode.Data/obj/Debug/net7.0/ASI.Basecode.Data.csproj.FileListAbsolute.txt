@@ -12,3 +12,17 @@ C:\Users\Mark Allen\Documents\C# Projects\usjr\ASI.Basecode.Data\obj\Debug\net7.
 C:\Users\Mark Allen\Documents\C# Projects\usjr\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.pdb
 C:\Users\Mark Allen\Documents\C# Projects\usjr\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.genruntimeconfig.cache
 C:\Users\Mark Allen\Documents\C# Projects\usjr\ASI.Basecode.Data\obj\Debug\net7.0\ref\ASI.Basecode.Data.dll
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.deps.json
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.runtimeconfig.json
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.dll
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.pdb
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.csproj.AssemblyReference.cache
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.AssemblyInfoInputs.cache
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.AssemblyInfo.cs
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.csproj.CoreCompileInputs.cache
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.dll
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\refint\ASI.Basecode.Data.dll
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.pdb
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.genruntimeconfig.cache
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ref\ASI.Basecode.Data.dll

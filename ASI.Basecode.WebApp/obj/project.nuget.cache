@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fY0wN/hRm6e5DcaHjWbqbV2Nz/wEX+vJlUqgP7o2gNTaJmvxsdrmToNOjrOr+HirO9wiwN1FLQRoTYRIBm5Z2Q==",
+  "dgSpecHash": "7wKUVIviyCm/UZebZyQeIN/qg3xVu25Mk7bWQbPc7H3fybcfBEiYBsbYELaxgfhmh1B6/zT7eIRmmRsevh+e3g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\usjr\\ASI.Basecode.WebApp\\ASI.Basecode.WebApp.csproj",
+  "projectFilePath": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\ASI.Basecode.WebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mark Allen\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Mark Allen\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
