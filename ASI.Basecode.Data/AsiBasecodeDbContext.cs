@@ -18,6 +18,9 @@ namespace ASI.Basecode.Data
         }
 
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Author> Authors { get; set; }
+        public virtual DbSet<AuthoredBooks> Authored_Books { get; set; }
+        public virtual DbSet<Review> Reviews { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>(entity =>
@@ -53,6 +56,66 @@ namespace ASI.Basecode.Data
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Review>(entity =>
+            {
+                entity.HasKey(e => e.reviewId);
+
+                entity.Property(e => e.reviewerFirstName)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.reviewerLastName)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.reviewerEmail)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.content)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.rating)
+                    .IsRequired();
+
+                entity.Property(e => e.dateReviewed)
+                    .IsRequired();
+
+                entity.HasOne<Book>()
+                    .WithMany()
+                    .HasForeignKey(e => e.bookId);
+            });
+
+            modelBuilder.Entity<Author>(entity =>
+            {
+                entity.HasKey(e => e.authorId);
+
+                entity.Property(e => e.authorFirstName)
+                    .IsRequired();
+                
+                entity.Property(e => e.authorLastName)
+                    .IsRequired();
+            });
+
+            modelBuilder.Entity<AuthoredBooks>(entity => 
+            {
+
+                entity.HasKey(e => new { e.bookId, e.authorId });
+
+                entity.HasOne<Book>()
+                    .WithMany()
+                    .HasForeignKey(e => e.bookId);
+
+                entity.HasOne<Author>()
+                    .WithMany()
+                    .HasForeignKey(e => e.authorId);
             });
 
             OnModelCreatingPartial(modelBuilder);

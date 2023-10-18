@@ -13,7 +13,6 @@ namespace ASI.Basecode.Data.Repositories
     {
         public UserRepository(IUnitOfWork unitOfWork) : base(unitOfWork) 
         {
-
         }
 
         public IQueryable<User> GetUsers()
