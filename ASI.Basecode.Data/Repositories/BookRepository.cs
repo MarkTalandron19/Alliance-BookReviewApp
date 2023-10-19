@@ -81,7 +81,6 @@ namespace ASI.Basecode.Data.Repositories
             {
                 book.title = update.title;
                 book.description = update.description;
-                book.genre = update.genre;
                 book.description = update.description;
                 book.pubYear = update.pubYear;
                 UnitOfWork.SaveChanges();

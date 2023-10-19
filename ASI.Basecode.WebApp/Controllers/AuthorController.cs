@@ -1,5 +1,6 @@
 ﻿using ASI.Basecode.Data.Models;
 using ASI.Basecode.Services.Interfaces;
+using ASI.Basecode.Services.ServiceModels;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -21,7 +22,7 @@ namespace ASI.Basecode.WebApp.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult AddAuthor(Author author) 
+        public IActionResult AddAuthor(AuthorViewModel author) 
         {
             _authorService.AddAuthor(author);
             return CreatedAtAction("GetAuthorById", new { authorId = author.authorId }, author);
@@ -49,7 +50,7 @@ namespace ASI.Basecode.WebApp.Controllers
         }
 
         [HttpPut("update")]
-        public IActionResult UpdateAuthor(Author author)
+        public IActionResult UpdateAuthor(AuthorViewModel author)
         {
             _authorService.UpdateAuthor(author);
             return NoContent();

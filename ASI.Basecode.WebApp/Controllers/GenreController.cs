@@ -1,5 +1,6 @@
 ﻿using ASI.Basecode.Data.Models;
 using ASI.Basecode.Services.Interfaces;
+using ASI.Basecode.Services.ServiceModels;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,7 +19,7 @@ namespace ASI.Basecode.WebApp.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult AddGenre(Genre genre)
+        public IActionResult AddGenre(GenreViewModel genre)
         {
             _genreService.AddGenre(genre);
             return NoContent();
@@ -32,7 +33,7 @@ namespace ASI.Basecode.WebApp.Controllers
         }
 
         [HttpPut("update/{genreId}")]
-        public IActionResult UpdateGenre(Genre genre)
+        public IActionResult UpdateGenre(GenreViewModel genre)
         {
             _genreService.UpdateGenre(genre);
             return NoContent();

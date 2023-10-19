@@ -109,8 +109,7 @@ namespace ASI.Basecode.Data
 
             modelBuilder.Entity<AuthoredBooks>(entity => 
             {
-
-                entity.HasKey(e => new { e.bookId, e.authorId });
+                entity.HasNoKey();
 
                 entity.HasOne<Book>()
                     .WithMany()
@@ -121,9 +120,20 @@ namespace ASI.Basecode.Data
                     .HasForeignKey(e => e.authorId);
             });
 
+            modelBuilder.Entity<Genre>(entity =>
+            {
+                entity.HasKey(e => e.genreId);
+
+                entity.Property(e => e.genreName)
+                    .IsRequired();
+
+                entity.Property(e => e.description) 
+                    .IsRequired();
+            });
+
             modelBuilder.Entity<BookGenres>(entity =>
             {
-                entity.HasKey(e => new { e.bookId, e.genreId });
+                entity.HasNoKey();
 
                 entity.HasOne<Book>()
                     .WithMany()

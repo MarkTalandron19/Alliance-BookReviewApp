@@ -1,4 +1,5 @@
 ﻿using ASI.Basecode.Data.Models;
+using ASI.Basecode.Services.ServiceModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,8 @@ namespace ASI.Basecode.Services.Interfaces
     {
         IQueryable<Author> GetAuthors();
         Task<Author> GetAuthorById(string authorId);
-        void AddAuthor(Author author);
-        void UpdateAuthor(Author update);
+        void AddAuthor(AuthorViewModel model);
+        void UpdateAuthor(AuthorViewModel update);
         void DeleteAuthor(string authorId);
     }
 }

@@ -14,8 +14,8 @@ namespace ASI.Basecode.Data.Migrations
                 columns: table => new
                 {
                     authorId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    authorFirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    authorLastName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    authorFirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    authorLastName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -23,22 +23,30 @@ namespace ASI.Basecode.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Book",
+                name: "Books",
                 columns: table => new
                 {
                     bookId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     title = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    genre = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    pubYear = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    pubYear = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Book", x => x.bookId);
+                    table.PrimaryKey("PK_Books", x => x.bookId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Genres",
+                columns: table => new
+                {
+                    genreId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    genreName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Genres", x => x.genreId);
                 });
 
             migrationBuilder.CreateTable(
@@ -64,24 +72,21 @@ namespace ASI.Basecode.Data.Migrations
                 name: "Authored_Books",
                 columns: table => new
                 {
-                    bookId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    authorId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    bookId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    authorId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Authored_Books", x => new { x.bookId, x.authorId });
                     table.ForeignKey(
                         name: "FK_Authored_Books_Authors_authorId",
                         column: x => x.authorId,
                         principalTable: "Authors",
-                        principalColumn: "authorId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "authorId");
                     table.ForeignKey(
-                        name: "FK_Authored_Books_Book_bookId",
+                        name: "FK_Authored_Books_Books_bookId",
                         column: x => x.bookId,
-                        principalTable: "Book",
-                        principalColumn: "bookId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalTable: "Books",
+                        principalColumn: "bookId");
                 });
 
             migrationBuilder.CreateTable(
@@ -95,18 +100,37 @@ namespace ASI.Basecode.Data.Migrations
                     content = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     rating = table.Column<int>(type: "int", nullable: false),
                     bookId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    dateReviewed = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    dateReviewed = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Reviews", x => x.reviewId);
                     table.ForeignKey(
-                        name: "FK_Reviews_Book_bookId",
+                        name: "FK_Reviews_Books_bookId",
                         column: x => x.bookId,
-                        principalTable: "Book",
+                        principalTable: "Books",
                         principalColumn: "bookId");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Book_Genres",
+                columns: table => new
+                {
+                    bookId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    genreId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.ForeignKey(
+                        name: "FK_Book_Genres_Books_bookId",
+                        column: x => x.bookId,
+                        principalTable: "Books",
+                        principalColumn: "bookId");
+                    table.ForeignKey(
+                        name: "FK_Book_Genres_Genres_genreId",
+                        column: x => x.genreId,
+                        principalTable: "Genres",
+                        principalColumn: "genreId");
                 });
 
             migrationBuilder.CreateIndex(
@@ -115,15 +139,24 @@ namespace ASI.Basecode.Data.Migrations
                 column: "authorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Reviews_bookId",
-                table: "Reviews",
+                name: "IX_Authored_Books_bookId",
+                table: "Authored_Books",
                 column: "bookId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Reviews_reviewId",
+                name: "IX_Book_Genres_bookId",
+                table: "Book_Genres",
+                column: "bookId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Book_Genres_genreId",
+                table: "Book_Genres",
+                column: "genreId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Reviews_bookId",
                 table: "Reviews",
-                column: "reviewId",
-                unique: true);
+                column: "bookId");
 
             migrationBuilder.CreateIndex(
                 name: "UQ__Users__1788CC4D5F4A160F",
@@ -138,6 +171,9 @@ namespace ASI.Basecode.Data.Migrations
                 name: "Authored_Books");
 
             migrationBuilder.DropTable(
+                name: "Book_Genres");
+
+            migrationBuilder.DropTable(
                 name: "Reviews");
 
             migrationBuilder.DropTable(
@@ -147,7 +183,10 @@ namespace ASI.Basecode.Data.Migrations
                 name: "Authors");
 
             migrationBuilder.DropTable(
-                name: "Book");
+                name: "Genres");
+
+            migrationBuilder.DropTable(
+                name: "Books");
         }
     }
 }

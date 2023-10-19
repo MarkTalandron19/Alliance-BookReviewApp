@@ -1,5 +1,6 @@
 ﻿using ASI.Basecode.Data.Models;
 using ASI.Basecode.Services.Interfaces;
+using ASI.Basecode.Services.ServiceModels;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace ASI.Basecode.WebApp.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult AddReview(Review review)
+        public IActionResult AddReview(ReviewViewModel review)
         {
             _reviewService.AddReview(review);
             return NoContent();
@@ -46,7 +47,7 @@ namespace ASI.Basecode.WebApp.Controllers
         }
 
         [HttpPut("update")]
-        public IActionResult UpdateReview(Review review)
+        public IActionResult UpdateReview(ReviewViewModel review)
         {
            _reviewService.UpdateReview(review);
            return NoContent();

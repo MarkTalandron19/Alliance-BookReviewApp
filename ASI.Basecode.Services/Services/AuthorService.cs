@@ -1,5 +1,7 @@
-﻿using ASI.Basecode.Data.Models;
+﻿using ASI.Basecode.Data.Interfaces;
+using ASI.Basecode.Data.Models;
 using ASI.Basecode.Services.Interfaces;
+using ASI.Basecode.Services.ServiceModels;
 using AutoMapper;
 using System;
 using System.Collections.Generic;
@@ -11,38 +13,42 @@ namespace ASI.Basecode.Services.Services
 {
     public class AuthorService : IAuthorService
     {
-        private readonly IAuthorService _authorService;
+        private readonly IAuthorRepository _repository;
         private readonly IMapper _mapper;
         
-        public AuthorService(IAuthorService authorService, IMapper mapper)
+        public AuthorService(IAuthorRepository repository, IMapper mapper)
         {
-            _authorService = authorService;
+            _repository = repository;
             _mapper = mapper;
         }
 
-        public void AddAuthor(Author author)
+        public void AddAuthor(AuthorViewModel model)
         {
-            _authorService.AddAuthor(author);
+            var author = new Author();
+            _mapper.Map(model, author);
+            _repository.AddAuthor(author);
         }
 
         public void DeleteAuthor(string authorId)
         {
-            _authorService.DeleteAuthor(authorId);
+            _repository.DeleteAuthor(authorId);
         }
 
         public Task<Author> GetAuthorById(string authorId)
         {
-            return _authorService.GetAuthorById(authorId);
+            return _repository.GetAuthorById(authorId);
         }
 
         public IQueryable<Author> GetAuthors()
         {
-            return _authorService.GetAuthors();
+            return _repository.GetAuthors();
         }
 
-        public void UpdateAuthor(Author update)
+        public void UpdateAuthor(AuthorViewModel update)
         {
-            _authorService.UpdateAuthor(update);
+            var author = new Author();
+            _mapper.Map(update, author);
+            _repository.UpdateAuthor(author);
         }
     }
 }
