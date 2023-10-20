@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "PLuQqJcbLgLdZ5DJSqMcOrufmMsW5Fp+zmLeqp8uI7xcfy/poVAKc0MFTn2sUgIm/CsmCOOKshfzs4kwh8sErw==",
   "success": true,
   "projectFilePath": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj",
-=======
-  "dgSpecHash": "w7EeV8CGUozn1bWwl6SUmSlYmlQSVfhIkqDvTzs7X7vIzhOCLdpRur9boh6HiIPkaQmv2xkVtBVaAhHc+LAW8Q==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj",
->>>>>>> 50f96210394d218cbd285c820ba122de7e1da3a5
   "expectedPackageFiles": [],
   "logs": []
 }

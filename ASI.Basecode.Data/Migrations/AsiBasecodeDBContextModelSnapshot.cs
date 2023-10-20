@@ -107,39 +107,6 @@ namespace ASI.Basecode.Data.Migrations
                     b.ToTable("Genres");
                 });
 
-            modelBuilder.Entity("ASI.Basecode.Data.Models.BookGenres", b =>
-                {
-                    b.Property<string>("bookId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("genreId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasIndex("bookId");
-
-                    b.HasIndex("genreId");
-
-                    b.ToTable("Book_Genres");
-                });
-
-            modelBuilder.Entity("ASI.Basecode.Data.Models.Genre", b =>
-                {
-                    b.Property<string>("genreId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("genreName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("genreId");
-
-                    b.ToTable("Genres");
-                });
-
             modelBuilder.Entity("ASI.Basecode.Data.Models.Review", b =>
                 {
                     b.Property<string>("reviewId")
@@ -246,17 +213,6 @@ namespace ASI.Basecode.Data.Migrations
                     b.HasOne("ASI.Basecode.Data.Models.Book", null)
                         .WithMany()
                         .HasForeignKey("bookId");
-                });
-
-            modelBuilder.Entity("ASI.Basecode.Data.Models.BookGenres", b =>
-                {
-                    b.HasOne("ASI.Basecode.Data.Models.Book", null)
-                        .WithMany()
-                        .HasForeignKey("bookId");
-
-                    b.HasOne("ASI.Basecode.Data.Models.Genre", null)
-                        .WithMany()
-                        .HasForeignKey("genreId");
                 });
 
             modelBuilder.Entity("ASI.Basecode.Data.Models.BookGenres", b =>

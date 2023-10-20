@@ -6,12 +6,13 @@ function GetGenres() {
         url: '/genres/get',
         type: 'get',
         datatype: 'json',
-        contentType: 'application/json;charset=utf-8',
+        contentType: 'application/json',
         success: function (response) {
+            console.log(response); 
             if (response == null || response == undefined || response.length == 0) {
                 var object = '';
                 object += '<tr>';
-                object += '<td colspan="3">' + 'No Genres created.' + '</td>';
+                object += '<td colspan="3">' + '<center>No Genres created.</center>' + '</td>';
                 object += '<tr>';
                 $('#tableBody').html(object);
             }
@@ -19,12 +20,10 @@ function GetGenres() {
                 var object = '';
                 $.each(response, function (index, item) {
                     object += '<tr>';
-                    object += '<td>' + item.genreId + '</td>';
                     object += '<td>' + item.genreName + '</td>';
                     object += '<td>' + item.description + '</td>';
-                    object += '<td> <a href="#" class="edit-button" onclick="Edit(' + item.genreId + ')">Edit</a> <a href="#" class="delete-button" onclick="Delete(' + item.genreId + ')">Delete</a> </td>';
+                    object += '<td> <a href="#" class="edit-button" onclick="Edit(\'' + item.genreId + '\')">Edit</a> <a href="#" class="delete-button" onclick="Delete(\'' + item.genreId + '\')">Delete</a> </td>';
                     object += '<tr>';
-                    $('#tableBody').html(object);
                 });
                 $('#tableBody').html(object);
 
@@ -40,12 +39,12 @@ $('#AddBtn').click(function () {
     $('#GenreModal').modal('show');
     $('#modalTitle').text('Add a Book Genre');
 }); 
-
+/*
 function AddGenre() {
     var formData = new Object();
     formData.id = $('#genreId').val();
-    formData.genreName = $('#genreName').val();
-    formData.description = $('#description').val();
+    formData.genrename = $('#genreName').val();
+    formData.desc = $('#description').val();
 
     $.ajax({
         url: '/genres/add',
@@ -56,6 +55,7 @@ function AddGenre() {
                 alert('Unable to save the data.');
             }
             else {
+                GetGenres();
                 alert('added');
             }
         },
@@ -64,4 +64,5 @@ function AddGenre() {
         }
     })
 }
+*/
 

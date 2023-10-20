@@ -202,6 +202,10 @@ th {
     padding: 10px 20px;
 }
 
+td {
+    padding: 10px 20px;
+}
+
 .dashboard-table-header {
     display:table-header-group;
     filter: drop-shadow(0 5px 3px rgba(0, 0, 0, 0.10));
@@ -263,6 +267,8 @@ th {
 .modal.show .modal-dialog {
     min-width: 500px;
 }
+
+
 
 
 

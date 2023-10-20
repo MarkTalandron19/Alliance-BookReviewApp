@@ -119,7 +119,9 @@
             <div class="modal-header">
                 <h4 id="modalTitle"></h4>
             </div>
+            <form method="post" asp-action="AddGenre" asp-controller="Genre" id="GenreForm">
             <div class="modal-body">
+                
                 <input type="hidden" asp-for="genreId" value="0" />
                 <div>
                     <label class="input-label" asp-for="genreName"></label>
@@ -129,13 +131,15 @@
                     <label class="input-label" asp-for="description"></label>
                     <input type="text" asp-for="description" class="form-control" placeholder="Short Description" />
                 </div>
+               
             </div>
             <div class="modal-footer">
                 <button class="modal-button-close" id="Save" data-bs-dismiss="modal" onclick="hideModal();">Close</button>
-                <button class="modal-button" id="Save" type="submit" onclick="insert();">Add Genre</button>
+                <button class="modal-button" id="Save" type="submit" >Add Genre</button>
                 <button class="modal-button" id="Update" type="submit" onclick="update();" style="display: none">Update Genre</button>
                 
             </div>
+             </form>
         </div>
     </div>
 </div>
