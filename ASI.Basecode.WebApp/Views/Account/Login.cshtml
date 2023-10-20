@@ -10,16 +10,15 @@
 <div>
     @Html.AntiForgeryToken()
 </div>
-<div class="container py-5" style="display:flex; align-content:center;height:calc(100vh - 64px)">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-xl-10">
-            <div class="card rounded-3 text-black">
-                <div class="row g-0 w-1000px">
-                    <div class="col-lg-6">
-                        <div class="card-body p-md-5 mx-md-4">
+<div class="body-main">
+        <div class="body-two-section">
+                <div class="login-row">
+                    <div class="first-col">
+                <img class="bibliobibuli-logo" src="~/img/Group 42.png" />
+                    </div>
+                    <div class="second-col">
+                        <div class="login-card">
                             <div class="text-center">
-                                <img src="~/img/asi-logo-invert.svg"
-                                     style="width: 185px;" alt="logo">
                             </div>
                             <form method="post" action="/Account/Login" id="loginForm">
                                 <div class="form-outline mb-4">
@@ -35,7 +34,7 @@
                                     <span asp-validation-for="Password" class="text-danger"></span>
                                 </div>
                                 <div class="text-center pt-1 mb-5 pb-1 d-flex flex-column align-items-center">
-                                    <button class="btn btn-primary btn-block login-btn gradient-custom-2 mb-3" type="submit">
+                                    <button class="login-btn" type="submit">
                                         @Login
                                     </button>
                                     <div>
@@ -49,13 +48,8 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-lg-6 d-flex">
-                        <img style="width:400px"src="~/img/LiveIT.png" />
-                    </div>
-                </div>
             </div>
         </div>
-    </div>
 </div>
 
 @section scripts {

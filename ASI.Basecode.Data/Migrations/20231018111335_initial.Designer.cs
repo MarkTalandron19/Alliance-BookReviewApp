@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASI.Basecode.Data.Migrations
 {
     [DbContext(typeof(AsiBasecodeDBContext))]
-    [Migration("20231016060540_initial")]
+    [Migration("20231018111335_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,9 +30,11 @@ namespace ASI.Basecode.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("authorFirstName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("authorLastName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("authorId");
@@ -136,9 +138,6 @@ namespace ASI.Basecode.Data.Migrations
                     b.HasKey("reviewId");
 
                     b.HasIndex("bookId");
-
-                    b.HasIndex("reviewId")
-                        .IsUnique();
 
                     b.ToTable("Reviews");
                 });

@@ -7,10 +7,6 @@
     background: linear-gradient(to right, #ff0000, #000000); /* Red, Black */
 }
 
-.login-btn {
-    width: 180px;
-}
-
 .register-box {
     width: 600px;
 }
@@ -27,3 +23,70 @@
         border-bottom-right-radius: .3rem;
     }
 }
+
+.container-fluid {
+    margin: 0!important;
+    padding: 0!important;
+    width: 100%;
+}
+
+.body-main {
+    height: 100vh;
+}
+
+.body-two-section {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.first-col {
+    width: 50%;
+    display: flex;
+    background-image: url("/img/lines 1.png");
+    background-size: cover;
+}
+
+.login-row {
+    display: flex;
+    width: 100vw;
+    height: 100%;
+}
+
+.bibliobibuli-logo {
+    width: 300px;
+    margin: auto;
+}
+
+.second-col {
+    width: 50%;
+    display: flex;
+}
+
+.login-card {
+    margin: auto;
+    width: 65%;
+    padding: 20px;
+}
+
+.form-label {
+    color: white;
+}
+
+.login-btn {
+    width: 100%;
+    background-color: #176B87;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+    transition: ease .2s;
+}
+
+    .login-btn:hover {
+        width: 100%;
+        background-color: #0D5066;
+        transition: ease .2s;
+    }

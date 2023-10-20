@@ -1,8 +1,75 @@
-﻿@{
+﻿@section styles {
+    <link rel="stylesheet" href="~/css/admindashboard.css" />
+}
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="body-main">
+    <div class="body-two-section">
+        <div class="left-space">
+            <div class="left-menu">
+                <div>
+                    <img class="bibliobibuli-logo" src="~/img/logo-leftaligned.png" />
+                    <div class="menu-items">
+                    <div class="leftmenu-item-title">
+                        <div class="leftmenu-item">
+                            <img class="leftmenu-icons" src="~/img/dashboard-icon.png" />
+                            Book Management<br />Dashboard
+                        </div>
+                    </div>
+                        <hr class="menu-divider" />
+                    <button class="leftmenu-items">
+                            <div class="leftmenu-item">
+                            <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+                            Book List
+                        </div>
+                    </button>
+                    <button class="leftmenu-items">
+                            <div class="leftmenu-item">
+                                <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+                            Genre List
+                        </div>
+                    </button>
+                    </div>
+                </div>
+                <div>
+                    <button class="logout-button">
+                        <div class="logout-text">
+                            <img class="leftmenu-icons" src="~/img/logout-icon.png" />
+                            Logout
+                        </div>
+                     </button>
+                </div>
+            </div>
+        </div>
+        <div class="admin-dashboard-list">
+            <div class="admin-header">
+                <div class="logosec">
+                    Welcome, @HttpContextAccessor.HttpContext.Session.GetString("UserName")!
+                    <div class="mr-20 hover-pointer" style="position: relative">
+                        <div class="dp">
+                            <img src="~/img/profile-logo.png"
+                                 class="dpicn hover-pointer"
+                                 alt="dp">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard">
+                <div class="dashboard-title-div">
+                    <p class="dashboard-title">Book Genre List Management</p>
+                    <button class="add-button"><p class="button-text">+</p></button>
+                </div>
+                <hr class="divider"/>
+                <p class="dashboard-subtitle">Book Genre you have created</p>
+                <div class="dashboard-card">
+                </div>
+
+                <p class="dashboard-subtitle">Book Genre List</p>
+                <div class="dashboard-card">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

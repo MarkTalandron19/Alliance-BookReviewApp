@@ -17,3 +17,22 @@ C:\Users\Mark Allen\Documents\C# Projects\usjr\ASI.Basecode.Resources\obj\Debug\
 C:\Users\Mark Allen\Documents\C# Projects\usjr\ASI.Basecode.Resources\obj\Debug\net7.0\refint\ASI.Basecode.Resources.dll
 C:\Users\Mark Allen\Documents\C# Projects\usjr\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.pdb
 C:\Users\Mark Allen\Documents\C# Projects\usjr\ASI.Basecode.Resources\obj\Debug\net7.0\ref\ASI.Basecode.Resources.dll
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.deps.json
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.dll
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.pdb
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Messages.Common.resources
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Messages.Errors.resources
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Account.resources
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Button.resources
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Screen.resources
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Table.resources
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.TitleText.resources
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.csproj.GenerateResource.cache
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.GeneratedMSBuildEditorConfig.editorconfig
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.AssemblyInfoInputs.cache
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.AssemblyInfo.cs
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.csproj.CoreCompileInputs.cache
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.dll
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\refint\ASI.Basecode.Resources.dll
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.pdb
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ref\ASI.Basecode.Resources.dll

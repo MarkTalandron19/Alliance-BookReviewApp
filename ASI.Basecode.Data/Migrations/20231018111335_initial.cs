@@ -14,8 +14,8 @@ namespace ASI.Basecode.Data.Migrations
                 columns: table => new
                 {
                     authorId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    authorFirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    authorLastName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    authorFirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    authorLastName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -118,12 +118,6 @@ namespace ASI.Basecode.Data.Migrations
                 name: "IX_Reviews_bookId",
                 table: "Reviews",
                 column: "bookId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Reviews_reviewId",
-                table: "Reviews",
-                column: "reviewId",
-                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "UQ__Users__1788CC4D5F4A160F",

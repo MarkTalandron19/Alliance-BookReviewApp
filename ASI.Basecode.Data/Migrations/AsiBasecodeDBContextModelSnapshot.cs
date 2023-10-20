@@ -28,9 +28,11 @@ namespace ASI.Basecode.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("authorFirstName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("authorLastName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("authorId");
@@ -134,9 +136,6 @@ namespace ASI.Basecode.Data.Migrations
                     b.HasKey("reviewId");
 
                     b.HasIndex("bookId");
-
-                    b.HasIndex("reviewId")
-                        .IsUnique();
 
                     b.ToTable("Reviews");
                 });
