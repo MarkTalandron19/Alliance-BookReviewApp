@@ -18,6 +18,7 @@ namespace ASI.Basecode.Data
         }
 
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Author> Authors { get; set; }
         public virtual DbSet<AuthoredBooks> Authored_Books { get; set; }
         public virtual DbSet<Review> Reviews { get; set; }
@@ -108,8 +109,7 @@ namespace ASI.Basecode.Data
 
             modelBuilder.Entity<AuthoredBooks>(entity => 
             {
-
-                entity.HasKey(e => new { e.bookId, e.authorId });
+                entity.HasNoKey();
 
                 entity.HasOne<Book>()
                     .WithMany()
@@ -140,6 +140,31 @@ namespace ASI.Basecode.Data
 
                 entity.HasOne<Genre>()
                 .WithMany()
+                    .HasForeignKey(e => e.genreId);
+            }
+            );
+
+            modelBuilder.Entity<Genre>(entity =>
+            {
+                entity.HasKey(e => e.genreId);
+
+                entity.Property(e => e.genreName)
+                    .IsRequired();
+
+                entity.Property(e => e.description) 
+                    .IsRequired();
+            });
+
+            modelBuilder.Entity<BookGenres>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.HasOne<Book>()
+                    .WithMany()
+                    .HasForeignKey(e => e.bookId);
+                
+                entity.HasOne<Genre>()
+                .   WithMany()
                     .HasForeignKey(e => e.genreId);
             }
             );

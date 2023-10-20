@@ -1,5 +1,7 @@
-﻿using ASI.Basecode.Data.Models;
+﻿using ASI.Basecode.Data.Interfaces;
+using ASI.Basecode.Data.Models;
 using ASI.Basecode.Services.Interfaces;
+using ASI.Basecode.Services.ServiceModels;
 using AutoMapper;
 using System;
 using System.Collections.Generic;
@@ -11,43 +13,47 @@ namespace ASI.Basecode.Services.Services
 {
     public class ReviewService : IReviewService
     {
-        private readonly IReviewService _reviewService;
+        private readonly IReviewRepository _repository;
         private readonly IMapper _mapper;
 
-        public ReviewService(IReviewService reviewService, IMapper mapper)
+        public ReviewService(IReviewRepository repository, IMapper mapper)
         {
-            _reviewService = reviewService;
+            _repository = repository;
             _mapper = mapper;
         }
 
-        public void AddReview(Review review)
+        public void AddReview(ReviewViewModel model)
         {
-            _reviewService.AddReview(review);
+            var review = new Review();
+            _mapper.Map(review, model);
+            _repository.AddReview(review);
         }
 
         public void DeleteReview(string reviewId)
         {
-            _reviewService.DeleteReview(reviewId);
+            _repository.DeleteReview(reviewId);
         }
 
         public IQueryable<Review> GetBookReview(string bookId)
         {
-            return _reviewService.GetBookReview(bookId);
+            return _repository.GetBookReview(bookId);
         }
 
         public IQueryable<Review> GetReviews()
         {
-            return _reviewService.GetReviews();
+            return _repository.GetReviews();
         }
 
         public Task<Review> GetReviewsById(string reviewId)
         {
-            return _reviewService.GetReviewsById(reviewId);
+            return _repository.GetReviewsById(reviewId);
         }
 
-        public void UpdateReview(Review update)
+        public void UpdateReview(ReviewViewModel update)
         {
-            _reviewService.UpdateReview(update);
+            var review = new Review();
+            _mapper.Map(review, update);
+            _repository.UpdateReview(review);
         }
     }
 }

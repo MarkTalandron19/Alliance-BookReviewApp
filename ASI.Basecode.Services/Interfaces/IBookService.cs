@@ -1,4 +1,5 @@
 ﻿using ASI.Basecode.Data.Models;
+using ASI.Basecode.Services.ServiceModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,8 @@ namespace ASI.Basecode.Services.Interfaces
     {
         IQueryable<Book> GetBooks();
         Task<Book> GetBookById(string bookId);
-        void AddBook(Book book, List<Author> authors, List<Genre> genres);
-        void UpdateBook(Book update);
+        void AddBook(BookViewModel model, List<Author> authors, List<Genre> genres);
+        void UpdateBook(BookViewModel update);
         void DeleteBook(string bookId);
     }
 }

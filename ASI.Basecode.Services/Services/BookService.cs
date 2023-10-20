@@ -1,5 +1,7 @@
-﻿using ASI.Basecode.Data.Models;
+﻿using ASI.Basecode.Data.Interfaces;
+using ASI.Basecode.Data.Models;
 using ASI.Basecode.Services.Interfaces;
+using ASI.Basecode.Services.ServiceModels;
 using AutoMapper;
 using System;
 using System.Collections.Generic;
@@ -11,38 +13,42 @@ namespace ASI.Basecode.Services.Services
 {
     public class BookService : IBookService
     {
-        private readonly IBookService _bookService;
+        private readonly IBookRepository _repository;
         private readonly IMapper _mapper;
 
-        public BookService(IBookService bookService, IMapper mapper)
+        public BookService(IBookRepository repository, IMapper mapper)
         {
-            _bookService = bookService;
+            _repository = repository;
             _mapper = mapper;
         }
 
-        public void AddBook(Book book, List<Author> authors, List<Genre> genres)
+        public void AddBook(BookViewModel model, List<Author> authors, List<Genre> genres)
         {
-            _bookService.AddBook(book, authors, genres);
+            var book = new Book();
+            _mapper.Map(model, book);
+            _repository.AddBook(book, authors, genres);
         }
 
         public void DeleteBook(string bookId)
         {
-            _bookService.DeleteBook(bookId);
+            _repository.DeleteBook(bookId);
         }
 
         public async Task<Book> GetBookById(string bookId)
         {
-            return await _bookService.GetBookById(bookId);
+            return await _repository.GetBookById(bookId);
         }
 
         public IQueryable<Book> GetBooks()
         {
-            return _bookService.GetBooks();
+            return _repository.GetBooks();
         }
 
-        public void UpdateBook(Book update)
+        public void UpdateBook(BookViewModel update)
         {
-            _bookService.UpdateBook(update);
+            var book = new Book();
+            _mapper.Map(update, book);
+            _repository.UpdateBook(book);
         }
     }
 }

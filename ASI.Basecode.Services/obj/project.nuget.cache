@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "ROE+pcpG5siID6OrIA/SfgzS6X6mkyZyC4LN0PE4MYvG+5QfndzdjXwO3DKvJIsQji7rNqyRK7QZyxBefl2opw==",
   "success": true,
   "projectFilePath": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj",
+=======
+  "dgSpecHash": "ojI4dIHsJ4oiFPCGdAHryznl7x0A2mHcoOnbh1H3SQh5e0Jhsx0O8ThNYLGr18m9c3vjovlB2HGjliGuYfHWGQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\Alliance-BookReviewApp\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj",
+>>>>>>> 50f96210394d218cbd285c820ba122de7e1da3a5
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",

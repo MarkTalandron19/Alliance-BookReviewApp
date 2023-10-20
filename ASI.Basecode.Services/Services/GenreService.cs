@@ -1,6 +1,7 @@
 ﻿using ASI.Basecode.Data.Interfaces;
 using ASI.Basecode.Data.Models;
 using ASI.Basecode.Services.Interfaces;
+using ASI.Basecode.Services.ServiceModels;
 using AutoMapper;
 using System;
 using System.Collections.Generic;
@@ -12,33 +13,37 @@ namespace ASI.Basecode.Services.Services
 {
     public class GenreService : IGenreService
     {
-        private readonly IGenreRepository _repository;
+        private readonly IGenreRepository _genreRepository;
         private readonly IMapper _mapper;
 
-        public GenreService(IGenreRepository genreService, IMapper mapper)
+        public GenreService(IGenreRepository repository, IMapper mapper)
         {
-            _repository = genreService;
+            _genreRepository = repository;
             _mapper = mapper;
         }
 
-        public void AddGenre(Genre genre)
+        public void AddGenre(GenreViewModel model)
         {
-            _repository.AddGenre(genre);
+            var genre = new Genre();
+            _mapper.Map(genre, model);
+            _genreRepository.AddGenre(genre);
         }
 
         public void DeleteGenre(string genreId)
         {
-            _repository.DeleteGenre(genreId);
+            _genreRepository.DeleteGenre(genreId);
         }
 
         public IQueryable<Genre> GetGenres()
         {
-            return _repository.GetGenres();
+            return _genreRepository.GetGenres();
         }
 
-        public void UpdateGenre(Genre update)
+        public void UpdateGenre(GenreViewModel update)
         {
-            _repository.UpdateGenre(update);
+            var genre = new Genre();
+            _mapper.Map(genre, update);
+            _genreRepository.AddGenre(genre);
         }
     }
 }

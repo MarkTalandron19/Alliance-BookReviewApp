@@ -17,6 +17,7 @@ C:\Users\Mark Allen\Documents\C# Projects\usjr\ASI.Basecode.Resources\obj\Debug\
 C:\Users\Mark Allen\Documents\C# Projects\usjr\ASI.Basecode.Resources\obj\Debug\net7.0\refint\ASI.Basecode.Resources.dll
 C:\Users\Mark Allen\Documents\C# Projects\usjr\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.pdb
 C:\Users\Mark Allen\Documents\C# Projects\usjr\ASI.Basecode.Resources\obj\Debug\net7.0\ref\ASI.Basecode.Resources.dll
+<<<<<<< HEAD
 D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.deps.json
 D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.dll
 D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.pdb
@@ -36,3 +37,24 @@ D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-Book
 D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\refint\ASI.Basecode.Resources.dll
 D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.pdb
 D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ref\ASI.Basecode.Resources.dll
+=======
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.deps.json
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.dll
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.pdb
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Messages.Common.resources
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Messages.Errors.resources
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Account.resources
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Button.resources
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Screen.resources
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Table.resources
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.TitleText.resources
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.csproj.GenerateResource.cache
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.AssemblyInfoInputs.cache
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.AssemblyInfo.cs
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.csproj.CoreCompileInputs.cache
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.dll
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\refint\ASI.Basecode.Resources.dll
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.pdb
+C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ref\ASI.Basecode.Resources.dll
+>>>>>>> 50f96210394d218cbd285c820ba122de7e1da3a5

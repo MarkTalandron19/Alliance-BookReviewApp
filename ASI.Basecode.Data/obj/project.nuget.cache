@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "PaG2O/piqiUZpCOTI1Tby1v1TXiG8KUJQNS79Gw7EI1+JCBjS8hPJ1wVo5vO75cfr2xZNlg/S4fMd3lYMkPpCQ==",
   "success": true,
   "projectFilePath": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj",
+=======
+  "dgSpecHash": "4z95Z/UJNltATI+WXCV9N3uzlRDOmG4BFv6RqX0WGfY6q0K0smUzbFaqQYptCPVtMT33TeHFhL3WEIHHPGiwdg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj",
+>>>>>>> 50f96210394d218cbd285c820ba122de7e1da3a5
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO\\.nuget\\packages\\csvhelper\\27.2.1\\csvhelper.27.2.1.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\dotmorten.microsoft.sqlserver.types\\1.4.0\\dotmorten.microsoft.sqlserver.types.1.4.0.nupkg.sha512",

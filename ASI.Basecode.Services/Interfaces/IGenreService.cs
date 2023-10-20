@@ -1,4 +1,5 @@
 ﻿using ASI.Basecode.Data.Models;
+using ASI.Basecode.Services.ServiceModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,8 @@ namespace ASI.Basecode.Services.Interfaces
     public interface IGenreService
     {
         IQueryable<Genre> GetGenres();
-        void AddGenre(Genre genre);
-        void UpdateGenre(Genre update);
+        void AddGenre(GenreViewModel model);
+        void UpdateGenre(GenreViewModel update);
         void DeleteGenre(string genreId);
     }
 }

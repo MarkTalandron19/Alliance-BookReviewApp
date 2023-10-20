@@ -1,5 +1,6 @@
 ﻿using ASI.Basecode.Data.Models;
 using ASI.Basecode.Services.Interfaces;
+using ASI.Basecode.Services.ServiceModels;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace ASI.Basecode.WebApp.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult AddBook(Book book, List<Author> authors, List<Genre> genres)
+        public IActionResult AddBook(BookViewModel book, List<Author> authors, List<Genre> genres)
         {
             _bookService.AddBook(book, authors, genres);
             return NoContent();
@@ -47,7 +48,7 @@ namespace ASI.Basecode.WebApp.Controllers
         }
 
         [HttpPut("update")]
-        public IActionResult UpdateBook(Book book)
+        public IActionResult UpdateBook(BookViewModel book)
         {
             _bookService.UpdateBook(book);
             return NoContent();

@@ -12,7 +12,5 @@ namespace ASI.Basecode.Data.Models
         public int rating { get; set; }
         public string bookId { get; set; }
         public DateTime dateReviewed { get; set; }
-        public string UpdatedBy { get; set; }
-        public DateTime UpdatedTime { get; set; }
     }
 }
