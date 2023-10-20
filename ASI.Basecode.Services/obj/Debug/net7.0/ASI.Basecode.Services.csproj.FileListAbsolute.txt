@@ -15,6 +15,25 @@ C:\Users\Mark Allen\Documents\C# Projects\usjr\ASI.Basecode.Services\obj\Debug\n
 C:\Users\Mark Allen\Documents\C# Projects\usjr\ASI.Basecode.Services\obj\Debug\net7.0\refint\ASI.Basecode.Services.dll
 C:\Users\Mark Allen\Documents\C# Projects\usjr\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.pdb
 C:\Users\Mark Allen\Documents\C# Projects\usjr\ASI.Basecode.Services\obj\Debug\net7.0\ref\ASI.Basecode.Services.dll
+<<<<<<< HEAD
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Services.deps.json
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Services.dll
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Services.pdb
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Data.dll
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Resources.dll
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Data.pdb
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Resources.pdb
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.csproj.AssemblyReference.cache
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.AssemblyInfoInputs.cache
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.AssemblyInfo.cs
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.csproj.CoreCompileInputs.cache
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.csproj.CopyComplete
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.dll
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\refint\ASI.Basecode.Services.dll
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.pdb
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ref\ASI.Basecode.Services.dll
+=======
 C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Services.deps.json
 C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Services.dll
 C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Services.pdb
@@ -32,3 +51,4 @@ C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Se
 C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\refint\ASI.Basecode.Services.dll
 C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.pdb
 C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ref\ASI.Basecode.Services.dll
+>>>>>>> 50f96210394d218cbd285c820ba122de7e1da3a5

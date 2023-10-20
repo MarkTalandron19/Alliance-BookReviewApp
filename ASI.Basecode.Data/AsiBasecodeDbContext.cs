@@ -119,6 +119,30 @@ namespace ASI.Basecode.Data
                     .WithMany()
                     .HasForeignKey(e => e.authorId);
             });
+            modelBuilder.Entity<Genre>(entity =>
+            {
+                entity.HasKey(e => e.genreId);
+
+                entity.Property(e => e.genreName)
+                    .IsRequired();
+
+                entity.Property(e => e.description)
+                    .IsRequired();
+            });
+
+            modelBuilder.Entity<BookGenres>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.HasOne<Book>()
+                    .WithMany()
+                    .HasForeignKey(e => e.bookId);
+
+                entity.HasOne<Genre>()
+                .WithMany()
+                    .HasForeignKey(e => e.genreId);
+            }
+            );
 
             modelBuilder.Entity<Genre>(entity =>
             {

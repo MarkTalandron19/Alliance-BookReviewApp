@@ -12,6 +12,22 @@ C:\Users\Mark Allen\Documents\C# Projects\usjr\ASI.Basecode.Data\obj\Debug\net7.
 C:\Users\Mark Allen\Documents\C# Projects\usjr\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.pdb
 C:\Users\Mark Allen\Documents\C# Projects\usjr\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.genruntimeconfig.cache
 C:\Users\Mark Allen\Documents\C# Projects\usjr\ASI.Basecode.Data\obj\Debug\net7.0\ref\ASI.Basecode.Data.dll
+<<<<<<< HEAD
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.deps.json
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.runtimeconfig.json
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.dll
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.pdb
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.csproj.AssemblyReference.cache
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.AssemblyInfoInputs.cache
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.AssemblyInfo.cs
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.csproj.CoreCompileInputs.cache
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.dll
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\refint\ASI.Basecode.Data.dll
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.pdb
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.genruntimeconfig.cache
+D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ref\ASI.Basecode.Data.dll
+=======
 C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.deps.json
 C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.runtimeconfig.json
 C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.dll
@@ -26,3 +42,4 @@ C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Da
 C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.pdb
 C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.genruntimeconfig.cache
 C:\Users\Mark Allen\Documents\C# Projects\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ref\ASI.Basecode.Data.dll
+>>>>>>> 50f96210394d218cbd285c820ba122de7e1da3a5

@@ -1,8 +1,144 @@
-﻿@{
+﻿@model ASI.Basecode.Data.Models.Genre
+@section styles {
+    <link rel="stylesheet" href="~/css/admindashboard.css" />
+}
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="body-main">
+    <div class="body-two-section">
+        <div class="left-space">
+            <div class="left-menu">
+                <div>
+                    <img class="bibliobibuli-logo" src="~/img/logo-leftaligned.png" />
+                    <div class="menu-items">
+                    <div class="leftmenu-item-title">
+                        <div class="leftmenu-item">
+                            <img class="leftmenu-icons" src="~/img/dashboard-icon.png" />
+                            Book Management<br />Dashboard
+                        </div>
+                    </div>
+                        <hr class="menu-divider" />
+                    <button class="leftmenu-items">
+                            <div class="leftmenu-item">
+                            <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+                            Book List
+                        </div>
+                    </button>
+                    <button class="leftmenu-items">
+                            <div class="leftmenu-item">
+                                <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+                            Genre List
+                        </div>
+                    </button>
+                    </div>
+                </div>
+                <div>
+                    <button class="logout-button">
+                        <div class="logout-text">
+                            <img class="leftmenu-icons" src="~/img/logout-icon.png" />
+                            Logout
+                        </div>
+                     </button>
+                </div>
+            </div>
+        </div>
+        <div class="admin-dashboard-list">
+            <div class="admin-header">
+                <div class="logosec">
+                    Welcome, @HttpContextAccessor.HttpContext.Session.GetString("UserName")!
+                    <div class="mr-20 hover-pointer" style="position: relative">
+                        <div class="dp">
+                            <img src="~/img/profile-logo.png"
+                                 class="dpicn hover-pointer"
+                                 alt="dp">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard">
+                <div class="dashboard-title-div">
+                    <p class="dashboard-title">Book Genre List Management</p>
+                    <button class="add-button" id="AddBtn"><p class="button-text">+</p></button>
+                </div>
+                <hr class="divider"/>
+                <p class="dashboard-subtitle">Book Genre you have created</p>
+                <div class="dashboard-card">
+                    <table class="dashboard-table">
+                        <thead class="dashboard-table-header">
+                            <tr class="header-row">
+                                <th>
+                                    Genre Name
+                                </th>
+                                <th>
+                                    Short Description
+                                </th>
+                                <th>
+                                    operation
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="dashboard-subtitle">Book Genre List</p>
+                <div class="dashboard-card">
+                    <table class="dashboard-table">
+                        <thead class="dashboard-table-header">
+                            <tr class="header-row">
+                                <th>
+                                    Genre Name
+                                </th>
+                                <th>
+                                    Short Description
+                                </th>
+                                <th>
+                                    Created by
+                                </th>
+                                <th>
+                                    Date Added
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<div class="modal" id="GenreModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="modalTitle"></h4>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" asp-for="genreId" value="0" />
+                <div>
+                    <label class="input-label" asp-for="genreName"></label>
+                    <input type="text" asp-for="genreName" class="form-control" placeholder="Genre Name" />
+                </div>
+                <div>
+                    <label class="input-label" asp-for="description"></label>
+                    <input type="text" asp-for="description" class="form-control" placeholder="Short Description" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-button-close" id="Save" data-bs-dismiss="modal" onclick="hideModal();">Close</button>
+                <button class="modal-button" id="Save" type="submit" onclick="insert();">Add Genre</button>
+                <button class="modal-button" id="Update" type="submit" onclick="update();" style="display: none">Update Genre</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="~/js/Genre.js"></script>

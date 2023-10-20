@@ -1,0 +1,272 @@
+﻿body {
+    background-color: #E6E6E6;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    left: 0;
+}
+
+header {
+    display: none;
+}
+
+footer {
+    display: none;
+}
+
+.body-main {
+    height: 100vh;
+}
+
+.body-two-section {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.left-space {
+    width: 27%;
+    margin: 0 16px;
+}
+
+.left-menu {
+    width: 23%;
+    background-color: #053B50;
+    height: 100%;
+    padding: 25px;
+    position: fixed;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.bibliobibuli-logo {
+    width: 200px;
+    margin: 0 auto 25px auto;
+}
+
+.admin-dashboard-list {
+    width: 100%;
+
+}
+
+.admin-header {
+    display: flex;
+    justify-content: flex-end;
+    background-color: white;
+    height: 80px;
+}
+
+.dashboard {
+    margin: auto;
+    padding: 20px;
+}
+
+.dashboard-card {
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.10));
+    background-color: white;
+    min-height: 300px;
+    border-left: solid 8px #176B87;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.dashboard-title-div {
+    display: flex;
+    gap: 20px;
+}
+
+.dashboard-title {
+    padding-left: 10px;
+    font-size: 20px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.button-text {
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+}
+
+.add-button {
+    background-color: #176B87;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    outline: none;
+    transition: ease .2s;
+}
+
+    .add-button:hover {
+        background-color: #0D5066;
+        transition: ease .2s;
+        border: none;
+        outline: none;
+    }
+
+.divider {
+    border: none;
+    height: 1px;
+    color: #bfbfbf;
+    background-color: #bfbfbf;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+}
+
+.dashboard-subtitle {
+    padding-left: 10px;
+    font-size: 16px;
+    margin: 30px 0 10px 0;
+}
+
+.logout-button {
+    float: right;
+    margin: 10px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.leftmenu-icons {
+   width: 20px;
+   height: 20px;
+   margin: 0 10px;
+}
+
+.logout-text {
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.leftmenu-item-title {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    background-color: transparent;
+    color: white;
+}
+
+.leftmenu-items {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.leftmenu-item {
+    display: flex;
+    padding: 5px 0;
+    justify-content: start;
+    align-items: center;
+}
+
+.menu-divider {
+    border: none;
+    height: 1px;
+    color: #4D93C1;
+    background-color: #4D93C1;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+}
+
+.dashboard-table {
+    margin: auto;
+    width: 100%;
+}
+
+th {
+    padding: 10px 20px;
+}
+
+.dashboard-table-header {
+    display:table-header-group;
+    filter: drop-shadow(0 5px 3px rgba(0, 0, 0, 0.10));
+    background-color: white;
+    border-radius: 20px;
+}
+
+.modal-body {
+    padding: 0 20px 30px 20px;
+}
+
+.modal-button {
+    background-color: #176B87;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    padding: 0 20px;
+    cursor: pointer;
+    outline: none;
+    transition: ease .2s;
+}
+
+    .modal-button:hover {
+        background-color: #0D5066;
+        transition: ease .2s;
+        border: none;
+        outline: none;
+    }
+
+.modal-button-close {
+    background-color: #bfbfbf;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    padding: 0 20px;
+    cursor: pointer;
+    outline: none;
+    transition: ease .2s;
+}
+
+    .modal-button-close:hover {
+        background-color: #808080;
+        transition: ease .2s;
+        border: none;
+        outline: none;
+    }
+
+.input-label {
+    padding-top: 20px;
+}
+
+.modal.show {
+    display: flex!important;
+    align-items: center;
+}
+
+.modal.show .modal-dialog {
+    min-width: 500px;
+}
+
+
+
+
+
+
+
