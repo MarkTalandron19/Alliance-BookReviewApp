@@ -42,6 +42,19 @@ namespace ASI.Basecode.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Genres",
+                columns: table => new
+                {
+                    genreId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    genreName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Genres", x => x.genreId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
@@ -109,10 +122,41 @@ namespace ASI.Basecode.Data.Migrations
                         principalColumn: "bookId");
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Book_Genres",
+                columns: table => new
+                {
+                    bookId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    genreId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.ForeignKey(
+                        name: "FK_Book_Genres_Book_bookId",
+                        column: x => x.bookId,
+                        principalTable: "Book",
+                        principalColumn: "bookId");
+                    table.ForeignKey(
+                        name: "FK_Book_Genres_Genres_genreId",
+                        column: x => x.genreId,
+                        principalTable: "Genres",
+                        principalColumn: "genreId");
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Authored_Books_authorId",
                 table: "Authored_Books",
                 column: "authorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Book_Genres_bookId",
+                table: "Book_Genres",
+                column: "bookId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Book_Genres_genreId",
+                table: "Book_Genres",
+                column: "genreId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Reviews_bookId",
@@ -132,6 +176,9 @@ namespace ASI.Basecode.Data.Migrations
                 name: "Authored_Books");
 
             migrationBuilder.DropTable(
+                name: "Book_Genres");
+
+            migrationBuilder.DropTable(
                 name: "Reviews");
 
             migrationBuilder.DropTable(
@@ -139,6 +186,9 @@ namespace ASI.Basecode.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Authors");
+
+            migrationBuilder.DropTable(
+                name: "Genres");
 
             migrationBuilder.DropTable(
                 name: "Book");

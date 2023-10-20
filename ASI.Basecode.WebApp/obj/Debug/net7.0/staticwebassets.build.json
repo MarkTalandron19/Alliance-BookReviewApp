@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Z/x4khMT+9mlUTaBrCKpdNSNn+pZ8uOeE0WlZAlCzhQ=",
+  "Hash": "cze6/a+jnvc0bv2sF1eUGvG33gQ5JDZGdkGZQDzZUpA=",
   "Source": "ASI.Basecode.WebApp",
   "BasePath": "_content/ASI.Basecode.WebApp",
   "Mode": "Default",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\admindashboard.css",
+      "SourceId": "ASI.Basecode.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecode.WebApp",
+      "RelativePath": "css/admindashboard.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\admindashboard.css"
+    },
     {
       "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\login.css",
       "SourceId": "ASI.Basecode.WebApp",
@@ -170,6 +187,40 @@
       "OriginalItemSpec": "wwwroot\\img\\asi-logo-invert.svg"
     },
     {
+      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\booklist-icon.png",
+      "SourceId": "ASI.Basecode.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecode.WebApp",
+      "RelativePath": "img/booklist-icon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\booklist-icon.png"
+    },
+    {
+      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\dashboard-icon.png",
+      "SourceId": "ASI.Basecode.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecode.WebApp",
+      "RelativePath": "img/dashboard-icon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\dashboard-icon.png"
+    },
+    {
       "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\Group 42.png",
       "SourceId": "ASI.Basecode.WebApp",
       "SourceType": "Discovered",
@@ -221,6 +272,40 @@
       "OriginalItemSpec": "wwwroot\\img\\LiveIT.png"
     },
     {
+      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\logo-leftaligned.png",
+      "SourceId": "ASI.Basecode.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecode.WebApp",
+      "RelativePath": "img/logo-leftaligned.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo-leftaligned.png"
+    },
+    {
+      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\logout-icon.png",
+      "SourceId": "ASI.Basecode.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecode.WebApp",
+      "RelativePath": "img/logout-icon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logout-icon.png"
+    },
+    {
       "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\profile-logo.png",
       "SourceId": "ASI.Basecode.WebApp",
       "SourceType": "Discovered",
@@ -236,6 +321,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\profile-logo.png"
+    },
+    {
+      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\Genre.js",
+      "SourceId": "ASI.Basecode.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecode.WebApp",
+      "RelativePath": "js/Genre.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Genre.js"
     },
     {
       "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\site.js",

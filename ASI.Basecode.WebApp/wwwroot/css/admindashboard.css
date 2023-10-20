@@ -78,6 +78,7 @@ footer {
     min-height: 300px;
     border-left: solid 8px #176B87;
     border-radius: 10px;
+    padding: 30px;
 }
 
 .dashboard-title-div {
@@ -191,6 +192,79 @@ footer {
     margin-right: auto;
     margin-bottom: 0;
 }
+
+.dashboard-table {
+    margin: auto;
+    width: 100%;
+}
+
+th {
+    padding: 10px 20px;
+}
+
+.dashboard-table-header {
+    display:table-header-group;
+    filter: drop-shadow(0 5px 3px rgba(0, 0, 0, 0.10));
+    background-color: white;
+    border-radius: 20px;
+}
+
+.modal-body {
+    padding: 0 20px 30px 20px;
+}
+
+.modal-button {
+    background-color: #176B87;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    padding: 0 20px;
+    cursor: pointer;
+    outline: none;
+    transition: ease .2s;
+}
+
+    .modal-button:hover {
+        background-color: #0D5066;
+        transition: ease .2s;
+        border: none;
+        outline: none;
+    }
+
+.modal-button-close {
+    background-color: #bfbfbf;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    padding: 0 20px;
+    cursor: pointer;
+    outline: none;
+    transition: ease .2s;
+}
+
+    .modal-button-close:hover {
+        background-color: #808080;
+        transition: ease .2s;
+        border: none;
+        outline: none;
+    }
+
+.input-label {
+    padding-top: 20px;
+}
+
+.modal.show {
+    display: flex!important;
+    align-items: center;
+}
+
+.modal.show .modal-dialog {
+    min-width: 500px;
+}
+
+
 
 
 

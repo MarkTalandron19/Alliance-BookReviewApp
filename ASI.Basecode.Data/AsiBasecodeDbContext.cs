@@ -21,6 +21,8 @@ namespace ASI.Basecode.Data
         public virtual DbSet<Author> Authors { get; set; }
         public virtual DbSet<AuthoredBooks> Authored_Books { get; set; }
         public virtual DbSet<Review> Reviews { get; set; }
+        public virtual DbSet<Genre> Genres { get; set; }
+        public virtual DbSet<BookGenres> Book_Genres { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>(entity =>
@@ -117,6 +119,30 @@ namespace ASI.Basecode.Data
                     .WithMany()
                     .HasForeignKey(e => e.authorId);
             });
+            modelBuilder.Entity<Genre>(entity =>
+            {
+                entity.HasKey(e => e.genreId);
+
+                entity.Property(e => e.genreName)
+                    .IsRequired();
+
+                entity.Property(e => e.description)
+                    .IsRequired();
+            });
+
+            modelBuilder.Entity<BookGenres>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.HasOne<Book>()
+                    .WithMany()
+                    .HasForeignKey(e => e.bookId);
+
+                entity.HasOne<Genre>()
+                .WithMany()
+                    .HasForeignKey(e => e.genreId);
+            }
+            );
 
             OnModelCreatingPartial(modelBuilder);
         }

@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\admindashboard.css",
+      "PackagePath": "staticwebassets\\css\\admindashboard.css"
+    },
+    {
       "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },
@@ -45,12 +49,32 @@
       "PackagePath": "staticwebassets\\img\\asi-logo-invert.svg"
     },
     {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\booklist-icon.png",
+      "PackagePath": "staticwebassets\\img\\booklist-icon.png"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\dashboard-icon.png",
+      "PackagePath": "staticwebassets\\img\\dashboard-icon.png"
+    },
+    {
       "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\lines 1.png",
       "PackagePath": "staticwebassets\\img\\lines 1.png"
     },
     {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\logo-leftaligned.png",
+      "PackagePath": "staticwebassets\\img\\logo-leftaligned.png"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\logout-icon.png",
+      "PackagePath": "staticwebassets\\img\\logout-icon.png"
+    },
+    {
       "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\profile-logo.png",
       "PackagePath": "staticwebassets\\img\\profile-logo.png"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\Genre.js",
+      "PackagePath": "staticwebassets\\js\\Genre.js"
     },
     {
       "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\site.js",

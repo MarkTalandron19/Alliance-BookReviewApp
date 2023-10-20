@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASI.Basecode.Data.Migrations
 {
     [DbContext(typeof(AsiBasecodeDBContext))]
-    [Migration("20231018111335_initial")]
+    [Migration("20231020121144_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -89,6 +89,39 @@ namespace ASI.Basecode.Data.Migrations
                     b.HasKey("bookId");
 
                     b.ToTable("Book");
+                });
+
+            modelBuilder.Entity("ASI.Basecode.Data.Models.BookGenres", b =>
+                {
+                    b.Property<string>("bookId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("genreId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasIndex("bookId");
+
+                    b.HasIndex("genreId");
+
+                    b.ToTable("Book_Genres");
+                });
+
+            modelBuilder.Entity("ASI.Basecode.Data.Models.Genre", b =>
+                {
+                    b.Property<string>("genreId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("genreName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("genreId");
+
+                    b.ToTable("Genres");
                 });
 
             modelBuilder.Entity("ASI.Basecode.Data.Models.Review", b =>
@@ -207,6 +240,17 @@ namespace ASI.Basecode.Data.Migrations
                         .HasForeignKey("bookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("ASI.Basecode.Data.Models.BookGenres", b =>
+                {
+                    b.HasOne("ASI.Basecode.Data.Models.Book", null)
+                        .WithMany()
+                        .HasForeignKey("bookId");
+
+                    b.HasOne("ASI.Basecode.Data.Models.Genre", null)
+                        .WithMany()
+                        .HasForeignKey("genreId");
                 });
 
             modelBuilder.Entity("ASI.Basecode.Data.Models.Review", b =>
