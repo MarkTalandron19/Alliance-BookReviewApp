@@ -1,4 +1,5 @@
-﻿$(document).ready(function () {
+﻿/*
+$(document).ready(function () {
     GetGenres();
 })
 function GetGenres() {
@@ -33,12 +34,17 @@ function GetGenres() {
             alert('Unable to retrieve the data.');
         }
     })
-}
-$('#AddBtn').click(function () {
-    jQuery.noConflict();
-    $('#GenreModal').modal('show');
-    $('#modalTitle').text('Add a Book Genre');
-}); 
+}*/
+
+$(document).ready(function () {
+    $('#AddBtn').click(function () {
+        jQuery.noConflict();
+        
+        $('#GenreModal').modal('show');
+        $('#modalTitle').text('Add a Book Genre');
+        console.log("Button clicked");
+    });
+});
 /*
 function AddGenre() {
     var formData = new Object();
