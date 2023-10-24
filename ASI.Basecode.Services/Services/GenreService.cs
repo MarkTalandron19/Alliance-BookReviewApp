@@ -25,7 +25,8 @@ namespace ASI.Basecode.Services.Services
         public void AddGenre(GenreViewModel model)
         {
             var genre = new Genre();
-            _mapper.Map(genre, model);
+            
+            _mapper.Map(model, genre);
             _genreRepository.AddGenre(genre);
         }
 

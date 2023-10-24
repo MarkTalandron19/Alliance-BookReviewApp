@@ -1,4 +1,4 @@
-﻿@model ASI.Basecode.Data.Models.Genre
+﻿@model IEnumerable<ASI.Basecode.Data.Models.Genre>
 @section styles {
     <link rel="stylesheet" href="~/css/admindashboard.css" />
 }
@@ -68,19 +68,30 @@
                     <table class="dashboard-table">
                         <thead class="dashboard-table-header">
                             <tr class="header-row">
-                                <th>
+                                <th style="width: 25%;">
                                     Genre Name
                                 </th>
-                                <th>
+                                <th style="width: 50%;">
                                     Short Description
                                 </th>
-                                <th>
+                                <th style="width: 25%;">
                                     operation
                                 </th>
                             </tr>
                         </thead>
                         <tbody id="tableBody">
+                            @foreach (var genre in Model)
+                            {
+                                <tr>
+                                    <td>@genre.genreName</td>
+                                    <td>@genre.description</td>
+                                    <td>
+                                        <button class="edit-button" onclick="Edit(\'' + item.genreId + '\')">Edit</button>
+                                        <button class="delete-button" onclick="Edit(\'' + item.genreId + '\')">Delete</button>
+                                    </td>
+                                </tr>
 
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -111,34 +122,10 @@
             </div>
         </div>
     </div>
+    @await Html.PartialAsync("_GenrePopupPartial", new ASI.Basecode.Services.ServiceModels.GenreViewModel())
 </div>
 
-<div class="modal" id="GenreModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 id="modalTitle"></h4>
-            </div>
-            <div class="modal-body">
-                <input type="hidden" asp-for="genreId" value="0" />
-                <div>
-                    <label class="input-label" asp-for="genreName"></label>
-                    <input type="text" asp-for="genreName" class="form-control" placeholder="Genre Name" />
-                </div>
-                <div>
-                    <label class="input-label" asp-for="description"></label>
-                    <input type="text" asp-for="description" class="form-control" placeholder="Short Description" />
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="modal-button-close" id="Save" data-bs-dismiss="modal" onclick="hideModal();">Close</button>
-                <button class="modal-button" id="Save" type="submit" onclick="insert();">Add Genre</button>
-                <button class="modal-button" id="Update" type="submit" onclick="update();" style="display: none">Update Genre</button>
-                
-            </div>
-        </div>
-    </div>
-</div>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="~/js/Genre.js"></script>
+

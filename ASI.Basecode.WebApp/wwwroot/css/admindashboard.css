@@ -202,6 +202,15 @@ th {
     padding: 10px 20px;
 }
 
+tr:nth-child(even) {
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+
+td {
+    padding: 10px 20px;
+}
+
 .dashboard-table-header {
     display:table-header-group;
     filter: drop-shadow(0 5px 3px rgba(0, 0, 0, 0.10));
@@ -263,6 +272,47 @@ th {
 .modal.show .modal-dialog {
     min-width: 500px;
 }
+
+.edit-button {
+    background-color: #176B87;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    padding: 0 20px;
+    cursor: pointer;
+    outline: none;
+    transition: ease .2s;
+}
+
+    .edit-button:hover {
+        background-color: #0D5066;
+        transition: ease .2s;
+        border: none;
+        outline: none;
+    }
+
+.delete-button {
+    background-color: #176B87;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    padding: 0 20px;
+    cursor: pointer;
+    outline: none;
+    transition: ease .2s;
+}
+
+    .delete-button:hover {
+        background-color: #0D5066;
+        transition: ease .2s;
+        border: none;
+        outline: none;
+    }
+    
+
+
 
 
 

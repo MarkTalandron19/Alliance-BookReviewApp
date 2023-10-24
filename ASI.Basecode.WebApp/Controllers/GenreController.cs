@@ -1,8 +1,11 @@
 ﻿using ASI.Basecode.Data.Models;
 using ASI.Basecode.Services.Interfaces;
 using ASI.Basecode.Services.ServiceModels;
+using ASI.Basecode.Services.Services;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.IO;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
@@ -21,15 +24,18 @@ namespace ASI.Basecode.WebApp.Controllers
         [HttpPost("add")]
         public IActionResult AddGenre(GenreViewModel genre)
         {
+            genre.genreId = Guid.NewGuid().ToString();
             _genreService.AddGenre(genre);
+            _genreService.GetGenres();
             return NoContent();
         }
 
         [HttpGet("get")]
         public IActionResult GetGenres()
         {
+
             var genres = _genreService.GetGenres();
-            return Ok(genres);
+            return View(genres);
         }
 
         [HttpPut("update/{genreId}")]

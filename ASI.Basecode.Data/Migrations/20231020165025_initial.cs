@@ -50,19 +50,6 @@ namespace ASI.Basecode.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Genres",
-                columns: table => new
-                {
-                    genreId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    genreName = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Genres", x => x.genreId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
@@ -135,15 +122,9 @@ namespace ASI.Basecode.Data.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-<<<<<<<< HEAD:ASI.Basecode.Data/Migrations/20231020121144_initial.cs
-                        name: "FK_Book_Genres_Book_bookId",
-                        column: x => x.bookId,
-                        principalTable: "Book",
-========
                         name: "FK_Book_Genres_Books_bookId",
                         column: x => x.bookId,
                         principalTable: "Books",
->>>>>>>> 50f96210394d218cbd285c820ba122de7e1da3a5:ASI.Basecode.Data/Migrations/20231019061005_initial.cs
                         principalColumn: "bookId");
                     table.ForeignKey(
                         name: "FK_Book_Genres_Genres_genreId",
@@ -158,13 +139,6 @@ namespace ASI.Basecode.Data.Migrations
                 column: "authorId");
 
             migrationBuilder.CreateIndex(
-<<<<<<<< HEAD:ASI.Basecode.Data/Migrations/20231020121144_initial.cs
-                name: "IX_Book_Genres_bookId",
-                table: "Book_Genres",
-                column: "bookId");
-
-            migrationBuilder.CreateIndex(
-========
                 name: "IX_Authored_Books_bookId",
                 table: "Authored_Books",
                 column: "bookId");
@@ -175,7 +149,6 @@ namespace ASI.Basecode.Data.Migrations
                 column: "bookId");
 
             migrationBuilder.CreateIndex(
->>>>>>>> 50f96210394d218cbd285c820ba122de7e1da3a5:ASI.Basecode.Data/Migrations/20231019061005_initial.cs
                 name: "IX_Book_Genres_genreId",
                 table: "Book_Genres",
                 column: "genreId");
@@ -213,11 +186,7 @@ namespace ASI.Basecode.Data.Migrations
                 name: "Genres");
 
             migrationBuilder.DropTable(
-<<<<<<<< HEAD:ASI.Basecode.Data/Migrations/20231020121144_initial.cs
-                name: "Book");
-========
                 name: "Books");
->>>>>>>> 50f96210394d218cbd285c820ba122de7e1da3a5:ASI.Basecode.Data/Migrations/20231019061005_initial.cs
         }
     }
 }
