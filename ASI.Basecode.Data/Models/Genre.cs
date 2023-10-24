@@ -11,5 +11,9 @@ namespace ASI.Basecode.Data.Models
         public string genreId;
         public string genreName;
         public string description;
+        public string CreatedBy { get; set; }
+        public DateTime CreatedTime { get; set; }
+        public string UpdatedBy { get; set; }
+        public DateTime UpdatedTime { get; set; }
     }
 }

@@ -5,6 +5,7 @@ using ASI.Basecode.Services.ServiceModels;
 using AutoMapper;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,13 +26,23 @@ namespace ASI.Basecode.Services.Services
         public void AddGenre(GenreViewModel model)
         {
             var genre = new Genre();
-            _mapper.Map(genre, model);
-            _genreRepository.AddGenre(genre);
+            if(!_genreRepository.GenreExists(model.genreId))
+            {
+                _mapper.Map(genre, model);
+                _genreRepository.AddGenre(genre);
+                genre.CreatedTime = DateTime.Now;
+                genre.UpdatedTime = DateTime.Now;
+                genre.CreatedBy = System.Environment.UserName;
+                genre.UpdatedBy = System.Environment.UserName;
+            }
         }
 
         public void DeleteGenre(string genreId)
         {
-            _genreRepository.DeleteGenre(genreId);
+            if(_genreRepository.GenreExists(genreId))
+            {
+                _genreRepository.DeleteGenre(genreId);
+            }
         }
 
         public IQueryable<Genre> GetGenres()
@@ -42,8 +53,13 @@ namespace ASI.Basecode.Services.Services
         public void UpdateGenre(GenreViewModel update)
         {
             var genre = new Genre();
-            _mapper.Map(genre, update);
-            _genreRepository.AddGenre(genre);
+            if(_genreRepository.GenreExists(update.genreId))
+            {
+                _mapper.Map(genre, update);
+                _genreRepository.AddGenre(genre);
+                genre.UpdatedTime = DateTime.Now;
+                genre.UpdatedBy = System.Environment.UserName;
+            }
         }
     }
 }

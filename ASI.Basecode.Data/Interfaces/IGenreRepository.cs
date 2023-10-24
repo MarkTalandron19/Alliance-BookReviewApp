@@ -13,5 +13,7 @@ namespace ASI.Basecode.Data.Interfaces
         void AddGenre(Genre genre);
         void UpdateGenre(Genre update);
         void DeleteGenre(string genreId);
+
+        bool GenreExists(string genreId);
     }
 }
