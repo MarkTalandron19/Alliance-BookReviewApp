@@ -14,5 +14,6 @@ namespace ASI.Basecode.Data.Interfaces
         void AddAuthor(Author author);
         void UpdateAuthor(Author update);
         void DeleteAuthor(string authorId);
+        bool AuthorExists(string authorId);
     }
 }
