@@ -29,11 +29,11 @@ namespace ASI.Basecode.Services.Services
             if(!_genreRepository.GenreExists(model.genreId))
             {
                 _mapper.Map(genre, model);
-                _genreRepository.AddGenre(genre);
                 genre.CreatedTime = DateTime.Now;
                 genre.UpdatedTime = DateTime.Now;
                 genre.CreatedBy = System.Environment.UserName;
                 genre.UpdatedBy = System.Environment.UserName;
+                _genreRepository.AddGenre(genre);
             }
         }
 
@@ -56,9 +56,9 @@ namespace ASI.Basecode.Services.Services
             if(_genreRepository.GenreExists(update.genreId))
             {
                 _mapper.Map(genre, update);
-                _genreRepository.AddGenre(genre);
                 genre.UpdatedTime = DateTime.Now;
                 genre.UpdatedBy = System.Environment.UserName;
+                _genreRepository.AddGenre(genre);
             }
         }
     }

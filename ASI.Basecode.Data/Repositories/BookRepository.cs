@@ -86,5 +86,10 @@ namespace ASI.Basecode.Data.Repositories
                 UnitOfWork.SaveChanges();
             }
         }
+
+        public bool BookExists(string bookId)
+        {
+            return this.GetDbSet<Book>().Any(x => x.bookId == bookId);
+        }
     }
 }
