@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MpcJjJyWVhcBdCEUctai8Gkafjx1LW5+eHjfhy6aWuk=",
+  "Hash": "uX9u2Tu8IWOK0r3hfclBxBQOyTNm21ssjPh3gO6ByeQ=",
   "Source": "ASI.Basecode.WebApp",
   "BasePath": "_content/ASI.Basecode.WebApp",
   "Mode": "Default",
@@ -321,6 +321,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\profile-logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\Book.js",
+      "SourceId": "ASI.Basecode.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecode.WebApp",
+      "RelativePath": "js/Book.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Book.js"
     },
     {
       "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\Genre.js",

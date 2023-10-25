@@ -1,9 +1,9 @@
-﻿@model IEnumerable<ASI.Basecode.Data.Models.Genre>
+﻿@model IEnumerable<ASI.Basecode.Data.Models.Book>
 @section styles {
     <link rel="stylesheet" href="~/css/admindashboard.css" />
 }
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Book List";
 }
 
 <div class="body-main">
@@ -60,7 +60,7 @@
             <div class="dashboard">
                 <div class="dashboard-title-div">
                     <p class="dashboard-title">Book List Management</p>
-                    <button class="add-button" id="AddBtn"><p class="button-text">+</p></button>
+                    <button class="add-button" id="AddBookBtn"><p class="button-text">+</p></button>
                 </div>
                 <hr class="divider"/>
                 <p class="dashboard-subtitle">Book Genre you have created</p>
@@ -111,9 +111,10 @@
             </div>
         </div>
     </div>
+    @await Html.PartialAsync("BookPopup", new ASI.Basecode.Services.ServiceModels.BookViewModel())
 </div>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="~/js/Genre.js"></script>
+<script src="~/js/Book.js"></script>
 

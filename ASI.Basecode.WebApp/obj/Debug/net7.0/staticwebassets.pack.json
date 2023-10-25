@@ -73,6 +73,10 @@
       "PackagePath": "staticwebassets\\img\\profile-logo.png"
     },
     {
+      "Id": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\Book.js",
+      "PackagePath": "staticwebassets\\js\\Book.js"
+    },
+    {
       "Id": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\Genre.js",
       "PackagePath": "staticwebassets\\js\\Genre.js"
     },
