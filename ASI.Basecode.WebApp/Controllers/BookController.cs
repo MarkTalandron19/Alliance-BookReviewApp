@@ -2,6 +2,7 @@
 using ASI.Basecode.Services.Interfaces;
 using ASI.Basecode.Services.ServiceModels;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -59,6 +60,13 @@ namespace ASI.Basecode.WebApp.Controllers
         {
             _bookService.DeleteBook(bookId);
             return NoContent();
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult BookList()
+        {
+            return View();
         }
     }
 }

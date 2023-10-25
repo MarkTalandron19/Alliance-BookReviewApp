@@ -20,18 +20,18 @@
                         </div>
                     </div>
                         <hr class="menu-divider" />
-                        <a asp-controller="Book" asp-action="BookList" class="leftmenu-items">
-                            <div class="leftmenu-item">
-                                <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
-                                Book List
-                            </div>
-                        </a>
                     <button class="leftmenu-items">
                             <div class="leftmenu-item">
-                                <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
-                            Genre List
+                            <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+                            Book List
                         </div>
                     </button>
+                        <a asp-controller="Home" asp-action="Index" class="leftmenu-items">
+                            <div class="leftmenu-item">
+                                <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+                                Genre List
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div>
@@ -59,7 +59,7 @@
             </div>
             <div class="dashboard">
                 <div class="dashboard-title-div">
-                    <p class="dashboard-title">Book Genre List Management</p>
+                    <p class="dashboard-title">Book List Management</p>
                     <button class="add-button" id="AddBtn"><p class="button-text">+</p></button>
                 </div>
                 <hr class="divider"/>
@@ -69,7 +69,7 @@
                         <thead class="dashboard-table-header">
                             <tr class="header-row">
                                 <th style="width: 25%;">
-                                    Genre Name
+                                    Book Name
                                 </th>
                                 <th style="width: 50%;">
                                     Short Description
@@ -80,18 +80,7 @@
                             </tr>
                         </thead>
                         <tbody id="tableBody">
-                            @foreach (var genre in Model)
-                            {
-                                <tr>
-                                    <td>@genre.genreName</td>
-                                    <td>@genre.description</td>
-                                    <td>
-                                        <button class="edit-button" onclick="Edit(\'' + item.genreId + '\')">Edit</button>
-                                        <button class="delete-button" onclick="Edit(\'' + item.genreId + '\')">Delete</button>
-                                    </td>
-                                </tr>
-
-                            }
+                            
                         </tbody>
                     </table>
                 </div>
@@ -122,7 +111,6 @@
             </div>
         </div>
     </div>
-    @await Html.PartialAsync("_GenrePopupPartial", new ASI.Basecode.Services.ServiceModels.GenreViewModel())
 </div>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>

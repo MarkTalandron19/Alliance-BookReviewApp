@@ -133,7 +133,9 @@ namespace ASI.Basecode.WebApp
             services.AddScoped<IBookService, BookService>();
             services.AddScoped<IReviewService, ReviewService>();
             services.AddScoped<IGenreService, GenreService>();
+
         }
+
 
         /// <summary>
         /// Configure application

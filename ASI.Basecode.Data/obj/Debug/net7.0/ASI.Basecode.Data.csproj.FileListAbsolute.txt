@@ -12,3 +12,17 @@ D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-Book
 D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.pdb
 D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.genruntimeconfig.cache
 D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ref\ASI.Basecode.Data.dll
+C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.csproj.AssemblyReference.cache
+C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.AssemblyInfoInputs.cache
+C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.AssemblyInfo.cs
+C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.csproj.CoreCompileInputs.cache
+C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.dll
+C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\refint\ASI.Basecode.Data.dll
+C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.pdb
+C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.deps.json
+C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.runtimeconfig.json
+C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.dll
+C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.Data\bin\Debug\net7.0\ASI.Basecode.Data.pdb
+C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ASI.Basecode.Data.genruntimeconfig.cache
+C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.Data\obj\Debug\net7.0\ref\ASI.Basecode.Data.dll
