@@ -28,6 +28,8 @@ namespace ASI.Basecode.Services.Services
             
             _mapper.Map(model, genre);
             _genreRepository.AddGenre(genre);
+            _genreRepository.GetGenres();
+
         }
 
         public void DeleteGenre(string genreId)

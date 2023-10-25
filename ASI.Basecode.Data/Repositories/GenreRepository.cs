@@ -22,6 +22,7 @@ namespace ASI.Basecode.Data.Repositories
         public void AddGenre(Genre genre)
         {
             this.GetDbSet<Genre>().Add(genre);
+            this.GetDbSet<Genre>();
             UnitOfWork.SaveChanges();
         }
 

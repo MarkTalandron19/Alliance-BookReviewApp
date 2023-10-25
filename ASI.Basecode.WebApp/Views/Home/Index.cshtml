@@ -86,11 +86,10 @@
                                     <td>@genre.genreName</td>
                                     <td>@genre.description</td>
                                     <td>
-                                        <button class="edit-button" onclick="Edit(\'' + item.genreId + '\')">Edit</button>
-                                        <button class="delete-button" onclick="Edit(\'' + item.genreId + '\')">Delete</button>
+                                        <button class="edit-button" id="Update" onclick="GetGenreEdit(\'' + @genre.genreId + '\');">Edit</button>
+                                        <button class="delete-button" onclick="Edit(\'' + @genre.genreId + '\')">Delete</button>
                                     </td>
                                 </tr>
-
                             }
                         </tbody>
                     </table>

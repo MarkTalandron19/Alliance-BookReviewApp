@@ -44,31 +44,53 @@ $(document).ready(function () {
         $('#modalTitle').text('Add a Book Genre');
         console.log("Button clicked");
     });
-});
-/*
-function AddGenre() {
-    var formData = new Object();
-    formData.id = $('#genreId').val();
-    formData.genrename = $('#genreName').val();
-    formData.desc = $('#description').val();
+    /*
+    $('#Update').click(function () {
+        jQuery.noConflict();
 
+        $('#GenreModal').modal('show');
+        $('#modalTitle').text('Update Book Genre Details');
+        $('#Save').css('display', 'none');
+        $('#Update').css('display', 'block');
+        $('#genreId').val('');
+        console.log("Button clicked");
+    });
+    */
+});
+
+
+
+function hideModal() {
+    $('#GenreModal').modal('hide');
+}
+
+function GetGenreEdit() {
     $.ajax({
-        url: '/genres/add',
-        data: formData,
-        type: 'post',
+        url: '/genres/update=' + genreId,
+        type: 'get',
+        datatype: 'json',
+        contentType: 'application/json',
         success: function (response) {
-            if (response == null || response == undefined || response.length == 0) {
-                alert('Unable to save the data.');
+            console.log(response);
+            if (response == null || response == undefined) {
+                alert('Unable to retrieve the data.');
+            }
+            else if (response.length == 0) {
+                alert('data not available with the id' + genreId);
             }
             else {
-                GetGenres();
-                alert('added');
+                $('#GenreModal').modal('show');
+                $('#modalTitle').text('Update Book Genre Details');
+                $('#Save').css('display', 'none');
+                $('#Update').css('display', 'block');
+                $('#genreId').val(response.genreId);
+                $('#genreName').val(response.genreName);
+                $('#description').val(response.description);
+                console.log("Button clicked");
             }
         },
         error: function () {
-            alert('Unable to save the data.');
+            alert('Unable to retrieve the data.');
         }
     })
 }
-*/
-
