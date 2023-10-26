@@ -172,6 +172,8 @@ namespace ASI.Basecode.Data
                 entity.Property(e => e.language)
                     .IsRequired();
 
+                entity.Property(e => e.image);
+
                 entity.Property(e => e.CreatedBy);
 
                 entity.Property(e => e.CreatedTime);
@@ -236,7 +238,7 @@ namespace ASI.Basecode.Data
 
             modelBuilder.Entity<AuthoredBooks>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => new { e.bookId, e.authorId });
 
                 entity.HasOne<Book>()
                     .WithMany()
@@ -257,7 +259,7 @@ namespace ASI.Basecode.Data
 
             modelBuilder.Entity<BookGenres>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => new { e.bookId, e.genreId });
 
                 entity.HasOne<Book>()
                     .WithMany()

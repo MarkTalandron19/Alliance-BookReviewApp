@@ -80,8 +80,8 @@ namespace ASI.Basecode.Data.Repositories
             if (book != null)
             {
                 book.title = update.title;
-                book.description = update.description;
-                book.description = update.description;
+                book.synopsis = update.synopsis;
+                book.synopsis = update.synopsis;
                 book.pubYear = update.pubYear;
                 UnitOfWork.SaveChanges();
             }

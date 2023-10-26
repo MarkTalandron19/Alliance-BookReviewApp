@@ -8,6 +8,7 @@ namespace ASI.Basecode.Data.Models
 {
     public partial class AuthoredBooks
     {
+        public int Id { get; set; }
         public string bookId { get; set; }
         public string authorId { get; set; }           
     }

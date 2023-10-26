@@ -8,9 +8,9 @@ namespace ASI.Basecode.Data.Models
 {
     public partial class Genre
     {
-        public string genreId;
-        public string genreName;
-        public string description;
+        public string genreId { get; set; }
+        public string genreName { get; set; }
+        public string description { get; set; }
         public string CreatedBy { get; set; }
         public DateTime CreatedTime { get; set; }
         public string UpdatedBy { get; set; }
