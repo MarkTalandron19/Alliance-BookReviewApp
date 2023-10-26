@@ -24,7 +24,7 @@ namespace ASI.Basecode.Services.ServiceModels
 
         [JsonPropertyName("pubYear")]
         [Required(ErrorMessage = "Publishing year is required.")]
-        public DateOnly pubYear { get; set; }
+        public DateTime pubYear { get; set; }
 
         [JsonPropertyName("publisher")]
         [Required(ErrorMessage = "Publisher is required.")]
