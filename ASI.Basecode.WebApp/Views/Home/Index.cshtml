@@ -86,8 +86,9 @@
                                     <td>@genre.genreName</td>
                                     <td>@genre.description</td>
                                     <td>
-                                        <button class="edit-button" id="Update" onclick="GetGenreEdit(\'' + @genre.genreId + '\');">Edit</button>
-                                        <button class="delete-button" onclick="Edit(\'' + @genre.genreId + '\')">Delete</button>
+                                        <button class="edit-button" id="Update" data-genre-id="@genre.genreId" data-genre-name="@genre.genreName" data-genre-desc="@genre.description">Edit</button>
+                                        <button class="delete-button" data-genre-id="@genre.genreId">Delete</button>
+                                        
                                     </td>
                                 </tr>
                             }
@@ -121,7 +122,9 @@
             </div>
         </div>
     </div>
-    @await Html.PartialAsync("_GenrePopupPartial", new ASI.Basecode.Services.ServiceModels.GenreViewModel())
+    @await Html.PartialAsync("_AddGenrePopup", new ASI.Basecode.Services.ServiceModels.GenreViewModel());
+    @await Html.PartialAsync("_EditGenrePopup", new ASI.Basecode.Services.ServiceModels.GenreViewModel());
+    @await Html.PartialAsync("_DeleteGenrePopup", new ASI.Basecode.Services.ServiceModels.GenreViewModel());
 </div>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
