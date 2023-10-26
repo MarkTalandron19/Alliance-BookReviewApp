@@ -150,7 +150,7 @@ namespace ASI.Basecode.Data
                 entity.Property(e => e.publisher)
                     .IsRequired();
 
-                entity.Property(e => e.IBSN)
+                entity.Property(e => e.isbn)
                     .IsRequired();
 
                 entity.Property(e => e.language)

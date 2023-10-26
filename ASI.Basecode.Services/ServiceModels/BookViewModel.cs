@@ -18,12 +18,24 @@ namespace ASI.Basecode.Services.ServiceModels
         [Required(ErrorMessage = "Book title is required.")]
         public string title { get; set; }
 
-        [JsonPropertyName("description")]
-        [Required(ErrorMessage = "Book description is required.")]
-        public string description { get; set; }
+        [JsonPropertyName("synopsis")]
+        [Required(ErrorMessage = "Book synopsis is required.")]
+        public string synopsis { get; set; }
 
         [JsonPropertyName("pubYear")]
         [Required(ErrorMessage = "Publishing year is required.")]
         public DateOnly pubYear { get; set; }
+
+        [JsonPropertyName("publisher")]
+        [Required(ErrorMessage = "Publisher is required.")]
+        public string publisher { get; set; }
+
+        [JsonPropertyName("isbn")]
+        [Required(ErrorMessage = "Book ISBN is required.")]
+        public string isbn { get; set; }
+
+        [JsonPropertyName("language")]
+        [Required(ErrorMessage = "Book language is required.")]
+        public string language { get; set; }
     }
 }
