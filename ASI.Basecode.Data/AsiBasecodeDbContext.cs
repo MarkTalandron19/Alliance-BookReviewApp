@@ -105,44 +105,15 @@ namespace ASI.Basecode.Data
                 
                 entity.Property(e => e.authorLastName)
                     .IsRequired();
+
+                entity.Property(e => e.CreatedBy);
+
+                entity.Property(e => e.CreatedTime);
+
+                entity.Property(e => e.UpdatedBy);
+
+                entity.Property(e => e.UpdatedTime);
             });
-
-            modelBuilder.Entity<AuthoredBooks>(entity => 
-            {
-                entity.HasNoKey();
-
-                entity.HasOne<Book>()
-                    .WithMany()
-                    .HasForeignKey(e => e.bookId);
-
-                entity.HasOne<Author>()
-                    .WithMany()
-                    .HasForeignKey(e => e.authorId);
-            });
-            modelBuilder.Entity<Genre>(entity =>
-            {
-                entity.HasKey(e => e.genreId);
-
-                entity.Property(e => e.genreName)
-                    .IsRequired();
-
-                entity.Property(e => e.description)
-                    .IsRequired();
-            });
-
-            modelBuilder.Entity<BookGenres>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.HasOne<Book>()
-                    .WithMany()
-                    .HasForeignKey(e => e.bookId);
-
-                entity.HasOne<Genre>()
-                .WithMany()
-                    .HasForeignKey(e => e.genreId);
-            }
-            );
 
             modelBuilder.Entity<Genre>(entity =>
             {
@@ -153,6 +124,58 @@ namespace ASI.Basecode.Data
 
                 entity.Property(e => e.description) 
                     .IsRequired();
+
+                entity.Property(e => e.CreatedBy);
+
+                entity.Property(e => e.CreatedTime);
+
+                entity.Property(e => e.UpdatedBy);
+
+                entity.Property(e => e.UpdatedTime);
+            });
+
+            modelBuilder.Entity<Book>(entity =>
+            {
+                entity.HasKey(e => e.bookId);
+
+                entity.Property(e => e.title)
+                    .IsRequired();
+
+                entity.Property(e => e.synopsis)
+                    .IsRequired();
+
+                entity.Property(e => e.pubYear)
+                    .IsRequired();
+
+                entity.Property(e => e.publisher)
+                    .IsRequired();
+
+                entity.Property(e => e.IBSN)
+                    .IsRequired();
+
+                entity.Property(e => e.language)
+                    .IsRequired();
+
+                entity.Property(e => e.CreatedBy);
+
+                entity.Property(e => e.CreatedTime);
+
+                entity.Property(e => e.UpdatedBy);
+
+                entity.Property(e => e.UpdatedTime);
+            });
+
+            modelBuilder.Entity<AuthoredBooks>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.HasOne<Book>()
+                    .WithMany()
+                    .HasForeignKey(e => e.bookId);
+
+                entity.HasOne<Author>()
+                    .WithMany()
+                    .HasForeignKey(e => e.authorId);
             });
 
             modelBuilder.Entity<BookGenres>(entity =>
@@ -166,8 +189,7 @@ namespace ASI.Basecode.Data
                 entity.HasOne<Genre>()
                 .   WithMany()
                     .HasForeignKey(e => e.genreId);
-            }
-            );
+            });
 
             OnModelCreatingPartial(modelBuilder);
         }
