@@ -47,5 +47,10 @@ namespace ASI.Basecode.Data.Repositories
                 UnitOfWork.SaveChanges();
             }
         }
+
+        public bool GenreExists(string genreId)
+        {
+            return this.GetDbSet<Genre>().Any(x => x.genreId == genreId);
+        }
     }
 }

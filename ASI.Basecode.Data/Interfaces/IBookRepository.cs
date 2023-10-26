@@ -14,5 +14,6 @@ namespace ASI.Basecode.Data.Interfaces
         void AddBook(Book book, List<Author> authors, List<Genre> genres);
         void UpdateBook(Book update);
         void DeleteBook(string bookId);
+        bool BookExists(string bookId);
     }
 }
