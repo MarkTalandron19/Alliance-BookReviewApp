@@ -1,15 +1,13 @@
-﻿@model ASI.Basecode.Services.ServiceModels.GenreViewModel
+﻿
+@model ASI.Basecode.Services.ServiceModels.GenreViewModel
 @section styles {
     <link rel="stylesheet" href="~/css/admindashboard.css" />
 }
-@{
-    
-}
-<div class="modal" id="GenreModal">
+<div class="modal" id="AddGenreModal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 id="modalTitle"></h4>
+                <h4 id="modalTitle">Add a Book Genre</h4>
             </div>
             <form method="post" asp-action="AddGenre" asp-controller="Genre" id="GenreForm">
                 <div class="modal-body">
@@ -26,9 +24,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button class="modal-button-close" id="Save" data-bs-dismiss="modal" onclick="hideModal();">Close</button>
+                    <button class="modal-button-close" id="Close" type="button" data-dismiss="modal">Close</button>
                     <button class="modal-button" id="Save" type="submit">Add Genre</button>
-                    <button class="modal-button" id="Update" type="submit" onclick="update();" style="display: none">Update Genre</button>
 
                 </div>
             </form>

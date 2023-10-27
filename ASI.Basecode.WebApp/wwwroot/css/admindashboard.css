@@ -310,6 +310,11 @@ td {
         border: none;
         outline: none;
     }
+
+.delete-modal-caption {
+    padding: 20px 10px 0 10px;
+    font-weight: 600;
+}
     
 
 

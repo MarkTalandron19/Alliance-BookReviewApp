@@ -27,7 +27,7 @@ namespace ASI.Basecode.WebApp.Controllers
             genre.genreId = Guid.NewGuid().ToString();
             _genreService.AddGenre(genre);
             _genreService.GetGenres();
-            return NoContent();
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet("get")]
@@ -42,14 +42,14 @@ namespace ASI.Basecode.WebApp.Controllers
         public IActionResult UpdateGenre(GenreViewModel genre)
         {
             _genreService.UpdateGenre(genre);
-            return NoContent();
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpDelete("delete/{genreId}")]
         public IActionResult DeleteGenre(string genreId)
         {
             _genreService.DeleteGenre(genreId);
-            return NoContent();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

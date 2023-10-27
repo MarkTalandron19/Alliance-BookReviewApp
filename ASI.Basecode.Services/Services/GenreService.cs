@@ -26,6 +26,13 @@ namespace ASI.Basecode.Services.Services
         public void AddGenre(GenreViewModel model)
         {
             var genre = new Genre();
+
+            
+/*            _mapper.Map(model, genre);
+            _genreRepository.AddGenre(genre);
+            _genreRepository.GetGenres();
+*/
+
             if(!_genreRepository.GenreExists(model.genreId))
             {
                 _mapper.Map(genre, model);
@@ -35,6 +42,7 @@ namespace ASI.Basecode.Services.Services
                 genre.UpdatedBy = System.Environment.UserName;
                 _genreRepository.AddGenre(genre);
             }
+
         }
 
         public void DeleteGenre(string genreId)
