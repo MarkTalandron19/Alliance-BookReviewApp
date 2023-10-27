@@ -1,8 +1,21 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "PLuQqJcbLgLdZ5DJSqMcOrufmMsW5Fp+zmLeqp8uI7xcfy/poVAKc0MFTn2sUgIm/CsmCOOKshfzs4kwh8sErw==",
   "success": true,
   "projectFilePath": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj",
+=======
+  "dgSpecHash": "w7EeV8CGUozn1bWwl6SUmSlYmlQSVfhIkqDvTzs7X7vIzhOCLdpRur9boh6HiIPkaQmv2xkVtBVaAhHc+LAW8Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mark Allen\\Documents\\C# Projects\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj",
+>>>>>>> backend-updates-2
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Mark Allen\\Documents\\C# Projects\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

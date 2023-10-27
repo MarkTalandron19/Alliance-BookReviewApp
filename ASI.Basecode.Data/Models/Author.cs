@@ -11,5 +11,9 @@ namespace ASI.Basecode.Data.Models
         public string authorId { get; set; }
         public string authorFirstName { get; set; }
         public string authorLastName { get; set; }
+        public string CreatedBy { get; set; }
+        public DateTime CreatedTime { get; set; }
+        public string UpdatedBy { get; set; }
+        public DateTime UpdatedTime { get; set; }
     }
 }
