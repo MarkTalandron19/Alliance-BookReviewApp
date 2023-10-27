@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('#AddBookBtn').click(function () {
-        /*jQuery.noConflict();*/
+        jQuery.noConflict();
 
         $('#BookModal').modal('show');
         $('#modalTitle').text('Add a Book');
