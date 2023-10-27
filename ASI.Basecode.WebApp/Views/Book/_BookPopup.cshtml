@@ -1,9 +1,10 @@
-﻿@model ASI.Basecode.Services.ServiceModels.BookViewModel
+﻿<!-- _BookPopup.cshtml -->
+@model ASI.Basecode.Services.ServiceModels.BookViewModel
 @section styles {
     <link rel="stylesheet" href="~/css/admindashboard.css" />
 }
 @{
-    
+    Layout = "_Layout";
 }
 <div class="modal" id="BookModal">
     <div class="modal-dialog">
@@ -11,13 +12,13 @@
             <div class="modal-header">
                 <h4 id="modalTitle"></h4>
             </div>
-            <form method="post" asp-action="AddBook" asp-controller="Book" id="GenreForm">
+            <form method="post" asp-action="AddBook" asp-controller="Book" id="BookForm">
                 <div class="modal-body">
 
-                    @* <input type="hidden" asp-for="genreId" value="0" /> *@
+                    <input type="hidden" asp-for="bookId" value="0" />
                     <div>
-                        @* <label class="input-label" asp-for="genreName"></label> *@
-                        @* <input type="text" asp-for="genreName" class="form-control" placeholder="Genre Name" /> *@
+                        <label class="input-label" asp-for="title"></label>
+                        <input type="text" asp-for="title" class="form-control" placeholder="Title" />
                     </div>
                     <div>
                         <label class="input-label" asp-for="description"></label>
@@ -27,8 +28,8 @@
                 </div>
                 <div class="modal-footer">
                     <button class="modal-button-close" id="Save" data-bs-dismiss="modal" onclick="hideModal();">Close</button>
-                    <button class="modal-button" id="Save" type="submit">Add Genre</button>
-                    <button class="modal-button" id="Update" type="submit" onclick="update();" style="display: none">Update Genre</button>
+                    <button class="modal-button" id="Save" type="submit">Add Book</button>
+                    <button class="modal-button" id="Update" type="submit" onclick="update();" style="display: none">Update Book</button>
 
                 </div>
             </form>
