@@ -10,7 +10,7 @@
             <div class="modal-header">
                 <h4 id="modalTitle">Edit Genre Details</h4>
             </div>
-            <form method="put" asp-action="UpdateGenre" asp-controller="Genre" id="GenreForm">
+            <form method="post" asp-action="UpdateGenre" asp-controller="Genre" id="EditGenreForm">
                 <div class="modal-body">
                     <div>
                         <input type="hidden" id="editGenreId" asp-for="genreId" />
