@@ -27,7 +27,7 @@
 
         var genreId = $(this).data('genre-id');
 
-        $('#editGenreId').val(genreId);;
+        $('#deleteGenreId').val(genreId);
         $('#DeleteGenreModal').modal('show');
         console.log("Button clicked");
     });

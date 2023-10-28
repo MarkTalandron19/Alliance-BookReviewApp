@@ -38,14 +38,14 @@ namespace ASI.Basecode.WebApp.Controllers
             return View(genres);
         }
 
-        [HttpPut("update/{genreId}")]
+        [HttpPost("update")]
         public IActionResult UpdateGenre(GenreViewModel genre)
         {
             _genreService.UpdateGenre(genre);
             return RedirectToAction("Index", "Home");
         }
 
-        [HttpDelete("delete/{genreId}")]
+        [HttpPost("delete")]
         public IActionResult DeleteGenre(string genreId)
         {
             _genreService.DeleteGenre(genreId);
