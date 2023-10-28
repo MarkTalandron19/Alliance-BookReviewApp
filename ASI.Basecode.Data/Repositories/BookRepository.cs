@@ -81,8 +81,10 @@ namespace ASI.Basecode.Data.Repositories
             {
                 book.title = update.title;
                 book.synopsis = update.synopsis;
-                book.synopsis = update.synopsis;
                 book.pubYear = update.pubYear;
+                book.publisher = update.publisher;
+                book.isbn = update.isbn;
+                book.language = update.language;
                 UnitOfWork.SaveChanges();
             }
         }

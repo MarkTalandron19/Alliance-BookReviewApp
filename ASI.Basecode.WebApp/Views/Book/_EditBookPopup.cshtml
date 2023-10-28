@@ -15,7 +15,7 @@
                     <div>
                         <input type="hidden" id="editBookId" asp-for="bookId" />
                         <label class="input-label" asp-for="title"></label>
-                        <input type="text" id="editBookName" asp-for="title" class="form-control" placeholder="Title" />
+                        <input type="text" id="editTitle" asp-for="title" class="form-control" placeholder="Title" />
                     </div>
                     <div>
                         <label class="input-label" asp-for="synopsis"></label>
@@ -38,7 +38,6 @@
                 <div class="modal-footer">
                     <button class="modal-button-close" id="Close" type="button" data-dismiss="modal">Close</button>
                     <button class="modal-button" id="Update" type="submit">Update Book</button>
-
                 </div>
             </form>
         </div>

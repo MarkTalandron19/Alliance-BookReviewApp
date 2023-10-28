@@ -63,7 +63,7 @@
                     <button class="add-button" id="AddBookBtn"><p class="button-text">+</p></button>
                 </div>
                 <hr class="divider"/>
-                <p class="dashboard-subtitle">Books you have created</p>
+                <p class="dashboard-subtitle">Book List</p>
                 <div class="dashboard-card">
                     <table class="dashboard-table">
                         <thead class="dashboard-table-header">
@@ -72,58 +72,25 @@
                                     Book Name
                                 </th>
                                 <th style="width: 50%;">
-                                    Short Description
+                                    Synopsis
                                 </th>
                                 <th style="width: 25%;">
-                                    operation
+                                    Operation
                                 </th>
                             </tr>
                         </thead>
                         <tbody id="tableBody">
-                           @*  @if (Model != null)
-                            { *@
                                 @foreach (var book in Model)
                                 {
                                     <tr>
-                                        <td><a href="#">@(book?.title ?? "Title not available")</a></td>
-                                        <td>@(book?.synopsis ?? "Synopsis not available")</td>
+                                    <td><a href="#">@book.title</a></td>
+                                    <td>@book.synopsis</td>
                                         <td>
-                                            <button class="edit-button" id="Update" data-book-id="@book.bookId" data-book-name="@book.title" data-book-desc="@book.synopsis">Edit</button>
-                                            <button class="delete-button" data-book-id="@book.bookId">Delete</button>
+                                        <button class="edit-button" id="Update" data-book-id="@book.bookId" data-book-title="@book.title" data-book-synopsis="@book.synopsis" data-book-publisher="@book.publisher" data-book-isbn="@book.isbn" data-book-language="@book.language">Edit</button>
+                                        <button class="delete-button" data-book-id="@book.bookId">Delete</button>
                                         </td>
                                     </tr>
                                 }
-                            @* }
-                            else
-                            {
-                                <tr>
-                                    <td colspan="3">No data available</td>
-                                </tr>
-                            } *@
-                        </tbody>
-                    </table>
-                </div>
-
-                <p class="dashboard-subtitle">Book List</p>
-                <div class="dashboard-card">
-                    <table class="dashboard-table">
-                        <thead class="dashboard-table-header">
-                            <tr class="header-row">
-                                <th>
-                                    Book Name
-                                </th>
-                                <th>
-                                    Short Description
-                                </th>
-                                <th>
-                                    Created by
-                                </th>
-                                <th>
-                                    Date Added
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody id="tableBody">
                         </tbody>
                     </table>
                 </div>
@@ -132,6 +99,7 @@
     </div>
     @await Html.PartialAsync("_AddBookPopup", new ASI.Basecode.Services.ServiceModels.BookViewModel())
     @await Html.PartialAsync("_EditBookPopup", new ASI.Basecode.Services.ServiceModels.BookViewModel())
+    @await Html.PartialAsync("_DeleteBookPopup", new ASI.Basecode.Services.ServiceModels.BookViewModel())
 </div>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>

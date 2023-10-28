@@ -17,8 +17,6 @@ $(document).ready(function () {
         var isbn = $(this).data('book-isbn');
         var language = $(this).data('book-language');
 
-
-
         $('#editBookId').val(bookId);
         $('#editTitle').val(title);
         $('#editSynopsis').val(synopsis);

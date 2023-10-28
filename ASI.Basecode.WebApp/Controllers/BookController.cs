@@ -52,18 +52,18 @@ namespace ASI.Basecode.WebApp.Controllers
             return Ok(book);
         }
 
-        [HttpPut("update")]
+        [HttpPost("update")]
         public IActionResult UpdateBook(BookViewModel book)
         {
             _bookService.UpdateBook(book);
-            return NoContent();
+            return RedirectToAction("BookList", "Book");
         }
 
-        [HttpDelete("delete/{bookId}")]
+        [HttpPost("delete")]
         public IActionResult DeleteBook(string bookId)
         {
             _bookService.DeleteBook(bookId);
-            return NoContent();
+            return RedirectToAction("BookList", "Book");
         }
 
         [HttpGet]
