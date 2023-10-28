@@ -28,7 +28,7 @@ namespace ASI.Basecode.Data.Repositories
             return book;
         }
 
-        public IQueryable<Genre> GetGenreOfBook(string bookId)
+        public IQueryable<Genre> GetGenresOfBook(string bookId)
         {
             var bookGenres = this.GetDbSet<BookGenres>()
                 .Include(bg => bg.genre)

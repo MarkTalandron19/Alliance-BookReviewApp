@@ -11,6 +11,7 @@ namespace ASI.Basecode.Services.Interfaces
     public interface IGenreService
     {
         IQueryable<Genre> GetGenres();
+        IQueryable<Book> GetBooksWithGenre(string genreId);
         void AddGenre(GenreViewModel model);
         void UpdateGenre(GenreViewModel update);
         void DeleteGenre(string genreId);
