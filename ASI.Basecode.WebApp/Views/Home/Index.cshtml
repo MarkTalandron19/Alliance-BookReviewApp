@@ -83,11 +83,11 @@
                             @foreach (var genre in Model)
                             {
                                 <tr>
-                                    <td>@genre.genreName</td>
+                                    <td><a href="#">@genre.genreName</a></td>
                                     <td>@genre.description</td>
                                     <td>
                                         <button class="edit-button" id="Update" data-genre-id="@genre.genreId" data-genre-name="@genre.genreName" data-genre-desc="@genre.description">Edit</button>
-                                        <button class="delete-button" data-genre-id="@genre.genreId" data-genre-name="@genre.genreName" data-genre-desc="@genre.description">Delete</button>
+                                        <button class="delete-button" data-genre-id="@genre.genreId">Delete</button>
                                         
                                     </td>
                                 </tr>
