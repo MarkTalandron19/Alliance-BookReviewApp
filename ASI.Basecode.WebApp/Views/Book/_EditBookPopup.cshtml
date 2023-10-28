@@ -1,0 +1,49 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@model ASI.Basecode.Services.ServiceModels.BookViewModel
+@section styles {
+    <link rel="stylesheet" href="~/css/admindashboard.css" />
+}
+<div class="modal" id="EditBookModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="modalTitle">Edit Book Details</h4>
+            </div>
+            <form method="post" asp-action="UpdateBook" asp-controller="Book" id="EditBookForm">
+                <div class="modal-body">
+                    <div>
+                        <input type="hidden" id="editBookId" asp-for="bookId" />
+                        <label class="input-label" asp-for="title"></label>
+                        <input type="text" id="editBookName" asp-for="title" class="form-control" placeholder="Title" />
+                    </div>
+                    <div>
+                        <label class="input-label" asp-for="synopsis"></label>
+                        <input type="text" id="editSynopsis" asp-for="synopsis" class="form-control" placeholder="Synopsis" />
+                    </div>
+                    <div>
+                        <label class="input-label" asp-for="publisher"></label>
+                        <input type="text" id="editPublisher" asp-for="publisher" class="form-control" placeholder="Publisher" />
+                    </div>
+                    <div>
+                        <label class="input-label" asp-for="isbn"></label>
+                        <input type="text" id="editIsbn" asp-for="isbn" class="form-control" placeholder="Isbn" />
+                    </div>
+                    <div>
+                        <label class="input-label" asp-for="language"></label>
+                        <input type="text" id="editLanguage" asp-for="language" class="form-control" placeholder="Language" />
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="modal-button-close" id="Close" type="button" data-dismiss="modal">Close</button>
+                    <button class="modal-button" id="Update" type="submit">Update Book</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="~/js/Book.js"></script>

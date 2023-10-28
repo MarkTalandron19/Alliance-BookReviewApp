@@ -70,7 +70,8 @@ namespace ASI.Basecode.WebApp.Controllers
         [AllowAnonymous]
         public IActionResult BookList()
         {
-            return View();
+            var books = _bookService.GetBooks();
+            return View(books);
         }
     }
 }

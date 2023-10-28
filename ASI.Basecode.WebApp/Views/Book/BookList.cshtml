@@ -80,7 +80,26 @@
                             </tr>
                         </thead>
                         <tbody id="tableBody">
-                            
+                           @*  @if (Model != null)
+                            { *@
+                                @foreach (var book in Model)
+                                {
+                                    <tr>
+                                        <td><a href="#">@(book?.title ?? "Title not available")</a></td>
+                                        <td>@(book?.synopsis ?? "Synopsis not available")</td>
+                                        <td>
+                                            <button class="edit-button" id="Update" data-book-id="@book.bookId" data-book-name="@book.title" data-book-desc="@book.synopsis">Edit</button>
+                                            <button class="delete-button" data-book-id="@book.bookId">Delete</button>
+                                        </td>
+                                    </tr>
+                                }
+                            @* }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="3">No data available</td>
+                                </tr>
+                            } *@
                         </tbody>
                     </table>
                 </div>
@@ -111,7 +130,8 @@
             </div>
         </div>
     </div>
-    @await Html.PartialAsync("_BookPopup", new ASI.Basecode.Services.ServiceModels.BookViewModel())
+    @await Html.PartialAsync("_AddBookPopup", new ASI.Basecode.Services.ServiceModels.BookViewModel())
+    @await Html.PartialAsync("_EditBookPopup", new ASI.Basecode.Services.ServiceModels.BookViewModel())
 </div>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
