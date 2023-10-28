@@ -2,7 +2,10 @@
 using ASI.Basecode.Services.Interfaces;
 using ASI.Basecode.Services.ServiceModels;
 using AutoMapper;
+using Humanizer.Localisation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -23,15 +26,17 @@ namespace ASI.Basecode.WebApp.Controllers
         [HttpPost("add")]
         public IActionResult AddBook(BookViewModel book, List<Author> authors, List<Genre> genres)
         {
+            book.bookId = Guid.NewGuid().ToString();
             _bookService.AddBook(book, authors, genres);
-            return NoContent();
+            _bookService.GetBooks();
+            return RedirectToAction("BookList", "Book");
         }
 
         [HttpGet("get")]
         public IActionResult GetBooks()
         {
             var books =_bookService.GetBooks();
-            return Ok(books);
+            return RedirectToAction("BookList", "Book");
         }
 
         [HttpGet("get/{bookId}")]
@@ -59,6 +64,13 @@ namespace ASI.Basecode.WebApp.Controllers
         {
             _bookService.DeleteBook(bookId);
             return NoContent();
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult BookList()
+        {
+            return View();
         }
     }
 }

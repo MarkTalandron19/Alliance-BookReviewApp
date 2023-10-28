@@ -1,0 +1,120 @@
+﻿@model IEnumerable<ASI.Basecode.Data.Models.Book>
+@section styles {
+    <link rel="stylesheet" href="~/css/admindashboard.css" />
+}
+@{
+    ViewData["Title"] = "Book List";
+}
+
+<div class="body-main">
+    <div class="body-two-section">
+        <div class="left-space">
+            <div class="left-menu">
+                <div>
+                    <img class="bibliobibuli-logo" src="~/img/logo-leftaligned.png" />
+                    <div class="menu-items">
+                    <div class="leftmenu-item-title">
+                        <div class="leftmenu-item">
+                            <img class="leftmenu-icons" src="~/img/dashboard-icon.png" />
+                            Book Management<br />Dashboard
+                        </div>
+                    </div>
+                        <hr class="menu-divider" />
+                    <button class="leftmenu-items">
+                            <div class="leftmenu-item">
+                            <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+                            Book List
+                        </div>
+                    </button>
+                        <a asp-controller="Home" asp-action="Index" class="leftmenu-items">
+                            <div class="leftmenu-item">
+                                <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+                                Genre List
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <button class="logout-button">
+                        <div class="logout-text">
+                            <img class="leftmenu-icons" src="~/img/logout-icon.png" />
+                            Logout
+                        </div>
+                     </button>
+                </div>
+            </div>
+        </div>
+        <div class="admin-dashboard-list">
+            <div class="admin-header">
+                <div class="logosec">
+                    Welcome, @HttpContextAccessor.HttpContext.Session.GetString("UserName")!
+                    <div class="mr-20 hover-pointer" style="position: relative">
+                        <div class="dp">
+                            <img src="~/img/profile-logo.png"
+                                 class="dpicn hover-pointer"
+                                 alt="dp">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard">
+                <div class="dashboard-title-div">
+                    <p class="dashboard-title">Book List Management</p>
+                    <button class="add-button" id="AddBookBtn"><p class="button-text">+</p></button>
+                </div>
+                <hr class="divider"/>
+                <p class="dashboard-subtitle">Books you have created</p>
+                <div class="dashboard-card">
+                    <table class="dashboard-table">
+                        <thead class="dashboard-table-header">
+                            <tr class="header-row">
+                                <th style="width: 25%;">
+                                    Book Name
+                                </th>
+                                <th style="width: 50%;">
+                                    Short Description
+                                </th>
+                                <th style="width: 25%;">
+                                    operation
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="dashboard-subtitle">Book List</p>
+                <div class="dashboard-card">
+                    <table class="dashboard-table">
+                        <thead class="dashboard-table-header">
+                            <tr class="header-row">
+                                <th>
+                                    Book Name
+                                </th>
+                                <th>
+                                    Short Description
+                                </th>
+                                <th>
+                                    Created by
+                                </th>
+                                <th>
+                                    Date Added
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    @await Html.PartialAsync("_BookPopup", new ASI.Basecode.Services.ServiceModels.BookViewModel())
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="~/js/Book.js"></script>
+

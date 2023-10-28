@@ -3,6 +3,7 @@ using ASI.Basecode.Services.Interfaces;
 using ASI.Basecode.Services.ServiceModels;
 using ASI.Basecode.Services.Services;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.IO;
@@ -50,6 +51,14 @@ namespace ASI.Basecode.WebApp.Controllers
         {
             _genreService.DeleteGenre(genreId);
             return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+
+        public IActionResult GenreList() 
+        {
+            return View();
         }
     }
 }
