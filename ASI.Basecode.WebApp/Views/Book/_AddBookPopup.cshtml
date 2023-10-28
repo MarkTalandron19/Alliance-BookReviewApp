@@ -21,13 +21,25 @@
                         <input type="text" asp-for="title" class="form-control" placeholder="Title" />
                     </div>
                     <div>
-                        <label class="input-label" asp-for="description"></label>
-                        <input type="text" asp-for="description" class="form-control" placeholder="Short Description" />
+                        <label class="input-label" asp-for="synopsis"></label>
+                        <input type="text" asp-for="synopsis" class="form-control" placeholder="Synopsis" />
+                    </div>
+                    <div>
+                        <label class="input-label" asp-for="publisher"></label>
+                        <input type="text" asp-for="publisher" class="form-control" placeholder="Publisher" />
+                    </div>
+                    <div>
+                        <label class="input-label" asp-for="isbn"></label>
+                        <input type="text" asp-for="isbn" class="form-control" placeholder="Isbn" />
+                    </div>
+                    <div>
+                        <label class="input-label" asp-for="language"></label>
+                        <input type="text" asp-for="language" class="form-control" placeholder="Language" />
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button class="modal-button-close" id="Save" data-bs-dismiss="modal" onclick="hideModal();">Close</button>
+                    <button class="modal-button-close" id="Close" type="button" data-dismiss="modal">Close</button>
                     <button class="modal-button" id="Save" type="submit">Add Book</button>
                     <button class="modal-button" id="Update" type="submit" onclick="update();" style="display: none">Update Book</button>
 
