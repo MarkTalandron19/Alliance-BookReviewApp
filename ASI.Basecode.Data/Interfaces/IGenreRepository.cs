@@ -10,10 +10,10 @@ namespace ASI.Basecode.Data.Interfaces
     public interface IGenreRepository
     {
         IQueryable<Genre> GetGenres();
+        IQueryable<Book> GetBooksWithGenre(string genreId);
         void AddGenre(Genre genre);
         void UpdateGenre(Genre update);
         void DeleteGenre(string genreId);
-
         bool GenreExists(string genreId);
     }
 }

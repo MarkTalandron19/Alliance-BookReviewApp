@@ -1,9 +1,11 @@
 ﻿using ASI.Basecode.Data.Interfaces;
 using ASI.Basecode.Data.Models;
 using Basecode.Data.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,6 +19,16 @@ namespace ASI.Basecode.Data.Repositories
         public IQueryable<Genre> GetGenres()
         {
             return this.GetDbSet<Genre>();
+        }
+
+        public IQueryable<Book> GetBooksWithGenre(string genreId)
+        {
+            var booksWithGenre = this.GetDbSet<BookGenres>()
+                .Include(bg => bg.book)
+                .Where(bg => bg.genreId == genreId)
+                .Select(bg => bg.book);
+
+            return booksWithGenre;
         }
 
         public void AddGenre(Genre genre)

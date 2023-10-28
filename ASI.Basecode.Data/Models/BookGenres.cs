@@ -11,5 +11,7 @@ namespace ASI.Basecode.Data.Models
         public int Id { get; set; }
         public string bookId { get; set; }
         public string genreId { get; set; }
+        public Book book { get; set; }
+        public Genre genre { get; set; }
     }
 }
