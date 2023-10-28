@@ -199,7 +199,7 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-1",
                             language = "English",
-                            pubYear = new DateTime(2023, 10, 27, 19, 10, 28, 160, DateTimeKind.Local).AddTicks(5771),
+                            pubYear = new DateTime(2023, 10, 28, 11, 27, 28, 898, DateTimeKind.Local).AddTicks(9491),
                             publisher = "Publisher 1",
                             synopsis = "Synopsis 1",
                             title = "Book 1"
@@ -211,7 +211,7 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-2",
                             language = "French",
-                            pubYear = new DateTime(2023, 10, 27, 19, 10, 28, 160, DateTimeKind.Local).AddTicks(5788),
+                            pubYear = new DateTime(2023, 10, 28, 11, 27, 28, 898, DateTimeKind.Local).AddTicks(9512),
                             publisher = "Publisher 2",
                             synopsis = "Synopsis 2",
                             title = "Book 2"
@@ -223,7 +223,7 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-3",
                             language = "Spanish",
-                            pubYear = new DateTime(2023, 10, 27, 19, 10, 28, 160, DateTimeKind.Local).AddTicks(5790),
+                            pubYear = new DateTime(2023, 10, 28, 11, 27, 28, 898, DateTimeKind.Local).AddTicks(9516),
                             publisher = "Publisher 3",
                             synopsis = "Synopsis 3",
                             title = "Book 3"
@@ -235,7 +235,7 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-4",
                             language = "German",
-                            pubYear = new DateTime(2023, 10, 27, 19, 10, 28, 160, DateTimeKind.Local).AddTicks(5793),
+                            pubYear = new DateTime(2023, 10, 28, 11, 27, 28, 898, DateTimeKind.Local).AddTicks(9519),
                             publisher = "Publisher 4",
                             synopsis = "Synopsis 4",
                             title = "Book 4"
@@ -247,7 +247,7 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-5",
                             language = "Italian",
-                            pubYear = new DateTime(2023, 10, 27, 19, 10, 28, 160, DateTimeKind.Local).AddTicks(5795),
+                            pubYear = new DateTime(2023, 10, 28, 11, 27, 28, 898, DateTimeKind.Local).AddTicks(9522),
                             publisher = "Publisher 5",
                             synopsis = "Synopsis 5",
                             title = "Book 5"

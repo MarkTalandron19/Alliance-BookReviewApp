@@ -2,6 +2,7 @@
 using ASI.Basecode.Data.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 
 namespace Basecode.Data.Repositories
 {
@@ -19,6 +20,23 @@ namespace Basecode.Data.Repositories
 
         protected virtual DbSet<TEntity> GetDbSet<TEntity>() where TEntity : class
         {
+
+            using (var asd = new AsiBasecodeDBContext())
+            {
+                var firstTable = asd.Genres;
+                var secondTable = asd.Books;
+
+                var query = asd.Books
+    .Join(asd.Book_Genres, book => book.bookId, bg => bg.bookId, (book, bg) => new { book, bg })
+    .Join(asd.Genres, joinedData => joinedData.bg.genreId, genre => genre.genreId, (joinedData, genre) => new { joinedData.book, genre })
+    .Where(joinedData => joinedData.book.bookId == joinedData.genre.genreId)
+    .Select(joinedData => new
+    {
+        Book = joinedData.book,
+        Genre = joinedData.genre,
+    })
+    .ToList();
+            }
             return Context.Set<TEntity>();
         }
 
