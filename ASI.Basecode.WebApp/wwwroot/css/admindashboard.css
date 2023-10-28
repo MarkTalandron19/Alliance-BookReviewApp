@@ -310,6 +310,17 @@ td {
         border: none;
         outline: none;
     }
+<<<<<<< HEAD
+=======
+
+.delete-modal-caption {
+    padding: 20px 10px 0 10px;
+    font-weight: 600;
+}
+    
+
+
+>>>>>>> 951d1aafbfd6047a2c3e11124abb4fe84fb953da
 
 
 

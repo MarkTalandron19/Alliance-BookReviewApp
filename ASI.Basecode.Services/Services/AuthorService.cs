@@ -25,13 +25,23 @@ namespace ASI.Basecode.Services.Services
         public void AddAuthor(AuthorViewModel model)
         {
             var author = new Author();
-            _mapper.Map(model, author);
-            _repository.AddAuthor(author);
+            if(!_repository.AuthorExists(model.authorId))
+            {
+                _mapper.Map(model, author);
+                author.UpdatedTime = DateTime.Now;
+                author.CreatedTime = DateTime.Now;
+                author.UpdatedBy = System.Environment.UserName;
+                author.CreatedBy = System.Environment.UserName;
+                _repository.AddAuthor(author);
+            }
         }
 
         public void DeleteAuthor(string authorId)
         {
-            _repository.DeleteAuthor(authorId);
+            if (_repository.AuthorExists(authorId))
+            {
+                _repository.DeleteAuthor(authorId);
+            }
         }
 
         public Task<Author> GetAuthorById(string authorId)
@@ -47,8 +57,13 @@ namespace ASI.Basecode.Services.Services
         public void UpdateAuthor(AuthorViewModel update)
         {
             var author = new Author();
-            _mapper.Map(update, author);
-            _repository.UpdateAuthor(author);
+            if(_repository.AuthorExists(update.authorId))
+            {
+                _mapper.Map(update, author);
+                author.UpdatedTime = DateTime.Now;
+                author.UpdatedBy = System.Environment.UserName;
+                _repository.UpdateAuthor(author);
+            }
         }
     }
 }

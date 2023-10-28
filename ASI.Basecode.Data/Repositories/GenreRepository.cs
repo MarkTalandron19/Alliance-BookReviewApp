@@ -22,6 +22,7 @@ namespace ASI.Basecode.Data.Repositories
         public void AddGenre(Genre genre)
         {
             this.GetDbSet<Genre>().Add(genre);
+            this.GetDbSet<Genre>();
             UnitOfWork.SaveChanges();
         }
 
@@ -46,6 +47,11 @@ namespace ASI.Basecode.Data.Repositories
                 genre.description = update.description;
                 UnitOfWork.SaveChanges();
             }
+        }
+
+        public bool GenreExists(string genreId)
+        {
+            return this.GetDbSet<Genre>().Any(x => x.genreId == genreId);
         }
     }
 }

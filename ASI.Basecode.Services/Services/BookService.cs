@@ -25,13 +25,23 @@ namespace ASI.Basecode.Services.Services
         public void AddBook(BookViewModel model, List<Author> authors, List<Genre> genres)
         {
             var book = new Book();
-            _mapper.Map(model, book);
-            _repository.AddBook(book, authors, genres);
+            if(!_repository.BookExists(model.bookId))
+            {
+                _mapper.Map(model, book);
+                book.CreatedTime = DateTime.Now;
+                book.UpdatedTime = DateTime.Now;
+                book.CreatedBy = System.Environment.UserName;
+                book.UpdatedBy = System.Environment.UserName;
+                _repository.AddBook(book, authors, genres);
+            }
         }
 
         public void DeleteBook(string bookId)
         {
-            _repository.DeleteBook(bookId);
+            if(_repository.BookExists(bookId))
+            {
+                _repository.DeleteBook(bookId);
+            }
         }
 
         public async Task<Book> GetBookById(string bookId)
@@ -47,8 +57,13 @@ namespace ASI.Basecode.Services.Services
         public void UpdateBook(BookViewModel update)
         {
             var book = new Book();
-            _mapper.Map(update, book);
-            _repository.UpdateBook(book);
+            if(_repository.BookExists(update.bookId))
+            {
+                _mapper.Map(update, book);
+                book.UpdatedTime = DateTime.Now;
+                book.UpdatedBy = System.Environment.UserName;
+                _repository.UpdateBook(book);
+            }
         }
     }
 }
