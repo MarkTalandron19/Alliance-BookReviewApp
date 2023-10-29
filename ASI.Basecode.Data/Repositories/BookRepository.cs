@@ -38,6 +38,16 @@ namespace ASI.Basecode.Data.Repositories
             return bookGenres;
         }
 
+        public IQueryable<Author> GetAuthorsOfBook(string bookId)
+        {
+            var bookAuthors = this.GetDbSet<AuthoredBooks>()
+                .Include(ab => ab.author)
+                .Where(ab => ab.bookId == bookId)
+                .Select(ab => ab.author);
+
+            return bookAuthors;
+        }
+
         public void AddBook(Book book, List<Author> authors, List<Genre> genres)
         {
             this.GetDbSet<Book>().Add(book);
