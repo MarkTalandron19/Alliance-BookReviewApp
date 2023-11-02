@@ -54,6 +54,11 @@ namespace ASI.Basecode.Services.Services
             return _repository.GetAuthors();
         }
 
+        public IQueryable<Book> GetAuthoredBooks(string authorId)
+        {
+            return _repository.GetAuthoredBooks(authorId);
+        }
+
         public void UpdateAuthor(AuthorViewModel update)
         {
             var author = new Author();

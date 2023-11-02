@@ -10,6 +10,8 @@ namespace ASI.Basecode.Data.Models
     {
         public int Id { get; set; }
         public string bookId { get; set; }
-        public string authorId { get; set; }           
+        public string authorId { get; set; }
+        public Book book { get; set; }
+        public Author author { get; set; }
     }
 }

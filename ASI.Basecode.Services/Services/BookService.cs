@@ -54,6 +54,16 @@ namespace ASI.Basecode.Services.Services
             return _repository.GetBooks();
         }
 
+        public IQueryable<Genre> GetGenresOfBook(string bookId)
+        {
+            return _repository.GetGenresOfBook(bookId);
+        }
+
+        public IQueryable<Author> GetAuthorsOfBook(string bookId)
+        {
+            return _repository.GetAuthorsOfBook(bookId);
+        }
+
         public void UpdateBook(BookViewModel update)
         {
             var book = new Book();

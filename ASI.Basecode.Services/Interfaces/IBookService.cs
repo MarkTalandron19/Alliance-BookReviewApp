@@ -12,6 +12,8 @@ namespace ASI.Basecode.Services.Interfaces
     {
         IQueryable<Book> GetBooks();
         Task<Book> GetBookById(string bookId);
+        IQueryable<Genre> GetGenresOfBook(string bookId);
+        IQueryable<Author> GetAuthorsOfBook(string bookId);
         void AddBook(BookViewModel model, List<Author> authors, List<Genre> genres);
         void UpdateBook(BookViewModel update);
         void DeleteBook(string bookId);

@@ -58,6 +58,11 @@ namespace ASI.Basecode.Services.Services
             return _genreRepository.GetGenres();
         }
 
+        public IQueryable<Book> GetBooksWithGenre(string genreId)
+        {
+            return _genreRepository.GetBooksWithGenre(genreId);
+        }
+
         public void UpdateGenre(GenreViewModel update)
         {
             var genre = new Genre();

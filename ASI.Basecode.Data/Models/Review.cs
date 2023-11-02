@@ -10,7 +10,8 @@ namespace ASI.Basecode.Data.Models
         public string reviewerEmail { get; set; }
         public string content { get; set; } 
         public int rating { get; set; }
-        public string bookId { get; set; }
         public DateTime dateReviewed { get; set; }
+        public string bookId { get; set; }
+        public Book book { get; set; }
     }
 }

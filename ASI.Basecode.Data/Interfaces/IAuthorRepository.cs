@@ -11,6 +11,7 @@ namespace ASI.Basecode.Data.Interfaces
     {
         IQueryable<Author> GetAuthors();
         Task<Author> GetAuthorById(string authorId);
+        IQueryable<Book> GetAuthoredBooks(string authorId);
         void AddAuthor(Author author);
         void UpdateAuthor(Author update);
         void DeleteAuthor(string authorId);
