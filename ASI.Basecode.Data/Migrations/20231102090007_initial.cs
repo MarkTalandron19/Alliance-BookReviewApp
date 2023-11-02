@@ -90,7 +90,9 @@ namespace ASI.Basecode.Data.Migrations
                 {
                     bookId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     authorId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    bookId1 = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    authorId1 = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -102,11 +104,21 @@ namespace ASI.Basecode.Data.Migrations
                         principalColumn: "authorId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
+                        name: "FK_Authored_Books_Authors_authorId1",
+                        column: x => x.authorId1,
+                        principalTable: "Authors",
+                        principalColumn: "authorId");
+                    table.ForeignKey(
                         name: "FK_Authored_Books_Books_bookId",
                         column: x => x.bookId,
                         principalTable: "Books",
                         principalColumn: "bookId",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Authored_Books_Books_bookId1",
+                        column: x => x.bookId1,
+                        principalTable: "Books",
+                        principalColumn: "bookId");
                 });
 
             migrationBuilder.CreateTable(
@@ -119,8 +131,9 @@ namespace ASI.Basecode.Data.Migrations
                     reviewerEmail = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     content = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     rating = table.Column<int>(type: "int", nullable: false),
+                    dateReviewed = table.Column<DateTime>(type: "datetime2", nullable: false),
                     bookId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    dateReviewed = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    bookId1 = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -128,6 +141,11 @@ namespace ASI.Basecode.Data.Migrations
                     table.ForeignKey(
                         name: "FK_Reviews_Books_bookId",
                         column: x => x.bookId,
+                        principalTable: "Books",
+                        principalColumn: "bookId");
+                    table.ForeignKey(
+                        name: "FK_Reviews_Books_bookId1",
+                        column: x => x.bookId1,
                         principalTable: "Books",
                         principalColumn: "bookId");
                 });
@@ -138,7 +156,9 @@ namespace ASI.Basecode.Data.Migrations
                 {
                     bookId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     genreId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    bookId1 = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    genreId1 = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -150,11 +170,21 @@ namespace ASI.Basecode.Data.Migrations
                         principalColumn: "bookId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
+                        name: "FK_Book_Genres_Books_bookId1",
+                        column: x => x.bookId1,
+                        principalTable: "Books",
+                        principalColumn: "bookId");
+                    table.ForeignKey(
                         name: "FK_Book_Genres_Genres_genreId",
                         column: x => x.genreId,
                         principalTable: "Genres",
                         principalColumn: "genreId",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Book_Genres_Genres_genreId1",
+                        column: x => x.genreId1,
+                        principalTable: "Genres",
+                        principalColumn: "genreId");
                 });
 
             migrationBuilder.InsertData(
@@ -174,11 +204,11 @@ namespace ASI.Basecode.Data.Migrations
                 columns: new[] { "bookId", "CreatedBy", "CreatedTime", "UpdatedBy", "UpdatedTime", "image", "isbn", "language", "pubYear", "publisher", "synopsis", "title" },
                 values: new object[,]
                 {
-                    { "1", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ISBN-1", "English", new DateTime(2023, 10, 28, 20, 41, 29, 199, DateTimeKind.Local).AddTicks(7493), "Publisher 1", "Synopsis 1", "Book 1" },
-                    { "2", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ISBN-2", "French", new DateTime(2023, 10, 28, 20, 41, 29, 199, DateTimeKind.Local).AddTicks(7506), "Publisher 2", "Synopsis 2", "Book 2" },
-                    { "3", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ISBN-3", "Spanish", new DateTime(2023, 10, 28, 20, 41, 29, 199, DateTimeKind.Local).AddTicks(7508), "Publisher 3", "Synopsis 3", "Book 3" },
-                    { "4", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ISBN-4", "German", new DateTime(2023, 10, 28, 20, 41, 29, 199, DateTimeKind.Local).AddTicks(7509), "Publisher 4", "Synopsis 4", "Book 4" },
-                    { "5", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ISBN-5", "Italian", new DateTime(2023, 10, 28, 20, 41, 29, 199, DateTimeKind.Local).AddTicks(7511), "Publisher 5", "Synopsis 5", "Book 5" }
+                    { "1", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ISBN-1", "English", new DateTime(2023, 11, 2, 17, 0, 6, 196, DateTimeKind.Local).AddTicks(3495), "Publisher 1", "Synopsis 1", "Book 1" },
+                    { "2", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ISBN-2", "French", new DateTime(2023, 11, 2, 17, 0, 6, 196, DateTimeKind.Local).AddTicks(3511), "Publisher 2", "Synopsis 2", "Book 2" },
+                    { "3", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ISBN-3", "Spanish", new DateTime(2023, 11, 2, 17, 0, 6, 196, DateTimeKind.Local).AddTicks(3513), "Publisher 3", "Synopsis 3", "Book 3" },
+                    { "4", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ISBN-4", "German", new DateTime(2023, 11, 2, 17, 0, 6, 196, DateTimeKind.Local).AddTicks(3514), "Publisher 4", "Synopsis 4", "Book 4" },
+                    { "5", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ISBN-5", "Italian", new DateTime(2023, 11, 2, 17, 0, 6, 196, DateTimeKind.Local).AddTicks(3517), "Publisher 5", "Synopsis 5", "Book 5" }
                 });
 
             migrationBuilder.InsertData(
@@ -195,26 +225,26 @@ namespace ASI.Basecode.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "Authored_Books",
-                columns: new[] { "authorId", "bookId", "Id" },
+                columns: new[] { "authorId", "bookId", "Id", "authorId1", "bookId1" },
                 values: new object[,]
                 {
-                    { "1", "1", 0 },
-                    { "2", "2", 0 },
-                    { "3", "3", 0 },
-                    { "4", "4", 0 },
-                    { "5", "5", 0 }
+                    { "1", "1", 0, null, null },
+                    { "2", "2", 0, null, null },
+                    { "3", "3", 0, null, null },
+                    { "4", "4", 0, null, null },
+                    { "5", "5", 0, null, null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Book_Genres",
-                columns: new[] { "bookId", "genreId", "Id" },
+                columns: new[] { "bookId", "genreId", "Id", "bookId1", "genreId1" },
                 values: new object[,]
                 {
-                    { "1", "1", 0 },
-                    { "2", "2", 0 },
-                    { "3", "3", 0 },
-                    { "4", "4", 0 },
-                    { "5", "5", 0 }
+                    { "1", "1", 0, null, null },
+                    { "2", "2", 0, null, null },
+                    { "3", "3", 0, null, null },
+                    { "4", "4", 0, null, null },
+                    { "5", "5", 0, null, null }
                 });
 
             migrationBuilder.CreateIndex(
@@ -223,14 +253,39 @@ namespace ASI.Basecode.Data.Migrations
                 column: "authorId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Authored_Books_authorId1",
+                table: "Authored_Books",
+                column: "authorId1");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Authored_Books_bookId1",
+                table: "Authored_Books",
+                column: "bookId1");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Book_Genres_bookId1",
+                table: "Book_Genres",
+                column: "bookId1");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Book_Genres_genreId",
                 table: "Book_Genres",
                 column: "genreId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Book_Genres_genreId1",
+                table: "Book_Genres",
+                column: "genreId1");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Reviews_bookId",
                 table: "Reviews",
                 column: "bookId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Reviews_bookId1",
+                table: "Reviews",
+                column: "bookId1");
 
             migrationBuilder.CreateIndex(
                 name: "UQ__Users__1788CC4D5F4A160F",

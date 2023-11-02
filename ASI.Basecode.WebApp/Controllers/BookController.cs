@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace ASI.Basecode.WebApp.Controllers
@@ -73,5 +75,25 @@ namespace ASI.Basecode.WebApp.Controllers
             var books = _bookService.GetBooks();
             return View(books);
         }
+
+        [HttpGet("getGenresOfBook")]
+        public async Task<IActionResult> GetGenresOfBook(string bookId)
+        {
+            var book = await _bookService.GetBookById(bookId);
+
+            if (book != null)
+            {
+                var genres = book.BookGenres;
+                var genreNames = genres.Select(bg => bg.genre.genreName).ToList();
+                return Ok(genreNames);
+            }
+            else
+            {
+                // Handle the case where the book with the given ID was not found.
+                return NotFound();
+            }
+        }
+
+
     }
 }

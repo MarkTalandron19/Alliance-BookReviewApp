@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ASI.Basecode.Data.Models
 {
@@ -16,5 +17,6 @@ namespace ASI.Basecode.Data.Models
         public DateTime CreatedTime { get; set; }
         public string UpdatedBy { get; set; }
         public DateTime UpdatedTime { get; set; }
+        public ICollection<BookGenres> BookGenres { get; set; }
     }
 }
