@@ -76,16 +76,17 @@ namespace ASI.Basecode.WebApp.Controllers
             return View(books);
         }
 
-        [HttpGet("getGenresOfBook")]
-        public async Task<IActionResult> GetGenresOfBook(string bookId)
+        [HttpGet("getGenresOfBooks")]
+        public IActionResult GetGenresOfBook(string bookId)
         {
-            var book = await _bookService.GetBookById(bookId);
+            var genres = _bookService.GetGenresOfBook(bookId).ToList();
 
-            if (book != null)
+            if (genres != null)
             {
-                var genres = book.BookGenres;
-                var genreNames = genres.Select(bg => bg.genre.genreName).ToList();
-                return Ok(genreNames);
+
+                // Return the view
+                return View("GetGenresOfBook", genres);
+                //return Json(new { Genres = genres });
             }
             else
             {
@@ -93,7 +94,5 @@ namespace ASI.Basecode.WebApp.Controllers
                 return NotFound();
             }
         }
-
-
     }
 }

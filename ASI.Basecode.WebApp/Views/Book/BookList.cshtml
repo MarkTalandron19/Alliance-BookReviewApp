@@ -83,7 +83,7 @@
                                 @foreach (var book in Model)
                                 {
                                     <tr>
-                                    <td><a href="#">@book.title</a></td>
+                                    <td><a href="@Url.Action("GetGenresOfBook", "Book", new { bookId = @book.bookId })" id="book-@book.bookId">@book.title</a></td>
                                     <td>@book.synopsis</td>
                                         <td>
                                         <button class="edit-button" id="Update" data-book-id="@book.bookId" data-book-title="@book.title" data-book-synopsis="@book.synopsis" data-book-publisher="@book.publisher" data-book-isbn="@book.isbn" data-book-language="@book.language">Edit</button>
@@ -157,4 +157,25 @@
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="~/js/Book.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".book-title-link").on("click", function (e) {
+            e.preventDefault();
+            var bookId = $(this).attr("id").replace("book-", "");
+
+            // Make an AJAX request to fetch and display genres
+            $.get("/BookController/GetGenresOfBook?bookId=" + bookId, function (data) {
+                if (data.genres) {
+                    var genreList = data.genres.join(", "); // Convert the array of genres to a string
+
+                    // Update the third column with the genre information
+                    $(`#book-${bookId}`).closest("tr").find("td:eq(2)").html(genreList);
+                } else {
+                    // Handle the case where there are no genres or an error occurred
+                    console.log("No genres found or an error occurred.");
+                }
+            });
+        });
+    });
+</script>
 
