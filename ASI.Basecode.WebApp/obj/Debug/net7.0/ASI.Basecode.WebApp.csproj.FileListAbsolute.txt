@@ -898,3 +898,4 @@ C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Ba
 C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.WebApp\obj\Debug\net7.0\ASI.Basecode.WebApp.csproj.CopyComplete
 C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.WebApp\obj\Debug\net7.0\ASI.Basecode.WebApp.genruntimeconfig.cache
 C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.WebApp\obj\Debug\net7.0\ref\ASI.Basecode.WebApp.dll
+C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.WebApp\bin\Debug\net7.0\Microsoft.CodeAnalysis.dll

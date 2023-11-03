@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.github",
+    "\\ASI.Basecode.WebApp",
+    "\\ASI.Basecode.WebApp\\Views",
+    "\\ASI.Basecode.WebApp\\Views\\Account",
+    "\\ASI.Basecode.WebApp\\Views\\Book",
+    "\\ASI.Basecode.WebApp\\Views\\Home",
+    "\\ASI.Basecode.WebApp\\wwwroot",
+    "\\ASI.Basecode.WebApp\\wwwroot\\css"
+  ],
+  "SelectedNode": "\\ASI.Basecode.WebApp\\wwwroot\\css\\homepage.css",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,8 +1,10 @@
 ﻿body {
-    background-color: #E6E6E6;
+    background-color: #FFFFFF;
     max-width: 100%;
     overflow-x: hidden;
     margin: 0;
+    padding: 0;
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .container-fluid {

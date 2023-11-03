@@ -1,63 +1,129 @@
 ﻿@model LoginViewModel
 @using static ASI.Basecode.Resources.Views.Screen
 @section styles {
-    <link rel="stylesheet" href="~/css/login.css" />
+    <link rel="stylesheet" href="~/css/homepage.css" />
 }
 @{
     ViewBag.LoginView = true;
     ViewData["Title"] = "Login Page";
 }
-<div>
-    @Html.AntiForgeryToken()
+<div class="navbar">
+    <img class="bibliobibuli-logo" src="~/img/bibliobibuli logo 2.png" />
+    <div class="navbar-right">
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/About">About</a></li>
+            <li><a asp-controller="Account" asp-action="Register">Library</a></li>
+        </ul>
+    </div>
+    <div class="dp">
+        <img src="~/img/profile-logo.png" class="dpicn hover-pointer" alt="dp">
+    </div>
 </div>
-<div class="body-main">
-        <div class="body-two-section">
-                <div class="login-row">
-                    <div class="first-col">
-                <img class="bibliobibuli-logo" src="~/img/Group 42.png" />
-                    </div>
-                    <div class="second-col">
-                        <div class="login-card">
-                            <div class="text-center">
-                            </div>
-                            <form method="post" action="/Account/Login" id="loginForm">
-                                <div class="form-outline mb-4">
-                                    <label class="form-label" for="form2Example11">@UserId</label>
-                                    <input type="text" id="form2Example11" class="form-control"
-                                           asp-for="UserId" placeholder="Enter userid" />
-                                    <span asp-validation-for="UserId" class="text-danger"></span>
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label class="form-label" for="form2Example22">@Password</label>
-                                    <input type="password" id="form2Example22" class="form-control"
-                                           asp-for="Password" placeholder="Enter password" />
-                                    <span asp-validation-for="Password" class="text-danger"></span>
-                                </div>
-                                <div class="text-center pt-1 mb-5 pb-1 d-flex flex-column align-items-center">
-                                    <button class="login-btn" type="submit">
-                                        @Login
-                                    </button>
-                                    <div>
-                                        <a class="text-muted" href="#!">@ForgotPass</a>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-center pb-4">
-                                    <p class="mb-0 me-2 mr-1">@DontHaveAcc</p>
-                                    <a asp-controller="Account" asp-action="Register" class="btn btn-outline-danger">@CreateNew</a>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+<div class="content">
+    <div class="logo-title">
+        <img class="logo" src="~/img/bibliobibuli logo 3.png" />
+        <h1>Bibliobibuli.</h1>
+    </div>
+    <div class="line-container">
+        <img class="line" src="~/img/lines 1.png" />
+        <div class="image-container">
+            <img class="image-book-reading" src="~/img/book reading.png" />
+        </div>
+    </div>
+    <div class="square-container">
+        <h2>Where Pages Come Alive.</h2>
+        <p>Authors and Readers Toast to the Art of Literary Feasts!</p>
+    </div>
+    <div class="center-container center-vertically">
+    <div class="center-container">
+        <div class="search-line-container">
+            <div class="search-elements">
+                <select class="year-dropdown">
+                    <option value="Year">Year</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                </select>
+                <select class="category-dropdown">
+                    <option value="Category">Category</option>
+                    <option value="Non-Fiction">Non-Fiction</option>
+                </select>
+
+                <div class="search-bar">
+                    <input type="text" placeholder="Enter Book Name here...">
+                    <div class="search-icon"><i class="fas fa-search"></i></div>
+                    <button class="search-button" style="background-color: #053B50; color: #FFFFFF;">Search ˃</button>
+                </div>      
             </div>
         </div>
+        </div>
+    </div>
+    <div class="white-background">
+        <div class="button-container-arrow-up">
+            <button class="button-arrow-up">˄</button>
+        </div>
+        <div class="text-container">
+            <h1 class="team-name">Bibliobibuli</h1>
+            <div class="text-info">
+                <p class="link">https://en.wiktionary.org</p>
+                <p class="definition">
+                    <text class="text-noun">Noun</text><text class="text-meaning">[bib·lio·bibu·li]</text><text class="plurals-text">(plural only)</text>
+                <p>1. The sort of <u>people</u> who <u>read</u> too much.</p>        
+                <p>"There are people who read too much: bibliobibuli. I know some who are constantly drunk on books, as other men are drunk on whiskey or religion. They wander through this most diverting and stimulating of worlds in a haze, seeing nothing and hearing nothing."</p>
+            </div>
+        </div>
+    </div>
+    <div class="second-background">
+        <div class="second-line-container">
+            <img class="second-line" src="~/img/lines 2.png" alt="Lines Image" />
+        </div>
+        <h2 class="trends-text">Trending this week</h2>
+        <p class="text-trends">Dive into our selection of trending books this week, where every page tells a story worth sharing.</p>
+    </div>
+    <div class="third-white-background">
+        <h3 class="featured-text">Featured Book</h3>
+        <text class="featured-line">Unearth the literary gems making waves this week!</text>
+        <div class="button-container-view-more">
+            <button class="button-view-more">VIEW MORE →</button>
+        </div>
+    </div>
+    <div class="fourth-white-background">
+        <h4 class="top-rated-books-text">Top-rated Books</h4>
+        <text class="top-rated-books-line">From captivating tales to thought-provoking narratives, these stories are igniting conversations across Bibliobibuli.</text>
+        <div class="second-button-container-view-more">
+            <button class="second-button-view-more">VIEW MORE →</button>
+        </div>
+    </div>
+    <div class="contact-image-background-container">
+        <img class="contact-info-image" src="~/img/contact section.png" alt="Contact Info Image" />
+    </div>
+    <div class="fifth-white-background">
+        <div class="second-line-container">
+            <img class="second-line" src="~/img/lines 3.png" alt="Lines Image" />
+        </div>
+        <div class="logo-title">
+            <img class="logo" src="~/img/bibliobibuli logo 3.png" />
+            <h1>Bibliobibuli.</h1>
+        </div>
+        <div class="text-line">
+            <p>Where Authors and Readers </p>
+            <p>Toast to the Art of Literary </p>
+            <p>Feasts!</p>
+          
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> bibliobibuli_inquire@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +63 912 3456 789</p>
+            </div>
+        </div>
+        <div class="quick-links">
+            <p class="text-quick-links">Quick Links</p>
+            <div class="second-nav-links">
+                <a href="/">Home</a>
+                <a href="/About">About</a>
+                <a href="/Library">Library</a>
+            </div>
+        </div>
+      
+    </div>
 </div>
 
-@section scripts {
-    <script>
-        // Check for error message and display Toastr notification
-        var errorMessage = '@TempData["ErrorMessage"]';
-        if (errorMessage) {
-            toastr.error(errorMessage);
-        }
-    </script>
-}
