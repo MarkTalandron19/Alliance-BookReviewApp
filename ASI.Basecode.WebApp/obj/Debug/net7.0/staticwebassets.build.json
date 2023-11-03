@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UiWB2BrR9ptn74E1vGKYYriJE57Te9htEk6nrUfQUks=",
+  "Hash": "2reuhsN9hx+TDpIsigDG42cLHvZ1//4sMdssQSuQlpU=",
   "Source": "ASI.Basecode.WebApp",
   "BasePath": "_content/ASI.Basecode.WebApp",
   "Mode": "Default",
@@ -185,6 +185,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\asi-logo-invert.svg"
+    },
+    {
+      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\bibliobibuli edited.jpg",
+      "SourceId": "ASI.Basecode.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecode.WebApp",
+      "RelativePath": "img/bibliobibuli edited.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\bibliobibuli edited.jpg"
     },
     {
       "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\booklist-icon.png",

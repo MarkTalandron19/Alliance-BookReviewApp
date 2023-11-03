@@ -45,7 +45,8 @@ namespace ASI.Basecode.WebApp.Controllers
         public async Task<IActionResult> GetBookById(string bookId)
         {
             var book = await _bookService.GetBookById(bookId);
-            
+
+         
             if (book == null)
             {
                 return NotFound();
@@ -77,9 +78,16 @@ namespace ASI.Basecode.WebApp.Controllers
         }
 
         [HttpGet("getGenresOfBooks")]
-        public IActionResult GetGenresOfBook(string bookId)
+        public IActionResult GetGenresOfBook(string bookId, string title, string synopsis, string pubYear, string publisher, string isbn, string language)
         {
             var genres = _bookService.GetGenresOfBook(bookId).ToList();
+
+            ViewBag.title = title;
+            ViewBag.synopsis = synopsis;
+            ViewBag.pubYear = pubYear;
+            ViewBag.publisher = publisher;
+            ViewBag.isbn = isbn;
+            ViewBag.language = language;
 
             if (genres != null)
             {

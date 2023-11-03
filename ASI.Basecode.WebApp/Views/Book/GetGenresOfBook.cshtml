@@ -1,17 +1,151 @@
 ﻿@using ASI.Basecode.Data.Models
 @model List<Genre>  
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Genres of Book</title>
-</head>
-<body>
-    <h1>Genres of Book</h1>
-    <ul>
-        @foreach (var genre in Model)
-        {
-            <li>@genre.genreName</li>
-        }
-    </ul>
-</body>
-</html>
+@section styles {
+    <link rel="stylesheet" href="~/css/admindashboard.css" />
+}
+
+<div class="body-main">
+    <div class="body-two-section">
+        <div class="left-space">
+            <div class="left-menu">
+                <div>
+                    <img class="bibliobibuli-logo" src="~/img/logo-leftaligned.png" />
+                    <div class="menu-items">
+                        <div class="leftmenu-item-title">
+                            <div class="leftmenu-item">
+                                <img class="leftmenu-icons" src="~/img/dashboard-icon.png" />
+                                Book Management<br />Dashboard
+                            </div>
+                        </div>
+                        <hr class="menu-divider" />
+                        <a asp-controller="Book" asp-action="BookList" class="leftmenu-items">
+                            <div class="leftmenu-item">
+                                <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+                                Book List
+                            </div>
+                        </a>
+                        <button class="leftmenu-items">
+                            <a asp-controller="Home" asp-action="Index" class="leftmenu-items">
+                            <div class="leftmenu-item">
+                                <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+                                Genre List
+                            </div>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <button class="logout-button">
+                        <div class="logout-text">
+                            <img class="leftmenu-icons" src="~/img/logout-icon.png" />
+                            Logout
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="admin-dashboard-list">
+            <div class="admin-header">
+                <div class="logosec">
+                    Welcome, @HttpContextAccessor.HttpContext.Session.GetString("UserName")!
+                    <div class="mr-20 hover-pointer" style="position: relative">
+                        <div class="dp">
+                            <img src="~/img/profile-logo.png"
+                                 class="dpicn hover-pointer"
+                                 alt="dp">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard">
+                <div class="dashboard-title-div">
+                    <p class="dashboard-title">Book Name: <strong>@ViewBag.title</strong></p>
+                </div>
+                <hr class="divider" />
+                <p class="dashboard-subtitle">Genres of <strong>"@ViewBag.title"</strong></p>
+                <div class="dashboard-card">
+                    <table class="dashboard-table">
+                        <thead class="dashboard-table-header">
+                            <tr class="header-row">
+                                <th style="width: 25%;">
+                                    Genre Name
+                                </th>
+                                <th style="width: 50%;">
+                                    Genre Description
+                                </th>
+                                <th style="width: 25%;">
+
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            @foreach (var genre in Model)
+                            {
+                                <tr>
+                                    <td>@genre.genreName</td>
+                                    <td>@genre.description</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="dashboard-subtitle">Book Details</p>
+                <div class="dashboard-card">
+                    <table class="dashboard-table">
+                        <thead class="dashboard-table-header">
+                            <tr class="header-row">
+                                <th style="width: 25%;">
+                                    Title
+                                </th>
+                                <th style="width: 2%;">
+                                    
+                                </th>
+                                <th style="width: 73%;">
+                                    Details
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                                <tr>
+                                <td><strong>Book Title</strong></td>
+                                <td><strong>:</strong></td>
+                                <td>@ViewBag.title</td>
+                                </tr>
+                            <tr>
+                                <td><strong>Book Synopsis</strong></td>
+                                <td><strong>:</strong></td>
+                                <td>@ViewBag.synopsis</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Year Published</strong></td>
+                                <td><strong>:</strong></td>
+                                <td>@ViewBag.pubYear</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Book Publisher</strong></td>
+                                <td><strong>:</strong></td>
+                                <td>@ViewBag.publisher</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Book ISBN</strong></td>
+                                <td><strong>:</strong></td>
+                                <td>@ViewBag.isbn</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Book Language</strong></td>
+                                <td><strong>:</strong></td>
+                                <td>@ViewBag.language</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="~/js/Genre.js"></script>
+
