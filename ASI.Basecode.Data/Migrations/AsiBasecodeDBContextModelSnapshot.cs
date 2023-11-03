@@ -105,9 +105,19 @@ namespace ASI.Basecode.Data.Migrations
                     b.Property<int>("Id")
                         .HasColumnType("int");
 
+                    b.Property<string>("authorId1")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("bookId1")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("bookId", "authorId");
 
                     b.HasIndex("authorId");
+
+                    b.HasIndex("authorId1");
+
+                    b.HasIndex("bookId1");
 
                     b.ToTable("Authored_Books");
 
@@ -199,7 +209,7 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-1",
                             language = "English",
-                            pubYear = new DateTime(2023, 10, 28, 20, 41, 29, 199, DateTimeKind.Local).AddTicks(7493),
+                            pubYear = new DateTime(2023, 11, 2, 17, 0, 6, 196, DateTimeKind.Local).AddTicks(3495),
                             publisher = "Publisher 1",
                             synopsis = "Synopsis 1",
                             title = "Book 1"
@@ -211,7 +221,7 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-2",
                             language = "French",
-                            pubYear = new DateTime(2023, 10, 28, 20, 41, 29, 199, DateTimeKind.Local).AddTicks(7506),
+                            pubYear = new DateTime(2023, 11, 2, 17, 0, 6, 196, DateTimeKind.Local).AddTicks(3511),
                             publisher = "Publisher 2",
                             synopsis = "Synopsis 2",
                             title = "Book 2"
@@ -223,7 +233,7 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-3",
                             language = "Spanish",
-                            pubYear = new DateTime(2023, 10, 28, 20, 41, 29, 199, DateTimeKind.Local).AddTicks(7508),
+                            pubYear = new DateTime(2023, 11, 2, 17, 0, 6, 196, DateTimeKind.Local).AddTicks(3513),
                             publisher = "Publisher 3",
                             synopsis = "Synopsis 3",
                             title = "Book 3"
@@ -235,7 +245,7 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-4",
                             language = "German",
-                            pubYear = new DateTime(2023, 10, 28, 20, 41, 29, 199, DateTimeKind.Local).AddTicks(7509),
+                            pubYear = new DateTime(2023, 11, 2, 17, 0, 6, 196, DateTimeKind.Local).AddTicks(3514),
                             publisher = "Publisher 4",
                             synopsis = "Synopsis 4",
                             title = "Book 4"
@@ -247,7 +257,7 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-5",
                             language = "Italian",
-                            pubYear = new DateTime(2023, 10, 28, 20, 41, 29, 199, DateTimeKind.Local).AddTicks(7511),
+                            pubYear = new DateTime(2023, 11, 2, 17, 0, 6, 196, DateTimeKind.Local).AddTicks(3517),
                             publisher = "Publisher 5",
                             synopsis = "Synopsis 5",
                             title = "Book 5"
@@ -265,9 +275,19 @@ namespace ASI.Basecode.Data.Migrations
                     b.Property<int>("Id")
                         .HasColumnType("int");
 
+                    b.Property<string>("bookId1")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("genreId1")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("bookId", "genreId");
 
+                    b.HasIndex("bookId1");
+
                     b.HasIndex("genreId");
+
+                    b.HasIndex("genreId1");
 
                     b.ToTable("Book_Genres");
 
@@ -384,6 +404,9 @@ namespace ASI.Basecode.Data.Migrations
                     b.Property<string>("bookId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("bookId1")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("content")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -417,6 +440,8 @@ namespace ASI.Basecode.Data.Migrations
                     b.HasKey("reviewId");
 
                     b.HasIndex("bookId");
+
+                    b.HasIndex("bookId1");
 
                     b.ToTable("Reviews");
                 });
@@ -481,11 +506,23 @@ namespace ASI.Basecode.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ASI.Basecode.Data.Models.Author", "author")
+                        .WithMany()
+                        .HasForeignKey("authorId1");
+
                     b.HasOne("ASI.Basecode.Data.Models.Book", null)
                         .WithMany()
                         .HasForeignKey("bookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("ASI.Basecode.Data.Models.Book", "book")
+                        .WithMany()
+                        .HasForeignKey("bookId1");
+
+                    b.Navigation("author");
+
+                    b.Navigation("book");
                 });
 
             modelBuilder.Entity("ASI.Basecode.Data.Models.BookGenres", b =>
@@ -496,11 +533,23 @@ namespace ASI.Basecode.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ASI.Basecode.Data.Models.Book", "book")
+                        .WithMany("BookGenres")
+                        .HasForeignKey("bookId1");
+
                     b.HasOne("ASI.Basecode.Data.Models.Genre", null)
                         .WithMany()
                         .HasForeignKey("genreId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("ASI.Basecode.Data.Models.Genre", "genre")
+                        .WithMany("BookGenres")
+                        .HasForeignKey("genreId1");
+
+                    b.Navigation("book");
+
+                    b.Navigation("genre");
                 });
 
             modelBuilder.Entity("ASI.Basecode.Data.Models.Review", b =>
@@ -508,6 +557,22 @@ namespace ASI.Basecode.Data.Migrations
                     b.HasOne("ASI.Basecode.Data.Models.Book", null)
                         .WithMany()
                         .HasForeignKey("bookId");
+
+                    b.HasOne("ASI.Basecode.Data.Models.Book", "book")
+                        .WithMany()
+                        .HasForeignKey("bookId1");
+
+                    b.Navigation("book");
+                });
+
+            modelBuilder.Entity("ASI.Basecode.Data.Models.Book", b =>
+                {
+                    b.Navigation("BookGenres");
+                });
+
+            modelBuilder.Entity("ASI.Basecode.Data.Models.Genre", b =>
+                {
+                    b.Navigation("BookGenres");
                 });
 #pragma warning restore 612, 618
         }

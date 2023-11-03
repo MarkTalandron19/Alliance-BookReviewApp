@@ -1,0 +1,17 @@
+﻿@using ASI.Basecode.Data.Models
+@model List<Genre>  
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Genres of Book</title>
+</head>
+<body>
+    <h1>Genres of Book</h1>
+    <ul>
+        @foreach (var genre in Model)
+        {
+            <li>@genre.genreName</li>
+        }
+    </ul>
+</body>
+</html>

@@ -240,12 +240,12 @@ namespace ASI.Basecode.Data
             {
                 entity.HasKey(e => new { e.bookId, e.authorId });
 
-                entity.HasOne<Book>()
-                    .WithMany()
+                entity.HasOne(ab => ab.book)
+                    .WithMany(b => b.AuthoredBooks)
                     .HasForeignKey(e => e.bookId);
 
-                entity.HasOne<Author>()
-                    .WithMany()
+                entity.HasOne(ab => ab.author)
+                    .WithMany(a => a.AuthoredBooks)
                     .HasForeignKey(e => e.authorId);
 
                 entity.HasData(
@@ -261,12 +261,12 @@ namespace ASI.Basecode.Data
             {
                 entity.HasKey(e => new { e.bookId, e.genreId });
 
-                entity.HasOne<Book>()
-                    .WithMany()
+                entity.HasOne(bg => bg.book)
+                    .WithMany(b => b.BookGenres)
                     .HasForeignKey(e => e.bookId);
 
-                entity.HasOne<Genre>()
-                    .WithMany()
+                entity.HasOne(bg => bg.genre)
+                    .WithMany(g => g.BookGenres)
                     .HasForeignKey(e => e.genreId);
 
                 entity.HasData(
