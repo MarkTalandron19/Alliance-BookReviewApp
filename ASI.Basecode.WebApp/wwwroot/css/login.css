@@ -79,7 +79,7 @@
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 10px;
+    padding: 15px;
     cursor: pointer;
     outline: none;
     transition: ease .2s;
@@ -90,3 +90,24 @@
         background-color: #0D5066;
         transition: ease .2s;
     }
+
+.back {
+    display: flex;
+    justify-content: center;
+} 
+
+.back-btn {
+    padding-top: 20px;
+    cursor: pointer;
+    outline: none;
+    transition: ease .2s;
+}
+
+    .back-btn:hover {
+        transition: ease .2s;
+    }
+
+.form-footer {
+    justify-content: center;
+}
+

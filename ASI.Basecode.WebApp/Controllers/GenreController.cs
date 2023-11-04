@@ -6,6 +6,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
 using System.IO;
 
 namespace ASI.Basecode.WebApp.Controllers
@@ -51,6 +52,23 @@ namespace ASI.Basecode.WebApp.Controllers
         {
             _genreService.DeleteGenre(genreId);
             return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet("GetBooksWithGenres")]
+        public IActionResult GetBooksWithGenre(string genreId, string genreName)
+        {
+            var books = _genreService.GetBooksWithGenre(genreId).ToList();
+
+            ViewBag.GenreName = genreName;
+            if (books != null)
+            {
+
+                return View("GetBooksWithGenre", books);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
         [HttpGet]

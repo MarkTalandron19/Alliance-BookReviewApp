@@ -68,14 +68,20 @@
                     <table class="dashboard-table">
                         <thead class="dashboard-table-header">
                             <tr class="header-row">
-                                <th style="width: 25%;">
+                                <th style="width: 15%;">
                                     Book Name
                                 </th>
-                                <th style="width: 50%;">
+                                <th style="width: 25%;">
                                     Synopsis
                                 </th>
-                                <th style="width: 25%;">
-                                    Operation
+                                <th style="width: 20%;">
+                                    Year Published
+                                </th>
+                                <th style="width: 20%;">
+                                    Publisher
+                                </th>
+                                <th style="width: 20%;">
+                                    
                                 </th>
                             </tr>
                         </thead>
@@ -83,12 +89,14 @@
                                 @foreach (var book in Model)
                                 {
                                     <tr>
-                                    <td><a href="@Url.Action("GetGenresOfBook", "Book", new { bookId = @book.bookId })" id="book-@book.bookId">@book.title</a></td>
+                                    <td><a href="@Url.Action("GetGenresOfBook", "Book", new { bookId = @book.bookId, title = book.title, synopsis = book.synopsis, pubYear = book.pubYear, publisher = book.publisher, isbn = book.isbn, language = book.language })">@book.title</a></td>
                                     <td>@book.synopsis</td>
-                                        <td>
+                                    <td>@book.pubYear</td>
+                                    <td>@book.publisher</td>
+                                    <td>
                                         <button class="edit-button" id="Update" data-book-id="@book.bookId" data-book-title="@book.title" data-book-synopsis="@book.synopsis" data-book-publisher="@book.publisher" data-book-isbn="@book.isbn" data-book-language="@book.language">Edit</button>
                                         <button class="delete-button" data-book-id="@book.bookId">Delete</button>
-                                        </td>
+                                    </td>
                                     </tr>
                                 }
                         </tbody>
@@ -96,7 +104,7 @@
                 </div>
 
 
-                <div class="dashboard-card">
+@*                 <div class="dashboard-card">
                     <table class="dashboard-table">
                         <thead class="dashboard-table-header">
                             <tr class="header-row">
@@ -144,7 +152,7 @@
                             }
                         </tbody>
                     </table>
-                </div>
+                </div> *@
 
             </div>
         </div>

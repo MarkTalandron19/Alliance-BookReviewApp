@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj": {}
+    "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj": {
+    "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj",
+        "projectUniqueName": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj",
         "projectName": "ASI.Basecode.Resources",
-        "projectPath": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj",
-        "packagesPath": "C:\\Users\\Aloys\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\obj\\",
+        "projectPath": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Aloys\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

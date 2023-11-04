@@ -1,5 +1,5 @@
 ﻿@using ASI.Basecode.Data.Models
-@model List<Genre>  
+@model List<Book>
 @section styles {
     <link rel="stylesheet" href="~/css/admindashboard.css" />
 }
@@ -59,84 +59,38 @@
             </div>
             <div class="dashboard">
                 <div class="dashboard-title-div">
-                    <p class="dashboard-title">Book Name: <strong>@ViewBag.title</strong></p>
+                    <p class="dashboard-title">Genre Name: <strong>@ViewBag.GenreName</strong></p>
                 </div>
                 <hr class="divider" />
-                <p class="dashboard-subtitle">Genres of <strong>"@ViewBag.title"</strong></p>
+                <p class="dashboard-subtitle">List of Books with <strong>"@ViewBag.GenreName"</strong> Genre</p>
                 <div class="dashboard-card">
                     <table class="dashboard-table">
                         <thead class="dashboard-table-header">
                             <tr class="header-row">
                                 <th style="width: 25%;">
-                                    Genre Name
+                                    Book Name
                                 </th>
-                                <th style="width: 50%;">
-                                    Genre Description
+                                <th style="width: 30%;">
+                                    Book Synopsis
                                 </th>
                                 <th style="width: 25%;">
-
+                                    Year Published
+                                </th>
+                                <th style="width: 20%;">
+                                    Publisher
                                 </th>
                             </tr>
                         </thead>
                         <tbody id="tableBody">
-                            @foreach (var genre in Model)
+                            @foreach (var book in Model)
                             {
                                 <tr>
-                                    <td>@genre.genreName</td>
-                                    <td>@genre.description</td>
+                                    <td>@book.title</td>
+                                    <td>@book.synopsis</td>
+                                    <td>@book.pubYear</td>
+                                    <td>@book.publisher</td>
                                 </tr>
                             }
-                        </tbody>
-                    </table>
-                </div>
-
-                <p class="dashboard-subtitle">Book Details</p>
-                <div class="dashboard-card">
-                    <table class="dashboard-table">
-                        <thead class="dashboard-table-header">
-                            <tr class="header-row">
-                                <th style="width: 25%;">
-                                    Title
-                                </th>
-                                <th style="width: 2%;">
-                                    
-                                </th>
-                                <th style="width: 73%;">
-                                    Details
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody id="tableBody">
-                                <tr>
-                                <td><strong>Book Title</strong></td>
-                                <td><strong>:</strong></td>
-                                <td>@ViewBag.title</td>
-                                </tr>
-                            <tr>
-                                <td><strong>Book Synopsis</strong></td>
-                                <td><strong>:</strong></td>
-                                <td>@ViewBag.synopsis</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Year Published</strong></td>
-                                <td><strong>:</strong></td>
-                                <td>@ViewBag.pubYear</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Book Publisher</strong></td>
-                                <td><strong>:</strong></td>
-                                <td>@ViewBag.publisher</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Book ISBN</strong></td>
-                                <td><strong>:</strong></td>
-                                <td>@ViewBag.isbn</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Book Language</strong></td>
-                                <td><strong>:</strong></td>
-                                <td>@ViewBag.language</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
