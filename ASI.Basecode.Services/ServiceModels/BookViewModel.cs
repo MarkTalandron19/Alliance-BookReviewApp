@@ -22,9 +22,13 @@ namespace ASI.Basecode.Services.ServiceModels
         [Required(ErrorMessage = "Book synopsis is required.")]
         public string synopsis { get; set; }
 
+        [JsonPropertyName("author")]
+        [Required(ErrorMessage = "Book author is required.")]
+        public string author { get; set; }
+
         [JsonPropertyName("pubYear")]
         [Required(ErrorMessage = "Publishing year is required.")]
-        public DateTime pubYear { get; set; }
+        public int pubYear { get; set; }
 
         [JsonPropertyName("publisher")]
         [Required(ErrorMessage = "Publisher is required.")]

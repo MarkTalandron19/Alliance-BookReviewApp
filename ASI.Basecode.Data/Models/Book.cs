@@ -8,7 +8,8 @@ namespace ASI.Basecode.Data.Models
         public string bookId { get; set; }
         public string title { get; set; }
         public string synopsis { get; set; }
-        public DateTime pubYear { get; set; }
+        public string author { get; set; }
+        public int pubYear { get; set; }
         public string publisher { get; set; }
         public string isbn { get; set; }
         public string language { get; set; }
@@ -18,6 +19,5 @@ namespace ASI.Basecode.Data.Models
         public string UpdatedBy { get; set; }
         public DateTime UpdatedTime { get; set; }
         public ICollection<BookGenres> BookGenres { get; set; }
-        public ICollection<AuthoredBooks> AuthoredBooks { get; set; }
     }
 }
