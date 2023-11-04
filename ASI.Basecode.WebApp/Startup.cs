@@ -124,12 +124,10 @@ namespace ASI.Basecode.WebApp
                 new PhysicalFileProvider(
                     Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));
 
-            services.AddScoped<IAuthorRepository, AuthorRepository>();
             services.AddScoped<IBookRepository, BookRepository>();
             services.AddScoped<IReviewRepository, ReviewRepository>();
             services.AddScoped<IGenreRepository, GenreRepository>();
 
-            services.AddScoped<IAuthorService, AuthorService>();
             services.AddScoped<IBookService, BookService>();
             services.AddScoped<IReviewService, ReviewService>();
             services.AddScoped<IGenreService, GenreService>();
