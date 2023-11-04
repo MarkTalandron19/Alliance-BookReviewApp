@@ -62,10 +62,10 @@ namespace ASI.Basecode.Data.Repositories
 
             if(book != null)
             {
-                var authoredBooks = this.GetDbSet<AuthoredBooks>().Where(ab => ab.bookId == bookId);
-                foreach (var authoredBook in authoredBooks)
+                var bookGenres = this.GetDbSet<BookGenres>().Where(bg => bg.bookId == bookId);
+                foreach (var bookGenre in bookGenres)
                 {
-                    this.GetDbSet<AuthoredBooks>().Remove(authoredBook);
+                    this.GetDbSet<BookGenres>().Remove(bookGenre);
                 }
                 this.GetDbSet<Book>().Remove(book);
                 UnitOfWork.SaveChanges();

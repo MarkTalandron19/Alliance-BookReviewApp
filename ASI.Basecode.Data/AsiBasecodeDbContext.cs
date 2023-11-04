@@ -19,8 +19,6 @@ namespace ASI.Basecode.Data
 
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Book> Books { get; set; }
-        public virtual DbSet<Author> Authors { get; set; }
-        public virtual DbSet<AuthoredBooks> Authored_Books { get; set; }
         public virtual DbSet<Review> Reviews { get; set; }
         public virtual DbSet<Genre> Genres { get; set; }
         public virtual DbSet<BookGenres> Book_Genres { get; set; }
@@ -94,33 +92,6 @@ namespace ASI.Basecode.Data
                 entity.HasOne<Book>()
                     .WithMany()
                     .HasForeignKey(e => e.bookId);
-            });
-
-            modelBuilder.Entity<Author>(entity =>
-            {
-                entity.HasKey(e => e.authorId);
-
-                entity.Property(e => e.authorFirstName)
-                    .IsRequired();
-
-                entity.Property(e => e.authorLastName)
-                    .IsRequired();
-
-                entity.Property(e => e.CreatedBy);
-
-                entity.Property(e => e.CreatedTime);
-
-                entity.Property(e => e.UpdatedBy);
-
-                entity.Property(e => e.UpdatedTime);
-
-                modelBuilder.Entity<Author>().HasData(
-                    new Author { authorId = "1", authorFirstName = "John", authorLastName = "Doe" },
-                    new Author { authorId = "2", authorFirstName = "Jane", authorLastName = "Smith" },
-                    new Author { authorId = "3", authorFirstName = "Robert", authorLastName = "Johnson" },
-                    new Author { authorId = "4", authorFirstName = "Emily", authorLastName = "Williams" },
-                    new Author { authorId = "5", authorFirstName = "David", authorLastName = "Brown" }
-                );
             });
 
             modelBuilder.Entity<Genre>(entity =>
@@ -235,27 +206,6 @@ namespace ASI.Basecode.Data
                     }
                 );
             });
-
-            /*modelBuilder.Entity<AuthoredBooks>(entity =>
-            {
-                entity.HasKey(e => new { e.bookId, e.authorId });
-
-                entity.HasOne(ab => ab.book)
-                    .WithMany(b => b.AuthoredBooks)
-                    .HasForeignKey(e => e.bookId);
-
-                entity.HasOne(ab => ab.author)
-                    .WithMany(a => a.AuthoredBooks)
-                    .HasForeignKey(e => e.authorId);
-
-                entity.HasData(
-                    new AuthoredBooks { bookId = "1", authorId = "1" },
-                    new AuthoredBooks { bookId = "2", authorId = "2" },
-                    new AuthoredBooks { bookId = "3", authorId = "3" },
-                    new AuthoredBooks { bookId = "4", authorId = "4" },
-                    new AuthoredBooks { bookId = "5", authorId = "5" }
-                );
-            });*/
 
             modelBuilder.Entity<BookGenres>(entity =>
             {
