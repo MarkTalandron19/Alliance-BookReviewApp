@@ -38,30 +38,9 @@ namespace ASI.Basecode.Data.Repositories
             return bookGenres;
         }
 
-        public IQueryable<Author> GetAuthorsOfBook(string bookId)
-        {
-            var bookAuthors = this.GetDbSet<AuthoredBooks>()
-                .Include(ab => ab.author)
-                .Where(ab => ab.bookId == bookId)
-                .Select(ab => ab.author);
-
-            return bookAuthors;
-        }
-
-        public void AddBook(Book book, List<Author> authors, List<Genre> genres)
+        public void AddBook(Book book, List<Genre> genres)
         {
             this.GetDbSet<Book>().Add(book);
-
-            foreach (var author in authors)
-            {
-                var authoredBook = new AuthoredBooks
-                {
-                    bookId = book.bookId,
-                    authorId = author.authorId
-                };
-
-                this.GetDbSet<AuthoredBooks>().Add(authoredBook);
-            }
 
             foreach (var genre in genres)
             {
@@ -83,10 +62,10 @@ namespace ASI.Basecode.Data.Repositories
 
             if(book != null)
             {
-                var authoredBooks = this.GetDbSet<AuthoredBooks>().Where(ab => ab.bookId == bookId);
-                foreach (var authoredBook in authoredBooks)
+                var bookGenres = this.GetDbSet<BookGenres>().Where(bg => bg.bookId == bookId);
+                foreach (var bookGenre in bookGenres)
                 {
-                    this.GetDbSet<AuthoredBooks>().Remove(authoredBook);
+                    this.GetDbSet<BookGenres>().Remove(bookGenre);
                 }
                 this.GetDbSet<Book>().Remove(book);
                 UnitOfWork.SaveChanges();

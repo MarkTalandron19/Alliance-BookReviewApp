@@ -22,7 +22,7 @@ namespace ASI.Basecode.Services.Services
             _mapper = mapper;
         }
 
-        public void AddBook(BookViewModel model, List<Author> authors, List<Genre> genres)
+        public void AddBook(BookViewModel model, List<Genre> genres)
         {
             var book = new Book();
             if(!_repository.BookExists(model.bookId))
@@ -32,7 +32,7 @@ namespace ASI.Basecode.Services.Services
                 book.UpdatedTime = DateTime.Now;
                 book.CreatedBy = System.Environment.UserName;
                 book.UpdatedBy = System.Environment.UserName;
-                _repository.AddBook(book, authors, genres);
+                _repository.AddBook(book, genres);
             }
         }
 
@@ -57,11 +57,6 @@ namespace ASI.Basecode.Services.Services
         public IQueryable<Genre> GetGenresOfBook(string bookId)
         {
             return _repository.GetGenresOfBook(bookId);
-        }
-
-        public IQueryable<Author> GetAuthorsOfBook(string bookId)
-        {
-            return _repository.GetAuthorsOfBook(bookId);
         }
 
         public void UpdateBook(BookViewModel update)
