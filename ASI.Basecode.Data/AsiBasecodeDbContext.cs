@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace ASI.Basecode.Data
 {
-    public partial class AsiBasecodeDBContext : IdentityDbContext<IdentityUser>
+    public partial class AsiBasecodeDBContext : IdentityDbContext<User>
     {
         public AsiBasecodeDBContext(DbContextOptions<AsiBasecodeDBContext> options)
             : base(options)
@@ -28,7 +28,6 @@ namespace ASI.Basecode.Data
             SaveChanges();
         }
 
-        public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<RefreshToken> RefreshToken { get; set; }
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Review> Reviews { get; set; }
@@ -106,8 +105,8 @@ namespace ASI.Basecode.Data
                 entity.Property(e => e.dateReviewed)
                     .IsRequired();
 
-                entity.HasOne<Book>()
-                    .WithMany()
+                entity.HasOne(e => e.book)
+                    .WithMany(b => b.Reviews)
                     .HasForeignKey(e => e.bookId);
             });
 

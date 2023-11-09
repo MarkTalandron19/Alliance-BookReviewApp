@@ -287,6 +287,7 @@ namespace ASI.Basecode.WebApp.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Register(UserViewModel model)
         {
+            _logger.LogInformation("register user");
             try
             {
                 var identityUser = new IdentityUser();
