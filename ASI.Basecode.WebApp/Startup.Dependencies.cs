@@ -7,6 +7,7 @@ using ASI.Basecode.Services.Services;
 using ASI.Basecode.WebApp.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using System;
 
 namespace ASI.Basecode.WebApp
 {
@@ -29,15 +30,29 @@ namespace ASI.Basecode.WebApp
             // Services
             services.AddSingleton<TokenValidationParametersFactory>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IBookService, BookService>();
+            services.AddScoped<IReviewService, ReviewService>();
+            services.AddScoped<IGenreService, GenreService>();
 
 
             // Repositories
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IBookRepository, BookRepository>();
+            services.AddScoped<IReviewRepository, ReviewRepository>();
+            services.AddScoped<IGenreRepository, GenreRepository>();
 
             // Manager Class
             services.AddScoped<SignInManager>();
 
             services.AddHttpClient();
+
+            services.AddSession((options) =>
+            {
+                options.Cookie.Name = "UserSession";
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
 
         }
     }

@@ -1,5 +1,6 @@
 ﻿using ASI.Basecode.Data;
 using ASI.Basecode.Data.Interfaces;
+using ASI.Basecode.Data.Models;
 using ASI.Basecode.Data.Repositories;
 using ASI.Basecode.Resources.Constants;
 using ASI.Basecode.Services.Interfaces;
@@ -11,6 +12,7 @@ using ASI.Basecode.WebApp.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -151,6 +153,8 @@ namespace ASI.Basecode.WebApp
             services.AddControllersWithViews();
             services.AddRazorPages().AddRazorRuntimeCompilation();
 
+            services.AddHttpContextAccessor();
+
             //Configuration
             services.Configure<TokenAuthentication>(Configuration.GetSection("TokenAuthentication"));
             
@@ -185,7 +189,6 @@ namespace ASI.Basecode.WebApp
             services.AddScoped<IBookService, BookService>();
             services.AddScoped<IReviewService, ReviewService>();
             services.AddScoped<IGenreService, GenreService>();
-
         }
 
         /// <summary>
