@@ -44,7 +44,7 @@ namespace ASI.Basecode.WebApp
             this.ConfigureCors(services);               // Configuration for CORS
             this.ConfigureAuth(services);               // Configuration for Authentication logic
             this.ConfigureMVC(services);                // Configuration for MVC                  
-
+            this.ConfigureSession(services);
 
             // Add services to the container.
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
