@@ -229,13 +229,13 @@ namespace ASI.Basecode.WebApp.Controllers
 
             if (ModelState.IsValid)
             {
-                // This doesn't count login failures towards account lockout
+                // This doesn't count login failures towards account lockout    
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+                var result = await _signInManager.PasswordSignInAsync(model.UserId, model.Password, Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                    //_logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+                    _logger.LogInformation("User logged in.");
+                    return RedirectToAction("GenreList", "Genre");
                 }
                 if (result.RequiresTwoFactor)
                 {
@@ -249,7 +249,19 @@ namespace ASI.Basecode.WebApp.Controllers
                 else
                 {
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        _logger.LogInformation(error.ErrorMessage);
+                    }
                     return RedirectToPage(returnUrl);
+                }
+            }
+
+            if (!ModelState.IsValid)
+            {
+                foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    _logger.LogInformation(error.ErrorMessage);
                 }
             }
 
@@ -292,7 +304,6 @@ namespace ASI.Basecode.WebApp.Controllers
             {
                 var identityUser = new IdentityUser();
                 identityUser.Email = model.Email;
-                identityUser.UserName = model.UserId;
                 identityUser.UserName = model.UserId;
                 var result = await _userManager.CreateAsync(identityUser, model.Password);
 

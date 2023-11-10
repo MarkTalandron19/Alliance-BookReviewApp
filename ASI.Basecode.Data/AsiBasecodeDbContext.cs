@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace ASI.Basecode.Data
 {
-    public partial class AsiBasecodeDBContext : IdentityDbContext<User>
+    public partial class AsiBasecodeDBContext : IdentityDbContext<IdentityUser>
     {
         public AsiBasecodeDBContext(DbContextOptions<AsiBasecodeDBContext> options)
             : base(options)
@@ -28,6 +28,7 @@ namespace ASI.Basecode.Data
             SaveChanges();
         }
 
+        public virtual DbSet<User> Users {  get; set; }
         public virtual DbSet<RefreshToken> RefreshToken { get; set; }
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Review> Reviews { get; set; }

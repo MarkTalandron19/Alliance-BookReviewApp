@@ -10,7 +10,7 @@ namespace ASI.Basecode.WebApp
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/");
+                    pattern: "{controller=Account}/{action=Login}/");
 
                 endpoints.MapControllerRoute(
                     name: "token",
