@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
@@ -77,6 +78,12 @@ namespace ASI.Basecode.WebApp.Controllers
         public IActionResult GenreList() 
         {
             return View();
+        }
+
+        [AllowAnonymous]
+        public IActionResult SignOutUser()
+        {
+            return RedirectToAction("Login", "Account");
         }
     }
 }

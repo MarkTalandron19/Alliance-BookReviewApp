@@ -1,6 +1,7 @@
 ﻿using ASI.Basecode.Services.Interfaces;
 using ASI.Basecode.WebApp.Mvc;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -38,6 +39,20 @@ namespace ASI.Basecode.WebApp.Controllers
         {
             var genres = _genreService.GetGenres();
             return View(genres);
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Home()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Library()
+        {
+            return View();
         }
     }
 }
