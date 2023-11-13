@@ -35,11 +35,7 @@ namespace ASI.Basecode.WebApp.Controllers
         /// Returns Home View.
         /// </summary>
         /// <returns> Home View </returns>
-        public IActionResult Index()
-        {
-            var genres = _genreService.GetGenres();
-            return View(genres);
-        }
+
 
         [HttpGet]
         [AllowAnonymous]

@@ -30,7 +30,7 @@ namespace ASI.Basecode.WebApp.Controllers
             genre.genreId = Guid.NewGuid().ToString();
             _genreService.AddGenre(genre);
             _genreService.GetGenres();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Genre");
         }
 
         [HttpGet("get")]
@@ -45,14 +45,14 @@ namespace ASI.Basecode.WebApp.Controllers
         public IActionResult UpdateGenre(GenreViewModel genre)
         {
             _genreService.UpdateGenre(genre);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Genre");
         }
 
         [HttpPost("delete")]
         public IActionResult DeleteGenre(string genreId)
         {
             _genreService.DeleteGenre(genreId);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Genre");
         }
 
         [HttpGet("GetBooksWithGenres")]
@@ -71,6 +71,11 @@ namespace ASI.Basecode.WebApp.Controllers
                 return NotFound();
             }
         }
+        public IActionResult Index()
+        {
+            var genres = _genreService.GetGenres();
+            return View(genres);
+        }
 
         [HttpGet]
         [AllowAnonymous]
@@ -78,7 +83,7 @@ namespace ASI.Basecode.WebApp.Controllers
         public IActionResult GenreList() 
         {
             var genres = _genreService.GetGenres();
-            return View("Views/Home/Index.cshtml", genres);
+            return View("Views/Genre/Index.cshtml", genres);
         }
 
         [AllowAnonymous]

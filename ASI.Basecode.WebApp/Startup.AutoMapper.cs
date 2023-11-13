@@ -2,7 +2,9 @@
 using ASI.Basecode.Services.ServiceModels;
 using AutoMapper;
 using Basecode.Data.ViewModels;
+using Humanizer;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace ASI.Basecode.WebApp
 {
@@ -29,6 +31,8 @@ namespace ASI.Basecode.WebApp
             public AutoMapperProfileConfiguration()
             {
                 CreateMap<UserViewModel, User>();
+                CreateMap<GenreViewModel, Genre>().ReverseMap();
+                CreateMap<BookViewModel, Book>().ReverseMap();
             }
         }
     }
