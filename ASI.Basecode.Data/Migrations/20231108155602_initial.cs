@@ -10,30 +10,14 @@ namespace ASI.Basecode.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Authors",
-                columns: table => new
-                {
-                    authorId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    authorFirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    authorLastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedTime = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Authors", x => x.authorId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Books",
                 columns: table => new
                 {
                     bookId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     synopsis = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    pubYear = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    author = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    pubYear = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     publisher = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     isbn = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     language = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -82,31 +66,6 @@ namespace ASI.Basecode.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Authored_Books",
-                columns: table => new
-                {
-                    bookId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    authorId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Authored_Books", x => new { x.bookId, x.authorId });
-                    table.ForeignKey(
-                        name: "FK_Authored_Books_Authors_authorId",
-                        column: x => x.authorId,
-                        principalTable: "Authors",
-                        principalColumn: "authorId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Authored_Books_Books_bookId",
-                        column: x => x.bookId,
-                        principalTable: "Books",
-                        principalColumn: "bookId",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -164,27 +123,15 @@ namespace ASI.Basecode.Data.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Authors",
-                columns: new[] { "authorId", "CreatedBy", "CreatedTime", "UpdatedBy", "UpdatedTime", "authorFirstName", "authorLastName" },
-                values: new object[,]
-                {
-                    { "1", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "John", "Doe" },
-                    { "2", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Jane", "Smith" },
-                    { "3", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Robert", "Johnson" },
-                    { "4", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Emily", "Williams" },
-                    { "5", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "David", "Brown" }
-                });
-
-            migrationBuilder.InsertData(
                 table: "Books",
-                columns: new[] { "bookId", "CreatedBy", "CreatedTime", "UpdatedBy", "UpdatedTime", "image", "isbn", "language", "pubYear", "publisher", "synopsis", "title" },
+                columns: new[] { "bookId", "CreatedBy", "CreatedTime", "UpdatedBy", "UpdatedTime", "author", "image", "isbn", "language", "pubYear", "publisher", "synopsis", "title" },
                 values: new object[,]
                 {
-                    { "1", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ISBN-1", "English", new DateTime(2023, 11, 4, 0, 18, 23, 940, DateTimeKind.Local).AddTicks(7117), "Publisher 1", "Synopsis 1", "Book 1" },
-                    { "2", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ISBN-2", "French", new DateTime(2023, 11, 4, 0, 18, 23, 940, DateTimeKind.Local).AddTicks(7130), "Publisher 2", "Synopsis 2", "Book 2" },
-                    { "3", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ISBN-3", "Spanish", new DateTime(2023, 11, 4, 0, 18, 23, 940, DateTimeKind.Local).AddTicks(7132), "Publisher 3", "Synopsis 3", "Book 3" },
-                    { "4", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ISBN-4", "German", new DateTime(2023, 11, 4, 0, 18, 23, 940, DateTimeKind.Local).AddTicks(7134), "Publisher 4", "Synopsis 4", "Book 4" },
-                    { "5", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "ISBN-5", "Italian", new DateTime(2023, 11, 4, 0, 18, 23, 940, DateTimeKind.Local).AddTicks(7135), "Publisher 5", "Synopsis 5", "Book 5" }
+                    { "1", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, "ISBN-1", "English", "2000", "Publisher 1", "Synopsis 1", "Book 1" },
+                    { "2", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, "ISBN-2", "French", "2000", "Publisher 2", "Synopsis 2", "Book 2" },
+                    { "3", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, "ISBN-3", "Spanish", "2000", "Publisher 3", "Synopsis 3", "Book 3" },
+                    { "4", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, "ISBN-4", "German", "2000", "Publisher 4", "Synopsis 4", "Book 4" },
+                    { "5", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, "ISBN-5", "Italian", "2000", "Publisher 5", "Synopsis 5", "Book 5" }
                 });
 
             migrationBuilder.InsertData(
@@ -200,18 +147,6 @@ namespace ASI.Basecode.Data.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Authored_Books",
-                columns: new[] { "authorId", "bookId", "Id" },
-                values: new object[,]
-                {
-                    { "1", "1", 0 },
-                    { "2", "2", 0 },
-                    { "3", "3", 0 },
-                    { "4", "4", 0 },
-                    { "5", "5", 0 }
-                });
-
-            migrationBuilder.InsertData(
                 table: "Book_Genres",
                 columns: new[] { "bookId", "genreId", "Id" },
                 values: new object[,]
@@ -222,11 +157,6 @@ namespace ASI.Basecode.Data.Migrations
                     { "4", "4", 0 },
                     { "5", "5", 0 }
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Authored_Books_authorId",
-                table: "Authored_Books",
-                column: "authorId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Book_Genres_genreId",
@@ -253,9 +183,6 @@ namespace ASI.Basecode.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Authored_Books");
-
-            migrationBuilder.DropTable(
                 name: "Book_Genres");
 
             migrationBuilder.DropTable(
@@ -263,9 +190,6 @@ namespace ASI.Basecode.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Users");
-
-            migrationBuilder.DropTable(
-                name: "Authors");
 
             migrationBuilder.DropTable(
                 name: "Genres");

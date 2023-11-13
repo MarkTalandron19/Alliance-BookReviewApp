@@ -9,7 +9,7 @@ namespace ASI.Basecode.Data.Models
         public string title { get; set; }
         public string synopsis { get; set; }
         public string author { get; set; }
-        public int pubYear { get; set; }
+        public string pubYear { get; set; }
         public string publisher { get; set; }
         public string isbn { get; set; }
         public string language { get; set; }

@@ -159,7 +159,7 @@ namespace ASI.Basecode.Data
                         bookId = "1",
                         title = "Book 1",
                         synopsis = "Synopsis 1",
-                        pubYear = 2000,
+                        pubYear = "2000",
                         publisher = "Publisher 1",
                         isbn = "ISBN-1",
                         language = "English"
@@ -169,7 +169,7 @@ namespace ASI.Basecode.Data
                         bookId = "2",
                         title = "Book 2",
                         synopsis = "Synopsis 2",
-                        pubYear = 2000,
+                        pubYear = "2000",
                         publisher = "Publisher 2",
                         isbn = "ISBN-2",
                         language = "French"
@@ -179,7 +179,7 @@ namespace ASI.Basecode.Data
                         bookId = "3",
                         title = "Book 3",
                         synopsis = "Synopsis 3",
-                        pubYear = 2000,
+                        pubYear = "2000",
                         publisher = "Publisher 3",
                         isbn = "ISBN-3",
                         language = "Spanish"
@@ -189,7 +189,7 @@ namespace ASI.Basecode.Data
                         bookId = "4",
                         title = "Book 4",
                         synopsis = "Synopsis 4",
-                        pubYear = 2000,
+                        pubYear = "2000",
                         publisher = "Publisher 4",
                         isbn = "ISBN-4",
                         language = "German"
@@ -199,7 +199,7 @@ namespace ASI.Basecode.Data
                         bookId = "5",
                         title = "Book 5",
                         synopsis = "Synopsis 5",
-                        pubYear = 2000,
+                        pubYear = "2000",
                         publisher = "Publisher 5",
                         isbn = "ISBN-5",
                         language = "Italian"

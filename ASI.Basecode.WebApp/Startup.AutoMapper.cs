@@ -28,7 +28,7 @@ namespace ASI.Basecode.WebApp
             {
                 CreateMap<UserViewModel, User>();
                 CreateMap<GenreViewModel, Genre>().ReverseMap();
-                CreateMap<BookViewModel, Book>().ForMember(dest => dest.pubYear, opt => opt.MapFrom(src => new DateTime(src.pubYear.Year, src.pubYear.Month, src.pubYear.Day))).ReverseMap();
+                CreateMap<BookViewModel, Book>();
             }
         }
     }

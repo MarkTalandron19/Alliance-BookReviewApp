@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASI.Basecode.Data.Migrations
 {
     [DbContext(typeof(AsiBasecodeDBContext))]
-    [Migration("20231103161824_initial")]
+    [Migration("20231108155602_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,128 +23,6 @@ namespace ASI.Basecode.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("ASI.Basecode.Data.Models.Author", b =>
-                {
-                    b.Property<string>("authorId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("authorFirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("authorLastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("authorId");
-
-                    b.ToTable("Authors");
-
-                    b.HasData(
-                        new
-                        {
-                            authorId = "1",
-                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            authorFirstName = "John",
-                            authorLastName = "Doe"
-                        },
-                        new
-                        {
-                            authorId = "2",
-                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            authorFirstName = "Jane",
-                            authorLastName = "Smith"
-                        },
-                        new
-                        {
-                            authorId = "3",
-                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            authorFirstName = "Robert",
-                            authorLastName = "Johnson"
-                        },
-                        new
-                        {
-                            authorId = "4",
-                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            authorFirstName = "Emily",
-                            authorLastName = "Williams"
-                        },
-                        new
-                        {
-                            authorId = "5",
-                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            authorFirstName = "David",
-                            authorLastName = "Brown"
-                        });
-                });
-
-            modelBuilder.Entity("ASI.Basecode.Data.Models.AuthoredBooks", b =>
-                {
-                    b.Property<string>("bookId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("authorId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.HasKey("bookId", "authorId");
-
-                    b.HasIndex("authorId");
-
-                    b.ToTable("Authored_Books");
-
-                    b.HasData(
-                        new
-                        {
-                            bookId = "1",
-                            authorId = "1",
-                            Id = 0
-                        },
-                        new
-                        {
-                            bookId = "2",
-                            authorId = "2",
-                            Id = 0
-                        },
-                        new
-                        {
-                            bookId = "3",
-                            authorId = "3",
-                            Id = 0
-                        },
-                        new
-                        {
-                            bookId = "4",
-                            authorId = "4",
-                            Id = 0
-                        },
-                        new
-                        {
-                            bookId = "5",
-                            authorId = "5",
-                            Id = 0
-                        });
-                });
 
             modelBuilder.Entity("ASI.Basecode.Data.Models.Book", b =>
                 {
@@ -163,6 +41,9 @@ namespace ASI.Basecode.Data.Migrations
                     b.Property<DateTime>("UpdatedTime")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("author")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<byte[]>("image")
                         .HasColumnType("varbinary(max)");
 
@@ -174,8 +55,9 @@ namespace ASI.Basecode.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("pubYear")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("pubYear")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("publisher")
                         .IsRequired()
@@ -201,7 +83,7 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-1",
                             language = "English",
-                            pubYear = new DateTime(2023, 11, 4, 0, 18, 23, 940, DateTimeKind.Local).AddTicks(7117),
+                            pubYear = "2000",
                             publisher = "Publisher 1",
                             synopsis = "Synopsis 1",
                             title = "Book 1"
@@ -213,7 +95,7 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-2",
                             language = "French",
-                            pubYear = new DateTime(2023, 11, 4, 0, 18, 23, 940, DateTimeKind.Local).AddTicks(7130),
+                            pubYear = "2000",
                             publisher = "Publisher 2",
                             synopsis = "Synopsis 2",
                             title = "Book 2"
@@ -225,7 +107,7 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-3",
                             language = "Spanish",
-                            pubYear = new DateTime(2023, 11, 4, 0, 18, 23, 940, DateTimeKind.Local).AddTicks(7132),
+                            pubYear = "2000",
                             publisher = "Publisher 3",
                             synopsis = "Synopsis 3",
                             title = "Book 3"
@@ -237,7 +119,7 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-4",
                             language = "German",
-                            pubYear = new DateTime(2023, 11, 4, 0, 18, 23, 940, DateTimeKind.Local).AddTicks(7134),
+                            pubYear = "2000",
                             publisher = "Publisher 4",
                             synopsis = "Synopsis 4",
                             title = "Book 4"
@@ -249,7 +131,7 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-5",
                             language = "Italian",
-                            pubYear = new DateTime(2023, 11, 4, 0, 18, 23, 940, DateTimeKind.Local).AddTicks(7135),
+                            pubYear = "2000",
                             publisher = "Publisher 5",
                             synopsis = "Synopsis 5",
                             title = "Book 5"
@@ -480,25 +362,6 @@ namespace ASI.Basecode.Data.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("ASI.Basecode.Data.Models.AuthoredBooks", b =>
-                {
-                    b.HasOne("ASI.Basecode.Data.Models.Author", "author")
-                        .WithMany("AuthoredBooks")
-                        .HasForeignKey("authorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ASI.Basecode.Data.Models.Book", "book")
-                        .WithMany("AuthoredBooks")
-                        .HasForeignKey("bookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("author");
-
-                    b.Navigation("book");
-                });
-
             modelBuilder.Entity("ASI.Basecode.Data.Models.BookGenres", b =>
                 {
                     b.HasOne("ASI.Basecode.Data.Models.Book", "book")
@@ -531,15 +394,8 @@ namespace ASI.Basecode.Data.Migrations
                     b.Navigation("book");
                 });
 
-            modelBuilder.Entity("ASI.Basecode.Data.Models.Author", b =>
-                {
-                    b.Navigation("AuthoredBooks");
-                });
-
             modelBuilder.Entity("ASI.Basecode.Data.Models.Book", b =>
                 {
-                    b.Navigation("AuthoredBooks");
-
                     b.Navigation("BookGenres");
                 });
 

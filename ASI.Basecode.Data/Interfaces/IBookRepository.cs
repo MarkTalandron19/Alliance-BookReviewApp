@@ -12,9 +12,10 @@ namespace ASI.Basecode.Data.Interfaces
         IQueryable<Book> GetBooks();
         Task<Book> GetBookById(string bookId);
         IQueryable<Genre> GetGenresOfBook(string bookId);
-        void AddBook(Book book, List<Genre> genres);
+        void AddBook(Book book);
         void UpdateBook(Book update);
         void DeleteBook(string bookId);
         bool BookExists(string bookId);
+        void RemoveBookGenresForBook(string bookId);
     }
 }

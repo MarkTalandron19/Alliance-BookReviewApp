@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ASI.Basecode.Data.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -28,7 +29,7 @@ namespace ASI.Basecode.Services.ServiceModels
 
         [JsonPropertyName("pubYear")]
         [Required(ErrorMessage = "Publishing year is required.")]
-        public int pubYear { get; set; }
+        public string pubYear { get; set; }
 
         [JsonPropertyName("publisher")]
         [Required(ErrorMessage = "Publisher is required.")]
@@ -41,5 +42,10 @@ namespace ASI.Basecode.Services.ServiceModels
         [JsonPropertyName("language")]
         [Required(ErrorMessage = "Book language is required.")]
         public string language { get; set; }
+
+        [JsonPropertyName("genre")]
+        [Required(ErrorMessage = "Genre is required.")]
+        public string genre { get; set; }
+
     }
 }
