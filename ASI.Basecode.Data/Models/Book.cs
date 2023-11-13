@@ -19,5 +19,6 @@ namespace ASI.Basecode.Data.Models
         public string UpdatedBy { get; set; }
         public DateTime UpdatedTime { get; set; }
         public ICollection<BookGenres> BookGenres { get; set; }
+        public ICollection<Review> Reviews { get; set; }
     }
 }

@@ -102,5 +102,11 @@ namespace ASI.Basecode.WebApp.Controllers
                 return NotFound();
             }
         }
+
+        [AllowAnonymous]
+        public IActionResult SignOutUser()
+        {
+            return RedirectToAction("Login", "Account");
+        }
     }
 }
