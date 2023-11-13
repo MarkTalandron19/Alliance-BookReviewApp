@@ -1,5 +1,6 @@
 ﻿using ASI.Basecode.Data;
 using ASI.Basecode.Data.Interfaces;
+using ASI.Basecode.Data.Models;
 using ASI.Basecode.Data.Repositories;
 using ASI.Basecode.Resources.Constants;
 using ASI.Basecode.Services.Interfaces;
@@ -11,6 +12,7 @@ using ASI.Basecode.WebApp.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,6 +26,60 @@ using System.Text;
 
 namespace ASI.Basecode.WebApp
 {
+    public partial class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            this.ConfigureDependencies(services);       // Configuration for dependency injections           
+            this.ConfigureDatabase(services);           // Configuration for database connections
+            this.ConfigureMapper(services);             // Configuration for entity model and view model mapping
+            this.ConfigureCors(services);               // Configuration for CORS
+            this.ConfigureAuth(services);               // Configuration for Authentication logic
+            this.ConfigureMVC(services);                // Configuration for MVC                  
+            this.ConfigureSession(services);
+
+            // Add services to the container.
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            services.AddMvc(options => options.EnableEndpointRouting = false);
+
+            //services.AddLogging(x => x.AddConfiguration(Configuration.GetLoggingSection()).AddConsole().AddDebug());
+            PathManager.Setup(this.Configuration.GetSetupRootDirectoryPath());
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");     // Enables site to redirect to page when an exception occurs
+                app.UseHsts();                              // Enables the Strict-Transport-Security header.
+            }
+
+            this.ConfigureLogger(app, env);
+            app.UseStaticFiles();           // Enables the use of static files
+            app.UseHttpsRedirection();      // Enables redirection of HTTP to HTTPS requests.
+            app.UseCors("CorsPolicy");      // Enables CORS                              
+            app.UseRouting();
+            app.UseAuthentication();        // Enables the ConfigureAuth service.
+            app.UseMvc();
+            app.UseAuthorization();
+
+            this.ConfigureRoutes(app);      // Configuration for API controller routing
+            this.ConfigureAuth(app);        // Configuration for Token Authentication
+        }
+    }
     /// <summary>
     /// For configuring services on application startup.
     /// </summary>
@@ -97,6 +153,8 @@ namespace ASI.Basecode.WebApp
             services.AddControllersWithViews();
             services.AddRazorPages().AddRazorRuntimeCompilation();
 
+            services.AddHttpContextAccessor();
+
             //Configuration
             services.Configure<TokenAuthentication>(Configuration.GetSection("TokenAuthentication"));
             
@@ -107,7 +165,7 @@ namespace ASI.Basecode.WebApp
             });
 
             // DI Services AutoMapper(Add Profile)
-            this.ConfigureAutoMapper();
+            //this.ConfigureAutoMapper();
 
             // DI Services
             this.ConfigureOtherServices();
@@ -124,18 +182,14 @@ namespace ASI.Basecode.WebApp
                 new PhysicalFileProvider(
                     Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));
 
-            services.AddScoped<IAuthorRepository, AuthorRepository>();
             services.AddScoped<IBookRepository, BookRepository>();
             services.AddScoped<IReviewRepository, ReviewRepository>();
             services.AddScoped<IGenreRepository, GenreRepository>();
 
-            services.AddScoped<IAuthorService, AuthorService>();
             services.AddScoped<IBookService, BookService>();
             services.AddScoped<IReviewService, ReviewService>();
             services.AddScoped<IGenreService, GenreService>();
-
         }
-
 
         /// <summary>
         /// Configure application
@@ -152,7 +206,7 @@ namespace ASI.Basecode.WebApp
                 this._app.UseHsts();
             }
 
-            this.ConfigureLogger();
+            //this.ConfigureLogger();
 
             this._app.UseTokenProvider(_tokenProviderOptions);
 

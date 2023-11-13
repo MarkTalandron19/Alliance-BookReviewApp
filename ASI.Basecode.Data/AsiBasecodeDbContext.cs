@@ -1,31 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using ASI.Basecode.Data.Models;
+using Microsoft.AspNetCore.Identity;
+using System.Linq;
 
 namespace ASI.Basecode.Data
 {
-    public partial class AsiBasecodeDBContext : DbContext
+    public partial class AsiBasecodeDBContext : IdentityDbContext<IdentityUser>
     {
-        public AsiBasecodeDBContext()
-        {
-        }
-
         public AsiBasecodeDBContext(DbContextOptions<AsiBasecodeDBContext> options)
             : base(options)
         {
         }
 
-        public virtual DbSet<User> Users { get; set; }
+        public void InsertNew(RefreshToken token)
+        {
+            var tokenModel = RefreshToken.SingleOrDefault(i => i.Username == token.Username);
+            if (tokenModel != null)
+            {
+                RefreshToken.Remove(tokenModel);
+                SaveChanges();
+            }
+            RefreshToken.Add(token);
+            SaveChanges();
+        }
+
+        public virtual DbSet<User> Users {  get; set; }
+        public virtual DbSet<RefreshToken> RefreshToken { get; set; }
         public virtual DbSet<Book> Books { get; set; }
-        public virtual DbSet<Author> Authors { get; set; }
-        public virtual DbSet<AuthoredBooks> Authored_Books { get; set; }
         public virtual DbSet<Review> Reviews { get; set; }
         public virtual DbSet<Genre> Genres { get; set; }
         public virtual DbSet<BookGenres> Book_Genres { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<IdentityUser>(entity =>
+            {
+                entity.ToTable("AspNetUsers"); 
+            });
+
             modelBuilder.Entity<User>(entity =>
             {
                 entity.HasIndex(e => e.UserId, "UQ__Users__1788CC4D5F4A160F")
@@ -91,36 +106,9 @@ namespace ASI.Basecode.Data
                 entity.Property(e => e.dateReviewed)
                     .IsRequired();
 
-                entity.HasOne<Book>()
-                    .WithMany()
+                entity.HasOne(e => e.book)
+                    .WithMany(b => b.Reviews)
                     .HasForeignKey(e => e.bookId);
-            });
-
-            modelBuilder.Entity<Author>(entity =>
-            {
-                entity.HasKey(e => e.authorId);
-
-                entity.Property(e => e.authorFirstName)
-                    .IsRequired();
-
-                entity.Property(e => e.authorLastName)
-                    .IsRequired();
-
-                entity.Property(e => e.CreatedBy);
-
-                entity.Property(e => e.CreatedTime);
-
-                entity.Property(e => e.UpdatedBy);
-
-                entity.Property(e => e.UpdatedTime);
-
-                modelBuilder.Entity<Author>().HasData(
-                    new Author { authorId = "1", authorFirstName = "John", authorLastName = "Doe" },
-                    new Author { authorId = "2", authorFirstName = "Jane", authorLastName = "Smith" },
-                    new Author { authorId = "3", authorFirstName = "Robert", authorLastName = "Johnson" },
-                    new Author { authorId = "4", authorFirstName = "Emily", authorLastName = "Williams" },
-                    new Author { authorId = "5", authorFirstName = "David", authorLastName = "Brown" }
-                );
             });
 
             modelBuilder.Entity<Genre>(entity =>
@@ -188,7 +176,7 @@ namespace ASI.Basecode.Data
                         bookId = "1",
                         title = "Book 1",
                         synopsis = "Synopsis 1",
-                        pubYear = DateTime.Now,
+                        pubYear = 2000,
                         publisher = "Publisher 1",
                         isbn = "ISBN-1",
                         language = "English"
@@ -198,7 +186,7 @@ namespace ASI.Basecode.Data
                         bookId = "2",
                         title = "Book 2",
                         synopsis = "Synopsis 2",
-                        pubYear = DateTime.Now,
+                        pubYear = 2000,
                         publisher = "Publisher 2",
                         isbn = "ISBN-2",
                         language = "French"
@@ -208,7 +196,7 @@ namespace ASI.Basecode.Data
                         bookId = "3",
                         title = "Book 3",
                         synopsis = "Synopsis 3",
-                        pubYear = DateTime.Now,
+                        pubYear = 2000,
                         publisher = "Publisher 3",
                         isbn = "ISBN-3",
                         language = "Spanish"
@@ -218,7 +206,7 @@ namespace ASI.Basecode.Data
                         bookId = "4",
                         title = "Book 4",
                         synopsis = "Synopsis 4",
-                        pubYear = DateTime.Now,
+                        pubYear = 2000,
                         publisher = "Publisher 4",
                         isbn = "ISBN-4",
                         language = "German"
@@ -228,32 +216,11 @@ namespace ASI.Basecode.Data
                         bookId = "5",
                         title = "Book 5",
                         synopsis = "Synopsis 5",
-                        pubYear = DateTime.Now,
+                        pubYear = 2000,
                         publisher = "Publisher 5",
                         isbn = "ISBN-5",
                         language = "Italian"
                     }
-                );
-            });
-
-            modelBuilder.Entity<AuthoredBooks>(entity =>
-            {
-                entity.HasKey(e => new { e.bookId, e.authorId });
-
-                entity.HasOne(ab => ab.book)
-                    .WithMany(b => b.AuthoredBooks)
-                    .HasForeignKey(e => e.bookId);
-
-                entity.HasOne(ab => ab.author)
-                    .WithMany(a => a.AuthoredBooks)
-                    .HasForeignKey(e => e.authorId);
-
-                entity.HasData(
-                    new AuthoredBooks { bookId = "1", authorId = "1" },
-                    new AuthoredBooks { bookId = "2", authorId = "2" },
-                    new AuthoredBooks { bookId = "3", authorId = "3" },
-                    new AuthoredBooks { bookId = "4", authorId = "4" },
-                    new AuthoredBooks { bookId = "5", authorId = "5" }
                 );
             });
 
@@ -276,6 +243,21 @@ namespace ASI.Basecode.Data
                     new BookGenres { bookId = "4", genreId = "4" },
                     new BookGenres { bookId = "5", genreId = "5" }
                 );
+            });
+
+            modelBuilder.Entity<IdentityUserLogin<string>>(entity =>
+            {
+                entity.HasKey(e => new { e.LoginProvider, e.ProviderKey });
+            });
+
+            modelBuilder.Entity<IdentityUserRole<string>>(entity =>
+            {
+                entity.HasKey(e => new { e.UserId, e.RoleId });
+            });
+
+            modelBuilder.Entity<IdentityUserToken<string>>(entity =>
+            {
+                entity.HasKey(e => new { e.UserId, e.LoginProvider, e.Name });
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -77,7 +77,8 @@ namespace ASI.Basecode.WebApp.Controllers
 
         public IActionResult GenreList() 
         {
-            return View();
+            var genres = _genreService.GetGenres();
+            return View("Views/Home/Index.cshtml", genres);
         }
 
         [AllowAnonymous]
