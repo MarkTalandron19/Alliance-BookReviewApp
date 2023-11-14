@@ -13,7 +13,7 @@ namespace ASI.Basecode.Services.Interfaces
         IQueryable<Book> GetBooks();
         Task<Book> GetBookById(string bookId);
         IQueryable<Genre> GetGenresOfBook(string bookId);
-        void AddBook(BookViewModel model, List<Genre> genres);
+        void AddBook(BookViewModel model);
         void UpdateBook(BookViewModel update);
         void DeleteBook(string bookId);
     }

@@ -1,22 +1,32 @@
 {
   "Version": 1,
+<<<<<<< HEAD
+  "Hash": "ohUk0cRrjgqkKlgUk4ChclK5iZW7nARVe/k20h+VqyY=",
+  "Source": "ASI.Basecpde.WebApp",
+  "BasePath": "_content/ASI.Basecpde.WebApp",
+=======
   "Hash": "mmt2T1nmf05/V6xUmODEUpUjSX+RoGahtYKUxaM7QvY=",
   "Source": "ASI.Basecode.WebApp",
   "BasePath": "_content/ASI.Basecode.WebApp",
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "ASI.Basecode.WebApp\\wwwroot",
-      "Source": "ASI.Basecode.WebApp",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "Name": "ASI.Basecpde.WebApp\\wwwroot",
+      "Source": "ASI.Basecpde.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
+<<<<<<< HEAD
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\admindashboard.css",
+      "SourceId": "ASI.Basecpde.WebApp",
+=======
       "Identity": "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.13\\staticwebassets\\V5\\css\\site.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
@@ -1039,9 +1049,10 @@
     {
       "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\admindashboard.css",
       "SourceId": "ASI.Basecode.WebApp",
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "css/admindashboard.css",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1054,6 +1065,10 @@
       "OriginalItemSpec": "wwwroot\\css\\admindashboard.css"
     },
     {
+<<<<<<< HEAD
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\login.css",
+      "SourceId": "ASI.Basecpde.WebApp",
+=======
       "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\homepage.css",
       "SourceId": "ASI.Basecode.WebApp",
       "SourceType": "Discovered",
@@ -1073,9 +1088,10 @@
     {
       "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\login.css",
       "SourceId": "ASI.Basecode.WebApp",
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "css/login.css",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1088,11 +1104,11 @@
       "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\main.css",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\main.css",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "css/main.css",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1105,11 +1121,11 @@
       "OriginalItemSpec": "wwwroot\\css\\main.css"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\site.css",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\site.css",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1122,11 +1138,11 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\style.css",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\style.css",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "css/style.css",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1139,6 +1155,10 @@
       "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
+<<<<<<< HEAD
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\favicon.ico",
+      "SourceId": "ASI.Basecpde.WebApp",
+=======
       "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\userbookcatalog.css",
       "SourceId": "ASI.Basecode.WebApp",
       "SourceType": "Discovered",
@@ -1158,9 +1178,10 @@
     {
       "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\favicon.ico",
       "SourceId": "ASI.Basecode.WebApp",
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1173,11 +1194,11 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\fonts\\roboto.css",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\fonts\\roboto.css",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "fonts/roboto.css",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1190,11 +1211,11 @@
       "OriginalItemSpec": "wwwroot\\fonts\\roboto.css"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\html\\assets\\js\\plugins\\jquery-slimscroll\\jquery.slimscroll.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\html\\assets\\js\\plugins\\jquery-slimscroll\\jquery.slimscroll.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "html/assets/js/plugins/jquery-slimscroll/jquery.slimscroll.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1207,11 +1228,11 @@
       "OriginalItemSpec": "wwwroot\\html\\assets\\js\\plugins\\jquery-slimscroll\\jquery.slimscroll.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\html\\assets\\js\\plugins\\jquery-slimscroll\\jquery.slimscroll.min.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\html\\assets\\js\\plugins\\jquery-slimscroll\\jquery.slimscroll.min.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "html/assets/js/plugins/jquery-slimscroll/jquery.slimscroll.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1224,11 +1245,11 @@
       "OriginalItemSpec": "wwwroot\\html\\assets\\js\\plugins\\jquery-slimscroll\\jquery.slimscroll.min.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\asi-logo-invert.svg",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\asi-logo-invert.svg",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "img/asi-logo-invert.svg",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1241,11 +1262,11 @@
       "OriginalItemSpec": "wwwroot\\img\\asi-logo-invert.svg"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\bibliobibuli edited.jpg",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\bibliobibuli edited.jpg",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "img/bibliobibuli edited.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1258,6 +1279,10 @@
       "OriginalItemSpec": "wwwroot\\img\\bibliobibuli edited.jpg"
     },
     {
+<<<<<<< HEAD
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\booklist-icon.png",
+      "SourceId": "ASI.Basecpde.WebApp",
+=======
       "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\bibliobibuli logo 2.png",
       "SourceId": "ASI.Basecode.WebApp",
       "SourceType": "Discovered",
@@ -1328,9 +1353,10 @@
     {
       "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\booklist-icon.png",
       "SourceId": "ASI.Basecode.WebApp",
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "img/booklist-icon.png",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1343,6 +1369,10 @@
       "OriginalItemSpec": "wwwroot\\img\\booklist-icon.png"
     },
     {
+<<<<<<< HEAD
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\dashboard-icon.png",
+      "SourceId": "ASI.Basecpde.WebApp",
+=======
       "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\contact section.png",
       "SourceId": "ASI.Basecode.WebApp",
       "SourceType": "Discovered",
@@ -1362,9 +1392,10 @@
     {
       "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\dashboard-icon.png",
       "SourceId": "ASI.Basecode.WebApp",
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "img/dashboard-icon.png",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1377,11 +1408,11 @@
       "OriginalItemSpec": "wwwroot\\img\\dashboard-icon.png"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\Group 42.png",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\Group 42.png",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "img/Group 42.png",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1394,11 +1425,11 @@
       "OriginalItemSpec": "wwwroot\\img\\Group 42.png"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\lines 1.png",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\lines 1.png",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "img/lines 1.png",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1411,6 +1442,10 @@
       "OriginalItemSpec": "wwwroot\\img\\lines 1.png"
     },
     {
+<<<<<<< HEAD
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\LiveIT.png",
+      "SourceId": "ASI.Basecpde.WebApp",
+=======
       "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\lines 2.png",
       "SourceId": "ASI.Basecode.WebApp",
       "SourceType": "Discovered",
@@ -1447,9 +1482,10 @@
     {
       "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\LiveIT.png",
       "SourceId": "ASI.Basecode.WebApp",
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "img/LiveIT.png",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1462,11 +1498,11 @@
       "OriginalItemSpec": "wwwroot\\img\\LiveIT.png"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\logo-leftaligned.png",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\logo-leftaligned.png",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "img/logo-leftaligned.png",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1479,11 +1515,11 @@
       "OriginalItemSpec": "wwwroot\\img\\logo-leftaligned.png"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\logout-icon.png",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\logout-icon.png",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "img/logout-icon.png",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1496,11 +1532,11 @@
       "OriginalItemSpec": "wwwroot\\img\\logout-icon.png"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\profile-logo.png",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\profile-logo.png",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "img/profile-logo.png",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1513,11 +1549,11 @@
       "OriginalItemSpec": "wwwroot\\img\\profile-logo.png"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\Book.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\Book.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "js/Book.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1530,11 +1566,11 @@
       "OriginalItemSpec": "wwwroot\\js\\Book.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\Genre.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\Genre.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "js/Genre.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1547,11 +1583,11 @@
       "OriginalItemSpec": "wwwroot\\js\\Genre.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\site.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\site.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1564,11 +1600,11 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1581,11 +1617,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1598,11 +1634,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1615,11 +1651,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1632,11 +1668,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1649,11 +1685,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1666,11 +1702,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1683,11 +1719,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1700,11 +1736,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1717,11 +1753,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1734,11 +1770,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1751,11 +1787,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1768,11 +1804,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1785,11 +1821,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1802,11 +1838,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1819,11 +1855,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1836,11 +1872,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1853,11 +1889,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1870,11 +1906,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1887,11 +1923,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1904,11 +1940,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\LICENSE",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1921,11 +1957,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1938,11 +1974,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1955,11 +1991,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1972,11 +2008,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery\\LICENSE.txt",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -1989,11 +2025,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2006,11 +2042,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2023,11 +2059,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2040,11 +2076,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2057,11 +2093,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2074,11 +2110,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2091,11 +2127,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2108,11 +2144,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2125,11 +2161,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react\\dist\\react.development.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react\\dist\\react.development.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/react/dist/react.development.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2142,11 +2178,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\react\\dist\\react.development.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react\\dist\\react.production.min.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react\\dist\\react.production.min.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/react/dist/react.production.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2159,11 +2195,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\react\\dist\\react.production.min.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react\\dist\\react.profiling.min.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react\\dist\\react.profiling.min.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/react/dist/react.profiling.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2176,11 +2212,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\react\\dist\\react.profiling.min.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom.development.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom.development.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/react-dom/dist/react-dom.development.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2193,11 +2229,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\react-dom\\dist\\react-dom.development.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom.production.min.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom.production.min.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/react-dom/dist/react-dom.production.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2210,11 +2246,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\react-dom\\dist\\react-dom.production.min.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom.profiling.min.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom.profiling.min.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/react-dom/dist/react-dom.profiling.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2227,11 +2263,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\react-dom\\dist\\react-dom.profiling.min.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-server.browser.development.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-server.browser.development.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/react-dom/dist/react-dom-server.browser.development.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2244,11 +2280,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\react-dom\\dist\\react-dom-server.browser.development.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-server.browser.production.min.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-server.browser.production.min.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/react-dom/dist/react-dom-server.browser.production.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2261,11 +2297,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\react-dom\\dist\\react-dom-server.browser.production.min.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-test-utils.development.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-test-utils.development.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/react-dom/dist/react-dom-test-utils.development.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2278,11 +2314,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\react-dom\\dist\\react-dom-test-utils.development.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-test-utils.production.min.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-test-utils.production.min.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/react-dom/dist/react-dom-test-utils.production.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2295,11 +2331,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\react-dom\\dist\\react-dom-test-utils.production.min.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-unstable-fizz.browser.development.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-unstable-fizz.browser.development.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/react-dom/dist/react-dom-unstable-fizz.browser.development.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2312,11 +2348,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\react-dom\\dist\\react-dom-unstable-fizz.browser.development.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-unstable-fizz.browser.production.min.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-unstable-fizz.browser.production.min.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/react-dom/dist/react-dom-unstable-fizz.browser.production.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2329,11 +2365,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\react-dom\\dist\\react-dom-unstable-fizz.browser.production.min.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-unstable-native-dependencies.development.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-unstable-native-dependencies.development.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/react-dom/dist/react-dom-unstable-native-dependencies.development.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -2346,11 +2382,11 @@
       "OriginalItemSpec": "wwwroot\\lib\\react-dom\\dist\\react-dom-unstable-native-dependencies.development.js"
     },
     {
-      "Identity": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-unstable-native-dependencies.production.min.js",
-      "SourceId": "ASI.Basecode.WebApp",
+      "Identity": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\lib\\react-dom\\dist\\react-dom-unstable-native-dependencies.production.min.js",
+      "SourceId": "ASI.Basecpde.WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
-      "BasePath": "_content/ASI.Basecode.WebApp",
+      "ContentRoot": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\",
+      "BasePath": "_content/ASI.Basecpde.WebApp",
       "RelativePath": "lib/react-dom/dist/react-dom-unstable-native-dependencies.production.min.js",
       "AssetKind": "All",
       "AssetMode": "All",

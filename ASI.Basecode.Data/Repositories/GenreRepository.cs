@@ -33,8 +33,9 @@ namespace ASI.Basecode.Data.Repositories
 
         public void AddGenre(Genre genre)
         {
+            genre.description = "Default Description";
+            genre.genreId = Guid.NewGuid().ToString();
             this.GetDbSet<Genre>().Add(genre);
-            this.GetDbSet<Genre>();
             UnitOfWork.SaveChanges();
         }
 

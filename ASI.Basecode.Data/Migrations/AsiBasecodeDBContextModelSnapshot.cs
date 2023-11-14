@@ -20,7 +20,11 @@ namespace ASI.Basecode.Data.Migrations
                 .HasAnnotation("ProductVersion", "7.0.13")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
+<<<<<<< HEAD
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+=======
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
 
             modelBuilder.Entity("ASI.Basecode.Data.Models.Book", b =>
                 {
@@ -53,8 +57,14 @@ namespace ASI.Basecode.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+<<<<<<< HEAD
+                    b.Property<string>("pubYear")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+=======
                     b.Property<int>("pubYear")
                         .HasColumnType("int");
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
 
                     b.Property<string>("publisher")
                         .IsRequired()
@@ -80,7 +90,11 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-1",
                             language = "English",
+<<<<<<< HEAD
+                            pubYear = "2000",
+=======
                             pubYear = 2000,
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
                             publisher = "Publisher 1",
                             synopsis = "Synopsis 1",
                             title = "Book 1"
@@ -92,7 +106,11 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-2",
                             language = "French",
+<<<<<<< HEAD
+                            pubYear = "2000",
+=======
                             pubYear = 2000,
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
                             publisher = "Publisher 2",
                             synopsis = "Synopsis 2",
                             title = "Book 2"
@@ -104,7 +122,11 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-3",
                             language = "Spanish",
+<<<<<<< HEAD
+                            pubYear = "2000",
+=======
                             pubYear = 2000,
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
                             publisher = "Publisher 3",
                             synopsis = "Synopsis 3",
                             title = "Book 3"
@@ -116,7 +138,11 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-4",
                             language = "German",
+<<<<<<< HEAD
+                            pubYear = "2000",
+=======
                             pubYear = 2000,
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
                             publisher = "Publisher 4",
                             synopsis = "Synopsis 4",
                             title = "Book 4"
@@ -128,7 +154,11 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-5",
                             language = "Italian",
+<<<<<<< HEAD
+                            pubYear = "2000",
+=======
                             pubYear = 2000,
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
                             publisher = "Publisher 5",
                             synopsis = "Synopsis 5",
                             title = "Book 5"
@@ -382,6 +412,8 @@ namespace ASI.Basecode.Data.Migrations
                     b.ToTable("Users");
                 });
 
+<<<<<<< HEAD
+=======
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -548,6 +580,7 @@ namespace ASI.Basecode.Data.Migrations
                     b.ToTable("UserTokens");
                 });
 
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
             modelBuilder.Entity("ASI.Basecode.Data.Models.BookGenres", b =>
                 {
                     b.HasOne("ASI.Basecode.Data.Models.Book", "book")

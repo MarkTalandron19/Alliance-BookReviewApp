@@ -26,11 +26,10 @@ namespace ASI.Basecode.WebApp.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult AddBook(BookViewModel book, List<Genre> genres)
+        public IActionResult AddBook(BookViewModel book)
         {
             book.bookId = Guid.NewGuid().ToString();
-            _bookService.AddBook(book, genres);
-            _bookService.GetBooks();
+            _bookService.AddBook(book);
             return RedirectToAction("BookList", "Book");
         }
 
