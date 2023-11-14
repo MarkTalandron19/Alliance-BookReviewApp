@@ -25,7 +25,7 @@
                             </div>
                         </a>
                         <button class="leftmenu-items">
-                            <a asp-controller="Home" asp-action="Index" class="leftmenu-items">
+                            <a asp-controller="Genre" asp-action="Index" class="leftmenu-items">
                             <div class="leftmenu-item">
                                 <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
                                 Genre List
@@ -47,7 +47,7 @@
         <div class="admin-dashboard-list">
             <div class="admin-header">
                 <div class="logosec">
-                    Welcome, @HttpContextAccessor.HttpContext.Session.GetString("UserName")!
+                    @*Welcome, @HttpContextAccessor.HttpContext.Session.GetString("UserName")!*@
                     <div class="mr-20 hover-pointer" style="position: relative">
                         <div class="dp">
                             <img src="~/img/profile-logo.png"

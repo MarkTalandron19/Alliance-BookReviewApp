@@ -1,0 +1,299 @@
+﻿﻿body {
+    background-color: #FFFFFF;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    left: 0;
+}
+
+/* Navbar */
+.navbar {
+    height: 60px;
+    background-color: #E3E3E3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    padding-right: 100px;
+    justify-content: space-between;
+}
+
+    .navbar h1 {
+        color: #000000;
+        padding: 10px;
+    }
+
+.bibliobibuli-logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.navbar-right ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+    .navbar-right ul li a {
+        text-decoration: none;
+        transition: background-color 0.3s;
+        color: #000000;
+        padding: 20px;
+    }
+
+        .navbar-right ul li a:hover {
+            background: linear-gradient(to top, transparent 90%, #176B87);
+        }
+
+.dp {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        padding-left: 200px;
+    }
+}
+
+.body-two-section {
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    background-color: white;
+
+}
+
+/* Side Navbar */
+.sidenav {
+    width: 20%;
+    background: linear-gradient(to right, transparent 98%, #E3E3E3);
+    padding: 20px 10px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+    .sidenav h2 {
+        padding-top: 50px;
+        color: #000000;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .sidenav h3 {
+        color: #000000;
+        font-size: 24px;
+        text-align: left;
+    }
+
+    .sidenav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidenav li {
+        margin-bottom: 10px;
+    }
+
+    .sidenav a {
+        color: #AAAAAA;
+        text-decoration: none;
+    }
+
+    .sidenav li a {
+        transition: color 0.3s;
+    }
+
+    .sidenav a:hover {
+        color: #176B87;
+    }
+
+/* Content */
+.content {
+    position: relative;
+    top: 30px;
+    padding: 20px;
+    width: 80%;
+}
+
+    .content h1 {
+        display: flex;
+        align-items: center;
+        color: #000000;
+        font-weight: bold;
+    }
+
+.content-header-search {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+/* Search bar */
+.search-bar {
+    top: 60px;
+    right: 150px;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    background-color: #E3E3E3;
+    padding: 5px;
+    border-radius: 5px;
+    width: 400px;
+}
+
+    .search-bar input {
+        flex: 1;
+        border: none;
+        padding: 5px;
+        background: none;
+        outline: none;
+    }
+
+.search-icon {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.search-button {
+    background-color: #053B50;
+    color: #FFFFFF;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+}
+
+.searches-button {
+    z-index: 1;
+}
+
+.search-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*Second line*/
+.second-para {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.number-books-desc {
+    color: #C6C6C6;
+    margin-right: auto;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 0;
+}
+
+.dropdown-button {
+    background-color: #FFFFFF;
+    color: #053B50;
+    border: 1px solid #176B87;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #053B50;
+            color: #FFFFFF;
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Book List */
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+.book {
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 300px;
+    padding: 10px;
+}
+
+    .book img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+.book-grade {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.book-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.book-author {
+    font-size: 1rem;
+    color: #CCCCCC;
+}
+
+.book-genre {
+    font-size: 1rem;
+    color: #176B87;
+    font-weight: bold;
+}
+
+.book-rating {
+    font-size: 1rem;
+    color: #ffac33;
+}
+
+.book-reviews {
+    font-size: 1rem;
+    margin-left: 10px;
+    color: #555;
+}

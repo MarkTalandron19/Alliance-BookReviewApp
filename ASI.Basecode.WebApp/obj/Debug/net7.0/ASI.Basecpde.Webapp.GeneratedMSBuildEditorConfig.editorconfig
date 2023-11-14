@@ -16,12 +16,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.WebApp
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Account/CreateRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDcmVhdGVSb2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/BookDetail/BookDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0RldGFpbFxCb29rRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Book/BookList.cshtml]
@@ -44,24 +52,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xfRWRpdEJvb2tQb3B1cC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Error/Forbidden.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRm9yYmlkZGVuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Genre/GetBooksWithGenre.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VucmVcR2V0Qm9va3NXaXRoR2VucmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Genre/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VucmVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Home/_AddGenrePopup.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfQWRkR2VucmVQb3B1cC5jc2h0bWw=
+[C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Genre/_AddGenrePopup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VucmVcX0FkZEdlbnJlUG9wdXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Home/_DeleteGenrePopup.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfRGVsZXRlR2VucmVQb3B1cC5jc2h0bWw=
+[C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Genre/_DeleteGenrePopup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VucmVcX0RlbGV0ZUdlbnJlUG9wdXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Home/_EditGenrePopup.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfRWRpdEdlbnJlUG9wdXAuY3NodG1s
+[C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Genre/_EditGenrePopup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VucmVcX0VkaXRHZW5yZVBvcHVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Home/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Home/Library.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaWJyYXJ5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Shared/Error.cshtml]
@@ -74,6 +94,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Aloys/Documents/College 4th Year/Alliance/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Shared/_ValidationScriptsPartial.cshtml]

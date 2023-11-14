@@ -1,25 +1,29 @@
-﻿using AutoMapper;
-using ASI.Basecode.Data.Models;
+﻿using ASI.Basecode.Data.Models;
 using ASI.Basecode.Services.ServiceModels;
+using AutoMapper;
+using Basecode.Data.ViewModels;
+using Humanizer;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
 namespace ASI.Basecode.WebApp
 {
-    // AutoMapper configuration
-    internal partial class StartupConfigurer
+    public partial class Startup
     {
-        /// <summary>
-        /// Configure auto mapper
-        /// </summary>
-        private void ConfigureAutoMapper()
+        private void ConfigureMapper(IServiceCollection services)
         {
             var mapperConfiguration = new MapperConfiguration(config =>
             {
                 config.AddProfile(new AutoMapperProfileConfiguration());
             });
 
-            this._services.AddSingleton<IMapper>(sp => mapperConfiguration.CreateMapper());
+            services.AddSingleton<IMapper>(sp => mapperConfiguration.CreateMapper());
+            /*var Config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<JobOpening, JobOpeningViewModel>();
+            });
+
+            services.AddSingleton(Config.CreateMapper());*/
         }
 
         private class AutoMapperProfileConfiguration : Profile
@@ -28,7 +32,7 @@ namespace ASI.Basecode.WebApp
             {
                 CreateMap<UserViewModel, User>();
                 CreateMap<GenreViewModel, Genre>().ReverseMap();
-                CreateMap<BookViewModel, Book>();
+                CreateMap<BookViewModel, Book>().ReverseMap();
             }
         }
     }

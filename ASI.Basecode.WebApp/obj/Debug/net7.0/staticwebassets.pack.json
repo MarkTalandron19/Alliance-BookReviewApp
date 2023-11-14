@@ -5,7 +5,15 @@
       "PackagePath": "staticwebassets\\css\\admindashboard.css"
     },
     {
+<<<<<<< HEAD
       "Id": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\login.css",
+=======
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\homepage.css",
+      "PackagePath": "staticwebassets\\css\\homepage.css"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\login.css",
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
@@ -21,7 +29,15 @@
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
+<<<<<<< HEAD
       "Id": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\favicon.ico",
+=======
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\userbookcatalog.css",
+      "PackagePath": "staticwebassets\\css\\userbookcatalog.css"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\favicon.ico",
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
@@ -53,11 +69,39 @@
       "PackagePath": "staticwebassets\\img\\bibliobibuli edited.jpg"
     },
     {
+<<<<<<< HEAD
       "Id": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\booklist-icon.png",
       "PackagePath": "staticwebassets\\img\\booklist-icon.png"
     },
     {
       "Id": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\dashboard-icon.png",
+=======
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\bibliobibuli logo 2.png",
+      "PackagePath": "staticwebassets\\img\\bibliobibuli logo 2.png"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\bibliobibuli logo 3.png",
+      "PackagePath": "staticwebassets\\img\\bibliobibuli logo 3.png"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\book cover placeholder.jpg",
+      "PackagePath": "staticwebassets\\img\\book cover placeholder.jpg"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\book reading.png",
+      "PackagePath": "staticwebassets\\img\\book reading.png"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\booklist-icon.png",
+      "PackagePath": "staticwebassets\\img\\booklist-icon.png"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\contact section.png",
+      "PackagePath": "staticwebassets\\img\\contact section.png"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\dashboard-icon.png",
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
       "PackagePath": "staticwebassets\\img\\dashboard-icon.png"
     },
     {
@@ -65,7 +109,19 @@
       "PackagePath": "staticwebassets\\img\\lines 1.png"
     },
     {
+<<<<<<< HEAD
       "Id": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\logo-leftaligned.png",
+=======
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\lines 2.png",
+      "PackagePath": "staticwebassets\\img\\lines 2.png"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\lines 3.png",
+      "PackagePath": "staticwebassets\\img\\lines 3.png"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\logo-leftaligned.png",
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
       "PackagePath": "staticwebassets\\img\\logo-leftaligned.png"
     },
     {

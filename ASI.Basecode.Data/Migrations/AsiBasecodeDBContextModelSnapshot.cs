@@ -17,10 +17,14 @@ namespace ASI.Basecode.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.6")
+                .HasAnnotation("ProductVersion", "7.0.13")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
+<<<<<<< HEAD
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+=======
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
 
             modelBuilder.Entity("ASI.Basecode.Data.Models.Book", b =>
                 {
@@ -53,9 +57,14 @@ namespace ASI.Basecode.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+<<<<<<< HEAD
                     b.Property<string>("pubYear")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+=======
+                    b.Property<int>("pubYear")
+                        .HasColumnType("int");
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
 
                     b.Property<string>("publisher")
                         .IsRequired()
@@ -81,7 +90,11 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-1",
                             language = "English",
+<<<<<<< HEAD
                             pubYear = "2000",
+=======
+                            pubYear = 2000,
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
                             publisher = "Publisher 1",
                             synopsis = "Synopsis 1",
                             title = "Book 1"
@@ -93,7 +106,11 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-2",
                             language = "French",
+<<<<<<< HEAD
                             pubYear = "2000",
+=======
+                            pubYear = 2000,
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
                             publisher = "Publisher 2",
                             synopsis = "Synopsis 2",
                             title = "Book 2"
@@ -105,7 +122,11 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-3",
                             language = "Spanish",
+<<<<<<< HEAD
                             pubYear = "2000",
+=======
+                            pubYear = 2000,
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
                             publisher = "Publisher 3",
                             synopsis = "Synopsis 3",
                             title = "Book 3"
@@ -117,7 +138,11 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-4",
                             language = "German",
+<<<<<<< HEAD
                             pubYear = "2000",
+=======
+                            pubYear = 2000,
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
                             publisher = "Publisher 4",
                             synopsis = "Synopsis 4",
                             title = "Book 4"
@@ -129,7 +154,11 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-5",
                             language = "Italian",
+<<<<<<< HEAD
                             pubYear = "2000",
+=======
+                            pubYear = 2000,
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
                             publisher = "Publisher 5",
                             synopsis = "Synopsis 5",
                             title = "Book 5"
@@ -258,15 +287,37 @@ namespace ASI.Basecode.Data.Migrations
                         });
                 });
 
+            modelBuilder.Entity("ASI.Basecode.Data.Models.RefreshToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("ExpiresUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("IssuedUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Token")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RefreshToken");
+                });
+
             modelBuilder.Entity("ASI.Basecode.Data.Models.Review", b =>
                 {
                     b.Property<string>("reviewId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("bookId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("bookId1")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("content")
@@ -303,8 +354,6 @@ namespace ASI.Basecode.Data.Migrations
 
                     b.HasIndex("bookId");
 
-                    b.HasIndex("bookId1");
-
                     b.ToTable("Reviews");
                 });
 
@@ -314,7 +363,7 @@ namespace ASI.Basecode.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CreatedBy")
                         .IsRequired()
@@ -324,6 +373,9 @@ namespace ASI.Basecode.Data.Migrations
 
                     b.Property<DateTime>("CreatedTime")
                         .HasColumnType("datetime");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -360,6 +412,175 @@ namespace ASI.Basecode.Data.Migrations
                     b.ToTable("Users");
                 });
 
+<<<<<<< HEAD
+=======
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Roles");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RoleClaims");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserClaims");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.ToTable("UserLogins");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.ToTable("UserRoles");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("UserTokens");
+                });
+
+>>>>>>> 5a011ffe23568a5f62e3e44b00a9b397c0dc1594
             modelBuilder.Entity("ASI.Basecode.Data.Models.BookGenres", b =>
                 {
                     b.HasOne("ASI.Basecode.Data.Models.Book", "book")
@@ -381,13 +602,9 @@ namespace ASI.Basecode.Data.Migrations
 
             modelBuilder.Entity("ASI.Basecode.Data.Models.Review", b =>
                 {
-                    b.HasOne("ASI.Basecode.Data.Models.Book", null)
-                        .WithMany()
-                        .HasForeignKey("bookId");
-
                     b.HasOne("ASI.Basecode.Data.Models.Book", "book")
-                        .WithMany()
-                        .HasForeignKey("bookId1");
+                        .WithMany("Reviews")
+                        .HasForeignKey("bookId");
 
                     b.Navigation("book");
                 });
@@ -395,6 +612,8 @@ namespace ASI.Basecode.Data.Migrations
             modelBuilder.Entity("ASI.Basecode.Data.Models.Book", b =>
                 {
                     b.Navigation("BookGenres");
+
+                    b.Navigation("Reviews");
                 });
 
             modelBuilder.Entity("ASI.Basecode.Data.Models.Genre", b =>
