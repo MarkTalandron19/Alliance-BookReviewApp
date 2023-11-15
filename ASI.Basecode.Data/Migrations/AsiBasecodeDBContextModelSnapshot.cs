@@ -42,8 +42,8 @@ namespace ASI.Basecode.Data.Migrations
                     b.Property<string>("author")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte[]>("image")
-                        .HasColumnType("varbinary(max)");
+                    b.Property<string>("image")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("isbn")
                         .IsRequired()
@@ -79,60 +79,65 @@ namespace ASI.Basecode.Data.Migrations
                             bookId = "1",
                             CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            isbn = "ISBN-1",
+                            image = "/seeder/1.jpg",
+                            isbn = "ISBN-9781594746031",
                             language = "English",
-                            pubYear = "2000",
-                            publisher = "Publisher 1",
-                            synopsis = "Synopsis 1",
-                            title = "Book 1"
+                            pubYear = "2011",
+                            publisher = "Quirk Books",
+                            synopsis = "When Jacob discovers clues to a mystery that spans different worlds and times, he finds a magical place known as Miss Peregrine's Home for Peculiar Children.",
+                            title = "Miss Peregrine's Home for Peculiar Children"
                         },
                         new
                         {
                             bookId = "2",
                             CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            isbn = "ISBN-2",
-                            language = "French",
-                            pubYear = "2000",
-                            publisher = "Publisher 2",
-                            synopsis = "Synopsis 2",
-                            title = "Book 2"
+                            image = "/seeder/2.jpg",
+                            isbn = "ISBN-9781594747359",
+                            language = "English",
+                            pubYear = "2014",
+                            publisher = "Quirk Books",
+                            synopsis = "Having escaped Miss Peregrine's island by the skin of their teeth, Jacob and his new friends journey to London, the peculiar capital of the world.",
+                            title = "Hollow City: The Second Novel of Miss Peregrine's Peculiar Children"
                         },
                         new
                         {
                             bookId = "3",
                             CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            isbn = "ISBN-3",
-                            language = "Spanish",
-                            pubYear = "2000",
-                            publisher = "Publisher 3",
-                            synopsis = "Synopsis 3",
-                            title = "Book 3"
+                            image = "/seeder/3.jpg",
+                            isbn = "ISBN-9781594747588",
+                            language = "English",
+                            pubYear = "2015",
+                            publisher = "Quirk Books",
+                            synopsis = "A boy with extraordinary powers. An army of deadly monsters. An epic battle for the future of peculiardom.",
+                            title = "Library of Souls: The Third Novel of Miss Peregrine's Peculiar Children"
                         },
                         new
                         {
                             bookId = "4",
                             CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            isbn = "ISBN-4",
-                            language = "German",
-                            pubYear = "2000",
-                            publisher = "Publisher 4",
-                            synopsis = "Synopsis 4",
-                            title = "Book 4"
+                            image = "/seeder/4.jpg",
+                            isbn = "ISBN-9780735232143",
+                            language = "English",
+                            pubYear = "2018",
+                            publisher = "Penguin Random House",
+                            synopsis = "Having defeated the monstrous threat that nearly destroyed the peculiar world, Jacob Portman is back where his story began, in Florida.",
+                            title = "A Map of Days: The Fourth Novel of Miss Peregrine's Peculiar Children"
                         },
                         new
                         {
                             bookId = "5",
                             CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            isbn = "ISBN-5",
-                            language = "Italian",
-                            pubYear = "2000",
-                            publisher = "Publisher 5",
-                            synopsis = "Synopsis 5",
-                            title = "Book 5"
+                            image = "/seeder/5.jpg",
+                            isbn = "ISBN-9780735232144",
+                            language = "English",
+                            pubYear = "2020",
+                            publisher = "Penguin Random House",
+                            synopsis = "The adventure that began with Miss Peregrine's Home for Peculiar Children and continued in A Map of Days comes to a thrilling conclusion.",
+                            title = "The Conference of the Birds: The Fifth Novel of Miss Peregrine's Peculiar Children"
                         });
                 });
 

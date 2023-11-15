@@ -7,8 +7,10 @@ using ASI.Basecode.Services.ServiceModels;
 using AutoMapper;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace ASI.Basecode.Services.Services
@@ -57,7 +59,6 @@ namespace ASI.Basecode.Services.Services
 
                     // Create BookGenres relationship
                     book.BookGenres.Add(new BookGenres { genre = newGenre, bookId = book.bookId, genreId = newGenre.genreId });
-
                 }
                 else
                 {
@@ -71,9 +72,44 @@ namespace ASI.Basecode.Services.Services
                     book.BookGenres.Add(new BookGenres { genre = existingGenre, bookId = book.bookId, genreId = existingGenre.genreId });
                 }
 
+                // Handle image upload
+                if (model.image != null && model.image.Length > 0)
+                {
+                    // Define the directory to store the uploaded image
+                    var uploadsDirectory = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+
+                    // Get the file extension
+                    var fileExtension = Path.GetExtension(model.image.FileName);
+
+                    // Extract only alphanumeric characters from the book title
+                    var cleanedBookName = Regex.Replace(model.title, @"[^A-Za-z0-9]+", "");
+
+                    // Generate a timestamp in YY-MM-DD-Time format
+                    var timestamp = DateTime.Now.ToString("yy-MM-dd-HHmmssfff");
+
+                    // Combine the book name, timestamp, and file extension
+                    var uniqueFileName = $"{cleanedBookName}_{timestamp}{fileExtension}";
+
+                    // Define the path where the image will be stored
+                    var filePath = Path.Combine(uploadsDirectory, uniqueFileName);
+
+                    // Save the image to the specified path
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        model.image.CopyTo(fileStream);
+                    }
+
+                    // Store the file path in the Book model's image property
+                    book.image = "/uploads/" + uniqueFileName; // Adjust the path as per your project's structure
+                }
+
+
+
+
                 _repository.AddBook(book);
             }
         }
+
 
         public IQueryable<Genre> GetGenresOfBook(string bookId)
         {
@@ -84,7 +120,7 @@ namespace ASI.Basecode.Services.Services
 
         public void DeleteBook(string bookId)
         {
-            if(_repository.BookExists(bookId))
+            if (_repository.BookExists(bookId))
             {
                 _repository.DeleteBook(bookId);
             }
@@ -157,17 +193,57 @@ namespace ASI.Basecode.Services.Services
                     existingBook.BookGenres.Add(new BookGenres { genre = existingGenre, bookId = existingBook.bookId, genreId = existingGenre.genreId });
                 }
 
+                // Handle image upload
+                if (book.image != null && book.image.Length > 0)
+                {
+                    // Delete the current image if it exists
+                    if (!string.IsNullOrEmpty(existingBook.image))
+                    {
+                        var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", existingBook.image.TrimStart('/'));
+
+                        if (File.Exists(imagePath))
+                        {
+                            File.Delete(imagePath);
+                            Console.WriteLine("Existing image deleted.");
+                        }
+                    }
+
+                    // Define the directory to store the uploaded image
+                    var uploadsDirectory = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+
+                    // Get the file extension
+                    var fileExtension = Path.GetExtension(book.image.FileName);
+
+                    // Extract only alphanumeric characters from the book title
+                    var cleanedBookName = Regex.Replace(book.title, @"[^A-Za-z0-9]+", "");
+
+                    // Generate a timestamp in YY-MM-DD-Time format
+                    var timestamp = DateTime.Now.ToString("yy-MM-dd-HHmmssfff");
+
+                    // Combine the book name, timestamp, and file extension
+                    var uniqueFileName = $"{cleanedBookName}_{timestamp}{fileExtension}";
+
+                    // Define the path where the image will be stored
+                    var filePath = Path.Combine(uploadsDirectory, uniqueFileName);
+
+                    // Save the image to the specified path
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        book.image.CopyTo(fileStream);
+                    }
+
+                    // Store the file path in the Book model's image property
+                    existingBook.image = "/uploads/" + uniqueFileName; // Adjust the path as per your project's structure
+                }
+
                 // Update the book in the repository
                 _repository.UpdateBook(existingBook);
 
                 Console.WriteLine("Book updated successfully!");
+
             }
+
+
         }
-
-
-
-
-
-
     }
 }
