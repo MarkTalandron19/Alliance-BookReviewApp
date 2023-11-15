@@ -46,7 +46,7 @@ namespace ASI.Basecode.Data.Migrations
                     title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     synopsis = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     author = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    pubYear = table.Column<int>(type: "int", nullable: false),
+                    pubYear = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     publisher = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     isbn = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     language = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -251,11 +251,11 @@ namespace ASI.Basecode.Data.Migrations
                 columns: new[] { "bookId", "CreatedBy", "CreatedTime", "UpdatedBy", "UpdatedTime", "author", "image", "isbn", "language", "pubYear", "publisher", "synopsis", "title" },
                 values: new object[,]
                 {
-                    { "1", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, "ISBN-1", "English", 2000, "Publisher 1", "Synopsis 1", "Book 1" },
-                    { "2", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, "ISBN-2", "French", 2000, "Publisher 2", "Synopsis 2", "Book 2" },
-                    { "3", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, "ISBN-3", "Spanish", 2000, "Publisher 3", "Synopsis 3", "Book 3" },
-                    { "4", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, "ISBN-4", "German", 2000, "Publisher 4", "Synopsis 4", "Book 4" },
-                    { "5", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, "ISBN-5", "Italian", 2000, "Publisher 5", "Synopsis 5", "Book 5" }
+                    { "1", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, "ISBN-1", "English", "2000", "Publisher 1", "Synopsis 1", "Book 1" },
+                    { "2", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, "ISBN-2", "French", "2000", "Publisher 2", "Synopsis 2", "Book 2" },
+                    { "3", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, "ISBN-3", "Spanish", "2000", "Publisher 3", "Synopsis 3", "Book 3" },
+                    { "4", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, "ISBN-4", "German", "2000", "Publisher 4", "Synopsis 4", "Book 4" },
+                    { "5", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, "ISBN-5", "Italian", "2000", "Publisher 5", "Synopsis 5", "Book 5" }
                 });
 
             migrationBuilder.InsertData(

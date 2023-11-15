@@ -27,9 +27,7 @@ namespace ASI.Basecode.WebApp.Controllers
         [HttpPost("add")]
         public IActionResult AddGenre(GenreViewModel genre)
         {
-            genre.genreId = Guid.NewGuid().ToString();
             _genreService.AddGenre(genre);
-            _genreService.GetGenres();
             return RedirectToAction("Index", "Genre");
         }
 

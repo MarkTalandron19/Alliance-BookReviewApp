@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASI.Basecode.Data.Migrations
 {
     [DbContext(typeof(AsiBasecodeDBContext))]
-    [Migration("20231115060026_initial")]
+    [Migration("20231115074321_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -56,8 +56,9 @@ namespace ASI.Basecode.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("pubYear")
-                        .HasColumnType("int");
+                    b.Property<string>("pubYear")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("publisher")
                         .IsRequired()
@@ -83,7 +84,7 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-1",
                             language = "English",
-                            pubYear = 2000,
+                            pubYear = "2000",
                             publisher = "Publisher 1",
                             synopsis = "Synopsis 1",
                             title = "Book 1"
@@ -95,7 +96,7 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-2",
                             language = "French",
-                            pubYear = 2000,
+                            pubYear = "2000",
                             publisher = "Publisher 2",
                             synopsis = "Synopsis 2",
                             title = "Book 2"
@@ -107,7 +108,7 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-3",
                             language = "Spanish",
-                            pubYear = 2000,
+                            pubYear = "2000",
                             publisher = "Publisher 3",
                             synopsis = "Synopsis 3",
                             title = "Book 3"
@@ -119,7 +120,7 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-4",
                             language = "German",
-                            pubYear = 2000,
+                            pubYear = "2000",
                             publisher = "Publisher 4",
                             synopsis = "Synopsis 4",
                             title = "Book 4"
@@ -131,7 +132,7 @@ namespace ASI.Basecode.Data.Migrations
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             isbn = "ISBN-5",
                             language = "Italian",
-                            pubYear = 2000,
+                            pubYear = "2000",
                             publisher = "Publisher 5",
                             synopsis = "Synopsis 5",
                             title = "Book 5"

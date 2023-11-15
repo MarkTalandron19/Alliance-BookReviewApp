@@ -313,20 +313,20 @@
       "PackagePath": "staticwebassets\\lib\\react\\dist\\react.profiling.min.js"
     },
     {
-      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Bibliobibuli.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.ASI.Basecode.WebApp.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Bibliobibuli.props",
-      "PackagePath": "build\\Bibliobibuli.props"
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.ASI.Basecode.WebApp.props",
+      "PackagePath": "build\\ASI.Basecode.WebApp.props"
     },
     {
-      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Bibliobibuli.props",
-      "PackagePath": "buildMultiTargeting\\Bibliobibuli.props"
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.ASI.Basecode.WebApp.props",
+      "PackagePath": "buildMultiTargeting\\ASI.Basecode.WebApp.props"
     },
     {
-      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Bibliobibuli.props",
-      "PackagePath": "buildTransitive\\Bibliobibuli.props"
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.ASI.Basecode.WebApp.props",
+      "PackagePath": "buildTransitive\\ASI.Basecode.WebApp.props"
     }
   ],
   "ElementsToRemove": []
