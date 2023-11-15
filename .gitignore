@@ -1,0 +1,11 @@
+.vs/*
+ASI.Basecode.Data/bin/*
+ASI.Basecode.Data/obj/*
+Bibliobibuli/appsettings.json
+Bibliobibuli/bin/*
+Bibliobibuli/obj/*
+Bibliobibuli/wwwroot/uploads/*
+Resources/bin/*
+Resources/obj/*
+Services/bin/*
+Services/obj/*

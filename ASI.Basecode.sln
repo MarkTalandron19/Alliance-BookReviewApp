@@ -5,7 +5,7 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASI.Basecode.Data", "ASI.Basecode.Data\ASI.Basecode.Data.csproj", "{19A1CD85-842A-4C7C-B29A-5928626D75A7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASI.Basecode.WebApp", "ASI.Basecode.WebApp\ASI.Basecode.WebApp.csproj", "{B0C34CEC-4ED8-4956-B3C8-CA543F829D7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bibliobibuli", "ASI.Basecode.WebApp\Bibliobibuli.csproj", "{B0C34CEC-4ED8-4956-B3C8-CA543F829D7B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASI.Basecode.Services", "ASI.Basecode.Services\ASI.Basecode.Services.csproj", "{141FD3B6-645F-4E17-B3DA-055A39639513}"
 EndProject
