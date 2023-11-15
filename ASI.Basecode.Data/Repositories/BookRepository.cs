@@ -38,20 +38,9 @@ namespace ASI.Basecode.Data.Repositories
             return bookGenres;
         }
 
-        public void AddBook(Book book, List<Genre> genres)
+        public void AddBook(Book book)
         {
             this.GetDbSet<Book>().Add(book);
-
-            foreach (var genre in genres)
-            {
-                var bookGenre = new BookGenres
-                {
-                    bookId = book.bookId,
-                    genreId = genre.genreId,
-                };
-
-                this.GetDbSet<BookGenres>().Add(bookGenre);
-            }
 
             UnitOfWork.SaveChanges();
         }
@@ -91,6 +80,16 @@ namespace ASI.Basecode.Data.Repositories
         public bool BookExists(string bookId)
         {
             return this.GetDbSet<Book>().Any(x => x.bookId == bookId);
+        }
+
+        public void RemoveBookGenresForBook(string bookId)
+        {
+            var bookGenres = this.GetDbSet<BookGenres>().Where(bg => bg.bookId == bookId);
+            foreach (var bookGenre in bookGenres)
+            {
+                this.GetDbSet<BookGenres>().Remove(bookGenre);
+            }
+            UnitOfWork.SaveChanges();
         }
     }
 }

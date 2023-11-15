@@ -13275,9 +13275,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\Bibliobibuli.csproj",
-      "projectName": "Bibliobibuli",
-      "projectPath": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\Bibliobibuli.csproj",
+      "projectUniqueName": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\ASI.Basecode.WebApp.csproj",
+      "projectName": "ASI.Basecode.WebApp",
+      "projectPath": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\ASI.Basecode.WebApp.csproj",
       "packagesPath": "C:\\Users\\Aloys\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\obj\\",
       "projectStyle": "PackageReference",

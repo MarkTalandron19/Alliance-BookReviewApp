@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FS46lB6unsupWxMvXIyqVGc26sIcIED5UdkLrI9Ja8v/QvuiwphhSJimp1q7sytR9xiZ177fty5ANwRfJpCIow==",
+  "dgSpecHash": "sfMikEpmO93XEyrHcejFyQyAaRoP2m3ssV+j/ogBx/6smvHxSgg/zwz7cMsf7iWWNSmiaSEOh48sYk6bLfzvnw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\Bibliobibuli.csproj",
+  "projectFilePath": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\ASI.Basecode.WebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Aloys\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Aloys\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",

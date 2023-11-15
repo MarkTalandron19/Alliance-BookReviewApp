@@ -1,5 +1,7 @@
-﻿using ASI.Basecode.Data.Interfaces;
+﻿using ASI.Basecode.Data;
+using ASI.Basecode.Data.Interfaces;
 using ASI.Basecode.Data.Models;
+using ASI.Basecode.Data.Repositories;
 using ASI.Basecode.Services.Interfaces;
 using ASI.Basecode.Services.ServiceModels;
 using AutoMapper;
@@ -14,27 +16,71 @@ namespace ASI.Basecode.Services.Services
     public class BookService : IBookService
     {
         private readonly IBookRepository _repository;
+        private readonly IGenreRepository _genreRepository;
         private readonly IMapper _mapper;
 
-        public BookService(IBookRepository repository, IMapper mapper)
+        public BookService(IBookRepository repository, IGenreRepository genreRepository, IMapper mapper)
         {
             _repository = repository;
+            _genreRepository = genreRepository;
             _mapper = mapper;
         }
 
-        public void AddBook(BookViewModel model, List<Genre> genres)
+        public void AddBook(BookViewModel model)
         {
             var book = new Book();
-            if(!_repository.BookExists(model.bookId))
+            if (!_repository.BookExists(model.bookId))
             {
                 _mapper.Map(model, book);
                 book.CreatedTime = DateTime.Now;
                 book.UpdatedTime = DateTime.Now;
                 book.CreatedBy = System.Environment.UserName;
                 book.UpdatedBy = System.Environment.UserName;
-                _repository.AddBook(book, genres);
+
+                // Handle genre
+                var genreName = model.genre!;
+
+                // Check if the genre already exists
+                var existingGenre = _genreRepository.GetGenres().FirstOrDefault(g => g.genreName == genreName);
+
+                if (existingGenre == null)
+                {
+                    // Genre doesn't exist, create a new one
+                    var newGenre = new Genre { genreName = genreName };
+                    _genreRepository.AddGenre(newGenre);
+
+                    // Ensure that BookGenres is initialized
+                    if (book.BookGenres == null)
+                    {
+                        book.BookGenres = new List<BookGenres>();
+                    }
+
+                    // Create BookGenres relationship
+                    book.BookGenres.Add(new BookGenres { genre = newGenre, bookId = book.bookId, genreId = newGenre.genreId });
+
+                }
+                else
+                {
+                    // Ensure that BookGenres is initialized
+                    if (book.BookGenres == null)
+                    {
+                        book.BookGenres = new List<BookGenres>();
+                    }
+
+                    // Genre already exists, use existing genre
+                    book.BookGenres.Add(new BookGenres { genre = existingGenre, bookId = book.bookId, genreId = existingGenre.genreId });
+                }
+
+                _repository.AddBook(book);
             }
         }
+
+        public IQueryable<Genre> GetGenresOfBook(string bookId)
+        {
+            // Implement the logic to retrieve genres of a book from your repository
+            return _repository.GetGenresOfBook(bookId);
+        }
+
 
         public void DeleteBook(string bookId)
         {
@@ -54,21 +100,74 @@ namespace ASI.Basecode.Services.Services
             return _repository.GetBooks();
         }
 
-        public IQueryable<Genre> GetGenresOfBook(string bookId)
+        public void UpdateBook(BookViewModel book)
         {
-            return _repository.GetGenresOfBook(bookId);
-        }
+            // Retrieve the existing book entity
+            var existingBook = _repository.GetBookById(book.bookId).Result;
 
-        public void UpdateBook(BookViewModel update)
-        {
-            var book = new Book();
-            if(_repository.BookExists(update.bookId))
+            if (existingBook != null)
             {
-                _mapper.Map(update, book);
-                book.UpdatedTime = DateTime.Now;
-                book.UpdatedBy = System.Environment.UserName;
-                _repository.UpdateBook(book);
+                Console.WriteLine($"Existing Book: {existingBook.title}");
+
+                // Map the properties from the book parameter to the existing book
+                _mapper.Map(book, existingBook);
+
+                // Update the time and user information
+                existingBook.UpdatedTime = DateTime.Now;
+                existingBook.UpdatedBy = System.Environment.UserName;
+
+                // Ensure that BookGenres is initialized
+                if (existingBook.BookGenres == null)
+                {
+                    existingBook.BookGenres = new List<BookGenres>();
+                    Console.WriteLine("BookGenres is null, initialized as a new list.");
+                }
+                else
+                {
+                    // Clear existing BookGenres
+                    existingBook.BookGenres.Clear();
+                    Console.WriteLine("Cleared existing BookGenres.");
+                }
+
+                // Remove existing BookGenres entries related to the book
+                _repository.RemoveBookGenresForBook(existingBook.bookId);
+
+                // Handle genre
+                var genreName = book.genre!;
+
+                // Check if the genre already exists
+                var existingGenre = _genreRepository.GetGenres().FirstOrDefault(g => g.genreName == genreName);
+
+                if (existingGenre == null)
+                {
+                    Console.WriteLine($"Genre '{genreName}' doesn't exist, creating a new one.");
+
+                    // Genre doesn't exist, create a new one
+                    var newGenre = new Genre { genreName = genreName };
+                    _genreRepository.AddGenre(newGenre);
+
+                    // Create BookGenres relationship
+                    existingBook.BookGenres.Add(new BookGenres { genre = newGenre, bookId = existingBook.bookId, genreId = newGenre.genreId });
+                }
+                else
+                {
+                    Console.WriteLine($"Genre '{genreName}' already exists, using existing genre.");
+
+                    // Genre already exists, use existing genre
+                    existingBook.BookGenres.Add(new BookGenres { genre = existingGenre, bookId = existingBook.bookId, genreId = existingGenre.genreId });
+                }
+
+                // Update the book in the repository
+                _repository.UpdateBook(existingBook);
+
+                Console.WriteLine("Book updated successfully!");
             }
         }
+
+
+
+
+
+
     }
 }
