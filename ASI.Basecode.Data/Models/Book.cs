@@ -13,7 +13,7 @@ namespace ASI.Basecode.Data.Models
         public string publisher { get; set; }
         public string isbn { get; set; }
         public string language { get; set; }
-        public byte[] image { get; set; }
+        public string image { get; set; }
         public string CreatedBy { get; set; }
         public DateTime CreatedTime { get; set; }
         public string UpdatedBy { get; set; }

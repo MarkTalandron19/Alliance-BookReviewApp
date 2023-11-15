@@ -171,57 +171,63 @@ namespace ASI.Basecode.Data
                 entity.Property(e => e.UpdatedTime);
 
                 modelBuilder.Entity<Book>().HasData(
-                    new Book
-                    {
-                        bookId = "1",
-                        title = "Book 1",
-                        synopsis = "Synopsis 1",
-                        pubYear = "2000",
-                        publisher = "Publisher 1",
-                        isbn = "ISBN-1",
-                        language = "English"
-                    },
-                    new Book
-                    {
-                        bookId = "2",
-                        title = "Book 2",
-                        synopsis = "Synopsis 2",
-                        pubYear = "2000",
-                        publisher = "Publisher 2",
-                        isbn = "ISBN-2",
-                        language = "French"
-                    },
-                    new Book
-                    {
-                        bookId = "3",
-                        title = "Book 3",
-                        synopsis = "Synopsis 3",
-                        pubYear = "2000",
-                        publisher = "Publisher 3",
-                        isbn = "ISBN-3",
-                        language = "Spanish"
-                    },
-                    new Book
-                    {
-                        bookId = "4",
-                        title = "Book 4",
-                        synopsis = "Synopsis 4",
-                        pubYear = "2000",
-                        publisher = "Publisher 4",
-                        isbn = "ISBN-4",
-                        language = "German"
-                    },
-                    new Book
-                    {
-                        bookId = "5",
-                        title = "Book 5",
-                        synopsis = "Synopsis 5",
-                        pubYear = "2000",
-                        publisher = "Publisher 5",
-                        isbn = "ISBN-5",
-                        language = "Italian"
-                    }
-                );
+    new Book
+    {
+        bookId = "1",
+        title = "Miss Peregrine's Home for Peculiar Children",
+        synopsis = "When Jacob discovers clues to a mystery that spans different worlds and times, he finds a magical place known as Miss Peregrine's Home for Peculiar Children.",
+        pubYear = "2011",
+        publisher = "Quirk Books",
+        isbn = "ISBN-9781594746031",
+        language = "English",
+        image = "/seeder/1.jpg"
+    },
+    new Book
+    {
+        bookId = "2",
+        title = "Hollow City: The Second Novel of Miss Peregrine's Peculiar Children",
+        synopsis = "Having escaped Miss Peregrine's island by the skin of their teeth, Jacob and his new friends journey to London, the peculiar capital of the world.",
+        pubYear = "2014",
+        publisher = "Quirk Books",
+        isbn = "ISBN-9781594747359",
+        language = "English",
+        image = "/seeder/2.jpg"
+    },
+    new Book
+    {
+        bookId = "3",
+        title = "Library of Souls: The Third Novel of Miss Peregrine's Peculiar Children",
+        synopsis = "A boy with extraordinary powers. An army of deadly monsters. An epic battle for the future of peculiardom.",
+        pubYear = "2015",
+        publisher = "Quirk Books",
+        isbn = "ISBN-9781594747588",
+        language = "English",
+        image = "/seeder/3.jpg"
+    },
+    new Book
+    {
+        bookId = "4",
+        title = "A Map of Days: The Fourth Novel of Miss Peregrine's Peculiar Children",
+        synopsis = "Having defeated the monstrous threat that nearly destroyed the peculiar world, Jacob Portman is back where his story began, in Florida.",
+        pubYear = "2018",
+        publisher = "Penguin Random House",
+        isbn = "ISBN-9780735232143",
+        language = "English",
+        image = "/seeder/4.jpg"
+    },
+    new Book
+    {
+        bookId = "5",
+        title = "The Conference of the Birds: The Fifth Novel of Miss Peregrine's Peculiar Children",
+        synopsis = "The adventure that began with Miss Peregrine's Home for Peculiar Children and continued in A Map of Days comes to a thrilling conclusion.",
+        pubYear = "2020",
+        publisher = "Penguin Random House",
+        isbn = "ISBN-9780735232144",
+        language = "English",
+        image = "/seeder/5.jpg"
+    }
+);
+
             });
 
             modelBuilder.Entity<BookGenres>(entity =>

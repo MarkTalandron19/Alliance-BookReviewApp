@@ -10,7 +10,7 @@
             <div class="modal-header">
                 <h4 id="modalTitle">Edit Book Details</h4>
             </div>
-            <form method="post" asp-action="UpdateBook" asp-controller="Book" id="EditBookForm">
+            <form method="post" asp-action="UpdateBook" asp-controller="Book" id="EditBookForm" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div>
                         <input type="hidden" id="editBookId" asp-for="bookId" />
@@ -40,6 +40,10 @@
                     <div>
                         <label class="input-label" asp-for="genre"></label>
                         <input type="text" id="editGenre" asp-for="genre" class="form-control" placeholder="Genre" />
+                    </div>
+                    <div>
+                        <label class="input-label">Book Cover</label>
+                        <input type="file" name="image" />
                     </div>
 
                 </div>

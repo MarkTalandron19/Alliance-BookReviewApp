@@ -1,4 +1,5 @@
 ﻿using ASI.Basecode.Data.Models;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -46,6 +47,11 @@ namespace ASI.Basecode.Services.ServiceModels
         [JsonPropertyName("genre")]
         [Required(ErrorMessage = "Genre is required.")]
         public string genre { get; set; }
+
+        [JsonPropertyName("image")]
+        public IFormFile image { get; set; }
+
+        public string ExistingImage { get; set; }
 
     }
 }

@@ -1,6 +1,7 @@
 ﻿using ASI.Basecode.Data.Interfaces;
 using ASI.Basecode.Data.Models;
 using Basecode.Data.Repositories;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,8 +13,12 @@ namespace ASI.Basecode.Data.Repositories
 {
     public class BookRepository : BaseRepository, IBookRepository
     {
-        public BookRepository(IUnitOfWork unitOfWork) : base(unitOfWork)
+
+        private readonly IWebHostEnvironment _webHostEnvironment;
+
+        public BookRepository(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment) : base(unitOfWork)
         {
+            _webHostEnvironment = webHostEnvironment;
         }
 
         public IQueryable<Book> GetBooks()

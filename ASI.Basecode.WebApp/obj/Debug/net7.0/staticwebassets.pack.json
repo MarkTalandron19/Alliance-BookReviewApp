@@ -313,6 +313,34 @@
       "PackagePath": "staticwebassets\\lib\\react\\dist\\react.profiling.min.js"
     },
     {
+      "Id": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\1.jpg",
+      "PackagePath": "staticwebassets\\seeder\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\2.jpg",
+      "PackagePath": "staticwebassets\\seeder\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\3.jpg",
+      "PackagePath": "staticwebassets\\seeder\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\4.jpg",
+      "PackagePath": "staticwebassets\\seeder\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\5.jpg",
+      "PackagePath": "staticwebassets\\seeder\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\uploads\\a_23-11-16-010313974.jpg",
+      "PackagePath": "staticwebassets\\uploads\\a_23-11-16-010313974.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\uploads\\a_23-11-16-010619918.jpg",
+      "PackagePath": "staticwebassets\\uploads\\a_23-11-16-010619918.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.ASI.Basecode.WebApp.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
