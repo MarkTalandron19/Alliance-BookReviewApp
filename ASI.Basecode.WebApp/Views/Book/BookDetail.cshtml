@@ -1,0 +1,90 @@
+﻿@using ASI.Basecode.Data.Models;
+@model ASI.Basecode.Data.Models.Book
+@{
+    ViewBag.LoginView = true;
+    ViewData["Title"] = "BiblioBibuli - Library";
+}
+@section styles {
+    <link rel="stylesheet" href="~/css/bookdetail.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+}
+<div class="navbar">
+    <img class="bibliobibuli-logo" src="~/img/bibliobibuli logo 2.png" />
+    <div class="navbar-right">
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/Home/Library">Library</a></li>
+        </ul>
+    </div>
+</div>
+<div class="body-two-section">
+    <div class="content">
+        <div class="book-details">
+            <div class="book-image">
+                <img src="@Model.image" alt="Book Image" class="book-detail-image" />
+                <div class="book-grade">
+                    <div class="book-rating">★★★★★ 4.5</div>
+                    <div class="book-reviews">641 reviews</div>
+                </div>
+            </div>
+            <div class="book-info">
+                <div class="book-title">@Model.title</div>
+                <div class="book-author">BOSS Mark</div>
+                <div class="book-genres">
+                        @foreach (var genre in (IEnumerable<Genre>)ViewData["Genres"])
+                        {
+                            <div class="book-genre">@genre.genreName</div>
+                        }
+                </div>
+                <div class="book-synopsis">@Model.synopsis</div>
+                <div class="book-other-details">
+                    <div class="book-darkblue">ISBN: @Model.isbn</div>
+                    <div class="book-lightblue">Language: @Model.language</div>
+                    <div class="book-darkblue">Publisher: @Model.publisher</div>
+                    <div class="book-lightblue">Year Published: @Model.pubYear</div>
+                </div>
+            </div>
+        </div>
+        @* insert review partial view here *@
+    </div>
+</div>
+
+<div class="contact-image-background-container">
+    <img class="contact-info-image" src="~/img/contact section.png" alt="Contact Info Image" />
+</div>
+<div class="fifth-white-background">
+    <div class="footer-first-col">
+        <div class="logo-title">
+            <img class="logo" src="~/img/bibliobibuli logo 3.png" />
+            <h1>Bibliobibuli.</h1>
+        </div>
+        <div class="text-line">
+            <p>Where Authors and Readers </p>
+            <p>Toast to the Art of Literary </p>
+            <p>Feasts!</p>
+
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> bibliobibuli_inquire@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +63 912 3456 789</p>
+            </div>
+        </div>
+    </div>
+    <div class="quick-links">
+        <p class="text-quick-links">Quick Links</p>
+        <div class="second-nav-links">
+            <a href="/">Home</a>
+            <a href="/Home/Library">Library</a>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        // Check for error message and display Toastr notification
+        var errorMessage = '@TempData["ErrorMessage"]';
+        if (errorMessage) {
+            toastr.error(errorMessage);
+        }
+    </script>
+}

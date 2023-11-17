@@ -469,13 +469,18 @@ h2 {
 /*Fifth background*/
 .fifth-white-background {
     background-color: #053B50;
-    height: 1000px;
+    background-image: url("/img/lines 3.png");
+    background-size: cover;
     width: 100%;
-    text-align: start;
-    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.footer-first-col {
+    width: 60%;
     padding-left: 50px;
-    margin: 0;
-    position: relative;
 }
 
 .text-line p {
@@ -486,17 +491,19 @@ h2 {
 }
 
 .contact-info {
-    padding-top: 14rem;
+    padding: 60px 0 30px 0;
 }
+    .contact-info i {
+        font-size: 20px;
+    }
+
+    .contact-info p {
+    font-size: 15px;
+    }
 
 .quick-links {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    text-align: start;
-    padding-top: 13rem;
-    padding-right: 34rem;
-    margin-right: 0;
+    width: 40%;
+    padding-top: 20px;
 }
 
 .text-quick-links {

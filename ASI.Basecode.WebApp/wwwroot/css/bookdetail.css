@@ -1,0 +1,293 @@
+﻿﻿body {
+    background-color: #FFFFFF;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    left: 0;
+}
+
+/* Navbar */
+.navbar {
+    height: 60px;
+    background-color: #E3E3E3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    padding-right: 100px;
+    justify-content: space-between;
+}
+
+    .navbar h1 {
+        color: #000000;
+        padding: 10px;
+    }
+
+.bibliobibuli-logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.navbar-right ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+    .navbar-right ul li a {
+        text-decoration: none;
+        transition: background-color 0.3s;
+        color: #000000;
+        padding: 20px;
+    }
+
+        .navbar-right ul li a:hover {
+            background: linear-gradient(to top, transparent 90%, #176B87);
+        }
+
+.dp {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        padding-left: 200px;
+    }
+}
+
+.body-two-section {
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    background-color: white;
+}
+
+/* Content */
+.content {
+    position: relative;
+    top: 30px;
+    padding: 40px;
+    width: 100%;
+    margin: auto;
+}
+
+    .content h1 {
+        display: flex;
+        align-items: center;
+        color: #000000;
+        font-weight: bold;
+    }
+
+.book-details {
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+}
+
+.book-image {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-detail-image {
+    max-width: 350px;
+    padding: 0 10px;
+    border-radius: 20px;
+}
+
+.book-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    padding: 10px 10px 5px 10px;
+    color: #ffac33;
+}
+
+
+.book-reviews {
+    font-size: 18px;
+    font-style: italic;
+    color: #555;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-info {
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-title {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 20px 0 5px 0;
+}
+
+.book-author {
+    font-size: 18px;
+    font-weight:500;
+    color: #176B87;
+    text-decoration: underline;
+}
+
+.book-genres {
+    display: flex;
+}
+
+.book-genre {
+    font-size: 16px;
+    color: white;
+    background-color: #176B87;
+    font-weight: bold;
+    padding: 3px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+}
+
+.book-synopsis {
+    font-size: 18px;
+    min-height: 150px;
+}
+
+.book-other-details {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.book-darkblue {
+    font-size: 18px;
+    color: white;
+    background-color: #176B87;
+    font-weight: 400;
+    padding: 3px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.book-lightblue {
+    font-size: 18px;
+    color: black;
+    background-color: #64CCC5;
+    font-weight: 400;
+    padding: 3px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+/*Fourth background*/
+.contact-image-background-container {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact-info-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*Fifth background*/
+.fifth-white-background {
+    background-color: #053B50;
+    background-image: url("/img/lines 3.png");
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.footer-first-col {
+    width: 60%;
+    padding-left: 50px;
+}
+
+.text-line p {
+    color: #FFFFFF;
+    padding-left: 50px;
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.contact-info {
+    padding: 60px 0 30px 0;
+}
+
+    .contact-info i {
+        font-size: 20px;
+    }
+
+    .contact-info p {
+        font-size: 15px;
+    }
+
+.quick-links {
+    width: 40%;
+    padding-top: 20px;
+}
+
+.text-quick-links {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.second-nav-links {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+    .second-nav-links a {
+        text-decoration: none;
+        color: #FFFFFF;
+        margin-bottom: 10px;
+    }
+
+/* Logo and Title */
+.logo-title {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.logo-title h1 {
+    padding-top: 30px;
+    font-size: 64px;
+    color: #FFFFFF;
+}

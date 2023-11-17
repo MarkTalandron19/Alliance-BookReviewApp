@@ -257,10 +257,19 @@
     margin: 10px;
     width: 300px;
     padding: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
+    .book:hover {
+        transform: scale(1.02);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
     .book img {
+        display: flex;
+        margin: auto;
+        padding: 5px 0;
         max-width: 100%;
+        max-height: 430px;
         height: auto;
         border-radius: 10px;
     }
@@ -274,6 +283,10 @@
 .book-title {
     font-size: 1.2rem;
     font-weight: bold;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
 }
 
 .book-author {
@@ -297,3 +310,104 @@
     margin-left: 10px;
     color: #555;
 }
+
+.book-link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.book-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+/*Fourth background*/
+.contact-image-background-container {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact-info-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*Fifth background*/
+.fifth-white-background {
+    background-color: #053B50;
+    background-image: url("/img/lines 3.png");
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.footer-first-col {
+    width: 60%;
+    padding-left: 50px;
+}
+
+.text-line p {
+    color: #FFFFFF;
+    padding-left: 50px;
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.contact-info {
+    padding: 60px 0 30px 0;
+}
+
+    .contact-info i {
+        font-size: 20px;
+    }
+
+    .contact-info p {
+        font-size: 15px;
+    }
+
+.quick-links {
+    width: 40%;
+    padding-top: 20px;
+}
+
+.text-quick-links {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.second-nav-links {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+    .second-nav-links a {
+        text-decoration: none;
+        color: #FFFFFF;
+        margin-bottom: 10px;
+    }
+
+/* Logo and Title */
+.logo-title {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.logo-title h1 {
+    padding-top: 30px;
+    font-size: 64px;
+    color: #FFFFFF;
+}
+
