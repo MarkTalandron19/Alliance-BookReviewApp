@@ -3,6 +3,18 @@ using System.Collections.Generic;
 
 namespace ASI.Basecode.Data.Models
 {
+   public struct BookAverageRating
+    {
+        public BookAverageRating(Book book, float AvgRating)
+        {
+            Book = book;
+            AverageRating = AvgRating;
+        }
+
+        public Book Book { get; set; }
+        public float AverageRating { get; set; }
+    }
+
     public partial class Book
     {   
         public string bookId { get; set; }

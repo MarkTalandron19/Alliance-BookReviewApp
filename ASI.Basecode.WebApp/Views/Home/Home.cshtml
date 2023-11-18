@@ -1,5 +1,6 @@
-﻿﻿
-@model LoginViewModel
+﻿@using ASI.Basecode.Data.Models;
+﻿
+@model HomeViewModel
 @using static ASI.Basecode.Resources.Views.Screen
 @section styles {
     <link rel="stylesheet" href="~/css/homepage.css" />
@@ -82,31 +83,88 @@
         </div>
     </div>
     </div>
+    <!-- Recent Books or New Release-->
     <div class="second-background">
         <h2 class="trends-text">Trending this week</h2>
         <p class="text-trends">Dive into our selection of trending books this week, where every page tells a story worth sharing.</p>
+
+        <section>
+            @{
+                List<Book> NewBooks = Model.NewlyReleasedBooks;
+                foreach(var book in NewBooks)
+                {
+                    <img src = "@book.image" alt = "@book.title">
+                }
+            }
+        </section>
     </div>
     <div class="third-white-background">
         <div class="books-header">
             <div class="featured-books-title">
-        <h3 class="featured-text">Featured Book</h3>
-        <text class="featured-line">Unearth the literary gems making waves this week!</text>
+                <h3 class="featured-text">Featured Book</h3>
+                <text class="featured-line">Unearth the literary gems making waves this week!</text>
             </div>
-        <div class="button-container-view-more">
-            <button class="button-view-more">VIEW MORE →</button>
-        </div>
+            <div class="button-container-view-more">
+                <button class="button-view-more">VIEW MORE →</button>
+            </div>
         </div>
     </div>
+    <!-- Top Rated Books -->
     <div class="fourth-white-background">
         <div class="books-header">
             <div class="top-books-title">
-        <h4 class="top-rated-books-text">Top-rated Books</h4>
-        <text class="top-rated-books-line">From captivating tales to thought-provoking narratives, these stories are igniting conversations across Bibliobibuli.</text>
+                <h4 class="top-rated-books-text">Top-rated Books</h4>
+                <text class="top-rated-books-line">From captivating tales to thought-provoking narratives, these stories are igniting conversations across Bibliobibuli.</text>
+            </div>
+            <div class="second-button-container-view-more">
+                <button class="second-button-view-more">VIEW MORE →</button>
+            </div>
         </div>
-        <div class="second-button-container-view-more">
-            <button class="second-button-view-more">VIEW MORE →</button>
-        </div>
-        </div>
+
+        <section>
+            @{
+                List<BookAverageRating> TopRatedBooks = Model.TopRatedBooks;
+
+                foreach(var ratedBook in TopRatedBooks)
+                {
+                    var book = ratedBook.Book;
+                    Review review = ratedBook.Book.Reviews.FirstOrDefault();
+                    <div>
+                        <h2>@book.title</h2>
+                        <h3>BY @book.author</h3>
+                        @{
+                            foreach(var genre in book.BookGenres)
+                            {
+                                <span>@genre</span>
+                            }
+                        }
+                        <textarea>@book.synopsis</textarea>
+                        @{/*TODO: Should add Star image rating*/}
+                        <div>@ratedBook.AverageRating</div>
+                        <span>@book.Reviews.Count reviews</span>
+                        <section>
+                            <div>
+                                @{
+                                    /*TODO: Should need an image of reviewer*/
+                                }
+                                <h4>@review.reviewerFirstName @review.reviewerLastName</h4>
+                            </div>
+                            <div>
+                                @{
+                                    /*TODO: Should add Star image rating*/
+                                }
+                                <span>@review.rating.0 stars</span>
+                                <textarea>
+                                    @review.content
+                                </textarea>
+                            </div>
+                        </section>
+                    </div>
+                    <button>View Details -></button>
+                    <div>@book.image</div>
+                }
+            }
+        </section>
     </div>
     <div class="contact-image-background-container">
         <img class="contact-info-image" src="~/img/contact section.png" alt="Contact Info Image" />
