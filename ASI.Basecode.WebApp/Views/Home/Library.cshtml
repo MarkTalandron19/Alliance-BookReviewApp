@@ -1,4 +1,5 @@
-﻿@model IEnumerable<ASI.Basecode.Data.Models.Book>
+﻿@using ASI.Basecode.Data.Models
+@model IEnumerable<ASI.Basecode.Data.Models.Book>
 @{
     ViewBag.LoginView = true;
     ViewData["Title"] = "BiblioBibuli - Library";
@@ -21,18 +22,13 @@
 <div class="sidenav">
     <h2>Filter</h2>
     <h3>Categories</h3>
-    <ul>
-        <li><a href="#"><i class="fas fa-check-circle"></i> All Genres</a></li>
-        <li><a href="#"><i class="fas fa-check-circle"></i> Arts & Photography</a></li>
-        <li><a href="#"><i class="fas fa-check-circle"></i> Biographies & Memory</a></li>
-        <li><a href="#"><i class="fas fa-check-circle"></i> Children’s Book</a></li>
-        <li><a href="#"><i class="fas fa-check-circle"></i> Cookbook & Food</a></li>
-        <li><a href="#"><i class="fas fa-check-circle"></i> History</a></li>
-        <li><a href="#"><i class="fas fa-check-circle"></i> Literature and Fiction</a></li>
-        <li><a href="#"><i class="fas fa-check-circle"></i> Romance</a></li>
-        <li><a href="#"><i class="fas fa-check-circle"></i> Scifi & Fantasy</a></li>
-        <li><a href="#"> + Load More</a></li>
-    </ul>
+        <ul>
+            @foreach (var genre in (IEnumerable<Genre>)ViewData["Genres"])
+            {
+                <li><a href="#"><i class="fas fa-check-circle"></i> @genre.genreName</a></li>
+                <li></li>
+            }
+        </ul>
 </div>
 
 <div class="content">
@@ -52,19 +48,20 @@
         <div class="second-para">
             <p class="number-books-desc">Over 475+ books available here, find it now!</p>
             <div class="dropdown">
-                <button class="dropdown-button">Newest ▼</button>
+                <button class="dropdown-button">Newest ▼</button>   
                 <div class="dropdown-content">
-                    <a href="#">Option 1</a>
-                    <a href="#">Option 2</a>
+                        <a href="#">Newest</a>
+                        <a href="#">Oldest</a>
                 </div>
             </div>
         </div>
         </div>
         <div class="book-list">
-@*             @foreach (var book in Model)
+            @foreach (var book in Model)
             {
+                <a asp-controller="Book" asp-action="BookDetail" asp-route-bookId="@book.bookId" class="book-link">
                 <div class="book">
-                    <img src="~/img/book cover placeholder.jpg" alt="Book 1">
+                    <img src="@book.image" alt="Book Image" class="book-image"/>
                     <div class="book-grade">
                         <div class="book-rating">★ 4.5</div>
                         <div>•</div>
@@ -74,212 +71,38 @@
                     <div class="book-title">@book.title</div>
                     <div class="book-author">@book.publisher</div>
                 </div>
-            } *@
-
-            <!-- Book 1 -->
-            <div class="book">
-                <img src="~/img/book cover placeholder.jpg" alt="Book 1">
-                <div class="book-grade">
-                    <div class="book-rating">★ 4.5</div>
-                    <div>•</div>
-                    <div class="book-reviews">641 reviews</div>
-                </div>
-                <div class="book-genre">Biography.</div>
-            </div>
-
-            <!-- Book 2 -->
-            <div class="book">
-                <img src="~/img/book cover placeholder.jpg" alt="Book 2">
-                <div class="book-grade">
-                    <div class="book-rating">★ 4.0</div>
-                    <div>•</div>
-                    <div class="book-reviews">246 reviews</div>
-                </div>
-                <div class="book-genre">Science</div>
-                <div class="book-title">Chemistry</div>
-                <div class="book-author">Brown Murphy</div>
-            </div>
-
-            <!-- Book 3 -->
-            <div class="book">
-                <img src ="~/img/book cover placeholder.jpg" alt="Book 3">
-                <div class="book-grade">
-                    <div class="book-rating">★ 4.1</div>
-                    <div>•</div>
-                    <div class="book-reviews">146 reviews</div>
-                </div>
-                <div class="book-genre">History</div>
-                <div class="book-title">Accreditation helps</div>
-                <div class="book-author">Ben Elliott</div>
-            </div>
-            <!-- Book 4 -->
-            <div class="book">
-                <img src="~/img/book cover placeholder.jpg" alt="Book 1">
-                <div class="book-grade">
-                    <div class="book-rating">★ 4.5</div>
-                    <div>•</div>
-                    <div class="book-reviews">641 reviews</div>
-                </div>
-                <div class="book-genre">Biography.</div>
-                <div class="book-title">Electronic Commerce</div>
-                <div class="book-author">John Doe</div>
-            </div>
-            <!-- Book 1 -->
-            <div class="book">
-                <img src="~/img/book cover placeholder.jpg" alt="Book 1">
-                <div class="book-grade">
-                    <div class="book-rating">★ 4.5</div>
-                    <div>•</div>
-                    <div class="book-reviews">641 reviews</div>
-                </div>
-                <div class="book-genre">Biography.</div>
-                <div class="book-title">Electronic Commerce</div>
-                <div class="book-author">John Doe</div>
-            </div>
-
-            <!-- Book 2 -->
-            <div class="book">
-                <img src="~/img/book cover placeholder.jpg" alt="Book 2">
-                <div class="book-grade">
-                    <div class="book-rating">★ 4.0</div>
-                    <div>•</div>
-                    <div class="book-reviews">246 reviews</div>
-                </div>
-                <div class="book-genre">Science</div>
-                <div class="book-title">Chemistry</div>
-                <div class="book-author">Brown Murphy</div>
-            </div>
-
-            <!-- Book 3 -->
-            <div class="book">
-                <img src="~/img/book cover placeholder.jpg" alt="Book 3">
-                <div class="book-grade">
-                    <div class="book-rating">★ 4.1</div>
-                    <div>•</div>
-                    <div class="book-reviews">146 reviews</div>
-                </div>
-                <div class="book-genre">History</div>
-                <div class="book-title">Accreditation helps</div>
-                <div class="book-author">Ben Elliott</div>
-            </div>
-            <!-- Book 4 -->
-            <div class="book">
-                <img src="~/img/book cover placeholder.jpg" alt="Book 1">
-                <div class="book-grade">
-                    <div class="book-rating">★ 4.5</div>
-                    <div>•</div>
-                    <div class="book-reviews">641 reviews</div>
-                </div>
-                <div class="book-genre">Biography.</div>
-                <div class="book-title">Electronic Commerce</div>
-                <div class="book-author">John Doe</div>
-            </div>
-            <!-- Book 1 -->
-            <div class="book">
-                <img src="~/img/book cover placeholder.jpg" alt="Book 1">
-                <div class="book-grade">
-                    <div class="book-rating">★ 4.5</div>
-                    <div>•</div>
-                    <div class="book-reviews">641 reviews</div>
-                </div>
-                <div class="book-genre">Biography.</div>
-                <div class="book-title">Electronic Commerce</div>
-                <div class="book-author">John Doe</div>
-            </div>
-
-            <!-- Book 2 -->
-            <div class="book">
-                <img src="~/img/book cover placeholder.jpg" alt="Book 2">
-                <div class="book-grade">
-                    <div class="book-rating">★ 4.0</div>
-                    <div>•</div>
-                    <div class="book-reviews">246 reviews</div>
-                </div>
-                <div class="book-genre">Science</div>
-                <div class="book-title">Chemistry</div>
-                <div class="book-author">Brown Murphy</div>
-            </div>
-
-            <!-- Book 3 -->
-            <div class="book">
-                <img src="~/img/book cover placeholder.jpg" alt="Book 3">
-                <div class="book-grade">
-                    <div class="book-rating">★ 4.1</div>
-                    <div>•</div>
-                    <div class="book-reviews">146 reviews</div>
-                </div>
-                <div class="book-genre">History</div>
-                <div class="book-title">Accreditation helps</div>
-                <div class="book-author">Ben Elliott</div>
-            </div>
-            <!-- Book 4 -->
-            <div class="book">
-                <img src="~/img/book cover placeholder.jpg" alt="Book 1">
-                <div class="book-grade">
-                    <div class="book-rating">★ 4.5</div>
-                    <div>•</div>
-                    <div class="book-reviews">641 reviews</div>
-                </div>
-                <div class="book-genre">Biography.</div>
-                <div class="book-title">Electronic Commerce</div>
-                <div class="book-author">John Doe</div>
-            </div>
-            <!-- Book 1 -->
-            <div class="book">
-                <img src="~/img/book cover placeholder.jpg" alt="Book 1">
-                <div class="book-grade">
-                    <div class="book-rating">★ 4.5</div>
-                    <div>•</div>
-                    <div class="book-reviews">641 reviews</div>
-                </div>
-                <div class="book-genre">Biography.</div>
-                <div class="book-title">Electronic Commerce</div>
-                <div class="book-author">John Doe</div>
-            </div>
-
-            <!-- Book 2 -->
-            <div class="book">
-                <img src="~/img/book cover placeholder.jpg" alt="Book 2">
-                <div class="book-grade">
-                    <div class="book-rating">★ 4.0</div>
-                    <div>•</div>
-                    <div class="book-reviews">246 reviews</div>
-                </div>
-                <div class="book-genre">Science</div>
-                <div class="book-title">Chemistry</div>
-                <div class="book-author">Brown Murphy</div>
-            </div>
-
-            <!-- Book 3 -->
-            <div class="book">
-                <img src="~/img/book cover placeholder.jpg" alt="Book 3">
-                <div class="book-grade">
-                    <div class="book-rating">★ 4.1</div>
-                    <div>•</div>
-                    <div class="book-reviews">146 reviews</div>
-                </div>
-                <div class="book-genre">History</div>
-                <div class="book-title">Accreditation helps</div>
-                <div class="book-author">Ben Elliott</div>
-            </div>
-            <!-- Book 4 -->
-            <div class="book">
-                <img src="~/img/book cover placeholder.jpg" alt="Book 1">
-                <div class="book-grade">
-                    <div class="book-rating">★ 4.5</div>
-                    <div>•</div>
-                    <div class="book-reviews">641 reviews</div>
-                </div>
-                <div class="book-genre">Biography.</div>
-                <div class="book-title">Electronic Commerce</div>
-                <div class="book-author">John Doe</div>
-            </div>
-
-
-
+                </a>
+            } 
         </div>
-
 </div>
+</div>
+<div class="contact-image-background-container">
+    <img class="contact-info-image" src="~/img/contact section.png" alt="Contact Info Image" />
+</div>
+<div class="fifth-white-background">
+    <div class="footer-first-col">
+        <div class="logo-title">
+            <img class="logo" src="~/img/bibliobibuli logo 3.png" />
+            <h1>Bibliobibuli.</h1>
+        </div>
+        <div class="text-line">
+            <p>Where Authors and Readers </p>
+            <p>Toast to the Art of Literary </p>
+            <p>Feasts!</p>
+
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> bibliobibuli_inquire@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +63 912 3456 789</p>
+            </div>
+        </div>
+    </div>
+    <div class="quick-links">
+        <p class="text-quick-links">Quick Links</p>
+        <div class="second-nav-links">
+            <a href="/">Home</a>
+            <a href="/Home/Library">Library</a>
+        </div>
+    </div>
 </div>
 
 @section scripts {

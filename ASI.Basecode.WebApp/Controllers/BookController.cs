@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
@@ -106,6 +107,17 @@ namespace ASI.Basecode.WebApp.Controllers
         public IActionResult SignOutUser()
         {
             return RedirectToAction("Login", "Account");
+        }
+
+        [HttpGet("BookDetail/{bookId}")]
+        [AllowAnonymous]
+        public async Task<IActionResult> BookDetail(string bookId)
+        {
+            var book = await _bookService.GetBookById(bookId);
+            var genres = _bookService.GetGenresOfBook(bookId);
+
+            ViewData["Genres"] = await genres.ToListAsync();
+            return View(book);
         }
     }
 }

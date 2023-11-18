@@ -36,10 +36,12 @@
                 </div>
                 <div>
                     <button class="logout-button">
-                        <div class="logout-text">
-                            <img class="leftmenu-icons" src="~/img/logout-icon.png" />
-                            Logout
-                        </div>
+                        <a asp-controller="Account" asp-action="SignOutUser">
+                            <div class="logout-text">
+                                <img class="leftmenu-icons" src="~/img/logout-icon.png" />
+                                Logout
+                            </div>
+                        </a>
                     </button>
                 </div>
             </div>
