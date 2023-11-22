@@ -16,5 +16,6 @@ namespace ASI.Basecode.Data.Interfaces
         IdentityUser FindUser(string userName);
         Task<IdentityUser> FindUserAsync(string userName, string password);
         Task<IdentityResult> CreateRole(string roleName);
+        IQueryable<IdentityRole> GetRoles();
     }
 }

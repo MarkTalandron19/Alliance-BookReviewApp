@@ -292,7 +292,12 @@ namespace ASI.Basecode.WebApp.Controllers
         [AllowAnonymous]
         public IActionResult Register()
         {
-            return View();
+            var roles = _userService.GetRoles().Select(r => r.Name).ToList();
+            var userViewModel = new UserViewModel
+            {
+                Roles = roles
+            };
+            return View(userViewModel);
         }
 
         [HttpPost]
@@ -311,7 +316,7 @@ namespace ASI.Basecode.WebApp.Controllers
                 {
                     _userService.AddUser(model);
 
-                    var userRole = _roleManager.FindByNameAsync("User").Result;
+                    var userRole = _roleManager.FindByNameAsync(model.SelectedRole).Result;
 
                     if (userRole != null)
                     {

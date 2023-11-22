@@ -71,5 +71,10 @@ namespace ASI.Basecode.Data.Repositories
             return null;
         }
 
+        public IQueryable<IdentityRole> GetRoles()
+        {
+            return this.GetDbSet<IdentityRole>();
+        }
+
     }
 }

@@ -68,5 +68,10 @@ namespace ASI.Basecode.Services.Services
         {
             return await _repository.CreateRole(roleName);
         }
+
+        public IQueryable<IdentityRole> GetRoles()
+        {
+            return _repository.GetRoles();
+        }
     }
 }
