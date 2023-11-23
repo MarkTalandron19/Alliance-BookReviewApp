@@ -117,8 +117,20 @@
       "PackagePath": "staticwebassets\\img\\profile-logo.png"
     },
     {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\starEmpty.png",
+      "PackagePath": "staticwebassets\\img\\starEmpty.png"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\starFilled.png",
+      "PackagePath": "staticwebassets\\img\\starFilled.png"
+    },
+    {
       "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\Book.js",
       "PackagePath": "staticwebassets\\js\\Book.js"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\BookDetail.js",
+      "PackagePath": "staticwebassets\\js\\BookDetail.js"
     },
     {
       "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\Genre.js",
@@ -335,6 +347,10 @@
     {
       "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\5.jpg",
       "PackagePath": "staticwebassets\\seeder\\5.jpg"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\uploads\\A_23-11-18-110439700.jpg",
+      "PackagePath": "staticwebassets\\uploads\\A_23-11-18-110439700.jpg"
     },
     {
       "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\uploads\\TestBook_23-11-18-043532846.jpg",
