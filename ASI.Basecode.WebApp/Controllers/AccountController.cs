@@ -319,6 +319,16 @@ namespace ASI.Basecode.WebApp.Controllers
 
             return View("Views/Account/UserList.cshtml", commonViewModel);
 		}
+
+        [HttpPost]
+        [AllowAnonymous]
+        public IActionResult UpdateUser(UserViewModel model)
+        {
+            _userService.UpdateUser(model);
+                
+            return RedirectToAction("UserList", "Account");
+        }
+
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> AddUser(UserViewModel model)
@@ -342,7 +352,6 @@ namespace ASI.Basecode.WebApp.Controllers
                         await _userManager.AddToRoleAsync(identityUser, userRole.Name);
                     }
                 }
-
 
                 return RedirectToAction("UserList", "Account");
             }

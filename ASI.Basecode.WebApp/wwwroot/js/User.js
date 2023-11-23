@@ -9,16 +9,19 @@ $(document).ready(function () {
     $('.edit-button').click(function () {
         jQuery.noConflict();
 
-        var genreId = $(this).data('genre-id');
-        var genreName = $(this).data('genre-name');
-        var description = $(this).data('genre-desc');
+        var userId = $(this).data('user-id');
+        var name = $(this).data('user-name');
+        var email = $(this).data('user-email');
+        var password = $(this).data('user-password');
 
 
 
-        $('#editGenreId').val(genreId);
-        $('#editGenreName').val(genreName);
-        $('#editDescription').val(description);
-        $('#EditGenreModal').modal('show');
+        $('#edituserId').val(userId);
+        $('#editname').val(name);
+        $('#editemail').val(email);
+        $('#editpassword').val(password);
+        $('#editconfirmpassword').val(password);
+        $('#EditUserModal').modal('show');
         console.log("Button clicked");
     });
 

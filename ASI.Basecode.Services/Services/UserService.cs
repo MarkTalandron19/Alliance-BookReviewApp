@@ -1,5 +1,6 @@
 ﻿using ASI.Basecode.Data.Interfaces;
 using ASI.Basecode.Data.Models;
+using ASI.Basecode.Data.Repositories;
 using ASI.Basecode.Services.Interfaces;
 using ASI.Basecode.Services.Manager;
 using ASI.Basecode.Services.ServiceModels;
@@ -77,6 +78,20 @@ namespace ASI.Basecode.Services.Services
         public IQueryable<User> GetUsers()
         {
             return _repository.GetUsers();
+        }
+
+        public void UpdateUser(UserViewModel model)
+        {
+            var user = new User();
+            var role = model.SelectedRole;
+            if (_repository.UserExists(model.UserId))
+            {
+                _mapper.Map(model, user);
+                user.UpdatedTime = DateTime.Now;
+                user.UpdatedBy = System.Environment.UserName;
+                _repository.UpdateUser(user);
+            }
+
         }
     }
 }

@@ -16,5 +16,6 @@ namespace ASI.Basecode.Services.Interfaces
         Task<IdentityResult> CreateRole(string roleName);
         IQueryable<IdentityRole> GetRoles(); 
         IQueryable<User> GetUsers();
+        void UpdateUser(UserViewModel model);
     }
 }

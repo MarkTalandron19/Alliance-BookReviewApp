@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace ASI.Basecode.Data.Repositories
 {
@@ -74,6 +75,21 @@ namespace ASI.Basecode.Data.Repositories
         public IQueryable<IdentityRole> GetRoles()
         {
             return this.GetDbSet<IdentityRole>();
+        }
+
+        public void UpdateUser(User model)
+        {
+            var user = this.GetDbSet<User>().SingleOrDefault(u => u.UserId == model.UserId);
+            if(user != null)
+            {
+                user.Name = model.Name;
+                user.UserId= model.UserId;
+                user.Email = model.Email;
+                user.Password = model.Password;
+                user.UpdatedBy = model.UpdatedBy;
+                user.UpdatedTime = model.UpdatedTime;
+				UnitOfWork.SaveChanges();			
+            }
         }
 
     }
