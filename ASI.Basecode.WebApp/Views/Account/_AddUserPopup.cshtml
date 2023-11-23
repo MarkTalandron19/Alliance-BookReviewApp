@@ -1,0 +1,67 @@
+﻿@using ASI.Basecode.Services.ServiceModels
+@model UserViewModel
+@section styles {
+	<link rel="stylesheet" href="~/css/admindashboard.css" />
+}
+<div class="modal" id="AddUserModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 id="modalTitle">Add a Book Genre</h4>
+			</div>
+			<form method="post" asp-action="AddUser" asp-controller="Account" id="GenreForm">
+				<div class="modal-body">
+					<div>
+						<label class="form-label" for="userId">UserId</label>
+						<input type="text" id="userId" class="form-control"
+							   asp-for="UserId" placeholder="Enter userid" />
+						<span asp-validation-for="UserId" class="text-danger"></span>
+
+					</div>
+					<div>
+						<label class="form-label" for="email">Email</label>
+						<input type="text" id="email" class="form-control"
+							   asp-for="Email" placeholder="Enter Email" />
+						<span asp-validation-for="Email" class="text-danger"></span>
+					</div>
+					<div>
+						<label class="form-label" for="name">Name</label>
+						<input type="text" id="name" class="form-control"
+							   asp-for="Name" placeholder="Enter name" />
+						<span asp-validation-for="Name" class="text-danger"></span>
+					</div>
+					<div>
+						<label class="form-label" for="password">Password</label>
+						<input type="password" id="password" class="form-control"
+							   asp-for="Password" placeholder="Enter password" />
+						<span asp-validation-for="Password" class="text-danger"></span>
+					</div>
+					<div>
+						<label class="form-label" for="confirmpassword">Confirm Password</label>
+						<input type="password" id="confirmpassword" class="form-control"
+							   asp-for="ConfirmPassword" placeholder="Confirm Password" />
+						<span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+					</div>
+					<div>
+						<label asp-for="SelectedRole" class="control-label">Role</label>
+						<select id="selectedRole" asp-for="SelectedRole" class="form-control">
+							<option value="">Select a role</option>
+							@foreach (var role in Model.Roles)
+							{
+								<option value="@role">@role</option>
+							}
+						</select>
+						<span asp-validation-for="SelectedRole" class="text-danger"></span>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="modal-button-close" id="Close" type="button" data-dismiss="modal">Close</button>
+					<button class="modal-button" id="Save" type="submit">Add User</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="~/js/User.js"></script>s

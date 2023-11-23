@@ -300,6 +300,63 @@ namespace ASI.Basecode.WebApp.Controllers
             return View(userViewModel);
         }
 
+		[HttpGet]
+		[AllowAnonymous]
+		public IActionResult UserList()
+        {
+            var roles = _userService.GetRoles().Select(r => r.Name).ToList();
+            var users = _userService.GetUsers().ToList();
+            var userViewModel = new UserViewModel
+            {
+                Roles = roles,
+                Users = users
+            };
+
+            var commonViewModel = new UserViewStorageModel
+            {
+                ViewModel = userViewModel,
+            };
+
+            return View("Views/Account/UserList.cshtml", commonViewModel);
+		}
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> AddUser(UserViewModel model)
+        {
+            _logger.LogInformation("register user");
+            try
+            {
+                var identityUser = new IdentityUser();
+                identityUser.Email = model.Email;
+                identityUser.UserName = model.UserId;
+                var result = await _userManager.CreateAsync(identityUser, model.Password);
+
+                if (result.Succeeded)
+                {
+                    _userService.AddUser(model);
+
+                    var userRole = _roleManager.FindByNameAsync(model.SelectedRole).Result;
+
+                    if (userRole != null)
+                    {
+                        await _userManager.AddToRoleAsync(identityUser, userRole.Name);
+                    }
+                }
+
+
+                return RedirectToAction("UserList", "Account");
+            }
+            catch (InvalidDataException ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = Resources.Messages.Errors.ServerError;
+            }
+            return View();
+        }
+
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> Register(UserViewModel model)

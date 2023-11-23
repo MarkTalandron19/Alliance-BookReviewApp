@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ASI.Basecode.Data.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -26,6 +27,7 @@ namespace ASI.Basecode.Services.ServiceModels
         public string ConfirmPassword { get; set; }
 
         public List<string> Roles { get; set; }
+        public List<User> Users { get; set; }
 
         [Required(ErrorMessage = "Role is required.")]
         public string SelectedRole { get; set; }

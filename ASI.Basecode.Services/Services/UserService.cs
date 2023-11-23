@@ -73,5 +73,10 @@ namespace ASI.Basecode.Services.Services
         {
             return _repository.GetRoles();
         }
+
+        public IQueryable<User> GetUsers()
+        {
+            return _repository.GetUsers();
+        }
     }
 }
