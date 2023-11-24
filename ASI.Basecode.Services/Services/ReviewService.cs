@@ -25,7 +25,7 @@ namespace ASI.Basecode.Services.Services
         public void AddReview(ReviewViewModel model)
         {
             var review = new Review();
-            _mapper.Map(review, model);
+            _mapper.Map(model, review);
             _repository.AddReview(review);
         }
 

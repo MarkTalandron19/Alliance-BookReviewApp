@@ -1,0 +1,115 @@
+﻿body {
+    background-color: #E6E6E6;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    left: 0;
+}
+
+header {
+    display: none;
+}
+
+.modal-body {
+    padding: 0 20px 30px 20px;
+}
+
+.modal-button {
+    background-color: #176B87;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    padding: 0 20px;
+    cursor: pointer;
+    outline: none;
+    transition: ease .2s;
+}
+
+    .modal-button:hover {
+        background-color: #0D5066;
+        transition: ease .2s;
+        border: none;
+        outline: none;
+    }
+
+.modal-button-close {
+    background-color: #bfbfbf;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    padding: 0 20px;
+    cursor: pointer;
+    outline: none;
+    transition: ease .2s;
+}
+
+    .modal-button-close:hover {
+        background-color: #808080;
+        transition: ease .2s;
+        border: none;
+        outline: none;
+    }
+
+.input-label {
+    padding-top: 20px;
+}
+
+.modal.show {
+    display: flex !important;
+    align-items: center;
+}
+
+    .modal.show .modal-dialog {
+        min-width: 500px;
+    }
+
+.edit-button {
+    background-color: #176B87;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    padding: 0 20px;
+    cursor: pointer;
+    outline: none;
+    transition: ease .2s;
+}
+
+    .edit-button:hover {
+        background-color: #0D5066;
+        transition: ease .2s;
+        border: none;
+        outline: none;
+    }
+
+.delete-button {
+    background-color: #176B87;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    padding: 0 20px;
+    cursor: pointer;
+    outline: none;
+    transition: ease .2s;
+}
+
+    .delete-button:hover {
+        background-color: #0D5066;
+        transition: ease .2s;
+        border: none;
+        outline: none;
+    }
+
+.delete-modal-caption {
+    padding: 20px 10px 0 10px;
+    font-weight: 600;
+}

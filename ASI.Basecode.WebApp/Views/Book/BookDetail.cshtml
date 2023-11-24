@@ -23,10 +23,6 @@
         <div class="book-details">
             <div class="book-image">
                 <img src="@Model.image" alt="Book Image" class="book-detail-image" />
-                <div class="book-grade">
-                    <div class="book-rating">★★★★★ 4.5</div>
-                    <div class="book-reviews">641 reviews</div>
-                </div>
             </div>
             <div class="book-info">
                 <div class="book-title">@Model.title</div>
@@ -46,7 +42,6 @@
                 </div>
             </div>
         </div>
-        @* insert review partial view here *@
         @if (ViewData["Reviews"] != null)
         {
             var reviews = (IEnumerable<ASI.Basecode.Data.Models.Review>)ViewData["Reviews"];
@@ -73,6 +68,7 @@
 
             <div class="review-details-row">
                 <div class="review-summary">
+                <div class="review-summary-1">
                     <div class="summary-details">
                         <div class="summary-detail-texts">
                             <h4>Reviews Summary</h4>
@@ -107,13 +103,16 @@
                             </div>
                         }
                     </div>
+                    
+                </div>
+                <h4 class="review-label">What do you think?</h4>
+                    <button class="add-button" id="AddReviewBtn"><p class="button-text">Write a Review</p></button>
                 </div>
 
                 <div class="review-contents">
                     <div class="review-content-title">
                         <div class="review-header">
                             <h3>Ratings and Reviews</h3>
-                            <button class="add-button" id="AddBtn"><p class="button-text">Write a Review</p></button>
                         </div>
                         <p>View all ></p>
                     </div>
@@ -147,7 +146,7 @@
                 </div>
             </div>
         }
-
+        @await Html.PartialAsync("~/Views/Review/_AddReviewPopup.cshtml", new ASI.Basecode.Services.ServiceModels.ReviewViewModel())
     </div>
 </div>
 
@@ -187,5 +186,8 @@
         if (errorMessage) {
             toastr.error(errorMessage);
         }
+        var bookId = @Model.bookId;
     </script>
 }
+
+<script src="~/js/Review.js"></script>

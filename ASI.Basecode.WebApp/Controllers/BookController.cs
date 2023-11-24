@@ -109,7 +109,7 @@ namespace ASI.Basecode.WebApp.Controllers
             return RedirectToAction("Login", "Account");
         }
 
-        [HttpGet("BookDetail/{bookId}")]
+        [HttpGet("BookDetail")]
         [AllowAnonymous]
         public async Task<IActionResult> BookDetail(string bookId)
         {

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASI.Basecode.Data.Migrations
 {
     [DbContext(typeof(AsiBasecodeDBContext))]
-    [Migration("20231123212719_initial")]
+    [Migration("20231124181308_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -340,7 +340,7 @@ namespace ASI.Basecode.Data.Migrations
                             reviewId = "1",
                             bookId = "1",
                             content = "Sample content",
-                            dateReviewed = new DateTime(2023, 11, 24, 5, 27, 19, 643, DateTimeKind.Local).AddTicks(1762),
+                            dateReviewed = new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4053),
                             rating = 4,
                             reviewerEmail = "test@gmail.com",
                             reviewerFirstName = "test",
@@ -351,7 +351,7 @@ namespace ASI.Basecode.Data.Migrations
                             reviewId = "2",
                             bookId = "1",
                             content = "Wow this is a great book!",
-                            dateReviewed = new DateTime(2023, 11, 24, 5, 27, 19, 643, DateTimeKind.Local).AddTicks(1777),
+                            dateReviewed = new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4077),
                             rating = 5,
                             reviewerEmail = "test2@gmail.com",
                             reviewerFirstName = "Aloysius",
@@ -362,7 +362,7 @@ namespace ASI.Basecode.Data.Migrations
                             reviewId = "3",
                             bookId = "1",
                             content = "Slow pacing, got bored of it immediately.",
-                            dateReviewed = new DateTime(2023, 11, 24, 5, 27, 19, 643, DateTimeKind.Local).AddTicks(1779),
+                            dateReviewed = new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4080),
                             rating = 2,
                             reviewerEmail = "test3@gmail.com",
                             reviewerFirstName = "Karen",
@@ -373,7 +373,7 @@ namespace ASI.Basecode.Data.Migrations
                             reviewId = "4",
                             bookId = "1",
                             content = "Very nice Story. Impressive writing by the Author.",
-                            dateReviewed = new DateTime(2023, 11, 24, 5, 27, 19, 643, DateTimeKind.Local).AddTicks(1780),
+                            dateReviewed = new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4083),
                             rating = 5,
                             reviewerEmail = "www@gmail.com",
                             reviewerFirstName = "Aloysius",
@@ -384,7 +384,7 @@ namespace ASI.Basecode.Data.Migrations
                             reviewId = "5",
                             bookId = "1",
                             content = "A good read.",
-                            dateReviewed = new DateTime(2023, 11, 24, 5, 27, 19, 643, DateTimeKind.Local).AddTicks(1782),
+                            dateReviewed = new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4086),
                             rating = 5,
                             reviewerEmail = "qwerty@gmail.com",
                             reviewerFirstName = "Enrique",
@@ -395,7 +395,7 @@ namespace ASI.Basecode.Data.Migrations
                             reviewId = "6",
                             bookId = "1",
                             content = "Not the best out of everything, but still very good nonetheless. I slightly teared up right before the ending part.",
-                            dateReviewed = new DateTime(2023, 11, 24, 5, 27, 19, 643, DateTimeKind.Local).AddTicks(1783),
+                            dateReviewed = new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4089),
                             rating = 4,
                             reviewerEmail = "abc@gmail.com",
                             reviewerFirstName = "Aaron",

@@ -287,12 +287,12 @@ namespace ASI.Basecode.Data.Migrations
                 columns: new[] { "reviewId", "bookId", "content", "dateReviewed", "rating", "reviewerEmail", "reviewerFirstName", "reviewerLastName" },
                 values: new object[,]
                 {
-                    { "1", "1", "Sample content", new DateTime(2023, 11, 24, 5, 27, 19, 643, DateTimeKind.Local).AddTicks(1762), 4, "test@gmail.com", "test", "test" },
-                    { "2", "1", "Wow this is a great book!", new DateTime(2023, 11, 24, 5, 27, 19, 643, DateTimeKind.Local).AddTicks(1777), 5, "test2@gmail.com", "Aloysius", "Beronque" },
-                    { "3", "1", "Slow pacing, got bored of it immediately.", new DateTime(2023, 11, 24, 5, 27, 19, 643, DateTimeKind.Local).AddTicks(1779), 2, "test3@gmail.com", "Karen", "Miller" },
-                    { "4", "1", "Very nice Story. Impressive writing by the Author.", new DateTime(2023, 11, 24, 5, 27, 19, 643, DateTimeKind.Local).AddTicks(1780), 5, "www@gmail.com", "Aloysius", "Beronque" },
-                    { "5", "1", "A good read.", new DateTime(2023, 11, 24, 5, 27, 19, 643, DateTimeKind.Local).AddTicks(1782), 5, "qwerty@gmail.com", "Enrique", "Pacudan" },
-                    { "6", "1", "Not the best out of everything, but still very good nonetheless. I slightly teared up right before the ending part.", new DateTime(2023, 11, 24, 5, 27, 19, 643, DateTimeKind.Local).AddTicks(1783), 4, "abc@gmail.com", "Aaron", "Alcuitas" }
+                    { "1", "1", "Sample content", new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4053), 4, "test@gmail.com", "test", "test" },
+                    { "2", "1", "Wow this is a great book!", new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4077), 5, "test2@gmail.com", "Aloysius", "Beronque" },
+                    { "3", "1", "Slow pacing, got bored of it immediately.", new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4080), 2, "test3@gmail.com", "Karen", "Miller" },
+                    { "4", "1", "Very nice Story. Impressive writing by the Author.", new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4083), 5, "www@gmail.com", "Aloysius", "Beronque" },
+                    { "5", "1", "A good read.", new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4086), 5, "qwerty@gmail.com", "Enrique", "Pacudan" },
+                    { "6", "1", "Not the best out of everything, but still very good nonetheless. I slightly teared up right before the ending part.", new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4089), 4, "abc@gmail.com", "Aaron", "Alcuitas" }
                 });
 
             migrationBuilder.CreateIndex(
