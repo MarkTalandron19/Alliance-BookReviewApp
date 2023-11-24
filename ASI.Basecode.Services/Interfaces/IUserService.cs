@@ -17,5 +17,6 @@ namespace ASI.Basecode.Services.Interfaces
         IQueryable<IdentityRole> GetRoles(); 
         IQueryable<User> GetUsers();
         Task UpdateUser(UserViewModel model);
+        Task DeleteUser(string userId);
     }
 }

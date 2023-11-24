@@ -14,11 +14,8 @@ $(document).ready(function () {
         var email = $(this).data('user-email');
         var password = $(this).data('user-password');
 
-
-
         $('#edituserId').val(userId);
         $('#editname').val(name);
-        $('#originalemail').val(email);
         $('#editemail').val(email);
         $('#originalemail').val(email);
         $('#editpassword').val(password);
@@ -30,10 +27,10 @@ $(document).ready(function () {
     $('.delete-button').click(function () {
         jQuery.noConflict();
 
-        var genreId = $(this).data('genre-id');
+        var userId = $(this).data('user-id');
 
-        $('#deleteGenreId').val(genreId);
-        $('#DeleteGenreModal').modal('show');
+        $('#deleteuserid').val(userId);
+        $('#DeleteUserModal').modal('show');
         console.log("Button clicked");
     });
 

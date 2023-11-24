@@ -9,9 +9,9 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 id="modalTitle">Edit Genre Details</h4>
+				<h4 id="modalTitle">Edit User Details</h4>
 			</div>
-			<form method="post" asp-action="UpdateUser" asp-controller="Account" id="EditGenreForm">
+			<form method="post" asp-action="UpdateUser" asp-controller="Account" id="EditUserForm">
 				<div class="modal-body">
 						<input type="hidden" id="edituserId" asp-for="UserId" />
 						<input type="hidden" id="originalemail" asp-for="OriginalEmail" />
@@ -54,7 +54,7 @@
 				</div>
 				<div class="modal-footer">
 					<button class="modal-button-close" id="Close" type="button" data-dismiss="modal">Close</button>
-					<button class="modal-button" id="Update" type="submit">Update Genre</button>
+					<button class="modal-button" id="Update" type="submit">Update User</button>
 
 				</div>
 			</form>

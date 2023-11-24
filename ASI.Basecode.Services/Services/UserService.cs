@@ -95,5 +95,12 @@ namespace ASI.Basecode.Services.Services
 			}
 
         }
+        public async Task DeleteUser(string userId)
+        {
+            if (_repository.UserExists(userId))
+            {
+                await _repository.DeleteUser(userId);
+            }
+        }
     }
 }

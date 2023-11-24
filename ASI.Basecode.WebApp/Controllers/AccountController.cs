@@ -22,6 +22,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using static ASI.Basecode.Resources.Constants.Enums;
+using ASI.Basecode.Services.Services;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
@@ -364,6 +365,13 @@ namespace ASI.Basecode.WebApp.Controllers
                 TempData["ErrorMessage"] = Resources.Messages.Errors.ServerError;
             }
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult DeleteUser(UserViewModel model)
+        {
+            _userService.DeleteUser(model.UserId);
+            return RedirectToAction("UserList", "Account");
         }
 
         [HttpPost]

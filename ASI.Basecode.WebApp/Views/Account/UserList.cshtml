@@ -90,7 +90,7 @@
 												data-user-name="@user.Name" data-user-email="@user.Email" data-user-password="@user.Password">
 											Edit
 										</button>
-										@*<button class="delete-button" data-genre-id="@genre.genreId">Delete</button>*@
+										<button class="delete-button" data-user-id="@user.UserId" data-user-email="@user.Email">Delete</button>
 									</td>
 								</tr>
 							}
@@ -101,8 +101,8 @@
 		</div>
 	</div>
 	@await Html.PartialAsync("_AddUserPopup", Model.ViewModel);
-	@await Html.PartialAsync("_EditUserPopup", Model.ViewModel);@*
-	@await Html.PartialAsync("_DeleteGenrePopup", new ASI.Basecode.Services.ServiceModels.GenreViewModel());*@
+	@await Html.PartialAsync("_EditUserPopup", Model.ViewModel);
+	@await Html.PartialAsync("_DeleteUserPopup", Model.ViewModel);
 </div>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>

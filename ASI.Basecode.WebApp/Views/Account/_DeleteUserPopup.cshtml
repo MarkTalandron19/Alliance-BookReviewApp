@@ -1,0 +1,33 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@using ASI.Basecode.Services.ServiceModels
+@model UserViewModel
+@section styles {
+    <link rel="stylesheet" href="~/css/admindashboard.css" />
+}
+<div class="modal" id="DeleteUserModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="modalTitle">Delete User</h4>
+            </div>
+            <form method="post" asp-action="DeleteUser" asp-controller="Account" id="DeleteUserForm">
+                <div class="modal-body">
+                    <div>
+						<input type="hidden" id="deleteuserid" asp-for="UserId" />
+                        <p class="delete-modal-caption">Are you sure you want to delete this User?<br /> This action is permanent.</p>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="modal-button-close" id="Close" type="button" data-dismiss="modal">Close</button>
+                    <button class="modal-button" id="Delete" type="submit">Delete User</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="~/js/User.js"></script>
