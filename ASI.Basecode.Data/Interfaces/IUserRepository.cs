@@ -18,5 +18,6 @@ namespace ASI.Basecode.Data.Interfaces
         Task<IdentityResult> CreateRole(string roleName);
         IQueryable<IdentityRole> GetRoles();
         void UpdateUser(User model);
+        Task UpdateIdentityUser(User model, string originalEmail, string role);
     }
 }

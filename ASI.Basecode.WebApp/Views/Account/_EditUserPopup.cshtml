@@ -14,6 +14,7 @@
 			<form method="post" asp-action="UpdateUser" asp-controller="Account" id="EditGenreForm">
 				<div class="modal-body">
 						<input type="hidden" id="edituserId" asp-for="UserId" />
+						<input type="hidden" id="originalemail" asp-for="OriginalEmail" />
 					<div>
 						<label class="form-label" for="email">Email</label>
 						<input type="text" id="editemail" class="form-control"

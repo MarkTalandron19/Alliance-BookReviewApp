@@ -80,9 +80,10 @@ namespace ASI.Basecode.Services.Services
             return _repository.GetUsers();
         }
 
-        public void UpdateUser(UserViewModel model)
+        public async Task UpdateUser(UserViewModel model)
         {
             var user = new User();
+            var originalEmail = model.OriginalEmail;
             var role = model.SelectedRole;
             if (_repository.UserExists(model.UserId))
             {
@@ -90,7 +91,8 @@ namespace ASI.Basecode.Services.Services
                 user.UpdatedTime = DateTime.Now;
                 user.UpdatedBy = System.Environment.UserName;
                 _repository.UpdateUser(user);
-            }
+				Task.Run(async () => await _repository.UpdateIdentityUser(user, originalEmail, role)).Wait();
+			}
 
         }
     }

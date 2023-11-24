@@ -18,7 +18,9 @@ $(document).ready(function () {
 
         $('#edituserId').val(userId);
         $('#editname').val(name);
+        $('#originalemail').val(email);
         $('#editemail').val(email);
+        $('#originalemail').val(email);
         $('#editpassword').val(password);
         $('#editconfirmpassword').val(password);
         $('#EditUserModal').modal('show');

@@ -92,5 +92,24 @@ namespace ASI.Basecode.Data.Repositories
             }
         }
 
+        public async Task UpdateIdentityUser(User model, string originalEmail, string role)
+        {
+            var user = await _userManager.FindByEmailAsync(originalEmail);
+            var identityUser = new IdentityUser();
+            if (user != null)
+            {
+                var newPasswordHash = _userManager.PasswordHasher.HashPassword(user, model.Password);
+				user.UserName = model.Name;
+                user.Email = model.Email;
+                user.PasswordHash = newPasswordHash;
+                await _userManager.UpdateAsync(user);
+                await _userManager.UpdateNormalizedEmailAsync(user);
+                await _userManager.UpdateNormalizedUserNameAsync(user);
+
+                var userRoles = await _userManager.GetRolesAsync(user);
+                await _userManager.RemoveFromRolesAsync(user, userRoles);
+                await _userManager.AddToRoleAsync(user, role);
+			}
+        }
     }
 }

@@ -31,5 +31,7 @@ namespace ASI.Basecode.Services.ServiceModels
 
         [Required(ErrorMessage = "Role is required.")]
         public string SelectedRole { get; set; }
+
+        public string OriginalEmail { get; set; }
     }
 }
