@@ -8,6 +8,16 @@
         $('#modalTitle').text('Post a Review');
         console.log("Button clicked");
     });
+
+    $('#ViewReviewsBtn').click(function () {
+        jQuery.noConflict();
+
+        $('#ViewReviewsModal input[name="bookId"]').val(bookId);
+
+        $('#ViewReviewsModal').modal('show');
+        $('#modalTitle').text('View All Reviews');
+        console.log("Button clicked");
+    });
 });
 
 $(document).ready(function () {

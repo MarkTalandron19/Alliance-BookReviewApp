@@ -6,6 +6,7 @@
 }
 @section styles {
     <link rel="stylesheet" href="~/css/bookdetail.css" />
+    <link rel="stylesheet" href="~/css/review.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 }
@@ -26,7 +27,7 @@
             </div>
             <div class="book-info">
                 <div class="book-title">@Model.title</div>
-                <div class="book-author">BOSS Mark</div>
+                <div class="book-author"><p class="book-author-title">Author:&nbsp;</p>@Model.author</div>
                 <div class="book-genres">
                     @foreach (var genre in (IEnumerable<Genre>)ViewData["Genres"])
                     {
@@ -114,10 +115,14 @@
                         <div class="review-header">
                             <h3>Ratings and Reviews</h3>
                         </div>
-                        <p>View all ></p>
+                        <button class="add-button" id="ViewReviewsBtn"><p class="button-text">View all</p></button>
+                        
                     </div>
                     <div class="user-reviews">
-                        @foreach (var c in (IEnumerable<ASI.Basecode.Data.Models.Review>)ViewData["Reviews"])
+                        @if (ViewData["Reviews"] != null && ((IEnumerable<ASI.Basecode.Data.Models.Review>)ViewData["Reviews"]).Any())
+                        {
+                            @foreach (var c in ((IEnumerable<ASI.Basecode.Data.Models.Review>)ViewData["Reviews"]).OrderByDescending(c => c.dateReviewed)
+                           .Take(5))
                         {
                             <div class="user-review">
                                 <div class="reviewer-header">
@@ -142,11 +147,21 @@
                                 </div>
                             </div>
                         }
+                        }
+                        else
+                        {
+                            <div class="user-review-empty">
+                                <div class="review-info">
+                                    • • • • • No Reviews yet. Be the first to review!
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
         }
         @await Html.PartialAsync("~/Views/Review/_AddReviewPopup.cshtml", new ASI.Basecode.Services.ServiceModels.ReviewViewModel())
+        @await Html.PartialAsync("~/Views/Review/_ViewReviewsPopup.cshtml", new ASI.Basecode.Services.ServiceModels.ReviewViewModel())
     </div>
 </div>
 
