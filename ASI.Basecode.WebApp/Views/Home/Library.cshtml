@@ -59,13 +59,34 @@
         <div class="book-list">
             @foreach (var book in Model)
             {
+                var reviews = ((IEnumerable<ASI.Basecode.Data.Models.Review>)ViewData["Reviews"]).Where(r => r.bookId == book.bookId);
+                var totalRatings = 0;
+                var totalReviews = reviews.Count();
+                var ratingsCount = new int[5];
+
+                foreach (var review in reviews)
+                {
+                    totalRatings += review.rating;
+                    ratingsCount[review.rating - 1]++;
+                }
+
+                double[] percentages = new double[5];
+                decimal averageRating = totalReviews > 0 ? (decimal)totalRatings / totalReviews : 0;
+                decimal averageRatingRounded = Math.Round(averageRating, 1);
+                int roundedRating = (int)Math.Round(averageRating);
+
+                for (int i = 0; i < 5; i++)
+                {
+                    percentages[i] = totalReviews > 0 ? ((double)ratingsCount[i] / totalReviews) * 100 : 0;
+                }
+
                 <a asp-controller="Book" asp-action="BookDetail" asp-route-bookId="@book.bookId" class="book-link">
                 <div class="book">
                     <img src="@book.image" alt="Book Image" class="book-image"/>
                     <div class="book-grade">
-                        <div class="book-rating">★ 4.5</div>
-                        <div>•</div>
-                        <div class="book-reviews">641 reviews</div>
+                            <div class="book-rating">★ @averageRatingRounded.ToString("0.0")</div>
+                            <div>&nbsp;&nbsp;•</div>
+                            <div class="book-reviews">@totalReviews.ToString("N0") reviews</div>
                     </div>
                     <div class="book-genre">@book.pubYear</div>
                     <div class="book-title">@book.title</div>

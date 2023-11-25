@@ -146,11 +146,20 @@
 }
 
 .book-author {
+    display: flex;
     font-size: 18px;
     font-weight:500;
     color: #176B87;
-    text-decoration: underline;
+    font-style: italic;
 }
+
+    .book-author-title {
+        margin-bottom: 0!important;
+        font-style: normal;
+        font-size: 18px;
+        font-weight: 500;
+        color: black;
+    }
 
 .book-genres {
     display: flex;
@@ -449,6 +458,13 @@
     padding: 20px 30px;
     margin-bottom: 20px;
     border-radius: 10px;
+}
+
+.user-review-empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 30px;
 }
 
 .reviewer-header {

@@ -279,8 +279,6 @@
 
 .book-grade {
     display: flex;
-    justify-content: space-between;
-    width: 60%;
 }
 
 .book-title {
