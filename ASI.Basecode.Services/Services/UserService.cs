@@ -84,7 +84,7 @@ namespace ASI.Basecode.Services.Services
         {
             var user = new User();
             var originalEmail = model.OriginalEmail;
-            var role = model.SelectedRole;
+            var role = model.Role;
             if (_repository.UserExists(model.UserId))
             {
                 _mapper.Map(model, user);

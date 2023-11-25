@@ -7,9 +7,9 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 id="modalTitle">Add a Book Genre</h4>
+				<h4 id="modalTitle">Add User</h4>
 			</div>
-			<form method="post" asp-action="AddUser" asp-controller="Account" id="GenreForm">
+			<form method="post" asp-action="AddUser" asp-controller="Account" id="UserForm">
 				<div class="modal-body">
 					<div>
 						<label class="form-label" for="userId">UserId</label>
@@ -43,15 +43,15 @@
 						<span asp-validation-for="ConfirmPassword" class="text-danger"></span>
 					</div>
 					<div>
-						<label asp-for="SelectedRole" class="control-label">Role</label>
-						<select id="selectedRole" asp-for="SelectedRole" class="form-control">
+						<label asp-for="Role" class="control-label">Role</label>
+						<select id="role" asp-for="Role" class="form-control">
 							<option value="">Select a role</option>
 							@foreach (var role in Model.Roles)
 							{
 								<option value="@role">@role</option>
 							}
 						</select>
-						<span asp-validation-for="SelectedRole" class="text-danger"></span>
+						<span asp-validation-for="Role" class="text-danger"></span>
 					</div>
 				</div>
 				<div class="modal-footer">

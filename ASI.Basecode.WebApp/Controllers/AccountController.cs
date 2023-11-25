@@ -346,7 +346,7 @@ namespace ASI.Basecode.WebApp.Controllers
                 {
                     _userService.AddUser(model);
 
-                    var userRole = _roleManager.FindByNameAsync(model.SelectedRole).Result;
+                    var userRole = _roleManager.FindByNameAsync(model.Role).Result;
 
                     if (userRole != null)
                     {
@@ -390,7 +390,7 @@ namespace ASI.Basecode.WebApp.Controllers
                 {
                     _userService.AddUser(model);
 
-                    var userRole = _roleManager.FindByNameAsync(model.SelectedRole).Result;
+                    var userRole = _roleManager.FindByNameAsync(model.Role).Result;
 
                     if (userRole != null)
                     {

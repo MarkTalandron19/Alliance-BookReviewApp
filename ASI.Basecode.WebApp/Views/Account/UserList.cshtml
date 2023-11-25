@@ -62,11 +62,11 @@
 			</div>
 			<div class="dashboard">
 				<div class="dashboard-title-div">
-					<p class="dashboard-title">Genre List Management</p>
+					<p class="dashboard-title">User List Management</p>
 					<button class="add-button" id="AddBtn"><p class="button-text">+</p></button>
 				</div>
 				<hr class="divider" />
-				<p class="dashboard-subtitle">Book Genre List</p>
+				<p class="dashboard-subtitle">User List</p>
 				<div class="dashboard-card">
 					<table class="dashboard-table">
 						<thead class="dashboard-table-header">
@@ -77,6 +77,15 @@
 								<th style="width: 50%;">
 									Email
 								</th>
+								<th style="width: 50%;">
+									Role
+								</th>
+								<th style="width: 50%;">
+									Created By
+								</th>
+								<th style="width: 50%;">
+									Created Time
+								</th>
 							</tr>
 						</thead>
 						<tbody id="tableBody">
@@ -85,9 +94,13 @@
 								<tr>
 									<td><a href="">@user.Name</a></td>
 									<td>@user.Email</td>
+									<td>@user.Role</td>
+									<td>@user.CreatedBy</td>
+									<td>@user.CreatedTime</td>
 									<td>
 										<button class="edit-button" id="Update" data-user-id="@user.UserId"
-												data-user-name="@user.Name" data-user-email="@user.Email" data-user-password="@user.Password">
+												data-user-name="@user.Name" data-user-email="@user.Email" data-user-password="@user.Password"
+												data-user-role="@user.Role">
 											Edit
 										</button>
 										<button class="delete-button" data-user-id="@user.UserId" data-user-email="@user.Email">Delete</button>
