@@ -79,6 +79,7 @@ namespace ASI.Basecode.Data.Migrations
                             bookId = "1",
                             CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "Ransom Riggs",
                             image = "/seeder/1.jpg",
                             isbn = "ISBN-9781594746031",
                             language = "English",
@@ -92,6 +93,7 @@ namespace ASI.Basecode.Data.Migrations
                             bookId = "2",
                             CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "Ransom Riggs",
                             image = "/seeder/2.jpg",
                             isbn = "ISBN-9781594747359",
                             language = "English",
@@ -105,6 +107,7 @@ namespace ASI.Basecode.Data.Migrations
                             bookId = "3",
                             CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "Ransom Riggs",
                             image = "/seeder/3.jpg",
                             isbn = "ISBN-9781594747588",
                             language = "English",
@@ -118,6 +121,7 @@ namespace ASI.Basecode.Data.Migrations
                             bookId = "4",
                             CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "Ransom Riggs",
                             image = "/seeder/4.jpg",
                             isbn = "ISBN-9780735232143",
                             language = "English",
@@ -131,6 +135,7 @@ namespace ASI.Basecode.Data.Migrations
                             bookId = "5",
                             CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "Ransom Riggs",
                             image = "/seeder/5.jpg",
                             isbn = "ISBN-9780735232144",
                             language = "English",
@@ -138,6 +143,286 @@ namespace ASI.Basecode.Data.Migrations
                             publisher = "Penguin Random House",
                             synopsis = "The adventure that began with Miss Peregrine's Home for Peculiar Children and continued in A Map of Days comes to a thrilling conclusion.",
                             title = "The Conference of the Birds: The Fifth Novel of Miss Peregrine's Peculiar Children"
+                        },
+                        new
+                        {
+                            bookId = "6",
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "Alex Michaelides",
+                            image = "/seeder/6.jpg",
+                            isbn = "ISBN-9781250301697",
+                            language = "English",
+                            pubYear = "2019",
+                            publisher = "Celadon Books",
+                            synopsis = "Alicia Berenson's life is seemingly perfect until she shoots her husband and then never speaks another word. Theo Faber, a criminal psychotherapist, is determined to unravel her mystery.",
+                            title = "The Silent Patient"
+                        },
+                        new
+                        {
+                            bookId = "7",
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "Delia Owens",
+                            image = "/seeder/7.jpg",
+                            isbn = "ISBN-9780735219091",
+                            language = "English",
+                            pubYear = "2018",
+                            publisher = "G.P. Putnam's Sons",
+                            synopsis = "A mystery tale of Kya Clark, known as the Marsh Girl, accused of the murder of Chase Andrews in the quiet town of Barkley Cove.",
+                            title = "Where the Crawdads Sing"
+                        },
+                        new
+                        {
+                            bookId = "8",
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "Erin Morgenstern",
+                            image = "/seeder/8.jpg",
+                            isbn = "ISBN-9780307744432",
+                            language = "English",
+                            pubYear = "2011",
+                            publisher = "Doubleday",
+                            synopsis = "Two young illusionists, Celia and Marco, are bound in a magical competition, unaware that it's a battle where only one can survive.",
+                            title = "The Night Circus"
+                        },
+                        new
+                        {
+                            bookId = "9",
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "Tara Westover",
+                            image = "/seeder/9.jpg",
+                            isbn = "ISBN-9780399590504",
+                            language = "English",
+                            pubYear = "2018",
+                            publisher = "Random House",
+                            synopsis = "A memoir recounting Tara Westover's inspiring journey from growing up in a strict survivalist family in Idaho to earning a Ph.D. from Cambridge University.",
+                            title = "Educated"
+                        },
+                        new
+                        {
+                            bookId = "10",
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "F. Scott Fitzgerald",
+                            image = "/seeder/10.jpg",
+                            isbn = "ISBN-9780743273565",
+                            language = "English",
+                            pubYear = "1925",
+                            publisher = "Charles Scribner's Sons",
+                            synopsis = "Jay Gatsby's extravagant parties and his pursuit of Daisy Buchanan, set against the backdrop of 1920s Long Island, ultimately leading to tragic consequences.",
+                            title = "The Great Gatsby"
+                        },
+                        new
+                        {
+                            bookId = "11",
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "Paulo Coelho",
+                            image = "/seeder/11.jpg",
+                            isbn = "ISBN-9780062315007",
+                            language = "English",
+                            pubYear = "1988",
+                            publisher = "HarperCollins",
+                            synopsis = "Follows the journey of Santiago, an Andalusian shepherd boy, as he travels in search of a worldly treasure.",
+                            title = "The Alchemist"
+                        },
+                        new
+                        {
+                            bookId = "12",
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "Harper Lee",
+                            image = "/seeder/12.jpg",
+                            isbn = "ISBN-9780061120084",
+                            language = "English",
+                            pubYear = "1960",
+                            publisher = "J. B. Lippincott & Co.",
+                            synopsis = "A classic novel set in the American South during the 1930s, dealing with the issues of racial injustice and moral growth through the eyes of Scout Finch.",
+                            title = "To Kill a Mockingbird"
+                        },
+                        new
+                        {
+                            bookId = "13",
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "George Orwell",
+                            image = "/seeder/13.jpg",
+                            isbn = "ISBN-9780451524935",
+                            language = "English",
+                            pubYear = "1949",
+                            publisher = "Secker & Warburg",
+                            synopsis = "George Orwell's dystopian novel explores a totalitarian society controlled by a single party led by Big Brother.",
+                            title = "1984"
+                        },
+                        new
+                        {
+                            bookId = "14",
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "J.D. Salinger",
+                            image = "/seeder/14.jpg",
+                            isbn = "ISBN-9780316769488",
+                            language = "English",
+                            pubYear = "1951",
+                            publisher = "Little, Brown and Company",
+                            synopsis = "Narrates the experiences of Holden Caulfield, a disenchanted teenager navigating life and dealing with societal phoniness.",
+                            title = "The Catcher in the Rye"
+                        },
+                        new
+                        {
+                            bookId = "15",
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "J.R.R. Tolkien",
+                            image = "/seeder/15.jpg",
+                            isbn = "ISBN-9780261102217",
+                            language = "English",
+                            pubYear = "1937",
+                            publisher = "Allen & Unwin",
+                            synopsis = "The story of Bilbo Baggins, a hobbit who embarks on an adventurous journey to help a group of dwarves reclaim their homeland.",
+                            title = "The Hobbit"
+                        },
+                        new
+                        {
+                            bookId = "16",
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "Rhiannon Frater",
+                            image = "/seeder/16.jpg",
+                            isbn = "ISBN-9780765331267",
+                            language = "English",
+                            pubYear = "2008",
+                            publisher = "Tor Books",
+                            synopsis = "Katie is driving to work one beautiful day when a dead man jumps into her car and tries to eat her.  That same morning, Jenni opens a bedroom door to find her husband devouring their toddler son. ",
+                            title = "The First Days"
+                        },
+                        new
+                        {
+                            bookId = "17",
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "Jane Austen",
+                            image = "/seeder/17.jpg",
+                            isbn = "ISBN-9780141199078",
+                            language = "English",
+                            pubYear = "1813",
+                            publisher = "T. Egerton, Whitehall",
+                            synopsis = "A romantic novel revolving around Elizabeth Bennet and Mr. Darcy, exploring societal norms, love, and misunderstandings.",
+                            title = "Pride and Prejudice"
+                        },
+                        new
+                        {
+                            bookId = "18",
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "Aldous Huxley",
+                            image = "/seeder/18.jpg",
+                            isbn = "ISBN-9780099518471",
+                            language = "English",
+                            pubYear = "1932",
+                            publisher = "Chatto & Windus",
+                            synopsis = "A dystopian novel portraying a future society controlled by technology, conformity, and conditioning.",
+                            title = "Brave New World"
+                        },
+                        new
+                        {
+                            bookId = "19",
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "J.R.R. Tolkien",
+                            image = "/seeder/19.jpg",
+                            isbn = "ISBN-9780261102361",
+                            language = "English",
+                            pubYear = "1954",
+                            publisher = "Allen & Unwin",
+                            synopsis = "A fantasy epic that chronicles the quest to destroy the One Ring and defeat the Dark Lord Sauron.",
+                            title = "The Lord of the Rings"
+                        },
+                        new
+                        {
+                            bookId = "20",
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "C.S. Lewis",
+                            image = "/seeder/20.jpg",
+                            isbn = "ISBN-9780066238500",
+                            language = "English",
+                            pubYear = "1950",
+                            publisher = "Geoffrey Bles",
+                            synopsis = "A series of high-fantasy novels depicting the adventures in the magical land of Narnia.",
+                            title = "The Chronicles of Narnia"
+                        },
+                        new
+                        {
+                            bookId = "21",
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "Robert T. Kiyosaki",
+                            image = "/seeder/21.jpg",
+                            isbn = "ISBN-9781612680194",
+                            language = "English",
+                            pubYear = "1997",
+                            publisher = "Plata Publishing",
+                            synopsis = "The book explores the mindset and financial knowledge needed to succeed financially, based on the author's experiences.",
+                            title = "Rich Dad Poor Dad"
+                        },
+                        new
+                        {
+                            bookId = "22",
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "James Clear",
+                            image = "/seeder/22.jpg",
+                            isbn = "ISBN-9780735211293",
+                            language = "English",
+                            pubYear = "2018",
+                            publisher = "Avery",
+                            synopsis = "A guide to creating good habits, breaking bad ones, and mastering the tiny behaviors that lead to remarkable results.",
+                            title = "Atomic Habits"
+                        },
+                        new
+                        {
+                            bookId = "23",
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "Steven Pressfield",
+                            image = "/seeder/23.jpg",
+                            isbn = "ISBN-9780553580532",
+                            language = "English",
+                            pubYear = "1998",
+                            publisher = "Bantam",
+                            synopsis = "A historical novel that retells the story of the Battle of Thermopylae from the perspective of the Spartans.",
+                            title = "Gates of Fire"
+                        },
+                        new
+                        {
+                            bookId = "24",
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "Herman Melville",
+                            image = "/seeder/24.jpg",
+                            isbn = "ISBN-9780142437247",
+                            language = "English",
+                            pubYear = "1851",
+                            publisher = "Richard Bentley",
+                            synopsis = "An epic saga of Captain Ahab's obsessive quest for revenge against the white whale, Moby Dick.",
+                            title = "Moby-Dick"
+                        },
+                        new
+                        {
+                            bookId = "25",
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            author = "Douglas Adams",
+                            image = "/seeder/25.jpg",
+                            isbn = "ISBN-9780345391803",
+                            language = "English",
+                            pubYear = "1979",
+                            publisher = "Pan Books",
+                            synopsis = "A comedic science fiction series following the misadventures of an unwitting human, Arthur Dent.",
+                            title = "The Hitchhiker's Guide to the Galaxy"
                         });
                 });
 
