@@ -43,6 +43,14 @@ namespace ASI.Basecode.Data.Repositories
             return bookGenres;
         }
 
+        public IQueryable<Review> GetReviewsOfBook(string bookId)
+        {
+            var bookReviews = this.GetDbSet<Review>()
+                .Where(bg => bg.bookId == bookId);
+
+            return bookReviews;
+        }
+
         public void AddBook(Book book)
         {
             this.GetDbSet<Book>().Add(book);

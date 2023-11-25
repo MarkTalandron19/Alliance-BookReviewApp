@@ -97,7 +97,6 @@ namespace ASI.Basecode.Data
 
                 entity.Property(e => e.content)
                     .IsRequired()
-                    .HasMaxLength(50)
                     .IsUnicode(false);
 
                 entity.Property(e => e.rating)
@@ -109,6 +108,74 @@ namespace ASI.Basecode.Data
                 entity.HasOne(e => e.book)
                     .WithMany(b => b.Reviews)
                     .HasForeignKey(e => e.bookId);
+
+                entity.HasData(
+    new Review { 
+        reviewId = "1", 
+        reviewerEmail = "test@gmail.com", 
+        reviewerFirstName = "test", 
+        reviewerLastName = "test", 
+        dateReviewed = DateTime.Now,
+        content = "Sample content", 
+        rating = 4,
+        bookId = "1", 
+    },
+    new Review
+    {
+        reviewId = "2",
+        reviewerEmail = "test2@gmail.com",
+        reviewerFirstName = "Aloysius",
+        reviewerLastName = "Beronque",
+        dateReviewed = DateTime.Now,
+        content = "Wow this is a great book!",
+        rating = 5,
+        bookId = "1",
+    },
+    new Review
+    {
+        reviewId = "3",
+        reviewerEmail = "test3@gmail.com",
+        reviewerFirstName = "Karen",
+        reviewerLastName = "Miller",
+        dateReviewed = DateTime.Now,
+        content = "Slow pacing, got bored of it immediately.",
+        rating = 2,
+        bookId = "1",
+    },
+    new Review
+    {
+        reviewId = "4",
+        reviewerEmail = "www@gmail.com",
+        reviewerFirstName = "Aloysius",
+        reviewerLastName = "Beronque",
+        dateReviewed = DateTime.Now,
+        content = "Very nice Story. Impressive writing by the Author.",
+        rating = 5,
+        bookId = "1",
+    },
+    new Review
+    {
+        reviewId = "5",
+        reviewerEmail = "qwerty@gmail.com",
+        reviewerFirstName = "Enrique",
+        reviewerLastName = "Pacudan",
+        dateReviewed = DateTime.Now,
+        content = "A good read.",
+        rating = 5,
+        bookId = "1",
+    },
+    new Review
+    {
+        reviewId = "6",
+        reviewerEmail = "abc@gmail.com",
+        reviewerFirstName = "Aaron",
+        reviewerLastName = "Alcuitas",
+        dateReviewed = DateTime.Now,
+        content = "Not the best out of everything, but still very good nonetheless. I slightly teared up right before the ending part.",
+        rating = 4,
+        bookId = "1",
+    }
+);
             });
 
             modelBuilder.Entity<Genre>(entity =>

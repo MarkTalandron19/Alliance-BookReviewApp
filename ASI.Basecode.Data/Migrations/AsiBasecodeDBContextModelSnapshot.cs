@@ -298,9 +298,8 @@ namespace ASI.Basecode.Data.Migrations
 
                     b.Property<string>("content")
                         .IsRequired()
-                        .HasMaxLength(50)
                         .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("varchar(max)");
 
                     b.Property<DateTime>("dateReviewed")
                         .HasColumnType("datetime2");
@@ -331,6 +330,74 @@ namespace ASI.Basecode.Data.Migrations
                     b.HasIndex("bookId");
 
                     b.ToTable("Reviews");
+
+                    b.HasData(
+                        new
+                        {
+                            reviewId = "1",
+                            bookId = "1",
+                            content = "Sample content",
+                            dateReviewed = new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4053),
+                            rating = 4,
+                            reviewerEmail = "test@gmail.com",
+                            reviewerFirstName = "test",
+                            reviewerLastName = "test"
+                        },
+                        new
+                        {
+                            reviewId = "2",
+                            bookId = "1",
+                            content = "Wow this is a great book!",
+                            dateReviewed = new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4077),
+                            rating = 5,
+                            reviewerEmail = "test2@gmail.com",
+                            reviewerFirstName = "Aloysius",
+                            reviewerLastName = "Beronque"
+                        },
+                        new
+                        {
+                            reviewId = "3",
+                            bookId = "1",
+                            content = "Slow pacing, got bored of it immediately.",
+                            dateReviewed = new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4080),
+                            rating = 2,
+                            reviewerEmail = "test3@gmail.com",
+                            reviewerFirstName = "Karen",
+                            reviewerLastName = "Miller"
+                        },
+                        new
+                        {
+                            reviewId = "4",
+                            bookId = "1",
+                            content = "Very nice Story. Impressive writing by the Author.",
+                            dateReviewed = new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4083),
+                            rating = 5,
+                            reviewerEmail = "www@gmail.com",
+                            reviewerFirstName = "Aloysius",
+                            reviewerLastName = "Beronque"
+                        },
+                        new
+                        {
+                            reviewId = "5",
+                            bookId = "1",
+                            content = "A good read.",
+                            dateReviewed = new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4086),
+                            rating = 5,
+                            reviewerEmail = "qwerty@gmail.com",
+                            reviewerFirstName = "Enrique",
+                            reviewerLastName = "Pacudan"
+                        },
+                        new
+                        {
+                            reviewId = "6",
+                            bookId = "1",
+                            content = "Not the best out of everything, but still very good nonetheless. I slightly teared up right before the ending part.",
+                            dateReviewed = new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4089),
+                            rating = 4,
+                            reviewerEmail = "abc@gmail.com",
+                            reviewerFirstName = "Aaron",
+                            reviewerLastName = "Alcuitas"
+                        });
                 });
 
             modelBuilder.Entity("ASI.Basecode.Data.Models.User", b =>

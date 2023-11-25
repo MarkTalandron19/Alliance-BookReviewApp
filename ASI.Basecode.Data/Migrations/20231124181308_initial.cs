@@ -206,7 +206,7 @@ namespace ASI.Basecode.Data.Migrations
                     reviewerFirstName = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     reviewerLastName = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     reviewerEmail = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    content = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    content = table.Column<string>(type: "varchar(max)", unicode: false, nullable: false),
                     rating = table.Column<int>(type: "int", nullable: false),
                     dateReviewed = table.Column<DateTime>(type: "datetime2", nullable: false),
                     bookId = table.Column<string>(type: "nvarchar(450)", nullable: true)
@@ -280,6 +280,19 @@ namespace ASI.Basecode.Data.Migrations
                     { "3", "3", 0 },
                     { "4", "4", 0 },
                     { "5", "5", 0 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Reviews",
+                columns: new[] { "reviewId", "bookId", "content", "dateReviewed", "rating", "reviewerEmail", "reviewerFirstName", "reviewerLastName" },
+                values: new object[,]
+                {
+                    { "1", "1", "Sample content", new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4053), 4, "test@gmail.com", "test", "test" },
+                    { "2", "1", "Wow this is a great book!", new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4077), 5, "test2@gmail.com", "Aloysius", "Beronque" },
+                    { "3", "1", "Slow pacing, got bored of it immediately.", new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4080), 2, "test3@gmail.com", "Karen", "Miller" },
+                    { "4", "1", "Very nice Story. Impressive writing by the Author.", new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4083), 5, "www@gmail.com", "Aloysius", "Beronque" },
+                    { "5", "1", "A good read.", new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4086), 5, "qwerty@gmail.com", "Enrique", "Pacudan" },
+                    { "6", "1", "Not the best out of everything, but still very good nonetheless. I slightly teared up right before the ending part.", new DateTime(2023, 11, 25, 2, 13, 8, 433, DateTimeKind.Local).AddTicks(4089), 4, "abc@gmail.com", "Aaron", "Alcuitas" }
                 });
 
             migrationBuilder.CreateIndex(

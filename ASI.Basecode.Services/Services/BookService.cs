@@ -117,6 +117,12 @@ namespace ASI.Basecode.Services.Services
             return _repository.GetGenresOfBook(bookId);
         }
 
+        public IQueryable<Review> GetReviewsOfBook(string bookId)
+        {
+            // Implement the logic to retrieve genres of a book from your repository
+            return _repository.GetReviewsOfBook(bookId);
+        }
+
 
         public void DeleteBook(string bookId)
         {
