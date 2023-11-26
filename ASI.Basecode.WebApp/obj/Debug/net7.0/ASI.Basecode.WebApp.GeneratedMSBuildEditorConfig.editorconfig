@@ -84,8 +84,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaWJyYXJ5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/MVC Projects/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Home/RecentBooksPages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWNlbnRCb29rc1BhZ2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/MVC Projects/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Home/SearchResult.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWFyY2hSZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MVC Projects/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Home/TopRatedBooksPages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUb3BSYXRlZEJvb2tzUGFnZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MVC Projects/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Review/_AddReviewPopup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XF9BZGRSZXZpZXdQb3B1cC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MVC Projects/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Review/_ViewReviewsPopup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XF9WaWV3UmV2aWV3c1BvcHVwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/MVC Projects/Alliance-BookReviewApp/ASI.Basecode.WebApp/Views/Shared/Error.cshtml]

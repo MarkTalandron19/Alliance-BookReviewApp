@@ -103,7 +103,7 @@ namespace ASI.Basecode.WebApp.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult Home(IEnumerable<Book> SearchRes)
+        public IActionResult Home()
         {
             const int NumOfViewRecentBooks = 5, NumOfViewRatingBooks = 10;
             const float AverageRatingCheck = 4.0f;
@@ -137,13 +137,14 @@ namespace ASI.Basecode.WebApp.Controllers
             List<BookAverageRating> TopRatedBooks = new();
 
             books.ForEach(book => {
+               
+                List<Review> reviews = AssignReviewsToBook(book);
+                book.BookGenres = AssignGenresToBook(book);
 
-                if (book.Reviews == null)
+                if(reviews.Count <= 0)
                 {
                     return;
                 }
-
-                List<Review> reviews = book.Reviews.ToList();
                 int Count = reviews.Count, Sum = 0;
 
                 //Get the rating average of each book
@@ -173,6 +174,16 @@ namespace ASI.Basecode.WebApp.Controllers
             
         }
 
+        public IActionResult RecentBooksPages()
+        {
+            return View();
+        }
+
+        public IActionResult TopRatedBooksPages()
+        {
+            return View();
+        }
+
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> Library(string bookId)
@@ -185,5 +196,34 @@ namespace ASI.Basecode.WebApp.Controllers
             ViewData["Reviews"] = reviews;
             return View(books);
         }
+
+        private List<Review> AssignReviewsToBook(Book book)
+        {
+            List<Review> ReviewsDB = _dbContext.Reviews.ToList(), BookReviews = new();
+
+            foreach(Review review in ReviewsDB)
+            {
+                if(book.bookId == review.bookId)
+                {
+                    BookReviews.Add(review);
+                }
+            }
+
+            return BookReviews;
+        }
+
+        private List<BookGenres> AssignGenresToBook(Book book)
+        {
+            List<Genre> genres = _dbContext.Genres.ToList();
+            List<BookGenres> bookGenres = _dbContext.Book_Genres.ToList();
+
+            bookGenres = bookGenres.Where(bookGenre => {
+                return bookGenre.bookId == book.bookId;
+            }).ToList();
+
+
+            return bookGenres;
+        }
+
     }
 }

@@ -150,12 +150,12 @@
                         <h2>@book.title</h2>
                         <h3>BY @book.author</h3>
                         @{
-                            foreach(var genre in book.BookGenres)
+                            foreach(BookGenres genre in book.BookGenres)
                             {
-                                <span>@genre</span>
+                                <span>@genre.genre.genreName</span>
                             }
                         }
-                        <textarea>@book.synopsis</textarea>
+                        <p>@book.synopsis</p>
                         @{/*TODO: Should add Star image rating*/}
                         <div>@ratedBook.AverageRating</div>
                         <span>@book.Reviews.Count reviews</span>
@@ -171,9 +171,9 @@
                                     /*TODO: Should add Star image rating*/
                                 }
                                 <span>@review.rating.0 stars</span>
-                                <textarea>
+                                <p>
                                     @review.content
-                                </textarea>
+                                </p>
                             </div>
                         </section>
                     </div>

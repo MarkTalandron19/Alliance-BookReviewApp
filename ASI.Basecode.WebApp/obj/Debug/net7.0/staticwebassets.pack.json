@@ -21,11 +21,11 @@
       "PackagePath": "staticwebassets\\css\\main.css"
     },
     {
-      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\review.css",
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\review.css",
       "PackagePath": "staticwebassets\\css\\review.css"
     },
     {
-      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\site.css",
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
@@ -121,12 +121,28 @@
       "PackagePath": "staticwebassets\\img\\profile-logo.png"
     },
     {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\starEmpty.png",
+      "PackagePath": "staticwebassets\\img\\starEmpty.png"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\img\\starFilled.png",
+      "PackagePath": "staticwebassets\\img\\starFilled.png"
+    },
+    {
       "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\Book.js",
       "PackagePath": "staticwebassets\\js\\Book.js"
     },
     {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\BookDetail.js",
+      "PackagePath": "staticwebassets\\js\\BookDetail.js"
+    },
+    {
       "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\Genre.js",
       "PackagePath": "staticwebassets\\js\\Genre.js"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\Review.js",
+      "PackagePath": "staticwebassets\\js\\Review.js"
     },
     {
       "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\site.js",
@@ -325,8 +341,72 @@
       "PackagePath": "staticwebassets\\seeder\\1.jpg"
     },
     {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\10.jpg",
+      "PackagePath": "staticwebassets\\seeder\\10.jpg"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\11.jpg",
+      "PackagePath": "staticwebassets\\seeder\\11.jpg"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\12.jpg",
+      "PackagePath": "staticwebassets\\seeder\\12.jpg"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\13.jpg",
+      "PackagePath": "staticwebassets\\seeder\\13.jpg"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\14.jpg",
+      "PackagePath": "staticwebassets\\seeder\\14.jpg"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\15.jpg",
+      "PackagePath": "staticwebassets\\seeder\\15.jpg"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\16.jpg",
+      "PackagePath": "staticwebassets\\seeder\\16.jpg"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\17.jpg",
+      "PackagePath": "staticwebassets\\seeder\\17.jpg"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\18.jpg",
+      "PackagePath": "staticwebassets\\seeder\\18.jpg"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\19.jpg",
+      "PackagePath": "staticwebassets\\seeder\\19.jpg"
+    },
+    {
       "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\2.jpg",
       "PackagePath": "staticwebassets\\seeder\\2.jpg"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\20.jpg",
+      "PackagePath": "staticwebassets\\seeder\\20.jpg"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\21.jpg",
+      "PackagePath": "staticwebassets\\seeder\\21.jpg"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\22.jpg",
+      "PackagePath": "staticwebassets\\seeder\\22.jpg"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\23.jpg",
+      "PackagePath": "staticwebassets\\seeder\\23.jpg"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\24.jpg",
+      "PackagePath": "staticwebassets\\seeder\\24.jpg"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\25.jpg",
+      "PackagePath": "staticwebassets\\seeder\\25.jpg"
     },
     {
       "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\3.jpg",
@@ -339,6 +419,22 @@
     {
       "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\5.jpg",
       "PackagePath": "staticwebassets\\seeder\\5.jpg"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\6.jpg",
+      "PackagePath": "staticwebassets\\seeder\\6.jpg"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\7.jpg",
+      "PackagePath": "staticwebassets\\seeder\\7.jpg"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\8.jpg",
+      "PackagePath": "staticwebassets\\seeder\\8.jpg"
+    },
+    {
+      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\seeder\\9.jpg",
+      "PackagePath": "staticwebassets\\seeder\\9.jpg"
     },
     {
       "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\uploads\\A_23-11-18-110439700.jpg",
