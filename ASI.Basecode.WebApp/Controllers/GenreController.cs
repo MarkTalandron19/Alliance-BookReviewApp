@@ -13,7 +13,8 @@ using System.Threading.Tasks;
 namespace ASI.Basecode.WebApp.Controllers
 {
     [Route("genres")]
-    public class GenreController : Controller
+	[Authorize(Roles = "Genremaster")]
+	public class GenreController : Controller
     {
         private readonly IGenreService _genreService;
         private readonly IMapper _mapper;

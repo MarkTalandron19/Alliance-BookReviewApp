@@ -42,6 +42,15 @@
 									</div>
 								</a>
 							}
+							@if (User.IsInRole("Superadmin"))
+							{
+								<a asp-controller="Account" asp-action="UserList" class="leftmenu-items">
+									<div class="leftmenu-item">
+										<img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+										User List
+									</div>
+								</a>
+							}
 						</div>
 					</div>
 					<div>
@@ -73,6 +82,7 @@
 					<div class="dashboard-title-div">
 						<p class="dashboard-title">User List Management</p>
 						<button class="add-button" id="AddBtn"><p class="button-text">+</p></button>
+						<a class="add-button" asp-controller="Account" asp-Action="CreateRole" id="AddRole"><p class="button-text">Add Role</p></a>
 					</div>
 					<hr class="divider" />
 					<p class="dashboard-subtitle">User List</p>
@@ -126,10 +136,6 @@
 		@await Html.PartialAsync("_EditUserPopup", Model.ViewModel);
 		@await Html.PartialAsync("_DeleteUserPopup", Model.ViewModel);
 	</div>
-}
-else
-{
-	<h2>Access Denied!</h2>
 }
 
 

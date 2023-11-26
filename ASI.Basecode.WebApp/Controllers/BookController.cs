@@ -15,7 +15,7 @@ using Microsoft.EntityFrameworkCore;
 namespace ASI.Basecode.WebApp.Controllers
 {
     [Route("books")]
-	[AllowAnonymous]
+	[Authorize(Roles = "Bookmaster")]
 	public class BookController : Controller
     {
         private readonly IBookService _bookService;
@@ -71,7 +71,6 @@ namespace ASI.Basecode.WebApp.Controllers
         }
 
         [HttpGet]
-		[AllowAnonymous]
         public IActionResult BookList()
         {
             var books = _bookService.GetBooks();
@@ -111,7 +110,6 @@ namespace ASI.Basecode.WebApp.Controllers
         }
 
         [HttpGet("BookDetail/{bookId}")]
-        [AllowAnonymous]
         public async Task<IActionResult> BookDetail(string bookId)
         {
             var book = await _bookService.GetBookById(bookId);

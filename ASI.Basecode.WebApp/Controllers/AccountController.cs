@@ -26,7 +26,7 @@ using ASI.Basecode.Services.Services;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
-
+    [Authorize(Roles = "Superadmin")]
     public class AccountController : Controller
     {
 
@@ -238,9 +238,9 @@ namespace ASI.Basecode.WebApp.Controllers
                     _logger.LogInformation("User logged in.");
                     if (User.IsInRole("Superadmin"))
                         return RedirectToAction("UserList", "Account");
-                    else if(User.IsInRole("Genremaster"))
+                    if(User.IsInRole("Genremaster"))
                         return RedirectToAction("GenreList", "Genre");
-                    else if(User.IsInRole("Bookmaster"))
+                    if(User.IsInRole("Bookmaster"))
                         return RedirectToAction("BookList", "Book");
                 }
                 if (result.RequiresTwoFactor)
@@ -307,7 +307,6 @@ namespace ASI.Basecode.WebApp.Controllers
         }
 
 		[HttpGet]
-		[AllowAnonymous]
 		public IActionResult UserList()
         {
             var roles = _userService.GetRoles().Select(r => r.Name).ToList();
@@ -327,7 +326,6 @@ namespace ASI.Basecode.WebApp.Controllers
 		}
 
         [HttpPost]
-        [AllowAnonymous]
         public IActionResult UpdateUser(UserViewModel model)
         {
             _userService.UpdateUser(model);
@@ -336,7 +334,6 @@ namespace ASI.Basecode.WebApp.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
         public async Task<IActionResult> AddUser(UserViewModel model)
         {
             _logger.LogInformation("register user");
@@ -430,7 +427,7 @@ namespace ASI.Basecode.WebApp.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Login", "Account");
+                    return RedirectToAction("UserList", "Account");
                 }
 
             return View();
