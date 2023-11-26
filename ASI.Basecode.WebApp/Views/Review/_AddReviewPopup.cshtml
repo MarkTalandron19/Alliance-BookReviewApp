@@ -1,0 +1,57 @@
+﻿<!-- _ReviewPopup.cshtml -->
+@model ASI.Basecode.Services.ServiceModels.ReviewViewModel
+@section styles {
+    <link rel="stylesheet" href="~/css/bookdetail.css" />
+}
+<div class="modal" id="ReviewModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="modalTitle"></h4>
+            </div>
+            <form method="post" asp-action="AddReview" asp-controller="Review" id="ReviewForm" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <input type="hidden" asp-for="bookId" />
+                    <input type="hidden" asp-for="reviewId" value="0" />
+                    <div>
+                        <label class="input-label" asp-for="reviewerFirstName"></label>
+                        <input type="text" asp-for="reviewerFirstName" class="form-control" placeholder="First Name..." />
+                    </div>
+                    <div>
+                        <label class="input-label" asp-for="reviewerLastName"></label>
+                        <input type="text" asp-for="reviewerLastName" class="form-control" placeholder="Last Name..." />
+                    </div>
+                    <div>
+                        <label class="input-label" asp-for="reviewerEmail"></label>
+                        <input type="email" asp-for="reviewerEmail" class="form-control" placeholder="Email Address..." />
+                    </div>
+                    <div class="rating-input">
+                        <label class="input-label" asp-for="rating"></label>
+                        <input type="number" asp-for="rating" class="form-control" placeholder="rating" />
+                    </div>
+                    <div class="rating-stars">
+                        <label class="input-label" asp-for="rating">Rating:</label>
+                        <i class="star far fa-star" data-value="1"></i>
+                        <i class="star far fa-star" data-value="2"></i>
+                        <i class="star far fa-star" data-value="3"></i>
+                        <i class="star far fa-star" data-value="4"></i>
+                        <i class="star far fa-star" data-value="5"></i>
+                    </div>
+                    <div>
+                        <label class="input-label" asp-for="content"></label>
+                        <input type="text" asp-for="content" class="form-control" placeholder="Review..." />
+                    </div> 
+                </div>
+                <div class="modal-footer">
+                    <button class="modal-button-close" id="Close" type="button" data-dismiss="modal">Close</button>
+                    <button class="modal-button" id="Save" type="submit">Post Review</button>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="~/js/Review.js"></script>

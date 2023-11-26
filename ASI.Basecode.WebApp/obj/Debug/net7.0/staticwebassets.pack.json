@@ -21,7 +21,11 @@
       "PackagePath": "staticwebassets\\css\\main.css"
     },
     {
-      "Id": "D:\\MVC Projects\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\site.css",
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\review.css",
+      "PackagePath": "staticwebassets\\css\\review.css"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {

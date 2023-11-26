@@ -1,4 +1,4 @@
-﻿using ASI.Basecode.Services.Interfaces;
+using ASI.Basecode.Services.Interfaces;
 using ASI.Basecode.Services.Services;
 using ASI.Basecode.WebApp.Mvc;
 using AutoMapper;
@@ -26,6 +26,7 @@ namespace ASI.Basecode.WebApp.Controllers
     {
         private readonly IGenreService _genreService;
         private readonly IBookService _bookService;
+        private readonly IReviewService _reviewService;
         private readonly IMapper _mapper;
         private readonly AsiBasecodeDBContext _dbContext;
         /// <summary>
@@ -36,7 +37,7 @@ namespace ASI.Basecode.WebApp.Controllers
         /// <param name="configuration"></param>
         /// <param name="localizer"></param>
         /// <param name="mapper"></param>
-        public HomeController(IBookService bookService, IGenreService genreService,IHttpContextAccessor httpContextAccessor,
+        public HomeController(IBookService bookService, IGenreService genreService, IReviewService reviewService, IHttpContextAccessor httpContextAccessor,
                               ILoggerFactory loggerFactory,
                               IConfiguration configuration,
                               AsiBasecodeDBContext dBContext,
@@ -45,6 +46,7 @@ namespace ASI.Basecode.WebApp.Controllers
             _genreService = genreService;
             _bookService = bookService;
             _dbContext = dBContext;
+            _reviewService = reviewService;
         }
 
         /// <summary>
@@ -177,8 +179,10 @@ namespace ASI.Basecode.WebApp.Controllers
         {
             var books = _bookService.GetBooks();
             var genres = await _genreService.GetGenres().ToListAsync();
+            var reviews = await _reviewService.GetReviews().ToListAsync();
 
             ViewData["Genres"] = genres;
+            ViewData["Reviews"] = reviews;
             return View(books);
         }
     }
