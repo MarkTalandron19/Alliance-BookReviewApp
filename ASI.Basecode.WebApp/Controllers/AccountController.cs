@@ -236,7 +236,12 @@ namespace ASI.Basecode.WebApp.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return RedirectToAction("GenreList", "Genre");
+                    if (User.IsInRole("Superadmin"))
+                        return RedirectToAction("UserList", "Account");
+                    else if(User.IsInRole("Genremaster"))
+                        return RedirectToAction("GenreList", "Genre");
+                    else if(User.IsInRole("Bookmaster"))
+                        return RedirectToAction("BookList", "Book");
                 }
                 if (result.RequiresTwoFactor)
                 {

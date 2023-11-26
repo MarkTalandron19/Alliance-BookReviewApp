@@ -1,4 +1,6 @@
 ﻿@using ASI.Basecode.Services.ServiceModels
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
 @model UserViewStorageModel
 @section styles {
 	<link rel="stylesheet" href="~/css/admindashboard.css" />
@@ -6,117 +8,130 @@
 @{
 	ViewData["Title"] = "Bibliobibuli - Admin Dashboard";
 }
-
-<div class="body-main">
-	<div class="body-two-section">
-		<div class="left-space">
-			<div class="left-menu">
-				<div>
-					<img class="bibliobibuli-logo" src="~/img/logo-leftaligned.png" />
-					<div class="menu-items">
-						<div class="leftmenu-item-title">
-							<div class="leftmenu-item">
-								<img class="leftmenu-icons" src="~/img/dashboard-icon.png" />
-								Book Management<br />Dashboard
+@if(User.IsInRole("Superadmin"))
+{
+	<div class="body-main">
+		<div class="body-two-section">
+			<div class="left-space">
+				<div class="left-menu">
+					<div>
+						<img class="bibliobibuli-logo" src="~/img/logo-leftaligned.png" />
+						<div class="menu-items">
+							<div class="leftmenu-item-title">
+								<div class="leftmenu-item">
+									<img class="leftmenu-icons" src="~/img/dashboard-icon.png" />
+									User Management<br />Dashboard
+								</div>
 							</div>
-						</div>
-						<hr class="menu-divider" />
-						<a asp-controller="Book" asp-action="BookList" class="leftmenu-items">
-							<div class="leftmenu-item">
-								<img class="leftmenu-icons" src="~/img/booklist-icon.png" />
-								Book List
-							</div>
-						</a>
-						<a asp-controller="Genre" asp-action="GenreList" class="leftmenu-items">
-							<div class="leftmenu-item">
-								<img class="leftmenu-icons" src="~/img/booklist-icon.png" />
-								Genre List
-							</div>
-						</a>
-					</div>
-				</div>
-				<div>
-					<button class="logout-button">
-						<a asp-controller="Account" asp-action="SignOutUser">
-							<div class="logout-text">
-								<img class="leftmenu-icons" src="~/img/logout-icon.png" />
-								Logout
-							</div>
-						</a>
-					</button>
-				</div>
-			</div>
-		</div>
-		<div class="admin-dashboard-list">
-			<div class="admin-header">
-				<div class="logosec">
-					@*Welcome, @HttpContextAccessor.HttpContext.Session.GetString("UserName")!*@
-					<div class="mr-20 hover-pointer" style="position: relative">
-						<div class="dp">
-							<img src="~/img/profile-logo.png"
-								 class="dpicn hover-pointer"
-								 alt="dp">
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="dashboard">
-				<div class="dashboard-title-div">
-					<p class="dashboard-title">User List Management</p>
-					<button class="add-button" id="AddBtn"><p class="button-text">+</p></button>
-				</div>
-				<hr class="divider" />
-				<p class="dashboard-subtitle">User List</p>
-				<div class="dashboard-card">
-					<table class="dashboard-table">
-						<thead class="dashboard-table-header">
-							<tr class="header-row">
-								<th style="width: 25%;">
-									User Name
-								</th>
-								<th style="width: 50%;">
-									Email
-								</th>
-								<th style="width: 50%;">
-									Role
-								</th>
-								<th style="width: 50%;">
-									Created By
-								</th>
-								<th style="width: 50%;">
-									Created Time
-								</th>
-							</tr>
-						</thead>
-						<tbody id="tableBody">
-							@foreach (var user in Model.ViewModel.Users)
+							<hr class="menu-divider" />
+							@if (User.IsInRole("Bookmaster"))
 							{
-								<tr>
-									<td><a href="">@user.Name</a></td>
-									<td>@user.Email</td>
-									<td>@user.Role</td>
-									<td>@user.CreatedBy</td>
-									<td>@user.CreatedTime</td>
-									<td>
-										<button class="edit-button" id="Update" data-user-id="@user.UserId"
-												data-user-name="@user.Name" data-user-email="@user.Email" data-user-password="@user.Password"
-												data-user-role="@user.Role">
-											Edit
-										</button>
-										<button class="delete-button" data-user-id="@user.UserId" data-user-email="@user.Email">Delete</button>
-									</td>
-								</tr>
+								<a asp-controller="Book" asp-action="BookList" class="leftmenu-items">
+									<div class="leftmenu-item">
+										<img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+										Book List
+									</div>
+								</a>
 							}
-						</tbody>
-					</table>
+							@if (User.IsInRole("Genremaster"))
+							{
+								<a asp-controller="Genre" asp-action="GenreList" class="leftmenu-items">
+									<div class="leftmenu-item">
+										<img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+										Genre List
+									</div>
+								</a>
+							}
+						</div>
+					</div>
+					<div>
+						<button class="logout-button">
+							<a asp-controller="Account" asp-action="SignOutUser">
+								<div class="logout-text">
+									<img class="leftmenu-icons" src="~/img/logout-icon.png" />
+									Logout
+								</div>
+							</a>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="admin-dashboard-list">
+				<div class="admin-header">
+					<div class="logosec">
+						@*Welcome, @HttpContextAccessor.HttpContext.Session.GetString("UserName")!*@
+						<div class="mr-20 hover-pointer" style="position: relative">
+							<div class="dp">
+								<img src="~/img/profile-logo.png"
+									 class="dpicn hover-pointer"
+									 alt="dp">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="dashboard">
+					<div class="dashboard-title-div">
+						<p class="dashboard-title">User List Management</p>
+						<button class="add-button" id="AddBtn"><p class="button-text">+</p></button>
+					</div>
+					<hr class="divider" />
+					<p class="dashboard-subtitle">User List</p>
+					<div class="dashboard-card">
+						<table class="dashboard-table">
+							<thead class="dashboard-table-header">
+								<tr class="header-row">
+									<th style="width: 25%;">
+										User Name
+									</th>
+									<th style="width: 50%;">
+										Email
+									</th>
+									<th style="width: 50%;">
+										Role
+									</th>
+									<th style="width: 50%;">
+										Created By
+									</th>
+									<th style="width: 50%;">
+										Created Time
+									</th>
+								</tr>
+							</thead>
+							<tbody id="tableBody">
+								@foreach (var user in Model.ViewModel.Users)
+								{
+									<tr>
+										<td><a href="">@user.Name</a></td>
+										<td>@user.Email</td>
+										<td>@user.Role</td>
+										<td>@user.CreatedBy</td>
+										<td>@user.CreatedTime</td>
+										<td>
+											<button class="edit-button" id="Update" data-user-id="@user.UserId"
+													data-user-name="@user.Name" data-user-email="@user.Email" data-user-password="@user.Password"
+													data-user-role="@user.Role">
+												Edit
+											</button>
+											<button class="delete-button" data-user-id="@user.UserId" data-user-email="@user.Email">Delete</button>
+										</td>
+									</tr>
+								}
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
+		@await Html.PartialAsync("_AddUserPopup", Model.ViewModel);
+		@await Html.PartialAsync("_EditUserPopup", Model.ViewModel);
+		@await Html.PartialAsync("_DeleteUserPopup", Model.ViewModel);
 	</div>
-	@await Html.PartialAsync("_AddUserPopup", Model.ViewModel);
-	@await Html.PartialAsync("_EditUserPopup", Model.ViewModel);
-	@await Html.PartialAsync("_DeleteUserPopup", Model.ViewModel);
-</div>
+}
+else
+{
+	<h2>Access Denied!</h2>
+}
+
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>

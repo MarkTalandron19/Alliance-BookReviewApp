@@ -15,7 +15,8 @@ using Microsoft.EntityFrameworkCore;
 namespace ASI.Basecode.WebApp.Controllers
 {
     [Route("books")]
-    public class BookController : Controller
+	[AllowAnonymous]
+	public class BookController : Controller
     {
         private readonly IBookService _bookService;
         private readonly IMapper _mapper;
@@ -70,7 +71,7 @@ namespace ASI.Basecode.WebApp.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
+		[AllowAnonymous]
         public IActionResult BookList()
         {
             var books = _bookService.GetBooks();
