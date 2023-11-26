@@ -9,6 +9,7 @@ namespace ASI.Basecode.WebApp.Models
         {
             this.TopRatedBooks = TopRatedBooks;
             this.NewlyReleasedBooks = NewlyReleasedBooks;
+            
         }
 
         public List<Book> NewlyReleasedBooks { get; set; }

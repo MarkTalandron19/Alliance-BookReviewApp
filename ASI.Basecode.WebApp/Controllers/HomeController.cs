@@ -15,6 +15,7 @@ using System.Data.Entity;
 using ASI.Basecode.Data;
 using System.Linq;
 using ASI.Basecode.WebApp.Models;
+using System.Collections;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
@@ -50,13 +51,59 @@ namespace ASI.Basecode.WebApp.Controllers
         /// Returns Home View.
         /// </summary>
         /// <returns> Home View </returns>
+        /// 
+
+        [HttpPost]
+        public IActionResult Search(string SearchText, string Year, string Genre)
+        {
+            List<Book> AllBooks = _dbContext.Books.ToList();
+            List<Book> SearchResults = new();
+
+            foreach (Book book in AllBooks)
+            {
+                //Check if the book's title contains of the given search text
+
+                book.title = book.title.ToLower();
+
+                if (!book.title.Contains(SearchText)) continue;
+
+                if(Year != null)
+                {
+                    //Check if the book's created year matches to the given year
+                    if (book.CreatedTime.Year != int.Parse(Year)) continue;
+                }
+
+                if(Genre != null)
+                {
+                    var BookGenres = book.BookGenres.ToList();
+
+                    //Check if the given genre is found or exits in this current book's collection of BookGenre
+
+                    bool IsBookHaveAnyOfGivenGenre = BookGenres.Any((genre) =>
+                    {
+                        if (genre.genre.genreName.ToLower().Contains(SearchText.ToLower()))
+                        {
+                            return true;
+                        }
+                        return false;
+                    });
+
+                    if (IsBookHaveAnyOfGivenGenre == false) continue;
+                }
+
+                SearchResults.Add(book);
+            }
+
+            //TODO: need to know how to view the search result
+            return RedirectToAction("Home");
+        }
 
 
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult Home()
+        public IActionResult Home(IEnumerable<Book> SearchRes)
         {
-            const int ViewRecentBooks = 5, ViewRatingBooks = 10;
+            const int NumOfViewRecentBooks = 5, NumOfViewRatingBooks = 10;
             const float AverageRatingCheck = 4.0f;
 
             //Get the books from Database
@@ -70,9 +117,9 @@ namespace ASI.Basecode.WebApp.Controllers
 
             //Only get the number of books defined by ViewRecentBooks starting from the last element
 
-            if (books.Count >= ViewRecentBooks)
+            if (books.Count >= NumOfViewRecentBooks)
             {
-                RecentBooks = new(books.TakeLast(ViewRecentBooks));
+                RecentBooks = new(books.TakeLast(NumOfViewRecentBooks));
             }
             else
             {
@@ -114,12 +161,14 @@ namespace ASI.Basecode.WebApp.Controllers
             });
 
             //For View
-            if (TopRatedBooks.Count >= ViewRatingBooks)
-                TopRatedBooks = TopRatedBooks.GetRange(0, ViewRatingBooks);
+            if (TopRatedBooks.Count >= NumOfViewRatingBooks)
+                TopRatedBooks = TopRatedBooks.GetRange(0, NumOfViewRatingBooks);
 
+            /* Genre */
             HomeViewModel homeViewModel = new(RecentBooks, TopRatedBooks);
 
             return View(homeViewModel);
+            
         }
 
         [HttpGet]

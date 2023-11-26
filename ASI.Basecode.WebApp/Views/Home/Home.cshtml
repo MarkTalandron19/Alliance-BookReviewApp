@@ -48,25 +48,39 @@
     <div class="search">
     <div class="center-container">
         <div class="search-line-container">
-            <div class="search-elements">
-                <select class="year-dropdown">
-                    <option value="Year">Year</option>
-                    <option value="2022">2022</option>
-                    <option value="2021">2021</option>
-                </select>
-                <select class="category-dropdown">
-                    <option value="Category">Category</option>
-                    <option value="Non-Fiction">Non-Fiction</option>
-                </select>
-
-                <div class="search-bar">
-                    <input type="text" placeholder="Enter Book Name here...">
-                    <div class="search-icon"><i class="fas fa-search"></i></div>
-                    <button class="search-button" style="background-color: #053B50; color: #FFFFFF;">Search ˃</button>
-                </div>      
-            </div>
+                <form method="post" asp-action="Search" class="search-elements">
+                    <select class="year-dropdown" name="Year" id="Year">
+                        <option value="">Year</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                    </select>
+                    <select class="category-dropdown" name="Genre" id="Genre">
+                        <option value="">Category</option>
+                        <option value="Non-Fiction">Non-Fiction</option>
+                    </select>
+                    <div class="search-bar">
+                        <input type="text" name="SearchText" id="SearchText" placeholder="Enter Book Name here...">
+                        <div class="search-icon"><i class="fas fa-search"></i></div>
+                        <button class="search-button" type="submit" style="background-color: #053B50; color: #FFFFFF;">Search ˃</button>
+                    </div>
+                </form>
         </div>
+        <div style="background-color:red">
+                @{
+                    IEnumerable<Book> SearchResults = ViewBag.SearchResults as IEnumerable<Book>;
+                    if(SearchResults != null && SearchResults.Count() > 0)
+                    {
+                        foreach (var bookSearchResult in SearchResults)
+                        {
+                            <section>
+                                <img src="@bookSearchResult.image" />
+                                <strong>@bookSearchResult.title</strong>
+                            </section>
+                        }
+                    }
+                }
         </div>
+    </div>
  
     <div class="white-background">
         <div class="text-container">
@@ -85,19 +99,22 @@
     </div>
     <!-- Recent Books or New Release-->
     <div class="second-background">
-        <h2 class="trends-text">Trending this week</h2>
-        <p class="text-trends">Dive into our selection of trending books this week, where every page tells a story worth sharing.</p>
+        <h2 class="trends-text">New releases</h2>
+        <p class="text-trends">Dive into our selection of newest books this week, where every page tells a story worth sharing.</p>
 
-        <section>
+        <section class="books-line">
             @{
                 List<Book> NewBooks = Model.NewlyReleasedBooks;
-                foreach(var book in NewBooks)
+                foreach (var book in NewBooks)
                 {
-                    <img src = "@book.image" alt = "@book.title">
+                    <div class="book-item">
+                        <img src="@book.image" alt="@book.title">
+                    </div>
                 }
             }
         </section>
     </div>
+
     <div class="third-white-background">
         <div class="books-header">
             <div class="featured-books-title">
