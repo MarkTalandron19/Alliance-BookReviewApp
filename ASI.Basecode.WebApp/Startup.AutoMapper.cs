@@ -33,6 +33,7 @@ namespace ASI.Basecode.WebApp
                 CreateMap<UserViewModel, User>();
                 CreateMap<GenreViewModel, Genre>().ReverseMap();
                 CreateMap<BookViewModel, Book>().ReverseMap();
+                CreateMap<ReviewViewModel, Review>().ReverseMap();
             }
         }
     }

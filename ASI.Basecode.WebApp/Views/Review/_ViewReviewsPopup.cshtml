@@ -1,0 +1,65 @@
+﻿<!-- _ReviewPopup.cshtml -->
+@model ASI.Basecode.Services.ServiceModels.ReviewViewModel
+@section styles {
+    <link rel="stylesheet" href="~/css/review.css" />
+}
+<div class="modal" id="ViewReviewsModal">
+    <div class="modal-dialog-view">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="modalTitle">All Reviews</h4>
+            </div>
+            <form method="post" asp-action="AddReview" asp-controller="Review" id="ReviewForm" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <input type="hidden" asp-for="bookId" />
+                    <input type="hidden" asp-for="reviewId" value="0" />
+                    <div class="all-reviews">
+                        @if (ViewData["Reviews"] != null && ((IEnumerable<ASI.Basecode.Data.Models.Review>)ViewData["Reviews"]).Any())
+                        {
+                            @foreach (var c in ((IEnumerable<ASI.Basecode.Data.Models.Review>)ViewData["Reviews"]).OrderByDescending(c => c.dateReviewed))
+                            {
+                                <div class="user-review">
+                                    <div class="reviewer-header">
+                                        <span class="reviewer-name">@c.reviewerLastName, @c.reviewerFirstName<i class="review-date">• @c.dateReviewed</i></span>
+                                        <div>
+                                            @for (var i = 1; i <= c.rating; i++)
+                                            {
+                                                <span class="starGlowN"></span>
+                                            }
+                                            @for (var i = c.rating + 1; i <= 5; i++)
+                                            {
+                                                <span class="starFadeN"></span>
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="reviewer-email">
+                                        @c.reviewerEmail
+                                    </div>
+
+                                    <div class="review-info">
+                                        @Html.Raw(c.content.Replace("\n", "<br />"))
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="user-review-empty">
+                                <div class="review-info">
+                                    • • • • • No Reviews yet. Be the first to review!
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="modal-button-close" id="Close" type="button" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="~/js/Review.js"></script>

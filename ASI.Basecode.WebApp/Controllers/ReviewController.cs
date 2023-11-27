@@ -1,9 +1,15 @@
 ﻿using ASI.Basecode.Data.Models;
 using ASI.Basecode.Services.Interfaces;
 using ASI.Basecode.Services.ServiceModels;
+using ASI.Basecode.Services.Services;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Linq;
+using System.IO;
 using System.Threading.Tasks;
+using System.Net;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
@@ -20,10 +26,12 @@ namespace ASI.Basecode.WebApp.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult AddReview(ReviewViewModel review)
+        public IActionResult AddReview(int bookId, ReviewViewModel review)
         {
+            review.reviewId = Guid.NewGuid().ToString();
+            review.dateReviewed = DateTime.Now;
             _reviewService.AddReview(review);
-            return NoContent();
+            return RedirectToAction("BookDetail", "Books", new { bookId });
         }
 
         [HttpGet("get")]

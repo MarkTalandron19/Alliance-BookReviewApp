@@ -109,13 +109,31 @@ namespace ASI.Basecode.WebApp.Controllers
             return RedirectToAction("Login", "Account");
         }
 
-        [HttpGet("BookDetail/{bookId}")]
+        [HttpGet("BookDetail")]
+        [AllowAnonymous]
         public async Task<IActionResult> BookDetail(string bookId)
         {
             var book = await _bookService.GetBookById(bookId);
             var genres = _bookService.GetGenresOfBook(bookId);
+            var reviews = _bookService.GetReviewsOfBook(bookId);
 
             ViewData["Genres"] = await genres.ToListAsync();
+            ViewData["Reviews"] = await reviews.ToListAsync();
+
+            var ratings = await reviews.ToListAsync();
+            if (ratings.Count > 0)
+            {
+                var ratingSum = ratings.Sum(r => r.rating);
+                ViewBag.RatingSum = ratingSum;
+                var ratingCount = ratings.Count;
+                ViewBag.RatingCount = ratingCount;
+            }
+            else
+            {
+                ViewBag.RatingSum = 0;
+                ViewBag.RatingCount = 0;
+            }
+
             return View(book);
         }
     }
