@@ -71,6 +71,8 @@
           "Microsoft.AspNetCore.Connections.Abstractions": "7.0.0.0",
           "Microsoft.AspNetCore.CookiePolicy": "7.0.0.0",
           "Microsoft.AspNetCore.Cors": "7.0.0.0",
+          "Microsoft.AspNetCore.Cryptography.Internal.Reference": "7.0.0.0",
+          "Microsoft.AspNetCore.Cryptography.KeyDerivation.Reference": "7.0.0.0",
           "Microsoft.AspNetCore.DataProtection.Abstractions": "7.0.0.0",
           "Microsoft.AspNetCore.DataProtection": "7.0.0.0",
           "Microsoft.AspNetCore.DataProtection.Extensions": "7.0.0.0",
@@ -157,11 +159,14 @@
           "Microsoft.Extensions.Features": "7.0.0.0",
           "Microsoft.Extensions.FileProviders.Abstractions.Reference": "7.0.0.0",
           "Microsoft.Extensions.FileProviders.Composite": "7.0.0.0",
+          "Microsoft.Extensions.FileProviders.Embedded.Reference": "7.0.0.0",
           "Microsoft.Extensions.FileProviders.Physical": "7.0.0.0",
           "Microsoft.Extensions.FileSystemGlobbing": "7.0.0.0",
           "Microsoft.Extensions.Hosting.Abstractions": "7.0.0.0",
           "Microsoft.Extensions.Hosting": "7.0.0.0",
           "Microsoft.Extensions.Http.Reference": "7.0.0.0",
+          "Microsoft.Extensions.Identity.Core.Reference": "7.0.0.0",
+          "Microsoft.Extensions.Identity.Stores.Reference": "7.0.0.0",
           "Microsoft.Extensions.Localization.Abstractions.Reference": "7.0.0.0",
           "Microsoft.Extensions.Localization": "7.0.0.0",
           "Microsoft.Extensions.Logging.Abstractions.Reference": "7.0.0.0",
@@ -1161,9 +1166,6 @@
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "7.0.1323.52007"
           }
-        },
-        "compile": {
-          "lib/net7.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cryptography.KeyDerivation/7.0.13": {
@@ -1175,9 +1177,6 @@
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "7.0.1323.52007"
           }
-        },
-        "compile": {
-          "lib/net7.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {}
         }
       },
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/7.0.13": {
@@ -2059,9 +2058,6 @@
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "7.0.1323.52007"
           }
-        },
-        "compile": {
-          "lib/net7.0/Microsoft.Extensions.FileProviders.Embedded.dll": {}
         }
       },
       "Microsoft.Extensions.Http/6.0.0": {
@@ -2083,9 +2079,6 @@
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "7.0.1323.52007"
           }
-        },
-        "compile": {
-          "lib/net7.0/Microsoft.Extensions.Identity.Core.dll": {}
         }
       },
       "Microsoft.Extensions.Identity.Stores/7.0.13": {
@@ -2099,9 +2092,6 @@
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "7.0.1323.52007"
           }
-        },
-        "compile": {
-          "lib/net7.0/Microsoft.Extensions.Identity.Stores.dll": {}
         }
       },
       "Microsoft.Extensions.Localization.Abstractions/2.2.0": {},
@@ -3884,6 +3874,18 @@
         },
         "compileOnly": true
       },
+      "Microsoft.AspNetCore.Cryptography.Internal.Reference/7.0.0.0": {
+        "compile": {
+          "Microsoft.AspNetCore.Cryptography.Internal.dll": {}
+        },
+        "compileOnly": true
+      },
+      "Microsoft.AspNetCore.Cryptography.KeyDerivation.Reference/7.0.0.0": {
+        "compile": {
+          "Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {}
+        },
+        "compileOnly": true
+      },
       "Microsoft.AspNetCore.DataProtection.Abstractions/7.0.0.0": {
         "compile": {
           "Microsoft.AspNetCore.DataProtection.Abstractions.dll": {}
@@ -4400,6 +4402,12 @@
         },
         "compileOnly": true
       },
+      "Microsoft.Extensions.FileProviders.Embedded.Reference/7.0.0.0": {
+        "compile": {
+          "Microsoft.Extensions.FileProviders.Embedded.dll": {}
+        },
+        "compileOnly": true
+      },
       "Microsoft.Extensions.FileProviders.Physical/7.0.0.0": {
         "compile": {
           "Microsoft.Extensions.FileProviders.Physical.dll": {}
@@ -4427,6 +4435,18 @@
       "Microsoft.Extensions.Http.Reference/7.0.0.0": {
         "compile": {
           "Microsoft.Extensions.Http.dll": {}
+        },
+        "compileOnly": true
+      },
+      "Microsoft.Extensions.Identity.Core.Reference/7.0.0.0": {
+        "compile": {
+          "Microsoft.Extensions.Identity.Core.dll": {}
+        },
+        "compileOnly": true
+      },
+      "Microsoft.Extensions.Identity.Stores.Reference/7.0.0.0": {
+        "compile": {
+          "Microsoft.Extensions.Identity.Stores.dll": {}
         },
         "compileOnly": true
       },
@@ -7569,6 +7589,16 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Microsoft.AspNetCore.Cryptography.Internal.Reference/7.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.Cryptography.KeyDerivation.Reference/7.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Microsoft.AspNetCore.DataProtection.Abstractions/7.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
@@ -7999,6 +8029,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Microsoft.Extensions.FileProviders.Embedded.Reference/7.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Microsoft.Extensions.FileProviders.Physical/7.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
@@ -8020,6 +8055,16 @@
       "sha512": ""
     },
     "Microsoft.Extensions.Http.Reference/7.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Identity.Core.Reference/7.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Identity.Stores.Reference/7.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

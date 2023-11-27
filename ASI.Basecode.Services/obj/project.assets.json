@@ -12592,19 +12592,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LENOVO\\.nuget\\packages\\": {}
+    "C:\\Users\\USER\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj",
       "projectName": "ASI.Basecode.Services",
-      "projectPath": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj",
-      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.Services\\obj\\",
+      "projectPath": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj",
+      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12618,11 +12618,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj": {
-              "projectPath": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj"
+            "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj": {
+              "projectPath": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj"
             },
-            "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj": {
-              "projectPath": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj"
+            "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj": {
+              "projectPath": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj"
             }
           }
         }
@@ -12702,7 +12702,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -32,3 +32,20 @@ D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-Book
 D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\refint\ASI.Basecode.Services.dll
 D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.pdb
 D:\COLLEGE STUFF\4TH YEAR\Free Elec 2 - ALLIANCE\FREE Elec Project\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ref\ASI.Basecode.Services.dll
+C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Services.deps.json
+C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Services.dll
+C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Services.pdb
+C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Data.dll
+C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Resources.dll
+C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Data.pdb
+C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Resources.pdb
+C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.AssemblyInfoInputs.cache
+C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.AssemblyInfo.cs
+C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.csproj.CopyComplete
+C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.dll
+C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\refint\ASI.Basecode.Services.dll
+C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.pdb
+C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ref\ASI.Basecode.Services.dll

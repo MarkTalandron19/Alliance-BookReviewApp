@@ -25,34 +25,37 @@
         <ul>
             @foreach (var genre in (IEnumerable<Genre>)ViewData["Genres"])
             {
-                <li><a href="#"><i class="fas fa-check-circle"></i> @genre.genreName</a></li>
-                <li></li>
+                <li>
+                    <a href="javascript:void(0);" data-genre-id="@genre.genreId">
+                        <i class="fas fa-check-circle"></i> @genre.genreName
+                    </a>
+                </li>
             }
         </ul>
 </div>
 
 <div class="content">
     <div class="content-header">
-        <div class="content-header-search">
-        <h1>Books</h1>
-        <div class="search-area">
-        <div class="search-bar">
-            <input type="text" placeholder="Enter Book Name here..."/>
-            <button class="search-icon"><i class="fas fa-search"></i></button>
-        </div>
+            <div class="content-header-search">
+                <h1>Books</h1>
+                <div class="search-area">
+                    <div class="search-bar">
+                        <input type="text" id="bookSearch" placeholder="Search here..." />
+                        <button class="search-icon"><i class="fas fa-search"></i></button>
+                    </div>
                     <div class="searches-button">
-                        <button class="search-button" style="background-color: #053B50; color: #FFFFFF;">Search ˃</button>
+                        <button class="search-button" style="background-color: #053B50; color: #FFFFFF;">Search</button>
                     </div>
                 </div>
             </div>
         <div class="second-para">
             <p class="number-books-desc">Over 475+ books available here, find it now!</p>
             <div class="dropdown">
-                <button class="dropdown-button">Newest ▼</button>   
-                <div class="dropdown-content">
-                        <a href="#">Newest</a>
-                        <a href="#">Oldest</a>
-                </div>
+                    <button class="dropdown-button">Sort by ▼</button>
+                    <div class="dropdown-content">
+                        <a href="#">Title(A-Z)</a>
+                        <a href="#">Rating(Highest)</a>
+                    </div>
             </div>
         </div>
         </div>
@@ -60,9 +63,17 @@
             @foreach (var book in Model)
             {
                 var reviews = ((IEnumerable<ASI.Basecode.Data.Models.Review>)ViewData["Reviews"]).Where(r => r.bookId == book.bookId);
+                var bookgenres = ViewData["BookGenres"] as IEnumerable<ASI.Basecode.Data.Models.BookGenres>;
+                if (bookgenres != null)
+                {
+                    bookgenres = bookgenres.Where(bg => bg.bookId == book.bookId);
+                }
+
+
                 var totalRatings = 0;
                 var totalReviews = reviews.Count();
                 var ratingsCount = new int[5];
+                var genreIds = string.Join(",", book.BookGenres?.Select(bg => bg.genreId) ?? Enumerable.Empty<string>());
 
                 foreach (var review in reviews)
                 {
@@ -80,15 +91,16 @@
                     percentages[i] = totalReviews > 0 ? ((double)ratingsCount[i] / totalReviews) * 100 : 0;
                 }
 
-                <a asp-controller="Book" asp-action="BookDetail" asp-route-bookId="@book.bookId" class="book-link">
-                <div class="book">
-                    <img src="@book.image" alt="Book Image" class="book-image"/>
+                <a asp-controller="Book" asp-action="BookDetail" asp-route-bookId="@book.bookId" class="book-link" data-book-id="@book.bookId" data-genres="@string.Join(",", book.BookGenres?.Select(bg => bg.genreId) ?? Enumerable.Empty<string>())">
+                    <div class="book" data-genres="@string.Join(",", book.BookGenres?.Select(bg => bg.genreId) ?? Enumerable.Empty<string>())" data-book-id="@book.bookId">
+                    
+                        <img src="@book.image" alt="Book Image" class="book-image"/>
                     <div class="book-grade">
                             <div class="book-rating">★ @averageRatingRounded.ToString("0.0")</div>
                             <div>&nbsp;&nbsp;•</div>
                             <div class="book-reviews">@totalReviews.ToString("N0") reviews</div>
                     </div>
-                    <div class="book-genre">@book.pubYear</div>
+                    <div class="book-year">@book.pubYear</div>
                     <div class="book-title">@book.title</div>
                     <div class="book-author">@book.publisher</div>
                 </div>
@@ -126,12 +138,126 @@
     </div>
 </div>
 
-@section scripts {
+@section scripts {   
     <script>
-        // Check for error message and display Toastr notification
         var errorMessage = '@TempData["ErrorMessage"]';
         if (errorMessage) {
             toastr.error(errorMessage);
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Add event listener for genre links
+            var genreLinks = document.querySelectorAll('.sidenav ul li a');
+            console.log("Number of genre links: " + genreLinks.length);
+
+            genreLinks.forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    console.log("Genre link clicked!");
+                    var genreId = link.getAttribute('data-genre-id');
+                    console.log("GenreID: " + genreId);
+                    filterBooksByGenre(genreId);
+                });
+            });
+
+            function filterBooksByGenre(genreId) {
+                console.log("Filtering books by genre: " + genreId);
+                var allBooks = document.querySelectorAll('.book');
+
+                allBooks.forEach(function (book) {
+                    var bookId = book.getAttribute('data-book-id');
+                    var genres = book.getAttribute('data-genres');
+                    console.log("Book ID: " + bookId + ", Genres: " + genres + ", Book: " + book);
+                    if (genres && genres.split(',').includes(genreId) && bookId) {
+                        book.style.display = 'block'; // Show the book
+                    } else {
+                        book.style.display = 'none';  // Hide the book
+                    }
+                });
+            }
+
+            function searchBooks() {
+                var searchTerm = document.getElementById('bookSearch').value.toLowerCase().trim();
+                console.log('Search Term:', searchTerm);
+
+                var books = document.querySelectorAll('.book');
+                books.forEach(function (book) {
+                    book.style.display = 'none';
+                });
+
+                var allBooks = document.querySelectorAll('.book');
+                allBooks.forEach(function (bookElement) {
+                    var title = bookElement.querySelector('.book-title').textContent.toLowerCase().trim();
+                    var author = bookElement.querySelector('.book-author').textContent.toLowerCase().trim();
+
+                    if (title.includes(searchTerm) || author.includes(searchTerm)) {
+                        bookElement.style.display = 'block';
+                    } else {
+                        bookElement.style.display = 'none';
+                    }
+                });
+
+
+            }
+            document.getElementById('bookSearch').addEventListener('keyup', function (event) {
+                console.log('Key pressed:', event.key);
+                if (event.key === 'Enter') {
+                    searchBooks();
+                }
+            });
+
+            document.querySelector('.search-button').addEventListener('click', function () {
+                console.log('Search button clicked');
+                searchBooks();
+            });
+
+            document.querySelector('.search-icon').addEventListener('click', function () {
+                console.log('Search icon clicked');
+                searchBooks();
+            });
+
+            document.querySelector('.dropdown-content').addEventListener('click', function (event) {
+                var sortOption = event.target.textContent.toLowerCase().trim();
+
+                if (sortOption === 'title(a-z)') {
+                    sortBooksBy('title');
+                } else if (sortOption === 'rating(highest)') {
+                    sortBooksBy('rating');
+                }
+            });
+
+            function sortBooksBy(criteria) {
+                var bookList = document.querySelector('.book-list');
+                var books = Array.from(bookList.querySelectorAll('.book'));
+
+                books.sort(function (a, b) {
+                    var valueA, valueB;
+
+                    if (criteria === 'title') {
+                        valueA = a.querySelector('.book-title').textContent.toLowerCase().trim();
+                        valueB = b.querySelector('.book-title').textContent.toLowerCase().trim();
+                    } else if (criteria === 'rating') {
+                        valueA = parseFloat(a.querySelector('.book-rating').textContent.replace('★', '').trim());
+                        valueB = parseFloat(b.querySelector('.book-rating').textContent.replace('★', '').trim());
+                    }
+
+                    return criteria === 'title' ? valueA.localeCompare(valueB) : valueB - valueA;
+                });
+
+                var fragment = document.createDocumentFragment();
+
+                books.forEach(function (book) {
+                    fragment.appendChild(book);
+                });
+                bookList.innerHTML = ''; 
+                bookList.appendChild(fragment);
+
+                books.forEach(function (book) {
+                    book.style.display = 'block';
+                });
+            }
+
+        
+        });
     </script>
 }
