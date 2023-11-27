@@ -48,15 +48,24 @@
     <div class="search">
     <div class="center-container">
         <div class="search-line-container">
-                <form method="post" asp-action="Search" class="search-elements">
+                <form method="get" asp-action="Search" class="search-elements">
                     <select class="year-dropdown" name="Year" id="Year">
                         <option value="">Year</option>
-                        <option value="2022">2022</option>
-                        <option value="2021">2021</option>
+                        @{
+                            foreach(var year in Model.Years)
+                            {
+                                <option value="@year">@year</option>
+                            }
+                        }
                     </select>
                     <select class="category-dropdown" name="Genre" id="Genre">
                         <option value="">Category</option>
-                        <option value="Non-Fiction">Non-Fiction</option>
+                        @{
+                            foreach(var genre in Model.Genres)
+                            {
+                                <option value="@genre.genreName">@genre.genreName</option>
+                            }
+                        }
                     </select>
                     <div class="search-bar">
                         <input type="text" name="SearchText" id="SearchText" placeholder="Enter Book Name here...">
@@ -64,21 +73,21 @@
                         <button class="search-button" type="submit" style="background-color: #053B50; color: #FFFFFF;">Search ˃</button>
                     </div>
                 </form>
-        </div>
-        <div style="background-color:red">
-                @{
-                    IEnumerable<Book> SearchResults = ViewBag.SearchResults as IEnumerable<Book>;
-                    if(SearchResults != null && SearchResults.Count() > 0)
-                    {
-                        foreach (var bookSearchResult in SearchResults)
+                <div>
+                    @{
+                        IEnumerable<Book> SearchResults = Model.SearchResults;
+                        if (SearchResults != null && SearchResults.Count() > 0)
                         {
-                            <section>
-                                <img src="@bookSearchResult.image" />
-                                <strong>@bookSearchResult.title</strong>
-                            </section>
+                            foreach (var bookSearchResult in SearchResults)
+                            {
+                                <section>
+                                    <img src="@bookSearchResult.image" />
+                                    <strong>@bookSearchResult.title</strong>
+                                </section>
+                            }
                         }
                     }
-                }
+                </div>
         </div>
     </div>
  

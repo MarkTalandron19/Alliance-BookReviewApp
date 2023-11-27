@@ -16,6 +16,9 @@ using ASI.Basecode.Data;
 using System.Linq;
 using ASI.Basecode.WebApp.Models;
 using System.Collections;
+using System;
+using Newtonsoft.Json;
+using Microsoft.CodeAnalysis.Elfie.Diagnostics;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
@@ -29,6 +32,7 @@ namespace ASI.Basecode.WebApp.Controllers
         private readonly IReviewService _reviewService;
         private readonly IMapper _mapper;
         private readonly AsiBasecodeDBContext _dbContext;
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -55,11 +59,16 @@ namespace ASI.Basecode.WebApp.Controllers
         /// <returns> Home View </returns>
         /// 
 
-        [HttpPost]
+        [HttpGet]
         public IActionResult Search(string SearchText, string Year, string Genre)
         {
             List<Book> AllBooks = _dbContext.Books.ToList();
             List<Book> SearchResults = new();
+
+            if(SearchText == null)
+            {
+                return RedirectToAction("Home", "Home", SearchResults);
+            }
 
             foreach (Book book in AllBooks)
             {
@@ -75,7 +84,9 @@ namespace ASI.Basecode.WebApp.Controllers
                     if (book.CreatedTime.Year != int.Parse(Year)) continue;
                 }
 
-                if(Genre != null)
+                book.BookGenres ??= AssignGenresToBook(book);
+
+                if (Genre != null)
                 {
                     var BookGenres = book.BookGenres.ToList();
 
@@ -83,9 +94,12 @@ namespace ASI.Basecode.WebApp.Controllers
 
                     bool IsBookHaveAnyOfGivenGenre = BookGenres.Any((genre) =>
                     {
-                        if (genre.genre.genreName.ToLower().Contains(SearchText.ToLower()))
+                        foreach(var bookGenre in BookGenres)
                         {
-                            return true;
+                            if (genre.genre.genreName.ToLower().Contains(bookGenre.genre.genreName.ToLower()))
+                            {
+                                return true;
+                            }
                         }
                         return false;
                     });
@@ -97,7 +111,13 @@ namespace ASI.Basecode.WebApp.Controllers
             }
 
             //TODO: need to know how to view the search result
-            return RedirectToAction("Home");
+            string SearchResultJson = JsonConvert.SerializeObject(SearchResults, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+            });
+
+            HttpContext.Session.SetString("SearchResult",SearchResultJson);
+            return RedirectToAction("Home", "Home");
         }
 
 
@@ -110,68 +130,34 @@ namespace ASI.Basecode.WebApp.Controllers
 
             //Get the books from Database
             List<Book> books = _dbContext.Books.ToList();
-
-            /* Get the Top 5 recent books */
-
-            //Sort the list by date
-
-            List<Book> RecentBooks;
-
-            //Only get the number of books defined by ViewRecentBooks starting from the last element
-
-            if (books.Count >= NumOfViewRecentBooks)
-            {
-                RecentBooks = new(books.TakeLast(NumOfViewRecentBooks));
-            }
-            else
-            {
-                RecentBooks = new(books);
-            }
-
-            IComparer<Book> DateComparer = Comparer<Book>.Create((x, y) => x.CreatedTime.CompareTo(y.CreatedTime));
-            RecentBooks.Sort(DateComparer);
+            List<Genre> genres = _dbContext.Genres.ToList();
+            List<int> years = SetupYears();
 
 
-            /* Get the Top 10 Best Rating books */
+            List<Book> RecentBooks = GetRecentBooks(NumOfViewRecentBooks, books);
+            List<BookAverageRating> TopRatedBooks = GetTopRatedBooks(AverageRatingCheck, books);
 
-            List<BookAverageRating> TopRatedBooks = new();
-
-            books.ForEach(book => {
-               
-                List<Review> reviews = AssignReviewsToBook(book);
-                book.BookGenres = AssignGenresToBook(book);
-
-                if(reviews.Count <= 0)
-                {
-                    return;
-                }
-                int Count = reviews.Count, Sum = 0;
-
-                //Get the rating average of each book
-                //If the average is greater than Average Rating Check, then the book will be added to the List of Top Rated Books
-
-                foreach (Review review in reviews)
-                {
-                    Sum += review.rating;
-                }
-
-                float Avg = Sum / Count;
-
-                if (Avg >= AverageRatingCheck)
-                {
-                    TopRatedBooks.Add(new(book, Avg));
-                }
-            });
-
-            //For View
             if (TopRatedBooks.Count >= NumOfViewRatingBooks)
                 TopRatedBooks = TopRatedBooks.GetRange(0, NumOfViewRatingBooks);
 
-            /* Genre */
-            HomeViewModel homeViewModel = new(RecentBooks, TopRatedBooks);
+            IComparer<Genre> GenreSorter = Comparer<Genre>.Create((x, y) => x.genreName.CompareTo(y.genreName));
+            genres.Sort(GenreSorter);
+
+            HomeViewModel homeViewModel = new(RecentBooks, TopRatedBooks, genres, years);
+            try
+            {
+                if (HttpContext.Session != null && HttpContext.Session.GetString("SearchResult") != null)
+                {
+                    homeViewModel.SearchResults = JsonConvert.DeserializeObject<List<Book>>(HttpContext.Session.GetString("SearchResult"));
+                }
+            }
+            catch
+            {
+                homeViewModel.SearchResults = null;
+            }
 
             return View(homeViewModel);
-            
+
         }
 
         public IActionResult RecentBooksPages()
@@ -195,6 +181,64 @@ namespace ASI.Basecode.WebApp.Controllers
             ViewData["Genres"] = genres;
             ViewData["Reviews"] = reviews;
             return View(books);
+        }
+
+        private static List<Book> GetRecentBooks(int NumOfViewRecentBooks, List<Book> books)
+        {
+            //Sort the list by date
+
+            List<Book> RecentBooks;
+
+            //Only get the number of books defined by ViewRecentBooks starting from the last element
+
+            if (books.Count >= NumOfViewRecentBooks)
+            {
+                RecentBooks = new(books.TakeLast(NumOfViewRecentBooks));
+            }
+            else
+            {
+                RecentBooks = new(books);
+            }
+
+            IComparer<Book> DateComparer = Comparer<Book>.Create((x, y) => x.CreatedTime.CompareTo(y.CreatedTime));
+            RecentBooks.Sort(DateComparer);
+            return RecentBooks;
+        }
+
+        private List<BookAverageRating> GetTopRatedBooks(float AverageRatingCheck, List<Book> books)
+        {
+            /* Get the Top 10 Best Rating books */
+
+            List<BookAverageRating> TopRatedBooks = new();
+
+            books.ForEach(book =>
+            {
+
+                List<Review> reviews = AssignReviewsToBook(book);
+                book.BookGenres = AssignGenresToBook(book);
+
+                if (reviews.Count <= 0)
+                {
+                    return;
+                }
+                int Count = reviews.Count, Sum = 0;
+
+                //Get the rating average of each book
+                //If the average is greater than Average Rating Check, then the book will be added to the List of Top Rated Books
+
+                foreach (Review review in reviews)
+                {
+                    Sum += review.rating;
+                }
+
+                float Avg = Sum / Count;
+
+                if (Avg >= AverageRatingCheck)
+                {
+                    TopRatedBooks.Add(new(book, Avg));
+                }
+            });
+            return TopRatedBooks;
         }
 
         private List<Review> AssignReviewsToBook(Book book)
@@ -225,5 +269,23 @@ namespace ASI.Basecode.WebApp.Controllers
             return bookGenres;
         }
 
+        private List<int> SetupYears()
+        {
+            List<Book> books = _dbContext.Books.ToList();
+            int minYear = DateTime.Now.Year;
+
+            List<int> years = new() { minYear };
+
+            foreach(Book book in books)
+            {
+                if(minYear < book.CreatedTime.Year)
+                {
+                    minYear = book.CreatedTime.Year;
+                    years.Add(book.CreatedTime.Year);
+                }
+            }
+
+            return years;
+        }
     }
 }
