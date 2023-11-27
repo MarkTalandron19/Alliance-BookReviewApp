@@ -22,10 +22,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using static ASI.Basecode.Resources.Constants.Enums;
+using ASI.Basecode.Services.Services;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
-
+    [Authorize(Roles = "Superadmin")]
     public class AccountController : Controller
     {
 
@@ -235,7 +236,12 @@ namespace ASI.Basecode.WebApp.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return RedirectToAction("GenreList", "Genre");
+                    if (User.IsInRole("Superadmin"))
+                        return RedirectToAction("UserList", "Account");
+                    if(User.IsInRole("Genremaster"))
+                        return RedirectToAction("GenreList", "Genre");
+                    if(User.IsInRole("Bookmaster"))
+                        return RedirectToAction("BookList", "Book");
                 }
                 if (result.RequiresTwoFactor)
                 {
@@ -292,7 +298,82 @@ namespace ASI.Basecode.WebApp.Controllers
         [AllowAnonymous]
         public IActionResult Register()
         {
+            var roles = _userService.GetRoles().Select(r => r.Name).ToList();
+            var userViewModel = new UserViewModel
+            {
+                Roles = roles
+            };
+            return View(userViewModel);
+        }
+
+		[HttpGet]
+		public IActionResult UserList()
+        {
+            var roles = _userService.GetRoles().Select(r => r.Name).ToList();
+            var users = _userService.GetUsers().ToList();
+            var userViewModel = new UserViewModel
+            {
+                Roles = roles,
+                Users = users
+            };
+
+            var commonViewModel = new UserViewStorageModel
+            {
+                ViewModel = userViewModel,
+            };
+
+            return View("Views/Account/UserList.cshtml", commonViewModel);
+		}
+
+        [HttpPost]
+        public IActionResult UpdateUser(UserViewModel model)
+        {
+            _userService.UpdateUser(model);
+                
+            return RedirectToAction("UserList", "Account");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddUser(UserViewModel model)
+        {
+            _logger.LogInformation("register user");
+            try
+            {
+                var identityUser = new IdentityUser();
+                identityUser.Email = model.Email;
+                identityUser.UserName = model.UserId;
+                var result = await _userManager.CreateAsync(identityUser, model.Password);
+
+                if (result.Succeeded)
+                {
+                    _userService.AddUser(model);
+
+                    var userRole = _roleManager.FindByNameAsync(model.Role).Result;
+
+                    if (userRole != null)
+                    {
+                        await _userManager.AddToRoleAsync(identityUser, userRole.Name);
+                    }
+                }
+
+                return RedirectToAction("UserList", "Account");
+            }
+            catch (InvalidDataException ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = Resources.Messages.Errors.ServerError;
+            }
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult DeleteUser(UserViewModel model)
+        {
+            _userService.DeleteUser(model.UserId);
+            return RedirectToAction("UserList", "Account");
         }
 
         [HttpPost]
@@ -311,7 +392,7 @@ namespace ASI.Basecode.WebApp.Controllers
                 {
                     _userService.AddUser(model);
 
-                    var userRole = _roleManager.FindByNameAsync("User").Result;
+                    var userRole = _roleManager.FindByNameAsync(model.Role).Result;
 
                     if (userRole != null)
                     {
@@ -346,7 +427,7 @@ namespace ASI.Basecode.WebApp.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Login", "Account");
+                    return RedirectToAction("UserList", "Account");
                 }
 
             return View();

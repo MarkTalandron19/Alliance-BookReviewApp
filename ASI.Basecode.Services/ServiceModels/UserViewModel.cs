@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ASI.Basecode.Data.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -24,5 +25,13 @@ namespace ASI.Basecode.Services.ServiceModels
         [Required(ErrorMessage = "Confirmation Password is required.")]
         [Compare("Password", ErrorMessage = "Password and Confirmation Password must match.")]
         public string ConfirmPassword { get; set; }
+
+        public List<string> Roles { get; set; }
+        public List<User> Users { get; set; }
+
+        [Required(ErrorMessage = "Role is required.")]
+        public string Role { get; set; }
+
+        public string OriginalEmail { get; set; }
     }
 }

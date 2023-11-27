@@ -1,11 +1,14 @@
-﻿@model IEnumerable<ASI.Basecode.Data.Models.Book>
+﻿@using ASI.Basecode.Services.ServiceModels
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@model UserViewStorageModel
 @section styles {
 	<link rel="stylesheet" href="~/css/admindashboard.css" />
 }
 @{
-	ViewData["Title"] = "Book List";
+	ViewData["Title"] = "Bibliobibuli - Admin Dashboard";
 }
-@if (User.IsInRole("Bookmaster"))
+@if(User.IsInRole("Superadmin"))
 {
 	<div class="body-main">
 		<div class="body-two-section">
@@ -17,7 +20,7 @@
 							<div class="leftmenu-item-title">
 								<div class="leftmenu-item">
 									<img class="leftmenu-icons" src="~/img/dashboard-icon.png" />
-									Book Management<br />Dashboard
+									User Management<br />Dashboard
 								</div>
 							</div>
 							<hr class="menu-divider" />
@@ -77,83 +80,67 @@
 				</div>
 				<div class="dashboard">
 					<div class="dashboard-title-div">
-						<p class="dashboard-title">Book List Management</p>
-						<button class="add-button" id="AddBookBtn"><p class="button-text">+</p></button>
+						<p class="dashboard-title">User List Management</p>
+						<button class="add-button" id="AddBtn"><p class="button-text">+</p></button>
+						<a class="add-button" asp-controller="Account" asp-Action="CreateRole" id="AddRole"><p class="button-text">Add Role</p></a>
 					</div>
 					<hr class="divider" />
-					<p class="dashboard-subtitle">Book List</p>
+					<p class="dashboard-subtitle">User List</p>
 					<div class="dashboard-card">
 						<table class="dashboard-table">
 							<thead class="dashboard-table-header">
 								<tr class="header-row">
-									<th style="width: 10%;">
-										Book Cover
+									<th style="width: 25%;">
+										User Name
 									</th>
-									<th style="width: 15%;">
-										Book Name
+									<th style="width: 50%;">
+										Email
 									</th>
-									<th style="width: 35%;">
-										Synopsis
+									<th style="width: 50%;">
+										Role
 									</th>
-									<th style="width: 20%;">
-										Publisher
+									<th style="width: 50%;">
+										Created By
 									</th>
-									<th style="width: 20%;">
-
+									<th style="width: 50%;">
+										Created Time
 									</th>
 								</tr>
 							</thead>
 							<tbody id="tableBody">
-								@foreach (var book in Model)
+								@foreach (var user in Model.ViewModel.Users)
 								{
 									<tr>
-										<td><img src="@book.image" alt="Book Image" style="max-width: 100px; max-height: 100px;" /></td>
+										<td><a href="">@user.Name</a></td>
+										<td>@user.Email</td>
+										<td>@user.Role</td>
+										<td>@user.CreatedBy</td>
+										<td>@user.CreatedTime</td>
 										<td>
-											<a href="@Url.Action("GetGenresOfBook", "Book", new { bookId = @book.bookId, title = book.title, synopsis = book.synopsis, pubYear = book.pubYear, publisher = book.publisher, isbn = book.isbn, language = book.language })">@book.title</a>
-										</td>
-										<td>@book.synopsis</td>
-										<td>@book.publisher</td>
-										<td>
-											<button class="edit-button" id="Update" data-book-id="@book.bookId" data-book-title="@book.title" data-book-synopsis="@book.synopsis" data-book-publisher="@book.publisher" data-book-isbn="@book.isbn" data-book-language="@book.language">Edit</button>
-											<button class="delete-button" data-book-id="@book.bookId">Delete</button>
+											<button class="edit-button" id="Update" data-user-id="@user.UserId"
+													data-user-name="@user.Name" data-user-email="@user.Email" data-user-password="@user.Password"
+													data-user-role="@user.Role">
+												Edit
+											</button>
+											<button class="delete-button" data-user-id="@user.UserId" data-user-email="@user.Email">Delete</button>
 										</td>
 									</tr>
 								}
 							</tbody>
 						</table>
 					</div>
-
 				</div>
 			</div>
 		</div>
-		@await Html.PartialAsync("_AddBookPopup", new ASI.Basecode.Services.ServiceModels.BookViewModel())
-		@await Html.PartialAsync("_EditBookPopup", new ASI.Basecode.Services.ServiceModels.BookViewModel())
-		@await Html.PartialAsync("_DeleteBookPopup", new ASI.Basecode.Services.ServiceModels.BookViewModel())
+		@await Html.PartialAsync("_AddUserPopup", Model.ViewModel);
+		@await Html.PartialAsync("_EditUserPopup", Model.ViewModel);
+		@await Html.PartialAsync("_DeleteUserPopup", Model.ViewModel);
 	</div>
 }
 
+
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="~/js/Book.js"></script>
-<script>
-	$(document).ready(function () {
-		$(".book-title-link").on("click", function (e) {
-			e.preventDefault();
-			var bookId = $(this).attr("id").replace("book-", "");
+<script src="~/js/User.js"></script>
 
-			// Make an AJAX request to fetch and display genres
-			$.get("/BookController/GetGenresOfBook?bookId=" + bookId, function (data) {
-				if (data.genres) {
-					var genreList = data.genres.join(", "); // Convert the array of genres to a string
-
-					// Update the third column with the genre information
-					$(`#book-${bookId}`).closest("tr").find("td:eq(2)").html(genreList);
-				} else {
-					// Handle the case where there are no genres or an error occurred
-					console.log("No genres found or an error occurred.");
-				}
-			});
-		});
-	});
-</script>
 

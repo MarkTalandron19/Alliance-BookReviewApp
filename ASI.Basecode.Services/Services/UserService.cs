@@ -1,5 +1,6 @@
 ﻿using ASI.Basecode.Data.Interfaces;
 using ASI.Basecode.Data.Models;
+using ASI.Basecode.Data.Repositories;
 using ASI.Basecode.Services.Interfaces;
 using ASI.Basecode.Services.Manager;
 using ASI.Basecode.Services.ServiceModels;
@@ -67,6 +68,39 @@ namespace ASI.Basecode.Services.Services
         public async Task<IdentityResult> CreateRole(string roleName)
         {
             return await _repository.CreateRole(roleName);
+        }
+
+        public IQueryable<IdentityRole> GetRoles()
+        {
+            return _repository.GetRoles();
+        }
+
+        public IQueryable<User> GetUsers()
+        {
+            return _repository.GetUsers();
+        }
+
+        public async Task UpdateUser(UserViewModel model)
+        {
+            var user = new User();
+            var originalEmail = model.OriginalEmail;
+            var role = model.Role;
+            if (_repository.UserExists(model.UserId))
+            {
+                _mapper.Map(model, user);
+                user.UpdatedTime = DateTime.Now;
+                user.UpdatedBy = System.Environment.UserName;
+                _repository.UpdateUser(user);
+				Task.Run(async () => await _repository.UpdateIdentityUser(user, originalEmail, role)).Wait();
+			}
+
+        }
+        public async Task DeleteUser(string userId)
+        {
+            if (_repository.UserExists(userId))
+            {
+                await _repository.DeleteUser(userId);
+            }
         }
     }
 }

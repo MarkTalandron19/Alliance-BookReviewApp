@@ -1,133 +1,151 @@
 ﻿@model IEnumerable<ASI.Basecode.Data.Models.Genre>
 @section styles {
-    <link rel="stylesheet" href="~/css/admindashboard.css" />
+	<link rel="stylesheet" href="~/css/admindashboard.css" />
 }
 @{
-    ViewData["Title"] = "Bibliobibuli - Admin Dashboard";
+	ViewData["Title"] = "Bibliobibuli - Admin Dashboard";
+}
+@if (User.IsInRole("Genremaster"))
+{
+	<div class="body-main">
+		<div class="body-two-section">
+			<div class="left-space">
+				<div class="left-menu">
+					<div>
+						<img class="bibliobibuli-logo" src="~/img/logo-leftaligned.png" />
+						<div class="menu-items">
+							<div class="leftmenu-item-title">
+								<div class="leftmenu-item">
+									<img class="leftmenu-icons" src="~/img/dashboard-icon.png" />
+									Book Management<br />Dashboard
+								</div>
+							</div>
+							<hr class="menu-divider" />
+							@if (User.IsInRole("Bookmaster"))
+							{
+								<a asp-controller="Book" asp-action="BookList" class="leftmenu-items">
+									<div class="leftmenu-item">
+										<img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+										Book List
+									</div>
+								</a>
+							}
+							@if (User.IsInRole("Genremaster"))
+							{
+								<a asp-controller="Genre" asp-action="GenreList" class="leftmenu-items">
+									<div class="leftmenu-item">
+										<img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+										Genre List
+									</div>
+								</a>
+							}
+							@if (User.IsInRole("Superadmin"))
+							{
+								<a asp-controller="Account" asp-action="UserList" class="leftmenu-items">
+									<div class="leftmenu-item">
+										<img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+										User List
+									</div>
+								</a>
+							}
+						</div>
+					</div>
+					<div>
+						<button class="logout-button">
+							<a asp-controller="Account" asp-action="SignOutUser">
+								<div class="logout-text">
+									<img class="leftmenu-icons" src="~/img/logout-icon.png" />
+									Logout
+								</div>
+							</a>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="admin-dashboard-list">
+				<div class="admin-header">
+					<div class="logosec">
+						@*Welcome, @HttpContextAccessor.HttpContext.Session.GetString("UserName")!*@
+						<div class="mr-20 hover-pointer" style="position: relative">
+							<div class="dp">
+								<img src="~/img/profile-logo.png"
+									 class="dpicn hover-pointer"
+									 alt="dp">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="dashboard">
+					<div class="dashboard-title-div">
+						<p class="dashboard-title">Genre List Management</p>
+						<button class="add-button" id="AddBtn"><p class="button-text">+</p></button>
+					</div>
+					<hr class="divider" />
+					<p class="dashboard-subtitle">Book Genre List</p>
+					<div class="dashboard-card">
+						<table class="dashboard-table">
+							<thead class="dashboard-table-header">
+								<tr class="header-row">
+									<th style="width: 25%;">
+										Genre Name
+									</th>
+									<th style="width: 50%;">
+										Short Description
+									</th>
+									<th style="width: 25%;">
+										Operation
+									</th>
+								</tr>
+							</thead>
+							<tbody id="tableBody">
+								@foreach (var genre in Model)
+								{
+									<tr>
+										<td><a href="@Url.Action("GetBooksWithGenre", "Genre", new { genreId = @genre.genreId, genreName = @genre.genreName })">@genre.genreName</a></td>
+										<td>@genre.description</td>
+										<td>
+											<button class="edit-button" id="Update" data-genre-id="@genre.genreId" data-genre-name="@genre.genreName" data-genre-desc="@genre.description">Edit</button>
+											<button class="delete-button" data-genre-id="@genre.genreId">Delete</button>
+
+										</td>
+									</tr>
+								}
+							</tbody>
+						</table>
+					</div>
+
+					@*                 <p class="dashboard-subtitle">Selected Genre Books</p>
+				<div class="dashboard-card">
+				<table class="dashboard-table">
+				<thead class="dashboard-table-header">
+				<tr class="header-row">
+				<th>
+				Genre Name
+				</th>
+				<th>
+				Short Description
+				</th>
+				<th>
+				Created by
+				</th>
+				<th>
+				Date Added
+				</th>
+				</tr>
+				</thead>
+				<tbody id="tableBody">
+				</tbody>
+				</table>
+				</div> *@
+				</div>
+			</div>
+		</div>
+		@await Html.PartialAsync("_AddGenrePopup", new ASI.Basecode.Services.ServiceModels.GenreViewModel());
+		@await Html.PartialAsync("_EditGenrePopup", new ASI.Basecode.Services.ServiceModels.GenreViewModel());
+		@await Html.PartialAsync("_DeleteGenrePopup", new ASI.Basecode.Services.ServiceModels.GenreViewModel());
+	</div>
 }
 
-<div class="body-main">
-    <div class="body-two-section">
-        <div class="left-space">
-            <div class="left-menu">
-                <div>
-                    <img class="bibliobibuli-logo" src="~/img/logo-leftaligned.png" />
-                    <div class="menu-items">
-                    <div class="leftmenu-item-title">
-                        <div class="leftmenu-item">
-                            <img class="leftmenu-icons" src="~/img/dashboard-icon.png" />
-                            Book Management<br />Dashboard
-                        </div>
-                    </div>
-                        <hr class="menu-divider" />
-                        <a asp-controller="Book" asp-action="BookList" class="leftmenu-items">
-                            <div class="leftmenu-item">
-                                <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
-                                Book List
-                            </div>
-                        </a>
-                    <button class="leftmenu-items">
-                            <div class="leftmenu-item">
-                                <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
-                            Genre List
-                        </div>
-                    </button>
-                    </div>
-                </div>
-                <div>
-                    <button class="logout-button">
-                        <a asp-controller="Account" asp-action="SignOutUser">
-                        <div class="logout-text">
-                            <img class="leftmenu-icons" src="~/img/logout-icon.png" />
-                            Logout
-                        </div>
-                        </a>
-                     </button>
-                </div>
-            </div>
-        </div>
-        <div class="admin-dashboard-list">
-            <div class="admin-header">
-                <div class="logosec">
-                    @*Welcome, @HttpContextAccessor.HttpContext.Session.GetString("UserName")!*@
-                    <div class="mr-20 hover-pointer" style="position: relative">
-                        <div class="dp">
-                            <img src="~/img/profile-logo.png"
-                                 class="dpicn hover-pointer"
-                                 alt="dp">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="dashboard">
-                <div class="dashboard-title-div">
-                    <p class="dashboard-title">Genre List Management</p>
-                    <button class="add-button" id="AddBtn"><p class="button-text">+</p></button>
-                </div>
-                <hr class="divider"/>
-                <p class="dashboard-subtitle">Book Genre List</p>
-                <div class="dashboard-card">
-                    <table class="dashboard-table">
-                        <thead class="dashboard-table-header">
-                            <tr class="header-row">
-                                <th style="width: 25%;">
-                                    Genre Name
-                                </th>
-                                <th style="width: 50%;">
-                                    Short Description
-                                </th>
-                                <th style="width: 25%;">
-                                    Operation
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody id="tableBody">
-                            @foreach (var genre in Model)
-                            {
-                                <tr>
-                                    <td><a href="@Url.Action("GetBooksWithGenre", "Genre", new { genreId = @genre.genreId, genreName = @genre.genreName })">@genre.genreName</a></td>
-                                    <td>@genre.description</td>
-                                    <td>
-                                        <button class="edit-button" id="Update" data-genre-id="@genre.genreId" data-genre-name="@genre.genreName" data-genre-desc="@genre.description">Edit</button>
-                                        <button class="delete-button" data-genre-id="@genre.genreId">Delete</button>
-                                        
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-
-@*                 <p class="dashboard-subtitle">Selected Genre Books</p>
-                <div class="dashboard-card">
-                    <table class="dashboard-table">
-                        <thead class="dashboard-table-header">
-                            <tr class="header-row">
-                                <th>
-                                    Genre Name
-                                </th>
-                                <th>
-                                    Short Description
-                                </th>
-                                <th>
-                                    Created by
-                                </th>
-                                <th>
-                                    Date Added
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody id="tableBody">
-                        </tbody>
-                    </table>
-                </div> *@
-            </div>
-        </div>
-    </div>
-    @await Html.PartialAsync("_AddGenrePopup", new ASI.Basecode.Services.ServiceModels.GenreViewModel());
-    @await Html.PartialAsync("_EditGenrePopup", new ASI.Basecode.Services.ServiceModels.GenreViewModel());
-    @await Html.PartialAsync("_DeleteGenrePopup", new ASI.Basecode.Services.ServiceModels.GenreViewModel());
-</div>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
