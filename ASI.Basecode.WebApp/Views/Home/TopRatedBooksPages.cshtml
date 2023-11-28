@@ -2,11 +2,12 @@
 @model List<BookAverageRating>
 
 <section>
+	<h1 style="color:white">Top Rated Books</h1>
 	@{
 		foreach(var book in Model)
 		{
-			<p>@book.Book.title</p>
-			<p>@book.AverageRating</p>
+			<p style="color:white">@book.Book.title</p>
+			<p style="color:white">@book.AverageRating</p>
 			<hr/>
 		}
 	}
