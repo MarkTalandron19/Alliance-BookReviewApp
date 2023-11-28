@@ -1,1 +1,12 @@
 ﻿@using ASI.Basecode.Data.Models;
+@model List<Book>
+
+
+<section>
+	@{
+		foreach(var book in Model)
+		{
+			<p>@book.title</p>
+		}
+	}
+</section>

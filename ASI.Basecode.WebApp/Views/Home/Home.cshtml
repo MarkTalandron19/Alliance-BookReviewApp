@@ -110,7 +110,7 @@
     <div class="second-background">
         <h2 class="trends-text">New releases</h2>
         <p class="text-trends">Dive into our selection of newest books this week, where every page tells a story worth sharing.</p>
-
+        <button><a asp-controller="Home" asp-action="RecentBooksPages">VIEW MORE</a></button>
         <section class="books-line">
             @{
                 List<Book> NewBooks = Model.NewlyReleasedBooks;
@@ -143,7 +143,7 @@
                 <text class="top-rated-books-line">From captivating tales to thought-provoking narratives, these stories are igniting conversations across Bibliobibuli.</text>
             </div>
             <div class="second-button-container-view-more">
-                <button class="second-button-view-more">VIEW MORE →</button>
+                <button class="second-button-view-more"><a asp-controller="Home" asp-action="TopRatedBooksPages">VIEW MORE →</a></button>
             </div>
         </div>
 

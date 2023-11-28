@@ -33,6 +33,9 @@ namespace ASI.Basecode.WebApp.Controllers
         private readonly IMapper _mapper;
         private readonly AsiBasecodeDBContext _dbContext;
 
+        private const float _averageRatingCheck = 4.0f;
+        private const int _weekLimit = 2;
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -126,7 +129,7 @@ namespace ASI.Basecode.WebApp.Controllers
         public IActionResult Home()
         {
             const int NumOfViewRecentBooks = 5, NumOfViewRatingBooks = 10;
-            const float AverageRatingCheck = 4.0f;
+            
 
             //Get the books from Database
             List<Book> books = _dbContext.Books.ToList();
@@ -134,8 +137,8 @@ namespace ASI.Basecode.WebApp.Controllers
             List<int> years = SetupYears();
 
 
-            List<Book> RecentBooks = GetRecentBooks(NumOfViewRecentBooks, books);
-            List<BookAverageRating> TopRatedBooks = GetTopRatedBooks(AverageRatingCheck, books);
+            List<Book> RecentBooks = GetRecentBooks(books, NumOfViewRecentBooks);
+            List<BookAverageRating> TopRatedBooks = GetTopRatedBooks(books);
 
             if (TopRatedBooks.Count >= NumOfViewRatingBooks)
                 TopRatedBooks = TopRatedBooks.GetRange(0, NumOfViewRatingBooks);
@@ -162,12 +165,39 @@ namespace ASI.Basecode.WebApp.Controllers
 
         public IActionResult RecentBooksPages()
         {
-            return View();
+            List<Book> AllRecentBooks = GetRecentBooks(_dbContext.Books.ToList());
+            List<Book> LimitedRecentBooksForView = new();
+            DateTime MinDateToView = GetDateSubtractedByWeekLimit();
+
+            foreach (var book in AllRecentBooks)
+            {
+                if (DateTime.Compare(book.CreatedTime, MinDateToView) == 0)
+                {
+                    break;
+                }
+                LimitedRecentBooksForView.Add(book);
+            }
+
+            return View(LimitedRecentBooksForView);
         }
 
         public IActionResult TopRatedBooksPages()
         {
-            return View();
+            List<BookAverageRating> AllTopRatedBooks = GetTopRatedBooks(_dbContext.Books.ToList());
+            List<BookAverageRating> LimitedTopRatedBooksForView = new();
+
+            DateTime MinDateToView = GetDateSubtractedByWeekLimit();
+
+            foreach (var book in AllTopRatedBooks)
+            {
+                if (DateTime.Compare(book.Book.CreatedTime, MinDateToView) == 0)
+                {
+                    break;
+                }
+                LimitedTopRatedBooksForView.Add(book);
+            }
+
+            return View(LimitedTopRatedBooksForView);
         }
 
         [HttpGet]
@@ -183,7 +213,7 @@ namespace ASI.Basecode.WebApp.Controllers
             return View(books);
         }
 
-        private static List<Book> GetRecentBooks(int NumOfViewRecentBooks, List<Book> books)
+        private static List<Book> GetRecentBooks(List<Book> books, int? NumOfViewRecentBooks = null)
         {
             //Sort the list by date
 
@@ -191,9 +221,9 @@ namespace ASI.Basecode.WebApp.Controllers
 
             //Only get the number of books defined by ViewRecentBooks starting from the last element
 
-            if (books.Count >= NumOfViewRecentBooks)
+            if (NumOfViewRecentBooks != null && books.Count >= NumOfViewRecentBooks)
             {
-                RecentBooks = new(books.TakeLast(NumOfViewRecentBooks));
+                RecentBooks = new(books.TakeLast(NumOfViewRecentBooks.Value));
             }
             else
             {
@@ -205,7 +235,7 @@ namespace ASI.Basecode.WebApp.Controllers
             return RecentBooks;
         }
 
-        private List<BookAverageRating> GetTopRatedBooks(float AverageRatingCheck, List<Book> books)
+        private List<BookAverageRating> GetTopRatedBooks(List<Book> books)
         {
             /* Get the Top 10 Best Rating books */
 
@@ -233,7 +263,7 @@ namespace ASI.Basecode.WebApp.Controllers
 
                 float Avg = Sum / Count;
 
-                if (Avg >= AverageRatingCheck)
+                if (Avg >= _averageRatingCheck)
                 {
                     TopRatedBooks.Add(new(book, Avg));
                 }
@@ -286,6 +316,12 @@ namespace ASI.Basecode.WebApp.Controllers
             }
 
             return years;
+        }
+
+        private static DateTime GetDateSubtractedByWeekLimit()
+        {
+            DateTime MinDateToView = DateTime.Now.Subtract(TimeSpan.FromDays(7 * _weekLimit));
+            return MinDateToView;
         }
     }
 }
