@@ -23,6 +23,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using static ASI.Basecode.Resources.Constants.Enums;
 using ASI.Basecode.Services.Services;
+using static ASI.Basecode.Resources.Constants.Constants;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
@@ -233,16 +234,18 @@ namespace ASI.Basecode.WebApp.Controllers
                 // This doesn't count login failures towards account lockout    
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(model.UserId, model.Password, Input.RememberMe, lockoutOnFailure: false);
-                if (result.Succeeded)
+				var user = await _userManager.FindByEmailAsync(model.Email);
+				var roles = await _userManager.GetRolesAsync(user);
+				if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    if (User.IsInRole("Superadmin"))
-                        return RedirectToAction("UserList", "Account");
-                    if(User.IsInRole("Genremaster"))
-                        return RedirectToAction("GenreList", "Genre");
-                    if(User.IsInRole("Bookmaster"))
-                        return RedirectToAction("BookList", "Book");
-                }
+					if (roles.Contains("Superadmin"))
+						return RedirectToAction("UserList", "Account");
+					if (roles.Contains("Bookmaster"))
+						return RedirectToAction("BookList", "Book");
+					if (roles.Contains("Genremaster"))
+						return RedirectToAction("GenreList", "Genre");
+				}
                 if (result.RequiresTwoFactor)
                 {
                     return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
@@ -368,7 +371,7 @@ namespace ASI.Basecode.WebApp.Controllers
             {
                 TempData["ErrorMessage"] = ex.Message;
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 TempData["ErrorMessage"] = Resources.Messages.Errors.ServerError;
             }
@@ -418,7 +421,7 @@ namespace ASI.Basecode.WebApp.Controllers
             {
                 TempData["ErrorMessage"] = ex.Message;
             }
-            catch(Exception ex)
+            catch(System.Exception ex)
             {
                 TempData["ErrorMessage"] = Resources.Messages.Errors.ServerError;
             }
