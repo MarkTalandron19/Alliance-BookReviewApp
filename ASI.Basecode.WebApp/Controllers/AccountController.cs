@@ -310,11 +310,24 @@ namespace ASI.Basecode.WebApp.Controllers
         }
 
 		[HttpGet]
-		public IActionResult UserList()
+		public async Task<IActionResult> UserList()
         {
             var roles = _userService.GetRoles().Select(r => r.Name).ToList();
             var users = _userService.GetUsers().ToList();
-            var userViewModel = new UserViewModel
+            var userList = new List<IdentityUserViewModel>();
+            foreach(var user in users)
+            {
+                var identityUser = await _userManager.FindByEmailAsync(user.Email);
+                var identityRoles = await _userManager.GetRolesAsync(identityUser);
+                var viewModel = new IdentityUserViewModel
+                {
+                    User = user,
+                    UserRoles = identityRoles.ToList(),
+                };
+
+                userList.Add(viewModel);
+            }
+			var userViewModel = new UserViewModel
             {
                 Roles = roles,
                 Users = users
@@ -323,6 +336,7 @@ namespace ASI.Basecode.WebApp.Controllers
             var commonViewModel = new UserViewStorageModel
             {
                 ViewModel = userViewModel,
+                IdentityUsers = userList
             };
 
             return View("Views/Account/UserList.cshtml", commonViewModel);

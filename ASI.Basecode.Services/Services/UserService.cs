@@ -91,7 +91,7 @@ namespace ASI.Basecode.Services.Services
                 user.UpdatedTime = DateTime.Now;
                 user.UpdatedBy = System.Environment.UserName;
                 _repository.UpdateUser(user);
-				//Task.Run(async () => await _repository.UpdateIdentityUser(user, originalEmail, role)).Wait();
+				Task.Run(async () => await _repository.UpdateIdentityUser(user, originalEmail, model.SelectedRoles)).Wait();
 			}
 
         }

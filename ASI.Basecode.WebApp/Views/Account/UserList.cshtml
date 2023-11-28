@@ -82,7 +82,6 @@
 					<div class="dashboard-title-div">
 						<p class="dashboard-title">User List Management</p>
 						<button class="add-button" id="AddBtn"><p class="button-text">+</p></button>
-						<a class="add-button" asp-controller="Account" asp-Action="CreateRole" id="AddRole"><p class="button-text">Add Role</p></a>
 					</div>
 					<hr class="divider" />
 					<p class="dashboard-subtitle">User List</p>
@@ -105,24 +104,32 @@
 									<th style="width: 50%;">
 										Created Time
 									</th>
+									<th style="width: 50%;">
+										Operations
+									</th>
 								</tr>
 							</thead>
 							<tbody id="tableBody">
-								@foreach (var user in Model.ViewModel.Users)
+								@foreach (var user in Model.IdentityUsers)
 								{
 									<tr>
-										<td><a href="">@user.Name</a></td>
-										<td>@user.Email</td>
-										<td>@user.Role</td>
-										<td>@user.CreatedBy</td>
-										<td>@user.CreatedTime</td>
+										<td><a href="">@user.User.Name</a></td>
+										<td>@user.User.Email</td>
 										<td>
-											<button class="edit-button" id="Update" data-user-id="@user.UserId"
-													data-user-name="@user.Name" data-user-email="@user.Email" data-user-password="@user.Password"
-													data-user-role="@user.Role">
+											@foreach(var role in user.UserRoles)
+											{
+												<p>@role</p>
+											}
+										</td>
+										<td>@user.User.CreatedBy</td>
+										<td>@user.User.CreatedTime</td>
+										<td>
+											<button class="edit-button" id="Update" data-user-id="@user.User.UserId"
+													data-user-name="@user.User.Name" data-user-email="@user.User.Email" data-user-password="@user.User.Password"
+													data-user-role="@string.Join(",", user.UserRoles)">
 												Edit
 											</button>
-											<button class="delete-button" data-user-id="@user.UserId" data-user-email="@user.Email">Delete</button>
+											<button class="delete-button" data-user-id="@user.User.UserId" data-user-email="@user.User.Email">Delete</button>
 										</td>
 									</tr>
 								}
