@@ -23,6 +23,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using static ASI.Basecode.Resources.Constants.Enums;
 using ASI.Basecode.Services.Services;
+using static ASI.Basecode.Resources.Constants.Constants;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
@@ -233,16 +234,18 @@ namespace ASI.Basecode.WebApp.Controllers
                 // This doesn't count login failures towards account lockout    
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(model.UserId, model.Password, Input.RememberMe, lockoutOnFailure: false);
-                if (result.Succeeded)
+				var user = await _userManager.FindByEmailAsync(model.Email);
+				var roles = await _userManager.GetRolesAsync(user);
+				if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    if (User.IsInRole("Superadmin"))
-                        return RedirectToAction("UserList", "Account");
-                    if(User.IsInRole("Genremaster"))
-                        return RedirectToAction("GenreList", "Genre");
-                    if(User.IsInRole("Bookmaster"))
-                        return RedirectToAction("BookList", "Book");
-                }
+					if (roles.Contains("Superadmin"))
+						return RedirectToAction("UserList", "Account");
+					if (roles.Contains("Bookmaster"))
+						return RedirectToAction("BookList", "Book");
+					if (roles.Contains("Genremaster"))
+						return RedirectToAction("GenreList", "Genre");
+				}
                 if (result.RequiresTwoFactor)
                 {
                     return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
@@ -307,11 +310,24 @@ namespace ASI.Basecode.WebApp.Controllers
         }
 
 		[HttpGet]
-		public IActionResult UserList()
+		public async Task<IActionResult> UserList()
         {
             var roles = _userService.GetRoles().Select(r => r.Name).ToList();
             var users = _userService.GetUsers().ToList();
-            var userViewModel = new UserViewModel
+            var userList = new List<IdentityUserViewModel>();
+            foreach(var user in users)
+            {
+                var identityUser = await _userManager.FindByEmailAsync(user.Email);
+                var identityRoles = await _userManager.GetRolesAsync(identityUser);
+                var viewModel = new IdentityUserViewModel
+                {
+                    User = user,
+                    UserRoles = identityRoles.ToList(),
+                };
+
+                userList.Add(viewModel);
+            }
+			var userViewModel = new UserViewModel
             {
                 Roles = roles,
                 Users = users
@@ -320,6 +336,7 @@ namespace ASI.Basecode.WebApp.Controllers
             var commonViewModel = new UserViewStorageModel
             {
                 ViewModel = userViewModel,
+                IdentityUsers = userList
             };
 
             return View("Views/Account/UserList.cshtml", commonViewModel);
@@ -338,31 +355,37 @@ namespace ASI.Basecode.WebApp.Controllers
         {
             _logger.LogInformation("register user");
             try
-            {
-                var identityUser = new IdentityUser();
-                identityUser.Email = model.Email;
-                identityUser.UserName = model.UserId;
-                var result = await _userManager.CreateAsync(identityUser, model.Password);
+			{
+				var identityUser = new IdentityUser
+				{
+					Email = model.Email,
+					UserName = model.UserId
+				};
 
-                if (result.Succeeded)
-                {
-                    _userService.AddUser(model);
+				var result = await _userManager.CreateAsync(identityUser, model.Password);
 
-                    var userRole = _roleManager.FindByNameAsync(model.Role).Result;
+				if (result.Succeeded)
+				{
+					_userService.AddUser(model);
 
-                    if (userRole != null)
-                    {
-                        await _userManager.AddToRoleAsync(identityUser, userRole.Name);
-                    }
-                }
+					foreach (var selectedRole in model.SelectedRoles)
+					{
+						var userRole = _roleManager.FindByNameAsync(selectedRole).Result;
 
-                return RedirectToAction("UserList", "Account");
-            }
+						if (userRole != null)
+						{
+							await _userManager.AddToRoleAsync(identityUser, userRole.Name);
+						}
+					}
+				}
+
+				return RedirectToAction("UserList", "Account");
+			}
             catch (InvalidDataException ex)
             {
                 TempData["ErrorMessage"] = ex.Message;
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 TempData["ErrorMessage"] = Resources.Messages.Errors.ServerError;
             }
@@ -382,32 +405,37 @@ namespace ASI.Basecode.WebApp.Controllers
         {
             _logger.LogInformation("register user");
             try
-            {
-                var identityUser = new IdentityUser();
-                identityUser.Email = model.Email;
-                identityUser.UserName = model.UserId;
-                var result = await _userManager.CreateAsync(identityUser, model.Password);
+			{
+				var identityUser = new IdentityUser
+				{
+					Email = model.Email,
+					UserName = model.UserId
+				};
 
-                if (result.Succeeded)
-                {
-                    _userService.AddUser(model);
+				var result = await _userManager.CreateAsync(identityUser, model.Password);
 
-                    var userRole = _roleManager.FindByNameAsync(model.Role).Result;
+				if (result.Succeeded)
+				{
+					_userService.AddUser(model);
 
-                    if (userRole != null)
-                    {
-                        await _userManager.AddToRoleAsync(identityUser, userRole.Name);
-                    }
-                }
+					foreach (var selectedRole in model.SelectedRoles)
+					{
+						var userRole = _roleManager.FindByNameAsync(selectedRole).Result;
 
+						if (userRole != null)
+						{
+							await _userManager.AddToRoleAsync(identityUser, userRole.Name);
+						}
+					}
+				}
 
-                return RedirectToAction("Login", "Account");
-            }
+				return RedirectToAction("UserList", "Account");
+			}
             catch(InvalidDataException ex)
             {
                 TempData["ErrorMessage"] = ex.Message;
             }
-            catch(Exception ex)
+            catch(System.Exception ex)
             {
                 TempData["ErrorMessage"] = Resources.Messages.Errors.ServerError;
             }

@@ -84,14 +84,14 @@ namespace ASI.Basecode.Services.Services
         {
             var user = new User();
             var originalEmail = model.OriginalEmail;
-            var role = model.Role;
+            //var role = model.Role;
             if (_repository.UserExists(model.UserId))
             {
                 _mapper.Map(model, user);
                 user.UpdatedTime = DateTime.Now;
                 user.UpdatedBy = System.Environment.UserName;
                 _repository.UpdateUser(user);
-				Task.Run(async () => await _repository.UpdateIdentityUser(user, originalEmail, role)).Wait();
+				Task.Run(async () => await _repository.UpdateIdentityUser(user, originalEmail, model.SelectedRoles)).Wait();
 			}
 
         }

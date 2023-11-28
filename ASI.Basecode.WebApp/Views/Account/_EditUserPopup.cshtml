@@ -40,15 +40,18 @@
 						<span asp-validation-for="ConfirmPassword" class="text-danger"></span>
 					</div>
 					<div>
-						<label asp-for="Role" class="control-label">Role</label>
-						<select id="editrole" asp-for="Role" class="form-control">
-							<option value="">Select a role</option>
-							@foreach (var role in Model.Roles)
+						<label asp-for="SelectedRoles" class="control-label">Role</label>
+						@foreach (var role in Model.Roles)
+						{
+							if (role != "Superadmin")
 							{
-								<option value="@role">@role</option>
+								<div class="form-control">
+									<input type="checkbox" id="@($"role_{role}")" name="selectedRoles" value="@role" />
+									<label for="@($"role_{role}")">@role</label>
+								</div>
 							}
-						</select>
-						<span asp-validation-for="Role" class="text-danger"></span>
+						}
+						<span asp-validation-for="SelectedRoles" class="text-danger"></span>
 					</div>
 
 				</div>
