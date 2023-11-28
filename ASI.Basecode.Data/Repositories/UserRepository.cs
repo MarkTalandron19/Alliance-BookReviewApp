@@ -94,7 +94,7 @@ namespace ASI.Basecode.Data.Repositories
             }
         }
 
-        public async Task UpdateIdentityUser(User model, string originalEmail, string role)
+        public async Task UpdateIdentityUser(User model, string originalEmail, string[] roles)
         {
             var user = await _userManager.FindByEmailAsync(originalEmail);
             var identityUser = new IdentityUser();
@@ -110,7 +110,7 @@ namespace ASI.Basecode.Data.Repositories
 
                 var userRoles = await _userManager.GetRolesAsync(user);
                 await _userManager.RemoveFromRolesAsync(user, userRoles);
-                await _userManager.AddToRoleAsync(user, role);
+                await _userManager.AddToRolesAsync(user, roles);
             }
         }
 
