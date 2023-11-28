@@ -36,11 +36,28 @@ namespace ASI.Basecode.Data
         public virtual DbSet<BookGenres> Book_Genres { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<IdentityUser>(entity =>
+            modelBuilder.Entity<IdentityRole>(entity =>
             {
-                entity.ToTable("AspNetUsers"); 
+                entity.HasData(
+                    new IdentityRole
+                    {
+                        Id = "1",
+                        Name = "Superadmin",
+                        NormalizedName = "SUPERADMIN",
+                    },
+                    new IdentityRole
+                    {
+                        Id = "2",
+                        Name = "Genremaster",
+                        NormalizedName = "GENREMASTER",
+                    },
+                    new IdentityRole
+                    {
+                        Id = "3",
+                        Name = "Bookmaster",
+                        NormalizedName = "BOOKMASTER",
+                    });  
             });
-
             modelBuilder.Entity<User>(entity =>
             {
                 entity.HasIndex(e => e.UserId, "UQ__Users__1788CC4D5F4A160F")
@@ -74,6 +91,48 @@ namespace ASI.Basecode.Data
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+                entity.HasData(
+                    new User
+                    {
+                        Id = 1,
+                        Email = "admin@gmail.com",
+                        UserId = "admin",
+                        Name = "admin",
+                        Password = "Admin1!",
+                        CreatedBy = System.Environment.UserName,
+                        UpdatedBy = System.Environment.UserName,
+                        CreatedTime = DateTime.Now,
+                        UpdatedTime = DateTime.Now,
+            });
+            });
+
+            modelBuilder.Entity<IdentityUser>(entity =>
+            {
+                var passwordHasher = new PasswordHasher<IdentityUser>();
+                entity.ToTable("AspNetUsers"); 
+                entity.HasData(
+                    new IdentityUser
+                    {
+                        Id = "e5b4ff19-cc2c-4e46-86e9-8b702eb16526",
+                        UserName = "admin",
+                        NormalizedUserName = "ADMIN",
+                        Email = "admin@gmail.com",
+                        NormalizedEmail = "ADMIN@GMAIL.COM",
+                        EmailConfirmed = false,
+                        PasswordHash = passwordHasher.HashPassword(null, "Admin1!")
+                    });
+            });
+
+            modelBuilder.Entity<IdentityUserRole<string>>(entity =>
+            {
+                entity.HasKey(e => new { e.UserId, e.RoleId });
+                entity.HasData(
+                    new IdentityUserRole<string>
+                    {
+                        UserId = "e5b4ff19-cc2c-4e46-86e9-8b702eb16526",
+                        RoleId = "1",
+                    });
             });
 
             modelBuilder.Entity<Review>(entity =>
@@ -1995,11 +2054,6 @@ namespace ASI.Basecode.Data
             modelBuilder.Entity<IdentityUserLogin<string>>(entity =>
             {
                 entity.HasKey(e => new { e.LoginProvider, e.ProviderKey });
-            });
-
-            modelBuilder.Entity<IdentityUserRole<string>>(entity =>
-            {
-                entity.HasKey(e => new { e.UserId, e.RoleId });
             });
 
             modelBuilder.Entity<IdentityUserToken<string>>(entity =>

@@ -29,9 +29,9 @@ namespace ASI.Basecode.Services.ServiceModels
         public List<string> Roles { get; set; }
         public List<User> Users { get; set; }
 
-        [Required(ErrorMessage = "Role is required.")]
-        public string Role { get; set; }
+        [Required(ErrorMessage = "At least 1 role is required.")]
+		public string[] SelectedRoles { get; set; }
 
-        public string OriginalEmail { get; set; }
+		public string OriginalEmail { get; set; }
     }
 }

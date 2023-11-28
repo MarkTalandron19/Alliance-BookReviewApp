@@ -338,26 +338,32 @@ namespace ASI.Basecode.WebApp.Controllers
         {
             _logger.LogInformation("register user");
             try
-            {
-                var identityUser = new IdentityUser();
-                identityUser.Email = model.Email;
-                identityUser.UserName = model.UserId;
-                var result = await _userManager.CreateAsync(identityUser, model.Password);
+			{
+				var identityUser = new IdentityUser
+				{
+					Email = model.Email,
+					UserName = model.UserId
+				};
 
-                if (result.Succeeded)
-                {
-                    _userService.AddUser(model);
+				var result = await _userManager.CreateAsync(identityUser, model.Password);
 
-                    var userRole = _roleManager.FindByNameAsync(model.Role).Result;
+				if (result.Succeeded)
+				{
+					_userService.AddUser(model);
 
-                    if (userRole != null)
-                    {
-                        await _userManager.AddToRoleAsync(identityUser, userRole.Name);
-                    }
-                }
+					foreach (var selectedRole in model.SelectedRoles)
+					{
+						var userRole = _roleManager.FindByNameAsync(selectedRole).Result;
 
-                return RedirectToAction("UserList", "Account");
-            }
+						if (userRole != null)
+						{
+							await _userManager.AddToRoleAsync(identityUser, userRole.Name);
+						}
+					}
+				}
+
+				return RedirectToAction("UserList", "Account");
+			}
             catch (InvalidDataException ex)
             {
                 TempData["ErrorMessage"] = ex.Message;
@@ -382,27 +388,32 @@ namespace ASI.Basecode.WebApp.Controllers
         {
             _logger.LogInformation("register user");
             try
-            {
-                var identityUser = new IdentityUser();
-                identityUser.Email = model.Email;
-                identityUser.UserName = model.UserId;
-                var result = await _userManager.CreateAsync(identityUser, model.Password);
+			{
+				var identityUser = new IdentityUser
+				{
+					Email = model.Email,
+					UserName = model.UserId
+				};
 
-                if (result.Succeeded)
-                {
-                    _userService.AddUser(model);
+				var result = await _userManager.CreateAsync(identityUser, model.Password);
 
-                    var userRole = _roleManager.FindByNameAsync(model.Role).Result;
+				if (result.Succeeded)
+				{
+					_userService.AddUser(model);
 
-                    if (userRole != null)
-                    {
-                        await _userManager.AddToRoleAsync(identityUser, userRole.Name);
-                    }
-                }
+					foreach (var selectedRole in model.SelectedRoles)
+					{
+						var userRole = _roleManager.FindByNameAsync(selectedRole).Result;
 
+						if (userRole != null)
+						{
+							await _userManager.AddToRoleAsync(identityUser, userRole.Name);
+						}
+					}
+				}
 
-                return RedirectToAction("Login", "Account");
-            }
+				return RedirectToAction("UserList", "Account");
+			}
             catch(InvalidDataException ex)
             {
                 TempData["ErrorMessage"] = ex.Message;
