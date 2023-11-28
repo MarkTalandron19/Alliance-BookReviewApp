@@ -1,5 +1,6 @@
-﻿﻿
-@model LoginViewModel
+﻿@using ASI.Basecode.Data.Models;
+﻿
+@model HomeViewModel
 @using static ASI.Basecode.Resources.Views.Screen
 @section styles {
     <link rel="stylesheet" href="~/css/homepage.css" />
@@ -47,25 +48,48 @@
     <div class="search">
     <div class="center-container">
         <div class="search-line-container">
-            <div class="search-elements">
-                <select class="year-dropdown">
-                    <option value="Year">Year</option>
-                    <option value="2022">2022</option>
-                    <option value="2021">2021</option>
-                </select>
-                <select class="category-dropdown">
-                    <option value="Category">Category</option>
-                    <option value="Non-Fiction">Non-Fiction</option>
-                </select>
-
-                <div class="search-bar">
-                    <input type="text" placeholder="Enter Book Name here...">
-                    <div class="search-icon"><i class="fas fa-search"></i></div>
-                    <button class="search-button" style="background-color: #053B50; color: #FFFFFF;">Search ˃</button>
-                </div>      
-            </div>
+                <form method="get" asp-action="Search" class="search-elements">
+                    <select class="year-dropdown" name="Year" id="Year">
+                        <option value="">Year</option>
+                        @{
+                            foreach(var year in Model.Years)
+                            {
+                                <option value="@year">@year</option>
+                            }
+                        }
+                    </select>
+                    <select class="category-dropdown" name="Genre" id="Genre">
+                        <option value="">Category</option>
+                        @{
+                            foreach(var genre in Model.Genres)
+                            {
+                                <option value="@genre.genreName">@genre.genreName</option>
+                            }
+                        }
+                    </select>
+                    <div class="search-bar">
+                        <input type="text" name="SearchText" id="SearchText" placeholder="Enter Book Name here...">
+                        <div class="search-icon"><i class="fas fa-search"></i></div>
+                        <button class="search-button" type="submit" style="background-color: #053B50; color: #FFFFFF;">Search ˃</button>
+                    </div>
+                </form>
+                <div>
+                    @{
+                        IEnumerable<Book> SearchResults = Model.SearchResults;
+                        if (SearchResults != null && SearchResults.Count() > 0)
+                        {
+                            foreach (var bookSearchResult in SearchResults)
+                            {
+                                <section>
+                                    <img src="@bookSearchResult.image" />
+                                    <strong>@bookSearchResult.title</strong>
+                                </section>
+                            }
+                        }
+                    }
+                </div>
         </div>
-        </div>
+    </div>
  
     <div class="white-background">
         <div class="text-container">
@@ -82,31 +106,91 @@
         </div>
     </div>
     </div>
+    <!-- Recent Books or New Release-->
     <div class="second-background">
-        <h2 class="trends-text">Trending this week</h2>
-        <p class="text-trends">Dive into our selection of trending books this week, where every page tells a story worth sharing.</p>
+        <h2 class="trends-text">New releases</h2>
+        <p class="text-trends">Dive into our selection of newest books this week, where every page tells a story worth sharing.</p>
+        <button><a asp-controller="Home" asp-action="RecentBooksPages">VIEW MORE</a></button>
+        <section class="books-line">
+            @{
+                List<Book> NewBooks = Model.NewlyReleasedBooks;
+                foreach (var book in NewBooks)
+                {
+                    <div class="book-item">
+                        <img src="@book.image" alt="@book.title">
+                    </div>
+                }
+            }
+        </section>
     </div>
+
     <div class="third-white-background">
         <div class="books-header">
             <div class="featured-books-title">
-        <h3 class="featured-text">Featured Book</h3>
-        <text class="featured-line">Unearth the literary gems making waves this week!</text>
+                <h3 class="featured-text">Featured Book</h3>
+                <text class="featured-line">Unearth the literary gems making waves this week!</text>
             </div>
-        <div class="button-container-view-more">
-            <button class="button-view-more">VIEW MORE →</button>
-        </div>
+            <div class="button-container-view-more">
+                <button class="button-view-more">VIEW MORE →</button>
+            </div>
         </div>
     </div>
+    <!-- Top Rated Books -->
     <div class="fourth-white-background">
         <div class="books-header">
             <div class="top-books-title">
-        <h4 class="top-rated-books-text">Top-rated Books</h4>
-        <text class="top-rated-books-line">From captivating tales to thought-provoking narratives, these stories are igniting conversations across Bibliobibuli.</text>
+                <h4 class="top-rated-books-text">Top-rated Books</h4>
+                <text class="top-rated-books-line">From captivating tales to thought-provoking narratives, these stories are igniting conversations across Bibliobibuli.</text>
+            </div>
+            <div class="second-button-container-view-more">
+                <button class="second-button-view-more"><a asp-controller="Home" asp-action="TopRatedBooksPages">VIEW MORE →</a></button>
+            </div>
         </div>
-        <div class="second-button-container-view-more">
-            <button class="second-button-view-more">VIEW MORE →</button>
-        </div>
-        </div>
+
+        <section>
+            @{
+                List<BookAverageRating> TopRatedBooks = Model.TopRatedBooks;
+
+                foreach(var ratedBook in TopRatedBooks)
+                {
+                    var book = ratedBook.Book;
+                    Review review = ratedBook.Book.Reviews.FirstOrDefault();
+                    <div>
+                        <h2>@book.title</h2>
+                        <h3>BY @book.author</h3>
+                        @{
+                            foreach(BookGenres genre in book.BookGenres)
+                            {
+                                <span>@genre.genre.genreName</span>
+                            }
+                        }
+                        <p>@book.synopsis</p>
+                        @{/*TODO: Should add Star image rating*/}
+                        <div>@ratedBook.AverageRating</div>
+                        <span>@book.Reviews.Count reviews</span>
+                        <section>
+                            <div>
+                                @{
+                                    /*TODO: Should need an image of reviewer*/
+                                }
+                                <h4>@review.reviewerFirstName @review.reviewerLastName</h4>
+                            </div>
+                            <div>
+                                @{
+                                    /*TODO: Should add Star image rating*/
+                                }
+                                <span>@review.rating.0 stars</span>
+                                <p>
+                                    @review.content
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <button>View Details -></button>
+                    <div>@book.image</div>
+                }
+            }
+        </section>
     </div>
     <div class="contact-image-background-container">
         <img class="contact-info-image" src="~/img/contact section.png" alt="Contact Info Image" />

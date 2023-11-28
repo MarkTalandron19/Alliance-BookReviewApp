@@ -49,6 +49,7 @@ namespace ASI.Basecode.WebApp
             // Add services to the container.
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddMvc(options => options.EnableEndpointRouting = false);
+            services.AddSession();
 
             //services.AddLogging(x => x.AddConfiguration(Configuration.GetLoggingSection()).AddConsole().AddDebug());
             PathManager.Setup(this.Configuration.GetSetupRootDirectoryPath());
@@ -75,6 +76,7 @@ namespace ASI.Basecode.WebApp
             app.UseAuthentication();        // Enables the ConfigureAuth service.
             app.UseMvc();
             app.UseAuthorization();
+            app.UseSession();
 
             this.ConfigureRoutes(app);      // Configuration for API controller routing
             this.ConfigureAuth(app);        // Configuration for Token Authentication

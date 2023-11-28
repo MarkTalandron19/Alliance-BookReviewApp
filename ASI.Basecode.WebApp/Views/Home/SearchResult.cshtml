@@ -1,0 +1,14 @@
+﻿@using ASI.Basecode.Data.Models;
+
+@model IEnumerable<Book>
+
+@{
+	foreach(var BookResult in Model)
+	{
+		<section style="margin:auto">
+			<img src="@BookResult.image" />
+			<strong>@BookResult.title</strong>
+		</section>
+	}
+}
+
