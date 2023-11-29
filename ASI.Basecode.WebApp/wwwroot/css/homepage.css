@@ -522,3 +522,21 @@ h2 {
         color: #FFFFFF;
         margin-bottom: 10px;
     }
+
+.books-line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.book-item {
+    margin: 10px;
+    max-width: 200px;
+}
+
+    .book-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+

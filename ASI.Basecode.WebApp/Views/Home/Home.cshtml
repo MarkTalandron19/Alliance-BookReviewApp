@@ -1,5 +1,6 @@
-﻿﻿
-@model LoginViewModel
+﻿@using ASI.Basecode.Data.Models;
+﻿
+@model HomeViewModel
 @using static ASI.Basecode.Resources.Views.Screen
 @section styles {
     <link rel="stylesheet" href="~/css/homepage.css" />
@@ -82,9 +83,21 @@
         </div>
     </div>
     </div>
+    <!-- Recent Books or New Release-->
     <div class="second-background">
-        <h2 class="trends-text">Trending this week</h2>
+        <h2 class="trends-text">New releases</h2>
         <p class="text-trends">Dive into our selection of trending books this week, where every page tells a story worth sharing.</p>
+        <section class="books-line">
+            @{
+                List<Book> NewBooks = Model.NewlyReleasedBooks;
+                foreach (var book in NewBooks)
+                {
+                    <div class="book-item">
+                        <img src="@book.image" alt="@book.title">
+                    </div>
+                }
+            }
+        </section>
     </div>
     <div class="third-white-background">
         <div class="books-header">

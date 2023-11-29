@@ -55,3 +55,22 @@ C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Resources\obj
 C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\refint\ASI.Basecode.Resources.dll
 C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.pdb
 C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ref\ASI.Basecode.Resources.dll
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.deps.json
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.dll
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\bin\Debug\net7.0\ASI.Basecode.Resources.pdb
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Messages.Common.resources
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Messages.Errors.resources
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Account.resources
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Button.resources
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Screen.resources
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.Table.resources
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.Views.TitleText.resources
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.csproj.GenerateResource.cache
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.GeneratedMSBuildEditorConfig.editorconfig
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.AssemblyInfoInputs.cache
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.AssemblyInfo.cs
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.csproj.CoreCompileInputs.cache
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.dll
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\refint\ASI.Basecode.Resources.dll
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.pdb
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ref\ASI.Basecode.Resources.dll

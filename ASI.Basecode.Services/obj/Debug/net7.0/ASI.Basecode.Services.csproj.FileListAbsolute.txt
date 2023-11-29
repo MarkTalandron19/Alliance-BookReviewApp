@@ -49,3 +49,20 @@ C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\obj\
 C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.csproj.CoreCompileInputs.cache
 C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.csproj.CopyComplete
 C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ref\ASI.Basecode.Services.dll
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Services.deps.json
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Services.dll
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Services.pdb
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Data.dll
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Resources.dll
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Data.pdb
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Services\bin\Debug\net7.0\ASI.Basecode.Resources.pdb
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.csproj.AssemblyReference.cache
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.AssemblyInfoInputs.cache
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.AssemblyInfo.cs
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.csproj.CoreCompileInputs.cache
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.csproj.CopyComplete
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.dll
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\refint\ASI.Basecode.Services.dll
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ASI.Basecode.Services.pdb
+D:\MVC Projects\Alliance-BookReviewApp\ASI.Basecode.Services\obj\Debug\net7.0\ref\ASI.Basecode.Services.dll
