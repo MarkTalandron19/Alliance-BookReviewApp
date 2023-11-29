@@ -12,6 +12,7 @@ $(document).ready(function () {
 
         var bookId = $(this).data('book-id');
         var title = $(this).data('book-title');
+        var author = $(this).data('book-author');
         var synopsis = $(this).data('book-synopsis');
         var publisher = $(this).data('book-publisher');
         var isbn = $(this).data('book-isbn');
@@ -19,6 +20,7 @@ $(document).ready(function () {
 
         $('#editBookId').val(bookId);
         $('#editTitle').val(title);
+        $('#editAuthor').val(author);
         $('#editSynopsis').val(synopsis);
         $('#editPublisher').val(publisher);
         $('#editIsbn').val(isbn);

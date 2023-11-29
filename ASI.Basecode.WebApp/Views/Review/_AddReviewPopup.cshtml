@@ -11,23 +11,28 @@
             </div>
             <form method="post" asp-action="AddReview" asp-controller="Review" id="ReviewForm" enctype="multipart/form-data">
                 <div class="modal-body">
-                    <input type="hidden" asp-for="bookId" />
+                    <input type="hidden" name="bookId" asp-for="bookId"/>
                     <input type="hidden" asp-for="reviewId" value="0" />
                     <div>
                         <label class="input-label" asp-for="reviewerFirstName"></label>
                         <input type="text" asp-for="reviewerFirstName" class="form-control" placeholder="First Name..." />
+                        <span asp-validation-for="reviewerFirstName" class="text-danger"></span>
                     </div>
                     <div>
                         <label class="input-label" asp-for="reviewerLastName"></label>
                         <input type="text" asp-for="reviewerLastName" class="form-control" placeholder="Last Name..." />
+                        <span asp-validation-for="reviewerLastName" class="text-danger"></span>
                     </div>
                     <div>
                         <label class="input-label" asp-for="reviewerEmail"></label>
                         <input type="email" asp-for="reviewerEmail" class="form-control" placeholder="Email Address..." />
+                        <span asp-validation-for="reviewerEmail" class="text-danger"></span>
                     </div>
                     <div class="rating-input">
                         <label class="input-label" asp-for="rating"></label>
                         <input type="number" asp-for="rating" class="form-control" placeholder="rating" />
+                        <span asp-validation-for="rating" class="text-danger"></span>
+
                     </div>
                     <div class="rating-stars">
                         <label class="input-label" asp-for="rating">Rating:</label>
@@ -36,10 +41,12 @@
                         <i class="star far fa-star" data-value="3"></i>
                         <i class="star far fa-star" data-value="4"></i>
                         <i class="star far fa-star" data-value="5"></i>
+                        <span asp-validation-for="rating" class="text-danger"></span>
                     </div>
                     <div>
                         <label class="input-label" asp-for="content"></label>
                         <input type="text" asp-for="content" class="form-control" placeholder="Review..." />
+                        <span asp-validation-for="content" class="text-danger"></span>
                     </div> 
                 </div>
                 <div class="modal-footer">

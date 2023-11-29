@@ -11,7 +11,7 @@
             </div>
             <form method="post" asp-action="AddReview" asp-controller="Review" id="ReviewForm" enctype="multipart/form-data">
                 <div class="modal-body">
-                    <input type="hidden" asp-for="bookId" />
+                    <input type="hidden" asp-for="bookId" value="@Model.bookId"/>
                     <input type="hidden" asp-for="reviewId" value="0" />
                     <div class="all-reviews">
                         @if (ViewData["Reviews"] != null && ((IEnumerable<ASI.Basecode.Data.Models.Review>)ViewData["Reviews"]).Any())

@@ -16,21 +16,40 @@ namespace ASI.Basecode.WebApp.Controllers
     [Route("reviews")]
     public class ReviewController : Controller
     {
+        private readonly IBookService _bookService;
         private readonly IReviewService _reviewService;
         private readonly IMapper _mapper;
 
-        public ReviewController(IReviewService reviewService, IMapper mapper)
+        public ReviewController(IReviewService reviewService,IBookService bookService , IMapper mapper)
         {
+            _bookService = bookService;
             _reviewService = reviewService;
             _mapper = mapper;
         }
 
         [HttpPost("add")]
-        public IActionResult AddReview(int bookId, ReviewViewModel review)
+        public IActionResult AddReview(string bookId, ReviewViewModel review)
         {
+
+            if (!ModelState.IsValid)
+            {
+                return View("ErrorView", review);
+            }
+
             review.reviewId = Guid.NewGuid().ToString();
             review.dateReviewed = DateTime.Now;
-            _reviewService.AddReview(review);
+
+            var existingBook = _bookService.GetBookById(bookId);
+
+            if (existingBook != null)
+            {
+                review.bookId = bookId;
+                _reviewService.AddReview(review);
+            }
+            else
+            {
+            }
+
             return RedirectToAction("BookDetail", "Books", new { bookId });
         }
 

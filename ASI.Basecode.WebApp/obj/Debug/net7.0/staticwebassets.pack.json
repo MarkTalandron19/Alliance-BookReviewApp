@@ -145,6 +145,10 @@
       "PackagePath": "staticwebassets\\js\\Review.js"
     },
     {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\User.js",
+      "PackagePath": "staticwebassets\\js\\User.js"
+    },
+    {
       "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
@@ -459,6 +463,26 @@
     {
       "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\uploads\\a_23-11-16-014143052.jpg",
       "PackagePath": "staticwebassets\\uploads\\a_23-11-16-014143052.jpg"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\uploads\\a_23-11-29-141156301.jpg",
+      "PackagePath": "staticwebassets\\uploads\\a_23-11-29-141156301.jpg"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\uploads\\a_23-11-29-144206909.jpg",
+      "PackagePath": "staticwebassets\\uploads\\a_23-11-29-144206909.jpg"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\uploads\\a_23-11-29-160838762.jpg",
+      "PackagePath": "staticwebassets\\uploads\\a_23-11-29-160838762.jpg"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\uploads\\a_23-11-29-173932097.jpg",
+      "PackagePath": "staticwebassets\\uploads\\a_23-11-29-173932097.jpg"
+    },
+    {
+      "Id": "D:\\COLLEGE STUFF\\4TH YEAR\\Free Elec 2 - ALLIANCE\\FREE Elec Project\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\wwwroot\\uploads\\q_23-11-29-172819338.jpg",
+      "PackagePath": "staticwebassets\\uploads\\q_23-11-29-172819338.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.ASI.Basecode.WebApp.Microsoft.AspNetCore.StaticWebAssets.props",
