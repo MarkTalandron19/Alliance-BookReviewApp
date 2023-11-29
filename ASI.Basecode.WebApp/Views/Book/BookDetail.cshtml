@@ -53,7 +53,15 @@
             foreach (var review in reviews)
             {
                 totalRatings += review.rating;
-                ratingsCount[review.rating - 1]++;
+                if (review.rating >= 1 && review.rating <= 5)
+                {
+                    ratingsCount[review.rating - 1]++;
+                }
+                else
+                {
+                    int defaultRating = 1; 
+                    ratingsCount[defaultRating - 1]++;
+                }
             }
 
             double[] percentages = new double[5];
@@ -201,7 +209,7 @@
         if (errorMessage) {
             toastr.error(errorMessage);
         }
-        var bookId = @Model.bookId;
+        var bookId = '@Model.bookId';
     </script>
 }
 

@@ -7,6 +7,7 @@
         $('#ReviewModal').modal('show');
         $('#modalTitle').text('Post a Review');
         console.log("Button clicked");
+        console.log("Book ID: ", bookId);
     });
 
     $('#ViewReviewsBtn').click(function () {
