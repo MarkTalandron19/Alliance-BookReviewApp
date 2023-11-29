@@ -157,22 +157,6 @@
                 });
             });
 
-            function filterBooksByGenre(genreId) {
-                var allBooks = document.querySelectorAll('.book');
-
-                allBooks.forEach(function (book) {
-                    var bookId = book.getAttribute('data-book-id');
-                    var genres = book.getAttribute('data-genres');
-
-                    if (genres && genres.split(',').includes(genreId) && bookId) {
-                        book.style.display = 'block'; // Show the book
-                    } else {
-                        book.style.display = 'none';  // Hide the book
-                    }
-                });
-            }
-
-
             document.getElementById('bookSearch').addEventListener('keyup', function (event) {
                 if (event.key === 'Enter') {
                     searchBooks();
@@ -186,6 +170,30 @@
             document.querySelector('.search-icon').addEventListener('click', function () {
                 searchBooks();
             });
+
+            document.querySelector('.dropdown-content').addEventListener('click', function (event) {
+                var sortOption = event.target.textContent.toLowerCase().trim();
+                handleSortOption(sortOption);
+            });
+
+
+            function filterBooksByGenre(genreId) {
+                var allBooks = document.querySelectorAll('.book');
+
+                allBooks.forEach(function (book) {
+                    var bookId = book.getAttribute('data-book-id');
+                    var genres = book.getAttribute('data-genres');
+
+                    if (genres && genres.split(',').includes(genreId) && bookId) {
+                        book.style.display = 'block'; // Show the book
+                    } else {
+                        book.style.display = 'none';  // Hide the book
+                    }
+                });
+
+                // Attach event listeners after updating the display
+                attachBookEventListeners();
+            }
 
             function searchBooks() {
                 var searchTerm = document.getElementById('bookSearch').value.toLowerCase().trim();
@@ -213,19 +221,9 @@
                 var criteria = sortingOptions[sortOption];
 
                 if (criteria) {
-
                     sortBooksBy(criteria);
-               
                 }
-
-                // Reattach event listeners for book links
-           
             }
-
-            document.querySelector('.dropdown-content').addEventListener('click', function (event) {
-                var sortOption = event.target.textContent.toLowerCase().trim();
-                handleSortOption(sortOption);
-            });
 
             function sortBooksBy(criteria) {
                 var bookList = document.querySelector('.book-list');
@@ -251,27 +249,48 @@
                     fragment.appendChild(book);
                 });
 
-                bookList.innerHTML = '';
-                bookList.appendChild(fragment);
-
-                // Attach event listeners after updating the DOM
-                attachBookEventListeners();
+                bookList.replaceChildren(fragment);
 
                 books.forEach(function (book) {
                     book.style.display = 'block';
                 });
+
+                attachBookEventListeners();
             }
             function attachBookEventListeners() {
                 var bookList = document.querySelector('.book-list');
+                console.log('Book List:', bookList);
+
                 bookList.addEventListener('click', function (event) {
-                    var target = event.target.closest('.book-link');
+                    var target = event.target.closest('.book');
+
+                    if (!target && event.target.classList.contains('book')) {
+                        target = event.target;
+                    }
+
                     if (target) {
                         var bookId = target.getAttribute('data-book-id');
-                        window.location.href = '/Book/BookDetail/' + bookId;
+                        console.log('Book ID:', bookId);
+                        window.location.href = '/books/BookDetail?bookId=' + bookId;
+                    }
+                });
+
+                // Add mouseover event listener to change cursor style
+                bookList.addEventListener('mouseover', function (event) {
+                    var book = event.target.closest('.book');
+                    if (book) {
+                        book.style.cursor = 'pointer';
+                    }
+                });
+
+                // Add mouseout event listener to revert cursor style
+                bookList.addEventListener('mouseout', function (event) {
+                    var book = event.target.closest('.book');
+                    if (book) {
+                        book.style.cursor = 'default';
                     }
                 });
             }
-
         });
     </script>
 }
