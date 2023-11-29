@@ -148,26 +148,22 @@
         document.addEventListener("DOMContentLoaded", function () {
             // Add event listener for genre links
             var genreLinks = document.querySelectorAll('.sidenav ul li a');
-            console.log("Number of genre links: " + genreLinks.length);
 
             genreLinks.forEach(function (link) {
                 link.addEventListener('click', function (event) {
                     event.preventDefault();
-                    console.log("Genre link clicked!");
                     var genreId = link.getAttribute('data-genre-id');
-                    console.log("GenreID: " + genreId);
                     filterBooksByGenre(genreId);
                 });
             });
 
             function filterBooksByGenre(genreId) {
-                console.log("Filtering books by genre: " + genreId);
                 var allBooks = document.querySelectorAll('.book');
 
                 allBooks.forEach(function (book) {
                     var bookId = book.getAttribute('data-book-id');
                     var genres = book.getAttribute('data-genres');
-                    console.log("Book ID: " + bookId + ", Genres: " + genres + ", Book: " + book);
+
                     if (genres && genres.split(',').includes(genreId) && bookId) {
                         book.style.display = 'block'; // Show the book
                     } else {
@@ -176,54 +172,59 @@
                 });
             }
 
-            function searchBooks() {
-                var searchTerm = document.getElementById('bookSearch').value.toLowerCase().trim();
-                console.log('Search Term:', searchTerm);
 
-                var books = document.querySelectorAll('.book');
-                books.forEach(function (book) {
-                    book.style.display = 'none';
-                });
-
-                var allBooks = document.querySelectorAll('.book');
-                allBooks.forEach(function (bookElement) {
-                    var title = bookElement.querySelector('.book-title').textContent.toLowerCase().trim();
-                    var author = bookElement.querySelector('.book-author').textContent.toLowerCase().trim();
-
-                    if (title.includes(searchTerm) || author.includes(searchTerm)) {
-                        bookElement.style.display = 'block';
-                    } else {
-                        bookElement.style.display = 'none';
-                    }
-                });
-
-
-            }
             document.getElementById('bookSearch').addEventListener('keyup', function (event) {
-                console.log('Key pressed:', event.key);
                 if (event.key === 'Enter') {
                     searchBooks();
                 }
             });
 
             document.querySelector('.search-button').addEventListener('click', function () {
-                console.log('Search button clicked');
                 searchBooks();
             });
 
             document.querySelector('.search-icon').addEventListener('click', function () {
-                console.log('Search icon clicked');
                 searchBooks();
             });
 
+            function searchBooks() {
+                var searchTerm = document.getElementById('bookSearch').value.toLowerCase().trim();
+
+                var books = document.querySelectorAll('.book');
+
+                books.forEach(function (book) {
+                    var title = book.querySelector('.book-title').textContent.toLowerCase().trim();
+                    var author = book.querySelector('.book-author').textContent.toLowerCase().trim();
+
+                    if (title.includes(searchTerm) || author.includes(searchTerm)) {
+                        book.style.display = 'block';
+                    } else {
+                        book.style.display = 'none';
+                    }
+                });
+            }
+
+            function handleSortOption(sortOption) {
+                var sortingOptions = {
+                    'title(a-z)': 'title',
+                    'rating(highest)': 'rating'
+                };
+
+                var criteria = sortingOptions[sortOption];
+
+                if (criteria) {
+
+                    sortBooksBy(criteria);
+               
+                }
+
+                // Reattach event listeners for book links
+           
+            }
+
             document.querySelector('.dropdown-content').addEventListener('click', function (event) {
                 var sortOption = event.target.textContent.toLowerCase().trim();
-
-                if (sortOption === 'title(a-z)') {
-                    sortBooksBy('title');
-                } else if (sortOption === 'rating(highest)') {
-                    sortBooksBy('rating');
-                }
+                handleSortOption(sortOption);
             });
 
             function sortBooksBy(criteria) {
@@ -249,14 +250,27 @@
                 books.forEach(function (book) {
                     fragment.appendChild(book);
                 });
+
                 bookList.innerHTML = '';
                 bookList.appendChild(fragment);
+
+                // Attach event listeners after updating the DOM
+                attachBookEventListeners();
 
                 books.forEach(function (book) {
                     book.style.display = 'block';
                 });
             }
-
+            function attachBookEventListeners() {
+                var bookList = document.querySelector('.book-list');
+                bookList.addEventListener('click', function (event) {
+                    var target = event.target.closest('.book-link');
+                    if (target) {
+                        var bookId = target.getAttribute('data-book-id');
+                        window.location.href = '/Book/BookDetail/' + bookId;
+                    }
+                });
+            }
 
         });
     </script>
