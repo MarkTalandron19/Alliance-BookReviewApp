@@ -112,26 +112,29 @@
 							<tbody id="tableBody">
 								@foreach (var user in Model.IdentityUsers)
 								{
-									<tr>
-										<td><a href="">@user.User.Name</a></td>
-										<td>@user.User.Email</td>
-										<td>
-											@foreach(var role in user.UserRoles)
-											{
-												<p>@role</p>
-											}
-										</td>
-										<td>@user.User.CreatedBy</td>
-										<td>@user.User.CreatedTime</td>
-										<td>
-											<button class="edit-button" id="Update" data-user-id="@user.User.UserId"
-													data-user-name="@user.User.Name" data-user-email="@user.User.Email" data-user-password="@user.User.Password"
-													data-user-role="@string.Join(",", user.UserRoles)">
-												Edit
-											</button>
-											<button class="delete-button" data-user-id="@user.User.UserId" data-user-email="@user.User.Email">Delete</button>
-										</td>
-									</tr>
+									@if(!user.UserRoles.Contains("Superadmin"))
+									{
+										<tr>
+											<td><a href="">@user.User.Name</a></td>
+											<td>@user.User.Email</td>
+											<td>
+												@foreach (var role in user.UserRoles)
+												{
+													<p>@role</p>
+												}
+											</td>
+											<td>@user.User.CreatedBy</td>
+											<td>@user.User.CreatedTime</td>
+											<td>
+												<button class="edit-button" id="Update" data-user-id="@user.User.UserId"
+														data-user-name="@user.User.Name" data-user-email="@user.User.Email" data-user-password="@user.User.Password"
+														data-user-role="@string.Join(",", user.UserRoles)">
+													Edit
+												</button>
+												<button class="delete-button" data-user-id="@user.User.UserId" data-user-email="@user.User.Email">Delete</button>
+											</td>
+										</tr>										
+									}									
 								}
 							</tbody>
 						</table>
