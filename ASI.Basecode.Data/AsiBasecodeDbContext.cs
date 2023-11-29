@@ -96,10 +96,10 @@ namespace ASI.Basecode.Data
                     new User
                     {
                         Id = 1,
-                        Email = "admin@gmail.com",
-                        UserId = "admin",
-                        Name = "admin",
-                        Password = "Admin1!",
+                        Email = "superadmin@gmail.com",
+                        UserId = "superadmin",
+                        Name = "superadmin",
+                        Password = "Superadmin1!",
                         CreatedBy = System.Environment.UserName,
                         UpdatedBy = System.Environment.UserName,
                         CreatedTime = DateTime.Now,
@@ -115,12 +115,12 @@ namespace ASI.Basecode.Data
                     new IdentityUser
                     {
                         Id = "e5b4ff19-cc2c-4e46-86e9-8b702eb16526",
-                        UserName = "admin",
-                        NormalizedUserName = "ADMIN",
-                        Email = "admin@gmail.com",
-                        NormalizedEmail = "ADMIN@GMAIL.COM",
+                        UserName = "superadmin",
+                        NormalizedUserName = "SUPERADMIN",
+                        Email = "superadmin@gmail.com",
+                        NormalizedEmail = "SUPERADMIN@GMAIL.COM",
                         EmailConfirmed = false,
-                        PasswordHash = passwordHasher.HashPassword(null, "Admin1!")
+                        PasswordHash = passwordHasher.HashPassword(null, "Superadmin1!")
                     });
             });
 
