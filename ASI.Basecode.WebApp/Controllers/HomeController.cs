@@ -57,8 +57,6 @@ namespace ASI.Basecode.WebApp.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Home()
         {
-            
-
 			//Get the books from Database
 			List<Book> books = await _bookService.GetBooks().ToListAsync();
 
@@ -103,7 +101,7 @@ namespace ASI.Basecode.WebApp.Controllers
 				RecentBooks = new(books);
 			}
 
-			IComparer<Book> DateComparer = Comparer<Book>.Create((x, y) => x.CreatedTime.CompareTo(y.CreatedTime));
+			IComparer<Book> DateComparer = Comparer<Book>.Create((x, y) => y.CreatedTime.CompareTo(x.CreatedTime));
 			RecentBooks.Sort(DateComparer);
 			return RecentBooks;
 		}
