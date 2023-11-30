@@ -1653,12 +1653,6 @@ namespace ASI.Basecode.Data
             {
                 entity.HasKey(e => e.bookId);
 
-                entity.HasMany(b => b.Reviews)
-                    .WithOne(r => r.book)
-                    .HasForeignKey(r => r.bookId)
-                    .OnDelete(DeleteBehavior.Cascade);
-
-
                 entity.Property(e => e.title)
                     .IsRequired();
 
@@ -2022,13 +2016,11 @@ namespace ASI.Basecode.Data
 
                 entity.HasOne(bg => bg.book)
                     .WithMany(b => b.BookGenres)
-                    .HasForeignKey(e => e.bookId)
-                    .OnDelete(DeleteBehavior.Cascade);
+                    .HasForeignKey(e => e.bookId);
 
                 entity.HasOne(bg => bg.genre)
                     .WithMany(g => g.BookGenres)
-                    .HasForeignKey(e => e.genreId)
-                    .OnDelete(DeleteBehavior.Cascade);
+                    .HasForeignKey(e => e.genreId);
 
                 entity.HasData(
                         new BookGenres { bookId = "1", genreId = "3" },  

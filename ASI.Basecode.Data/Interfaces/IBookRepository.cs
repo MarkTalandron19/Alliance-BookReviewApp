@@ -10,6 +10,7 @@ namespace ASI.Basecode.Data.Interfaces
     public interface IBookRepository
     {
         IQueryable<Book> GetBooks();
+        IQueryable<Book> GetRecentBooks();
         Task<Book> GetBookById(string bookId);
         IQueryable<Genre> GetGenresOfBook(string bookId);
         IQueryable<Review> GetReviewsOfBook(string bookId);

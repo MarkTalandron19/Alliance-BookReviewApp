@@ -9,6 +9,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using ASI.Basecode.Data;
+using ASI.Basecode.Data.Models;
+using System.Collections.Generic;
+using System.Linq;
+using ASI.Basecode.WebApp.Models;
+using ASI.Basecode.Services.ServiceModels;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
@@ -21,6 +27,8 @@ namespace ASI.Basecode.WebApp.Controllers
         private readonly IBookService _bookService;
         private readonly IReviewService _reviewService;
         private readonly IMapper _mapper;
+
+        private const int _numOfViewRecentBooks = 5;
         /// <summary>
         /// Constructor
         /// </summary>
@@ -32,6 +40,7 @@ namespace ASI.Basecode.WebApp.Controllers
         public HomeController(IBookService bookService, IGenreService genreService, IReviewService reviewService, IHttpContextAccessor httpContextAccessor,
                               ILoggerFactory loggerFactory,
                               IConfiguration configuration,
+                              AsiBasecodeDBContext dBContext,
                               IMapper mapper = null) : base(httpContextAccessor, loggerFactory, configuration, mapper)
         {
             _genreService = genreService;
@@ -47,9 +56,19 @@ namespace ASI.Basecode.WebApp.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult Home()
+        public async Task<IActionResult> Home()
         {
-            return View();
+			//Get the books from Database
+			//List<Book> books = await _bookService.GetBooks().ToListAsync();
+
+			List<Book> RecentBooks = _bookService.GetRecentBooks().ToList();
+
+            var viewModel = new HomeViewModel
+            {
+                NewlyReleasedBooks = RecentBooks
+            };
+
+			return View(viewModel);
         }
 
         [HttpGet]
@@ -64,5 +83,30 @@ namespace ASI.Basecode.WebApp.Controllers
             ViewData["Reviews"] = reviews;
             return View(books);
         }
-    }
+
+        [HttpGet]
+        public IActionResult BookDetail(string bookId) => RedirectToAction("BookDetail", "Book", new { bookId });
+
+        /*private static List<Book> GetRecentBooks(List<Book> books)
+		{
+			//Sort the list by date
+
+			List<Book> RecentBooks;
+
+			//Only get the number of books defined by ViewRecentBooks starting from the last element
+
+			if (books.Count >= _numOfViewRecentBooks)
+			{
+				RecentBooks = new(books.TakeLast(_numOfViewRecentBooks));
+			}
+			else
+			{
+				RecentBooks = new(books);
+			}
+
+			IComparer<Book> DateComparer = Comparer<Book>.Create((x, y) => y.CreatedTime.CompareTo(x.CreatedTime));
+			RecentBooks.Sort(DateComparer);
+			return RecentBooks;
+		}*/
+	}
 }

@@ -249,7 +249,10 @@ namespace ASI.Basecode.Services.Services
 
             }
 
-
         }
-    }
+		public IQueryable<Book> GetRecentBooks()
+		{
+			return _repository.GetRecentBooks();
+		}
+	}
 }
