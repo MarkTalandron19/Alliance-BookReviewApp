@@ -1,5 +1,6 @@
-﻿﻿
-@model LoginViewModel
+﻿@using ASI.Basecode.Data.Models;
+﻿
+@model HomeViewModel
 @using static ASI.Basecode.Resources.Views.Screen
 @section styles {
     <link rel="stylesheet" href="~/css/homepage.css" />
@@ -47,23 +48,46 @@
     <div class="search">
     <div class="center-container">
         <div class="search-line-container">
-            <div class="search-elements">
-                <select class="year-dropdown">
-                    <option value="Year">Year</option>
-                    <option value="2022">2022</option>
-                    <option value="2021">2021</option>
-                </select>
-                <select class="category-dropdown">
-                    <option value="Category">Category</option>
-                    <option value="Non-Fiction">Non-Fiction</option>
-                </select>
-
-                <div class="search-bar">
-                    <input type="text" placeholder="Enter Book Name here...">
-                    <div class="search-icon"><i class="fas fa-search"></i></div>
-                    <button class="search-button" style="background-color: #053B50; color: #FFFFFF;">Search ˃</button>
-                </div>      
-            </div>
+            <form method="get" asp-action="Search" class="search-elements">
+                    <select class="year-dropdown" name="Year" id="Year">
+                        <option value="">Year</option>
+                        @{
+                            foreach (var year in Model.Years)
+                            {
+                                <option value="@year">@year</option>
+                            }
+                        }
+                    </select>
+                    <select class="category-dropdown" name="Genre" id="Genre">
+                        <option value="">Category</option>
+                        @{
+                            foreach (var genre in Model.Genres)
+                            {
+                                <option value="@genre.genreName">@genre.genreName</option>
+                            }
+                        }
+                    </select>
+                    <div class="search-bar">
+                        <input type="text" name="SearchText" id="SearchText" placeholder="Enter Book Name here...">
+                        <div class="search-icon"><i class="fas fa-search"></i></div>
+                        <button class="search-button" type="submit" style="background-color: #053B50; color: #FFFFFF;">Search ˃</button>
+                    </div>
+            </form>
+                <div>
+                    @{
+                        IEnumerable<Book> SearchResults = Model.SearchResults;
+                        if (SearchResults != null && SearchResults.Count() > 0)
+                        {
+                            foreach (var bookSearchResult in SearchResults)
+                            {
+                                <section>
+                                    <img src="@bookSearchResult.image" />
+                                    <strong>@bookSearchResult.title</strong>
+                                </section>
+                            }
+                        }
+                    }
+                </div>
         </div>
         </div>
  
