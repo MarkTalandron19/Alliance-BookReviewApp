@@ -104,5 +104,10 @@ namespace ASI.Basecode.Data.Repositories
             }
             UnitOfWork.SaveChanges();
         }
-    }
+
+		public IQueryable<Book> GetRecentBooks()
+		{
+			return this.GetDbSet<Book>().OrderByDescending(b => b.CreatedTime).Take(5);
+		}
+	}
 }

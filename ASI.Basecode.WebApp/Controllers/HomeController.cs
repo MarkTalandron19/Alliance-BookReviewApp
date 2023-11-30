@@ -14,6 +14,7 @@ using ASI.Basecode.Data.Models;
 using System.Collections.Generic;
 using System.Linq;
 using ASI.Basecode.WebApp.Models;
+using ASI.Basecode.Services.ServiceModels;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
@@ -60,14 +61,16 @@ namespace ASI.Basecode.WebApp.Controllers
             
 
 			//Get the books from Database
-			List<Book> books = await _bookService.GetBooks().ToListAsync();
+			//List<Book> books = await _bookService.GetBooks().ToListAsync();
 
-			List<Book> RecentBooks = GetRecentBooks(books);
+			List<Book> RecentBooks = _bookService.GetRecentBooks().ToList();
 
-            HomeViewModel homeViewModel = new(RecentBooks);
+            var viewModel = new HomeViewModel
+            {
+                NewlyReleasedBooks = RecentBooks
+            };
 
-
-			return View(homeViewModel);
+			return View(viewModel);
         }
 
         [HttpGet]
@@ -86,7 +89,7 @@ namespace ASI.Basecode.WebApp.Controllers
         [HttpGet]
         public IActionResult BookDetail(string bookId) => RedirectToAction("BookDetail", "Book", new { bookId });
 
-        private static List<Book> GetRecentBooks(List<Book> books)
+        /*private static List<Book> GetRecentBooks(List<Book> books)
 		{
 			//Sort the list by date
 
@@ -106,6 +109,6 @@ namespace ASI.Basecode.WebApp.Controllers
 			IComparer<Book> DateComparer = Comparer<Book>.Create((x, y) => x.CreatedTime.CompareTo(y.CreatedTime));
 			RecentBooks.Sort(DateComparer);
 			return RecentBooks;
-		}
+		}*/
 	}
 }
