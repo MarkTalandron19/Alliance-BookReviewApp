@@ -26,16 +26,17 @@ namespace ASI.Basecode.WebApp.Controllers
         private readonly IBookService _bookService;
         private readonly IReviewService _reviewService;
         private readonly IMapper _mapper;
-		private readonly AsiBasecodeDBContext _dbContext;
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="httpContextAccessor"></param>
-		/// <param name="loggerFactory"></param>
-		/// <param name="configuration"></param>
-		/// <param name="localizer"></param>
-		/// <param name="mapper"></param>
-		public HomeController(IBookService bookService, IGenreService genreService, IReviewService reviewService, IHttpContextAccessor httpContextAccessor,
+
+        private const int _numOfViewRecentBooks = 5;
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="httpContextAccessor"></param>
+        /// <param name="loggerFactory"></param>
+        /// <param name="configuration"></param>
+        /// <param name="localizer"></param>
+        /// <param name="mapper"></param>
+        public HomeController(IBookService bookService, IGenreService genreService, IReviewService reviewService, IHttpContextAccessor httpContextAccessor,
                               ILoggerFactory loggerFactory,
                               IConfiguration configuration,
                               AsiBasecodeDBContext dBContext,
@@ -44,7 +45,6 @@ namespace ASI.Basecode.WebApp.Controllers
             _genreService = genreService;
             _bookService = bookService;
             _reviewService = reviewService;
-            _dbContext = dBContext;
         }
 
         /// <summary>
@@ -55,14 +55,14 @@ namespace ASI.Basecode.WebApp.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult Home()
+        public async Task<IActionResult> Home()
         {
-            const int NumOfViewRecentBooks = 5;
+            
 
 			//Get the books from Database
-			List<Book> books = _dbContext.Books.ToList();
+			List<Book> books = await _bookService.GetBooks().ToListAsync();
 
-			List<Book> RecentBooks = GetRecentBooks(books, NumOfViewRecentBooks);
+			List<Book> RecentBooks = GetRecentBooks(books);
 
             HomeViewModel homeViewModel = new(RecentBooks);
 
@@ -83,7 +83,10 @@ namespace ASI.Basecode.WebApp.Controllers
             return View(books);
         }
 
-		private static List<Book> GetRecentBooks(List<Book> books, int? NumOfViewRecentBooks = null)
+        [HttpGet]
+        public IActionResult BookDetail(string bookId) => RedirectToAction("BookDetail", "Book", new { bookId });
+
+        private static List<Book> GetRecentBooks(List<Book> books)
 		{
 			//Sort the list by date
 
@@ -91,9 +94,9 @@ namespace ASI.Basecode.WebApp.Controllers
 
 			//Only get the number of books defined by ViewRecentBooks starting from the last element
 
-			if (NumOfViewRecentBooks != null && books.Count >= NumOfViewRecentBooks)
+			if (books.Count >= _numOfViewRecentBooks)
 			{
-				RecentBooks = new(books.TakeLast(NumOfViewRecentBooks.Value));
+				RecentBooks = new(books.TakeLast(_numOfViewRecentBooks));
 			}
 			else
 			{

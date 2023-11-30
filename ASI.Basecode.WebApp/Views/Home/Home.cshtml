@@ -87,13 +87,18 @@
     <div class="second-background">
         <h2 class="trends-text">New releases</h2>
         <p class="text-trends">Dive into our selection of trending books this week, where every page tells a story worth sharing.</p>
+        <div class="button-container-view-more">
+            <button class="button-view-more">
+                <a asp-controller="Home" asp-action="Library">VIEW MORE</a>
+            </button>
+        </div>
         <section class="books-line">
             @{
                 List<Book> NewBooks = Model.NewlyReleasedBooks;
                 foreach (var book in NewBooks)
                 {
                     <div class="book-item">
-                        <img src="@book.image" alt="@book.title">
+                        <a asp-controller="Home" asp-action="BookDetail" asp-route-bookId="@book.bookId"><img src="@book.image" alt="@book.title"></a>
                     </div>
                 }
             }
