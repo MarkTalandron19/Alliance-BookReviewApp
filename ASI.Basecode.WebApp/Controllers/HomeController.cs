@@ -29,7 +29,6 @@ namespace ASI.Basecode.WebApp.Controllers
         private readonly IBookService _bookService;
         private readonly IReviewService _reviewService;
         private readonly IMapper _mapper;
-        private readonly AsiBasecodeDBContext _dbContext;
         /// <summary>
         /// Constructor
         /// </summary>
@@ -41,13 +40,11 @@ namespace ASI.Basecode.WebApp.Controllers
         public HomeController(IBookService bookService, IGenreService genreService, IReviewService reviewService, IHttpContextAccessor httpContextAccessor,
                               ILoggerFactory loggerFactory,
                               IConfiguration configuration,
-                              AsiBasecodeDBContext dBContext,
                               IMapper mapper = null) : base(httpContextAccessor, loggerFactory, configuration, mapper)
         {
             _genreService = genreService;
             _bookService = bookService;
             _reviewService = reviewService;
-            _dbContext = dBContext;
         }
 
         /// <summary>
@@ -62,7 +59,7 @@ namespace ASI.Basecode.WebApp.Controllers
         {
             //await _genreService.GetGenres().ToListAsync();
             //await SetupYears()
-            List<Genre> genres = _dbContext.Genres.ToList();
+            List<Genre> genres = _genreService.GetGenres().ToList();
             List<int> years = SetupYears();
 
             IComparer<Genre> GenreSorter = Comparer<Genre>.Create((x, y) => x.genreName.CompareTo(y.genreName));
@@ -93,7 +90,7 @@ namespace ASI.Basecode.WebApp.Controllers
         [HttpGet]
         public IActionResult Search(string SearchText, string Year, string Genre)
         {
-            List<Book> AllBooks = _dbContext.Books.ToList();
+            List<Book> AllBooks = _bookService.GetBooks().ToList();
             List<Book> SearchResults = new();
 
             if(SearchText == null)
@@ -115,23 +112,18 @@ namespace ASI.Basecode.WebApp.Controllers
                     if (book.CreatedTime.Year != int.Parse(Year)) continue;
                 }
 
-                book.BookGenres ??= AssignGenresToBook(book);
-
                 if (Genre != null)
                 {
-                    var BookGenres = book.BookGenres;
-
-                    //Check if the given genre is found or exits in this current book's collection of BookGenre
+                    List<Genre> genresOfThisBook = _bookService.GetGenresOfBook(book.bookId).ToList();
 
                     bool IsBookHaveAnyOfGivenGenre = false;
-
-                    foreach(var bookGenre in BookGenres)
+                    foreach (var genre in genresOfThisBook)
                     {
-                        string givenGenre = Genre.ToLower(), genreOftheBook = bookGenre.genre.genreName.ToLower();
+                        string genreName = genre.genreName.ToLower();
 
-                        if(genreOftheBook.Contains(givenGenre))
+                        if (genreName.Contains(Genre.ToLower()))
                         {
-                            IsBookHaveAnyOfGivenGenre= true;
+                            IsBookHaveAnyOfGivenGenre = true;
                             break;
                         }
                     }
@@ -151,22 +143,9 @@ namespace ASI.Basecode.WebApp.Controllers
             return RedirectToAction("Home");
         }
 
-        private List<BookGenres> AssignGenresToBook(Book book)
-        {
-            List<Genre> genres = _dbContext.Genres.ToList();
-            List<BookGenres> bookGenres = _dbContext.Book_Genres.ToList();
-
-            bookGenres = bookGenres.Where(bookGenre => {
-                return bookGenre.bookId == book.bookId;
-            }).ToList();
-
-
-            return bookGenres;
-        }
-
         private List<int> SetupYears()
         {
-            List<Book> books = _dbContext.Books.ToList();
+            List<Book> books = _bookService.GetBooks().ToList();
             int minYear = DateTime.Now.Year;
 
             List<int> years = new() { minYear };
@@ -189,8 +168,8 @@ namespace ASI.Basecode.WebApp.Controllers
         public async Task<IActionResult> Library(string bookId)
         {
             var books = _bookService.GetBooks();
-            var genres = await _genreService.GetGenres().ToListAsync();
-            var reviews = await _reviewService.GetReviews().ToListAsync();
+            var genres = _genreService.GetGenres().ToList();
+            var reviews = _reviewService.GetReviews().ToList();
 
             ViewData["Genres"] = genres;
             ViewData["Reviews"] = reviews;
