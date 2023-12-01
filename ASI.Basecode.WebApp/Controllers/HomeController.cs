@@ -15,6 +15,8 @@ using System.Collections.Generic;
 using System.Linq;
 using ASI.Basecode.WebApp.Models;
 using ASI.Basecode.Services.ServiceModels;
+using System;
+using Microsoft.IdentityModel.Tokens;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
@@ -73,15 +75,27 @@ namespace ASI.Basecode.WebApp.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public async Task<IActionResult> Library(string bookId)
+        public async Task<IActionResult> Library(string bookId, int page = 1, int pageSize = 10, string genreId = null)
         {
             var books = _bookService.GetBooks();
             var genres = await _genreService.GetGenres().ToListAsync();
             var reviews = await _reviewService.GetReviews().ToListAsync();
 
+            if (!string.IsNullOrEmpty(genreId))
+            {
+                books = books.Where(b => b.BookGenres.Any(bg => bg.genreId == genreId));
+            }
+
+            var paginatedBooks = books.Skip((page - 1) * pageSize).Take(pageSize).ToList();
+
             ViewData["Genres"] = genres;
             ViewData["Reviews"] = reviews;
-            return View(books);
+            ViewData["CurrentPage"] = page;
+            ViewData["TotalPages"] = (int)Math.Ceiling((double)books.Count() / pageSize);
+
+            ViewBag.Page = page;
+
+            return View(paginatedBooks);
         }
 
         [HttpGet]
