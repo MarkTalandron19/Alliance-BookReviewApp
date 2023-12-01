@@ -16,6 +16,7 @@ using System.Linq;
 using ASI.Basecode.WebApp.Models;
 using ASI.Basecode.Services.ServiceModels;
 using System.Data.Entity;
+using System;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
@@ -112,12 +113,25 @@ namespace ASI.Basecode.WebApp.Controllers
 			return RecentBooks;
 		}*/
 
+        struct BookRating
+        {
+            public BookRating(Book Book, double AvgRating)
+            {
+                this.AvgRating = AvgRating;
+                this.Book = Book;
+            }
+
+            public Book Book { get; set; }
+            public double AvgRating { get; set; }
+        }
+
         private List<Book> GetTopRatedBooks()
         {
             const float AverageRatingCheck = 4.0f;
             const int LimitNumberOfBooksToView = 5;
 
             List<Book> AllBooks = _bookService.GetBooks().ToList(), TopBooks = new();
+            List<BookRating> TopRatedBooks = new();
 
             foreach (var book in AllBooks)
             {
@@ -128,7 +142,8 @@ namespace ASI.Basecode.WebApp.Controllers
                     continue;
                 }
 
-                int Count = reviews.Count, Sum = 0;
+                int Count = reviews.Count;
+                float Sum = 0;
 
                 //Get the rating average of each book
                 //If the average is greater than Average Rating Check, then the book will be added to the List of Top Rated Books
@@ -138,17 +153,26 @@ namespace ASI.Basecode.WebApp.Controllers
                     Sum += review.rating;
                 }
 
-                float Avg = Sum / Count;
+                double Avg = Sum / Count;
+                double RoundedAvg = Math.Round(Avg, 1);
 
-                if(Avg >= AverageRatingCheck)
+                if(RoundedAvg >= AverageRatingCheck)
                 {
-                    TopBooks.Add(book);
+                    TopRatedBooks.Add(new(book, RoundedAvg));
                 }
+            }
+
+            IComparer<BookRating> RatingComparer = Comparer<BookRating>.Create((x,y) => y.AvgRating.CompareTo(x.AvgRating));
+            TopRatedBooks.Sort(RatingComparer);
+
+            foreach (var bookRating in TopRatedBooks)
+            {
+                TopBooks.Add(bookRating.Book);
             }
 
             if(TopBooks.Count >  LimitNumberOfBooksToView)
             {
-                return TopBooks.GetRange(0, LimitNumberOfBooksToView);
+                return TopBooks.Take(LimitNumberOfBooksToView).ToList();
             }
 
             return TopBooks;
