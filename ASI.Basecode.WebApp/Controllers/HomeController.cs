@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ASI.Basecode.WebApp.Models;
 using ASI.Basecode.Services.ServiceModels;
+using System.Data.Entity;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
@@ -62,10 +63,12 @@ namespace ASI.Basecode.WebApp.Controllers
 			//List<Book> books = await _bookService.GetBooks().ToListAsync();
 
 			List<Book> RecentBooks = _bookService.GetRecentBooks().ToList();
+            List<Book> TopRatedBooks = GetTopRatedBooks();
 
             var viewModel = new HomeViewModel
             {
-                NewlyReleasedBooks = RecentBooks
+                NewlyReleasedBooks = RecentBooks,
+                TopRatedBooks = TopRatedBooks
             };
 
 			return View(viewModel);
@@ -76,8 +79,8 @@ namespace ASI.Basecode.WebApp.Controllers
         public async Task<IActionResult> Library(string bookId)
         {
             var books = _bookService.GetBooks();
-            var genres = await _genreService.GetGenres().ToListAsync();
-            var reviews = await _reviewService.GetReviews().ToListAsync();
+            var genres = _genreService.GetGenres().ToList();
+            var reviews = _reviewService.GetReviews().ToList();
 
             ViewData["Genres"] = genres;
             ViewData["Reviews"] = reviews;
@@ -108,5 +111,47 @@ namespace ASI.Basecode.WebApp.Controllers
 			RecentBooks.Sort(DateComparer);
 			return RecentBooks;
 		}*/
-	}
+
+        private List<Book> GetTopRatedBooks()
+        {
+            const float AverageRatingCheck = 4.0f;
+            const int LimitNumberOfBooksToView = 10;
+
+            List<Book> AllBooks = _bookService.GetBooks().ToList(), TopBooks = new();
+
+            foreach (var book in AllBooks)
+            {
+                List<Review> reviews = _reviewService.GetBookReview(book.bookId).ToList();
+
+                if(reviews.Count <= 0)
+                {
+                    continue;
+                }
+
+                int Count = reviews.Count, Sum = 0;
+
+                //Get the rating average of each book
+                //If the average is greater than Average Rating Check, then the book will be added to the List of Top Rated Books
+
+                foreach (Review review in reviews)
+                {
+                    Sum += review.rating;
+                }
+
+                float Avg = Sum / Count;
+
+                if(Avg >= AverageRatingCheck)
+                {
+                    TopBooks.Add(book);
+                }
+            }
+
+            if(TopBooks.Count >  LimitNumberOfBooksToView)
+            {
+                return TopBooks.GetRange(0, LimitNumberOfBooksToView);
+            }
+
+            return TopBooks;
+        }
+    }
 }
