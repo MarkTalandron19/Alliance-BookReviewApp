@@ -115,7 +115,7 @@ namespace ASI.Basecode.WebApp.Controllers
         private List<Book> GetTopRatedBooks()
         {
             const float AverageRatingCheck = 4.0f;
-            const int LimitNumberOfBooksToView = 10;
+            const int LimitNumberOfBooksToView = 5;
 
             List<Book> AllBooks = _bookService.GetBooks().ToList(), TopBooks = new();
 
