@@ -532,11 +532,20 @@ h2 {
 .book-item {
     margin: 10px;
     max-width: 200px;
+    display: flex;
 }
 
-    .book-item img {
+.book-item a {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+    .book-item-img {
+        flex: 1;
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
         border-radius: 5px;
     }
 
