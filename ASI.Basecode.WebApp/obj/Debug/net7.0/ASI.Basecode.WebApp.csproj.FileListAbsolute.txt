@@ -1824,3 +1824,5 @@ C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.WebApp\obj\De
 C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.WebApp\obj\Debug\net7.0\ASI.Basecode.WebApp.pdb
 C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.WebApp\obj\Debug\net7.0\ASI.Basecode.WebApp.genruntimeconfig.cache
 C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.WebApp\obj\Debug\net7.0\ref\ASI.Basecode.WebApp.dll
+C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.WebApp\bin\Debug\net7.0\SendGrid.dll
+C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.WebApp\bin\Debug\net7.0\StarkbankEcdsa.dll

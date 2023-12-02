@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\ASI.Basecode.WebApp.csproj": {}
+    "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\ASI.Basecode.WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj": {
+    "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj",
         "projectName": "ASI.Basecode.Data",
-        "projectPath": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Data\\obj\\",
+        "projectPath": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj",
+        "packagesPath": "C:\\Users\\Aloys\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Data\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Aloys\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -92,6 +96,10 @@
               "target": "Package",
               "version": "[1.7.0, )"
             },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.28.1, )"
+            },
             "System.Drawing.Common": {
               "target": "Package",
               "version": "[6.0.0, )"
@@ -117,21 +125,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj": {
+    "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj",
+        "projectUniqueName": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj",
         "projectName": "ASI.Basecode.Resources",
-        "projectPath": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\obj\\",
+        "projectPath": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj",
+        "packagesPath": "C:\\Users\\Aloys\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Aloys\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -156,6 +168,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.28.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -172,21 +190,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj": {
+    "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj",
+        "projectUniqueName": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj",
         "projectName": "ASI.Basecode.Services",
-        "projectPath": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Services\\obj\\",
+        "projectPath": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj",
+        "packagesPath": "C:\\Users\\Aloys\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Services\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Aloys\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -200,11 +222,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj": {
-                "projectPath": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj"
+              "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj": {
+                "projectPath": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Data\\ASI.Basecode.Data.csproj"
               },
-              "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj": {
-                "projectPath": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj"
+              "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj": {
+                "projectPath": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj"
               }
             }
           }
@@ -266,6 +288,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration": {
               "target": "Package",
               "version": "[7.0.11, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.28.1, )"
             }
           },
           "imports": [
@@ -284,21 +310,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\ASI.Basecode.WebApp.csproj": {
+    "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\ASI.Basecode.WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\ASI.Basecode.WebApp.csproj",
+        "projectUniqueName": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\ASI.Basecode.WebApp.csproj",
         "projectName": "ASI.Basecode.WebApp",
-        "projectPath": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\ASI.Basecode.WebApp.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\obj\\",
+        "projectPath": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\ASI.Basecode.WebApp.csproj",
+        "packagesPath": "C:\\Users\\Aloys\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.WebApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Aloys\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -312,11 +342,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj": {
-                "projectPath": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj"
+              "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj": {
+                "projectPath": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Resources\\ASI.Basecode.Resources.csproj"
               },
-              "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj": {
-                "projectPath": "C:\\Users\\USER\\Desktop\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj"
+              "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj": {
+                "projectPath": "C:\\Users\\Aloys\\Documents\\College 4th Year\\Alliance\\Alliance-BookReviewApp\\ASI.Basecode.Services\\ASI.Basecode.Services.csproj"
               }
             }
           }
@@ -387,6 +417,10 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.28.1, )"
+            },
             "Seq.Extensions.Logging": {
               "target": "Package",
               "version": "[6.0.0, )"
@@ -427,7 +461,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

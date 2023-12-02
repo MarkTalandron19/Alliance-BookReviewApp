@@ -24,6 +24,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using static ASI.Basecode.Resources.Constants.Enums;
 using ASI.Basecode.Services.Services;
 using static ASI.Basecode.Resources.Constants.Constants;
+using System.Net.Mail;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
@@ -470,6 +473,131 @@ namespace ASI.Basecode.WebApp.Controllers
         {
             await this._signInManager.SignOutAsync();
             return RedirectToAction("Login", "Account");
+        }
+
+        private async Task SendEmailWithToken(string userEmail, string token)
+        {
+            try
+            {
+                // Initialize the SendGrid API key
+                var apiKey = "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";
+
+                // Create a SendGrid client
+                var client = new SendGridClient(apiKey);
+
+                // Compose the email message
+                var from = new EmailAddress("aloysiusmatthew1@gmail.com", "Bibiliobibuli");
+                var to = new EmailAddress(userEmail);
+                var subject = "Password Reset Token";
+                var plainTextContent = $"Your password reset token is: {token}";
+                var htmlContent = $"<strong>Your password reset token is: {token}</strong>";
+                var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
+
+                // Send the email asynchronously
+                var response = await client.SendEmailAsync(msg);
+
+                // Log the success message
+                Console.WriteLine($"Verification code successfully sent. Response: {response.StatusCode}");
+            }
+            catch (System.Exception ex)
+            {
+                // Handle any exception related to email sending (e.g., log the error)
+                Console.WriteLine($"Failed to send email: {ex.Message}");
+            }
+        }
+
+        [AllowAnonymous]
+        public IActionResult ForgotPasswordEmail()
+        {
+            return View("Views/Account/ForgotPasswordEmail.cshtml");
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> ForgotPasswordCode(string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+
+            if (user != null)
+            {
+                var originalToken = await _userManager.GeneratePasswordResetTokenAsync(user);
+
+                await SendEmailWithToken(user.Email, originalToken);
+
+                // Create a view model to hold email and originalToken
+                var viewModel = new ForgotPasswordCodeViewModel
+                {
+                    Email = email,
+                    OriginalToken = originalToken
+                };
+
+                return View("Views/Account/ForgotPasswordCode.cshtml", viewModel);
+            }
+            else
+            {
+                ViewBag.EmailNotExist = "Email does not exist";
+                return View("ForgotPasswordEmail");
+            }
+        }
+
+
+        [HttpPost]
+        [AllowAnonymous]
+        public IActionResult ForgotPasswordNew(string token, string originalToken, string email)
+        {
+            // Compare the input token with the original token
+            if (token == originalToken)
+            {
+                var viewModel = new ForgotPasswordNewViewModel
+                {
+                    Email = email, // Assign the email to the view model
+                    OriginalToken = originalToken // Assign the original token to the view model
+                };
+
+                ViewBag.ResetToken = originalToken;
+                // Tokens match, allow password reset
+                return View("Views/Account/ForgotPasswordNew.cshtml", viewModel);
+            }
+            else
+            {
+                ViewBag.TokenMismatch = "Token is incorrect";
+                var viewModel = new ForgotPasswordCodeViewModel
+                {
+                    Email = email, // Assign the email to the view model
+                    OriginalToken = originalToken // Assign the original token to the view model
+                };
+                return View("Views/Account/ForgotPasswordCode.cshtml", viewModel);
+            }
+        }
+
+
+        [AllowAnonymous]
+        public async Task<IActionResult> ForgotPasswordDone(string email, string password, string confirmPassword, string originalToken)
+        {
+            if (password == confirmPassword)
+            {
+                var user = await _userManager.FindByEmailAsync(email);
+                if (user != null)
+                {
+                    var result = await _userManager.ResetPasswordAsync(user, originalToken, password);
+                    if (result.Succeeded)
+                    {
+                        return View("Views/Account/Login.cshtml");
+                    }
+                }
+            }
+            else
+            {
+                ViewBag.PasswordMismatch = "Passwords do not match";
+                var viewModel = new ForgotPasswordNewViewModel
+                {
+                    Email = email, // Assign the email to the view model
+                    OriginalToken = originalToken // Assign the original token to the view model
+                };
+                return View("Views/Account/ForgotPasswordNew.cshtml", viewModel);
+            }
+
+            return View(email);
         }
     }
 }

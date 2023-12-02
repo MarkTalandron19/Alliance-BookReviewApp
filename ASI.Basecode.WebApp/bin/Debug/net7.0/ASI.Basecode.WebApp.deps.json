@@ -50,6 +50,7 @@
           "Microsoft.TypeScript.MSBuild": "4.7.4",
           "Microsoft.VisualStudio.Web.CodeGeneration": "7.0.11",
           "Newtonsoft.Json": "13.0.1",
+          "SendGrid": "9.28.1",
           "Seq.Extensions.Logging": "6.0.0",
           "Serilog": "2.11.0",
           "Serilog.Extensions.Logging": "3.1.0",
@@ -71,8 +72,6 @@
           "Microsoft.AspNetCore.Connections.Abstractions": "7.0.0.0",
           "Microsoft.AspNetCore.CookiePolicy": "7.0.0.0",
           "Microsoft.AspNetCore.Cors": "7.0.0.0",
-          "Microsoft.AspNetCore.Cryptography.Internal.Reference": "7.0.0.0",
-          "Microsoft.AspNetCore.Cryptography.KeyDerivation.Reference": "7.0.0.0",
           "Microsoft.AspNetCore.DataProtection.Abstractions": "7.0.0.0",
           "Microsoft.AspNetCore.DataProtection": "7.0.0.0",
           "Microsoft.AspNetCore.DataProtection.Extensions": "7.0.0.0",
@@ -159,14 +158,11 @@
           "Microsoft.Extensions.Features": "7.0.0.0",
           "Microsoft.Extensions.FileProviders.Abstractions.Reference": "7.0.0.0",
           "Microsoft.Extensions.FileProviders.Composite": "7.0.0.0",
-          "Microsoft.Extensions.FileProviders.Embedded.Reference": "7.0.0.0",
           "Microsoft.Extensions.FileProviders.Physical": "7.0.0.0",
           "Microsoft.Extensions.FileSystemGlobbing": "7.0.0.0",
           "Microsoft.Extensions.Hosting.Abstractions": "7.0.0.0",
           "Microsoft.Extensions.Hosting": "7.0.0.0",
           "Microsoft.Extensions.Http.Reference": "7.0.0.0",
-          "Microsoft.Extensions.Identity.Core.Reference": "7.0.0.0",
-          "Microsoft.Extensions.Identity.Stores.Reference": "7.0.0.0",
           "Microsoft.Extensions.Localization.Abstractions.Reference": "7.0.0.0",
           "Microsoft.Extensions.Localization": "7.0.0.0",
           "Microsoft.Extensions.Logging.Abstractions.Reference": "7.0.0.0",
@@ -1166,6 +1162,9 @@
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "7.0.1323.52007"
           }
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cryptography.KeyDerivation/7.0.13": {
@@ -1177,6 +1176,9 @@
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "7.0.1323.52007"
           }
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {}
         }
       },
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/7.0.13": {
@@ -2058,6 +2060,9 @@
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "7.0.1323.52007"
           }
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.Extensions.FileProviders.Embedded.dll": {}
         }
       },
       "Microsoft.Extensions.Http/6.0.0": {
@@ -2079,6 +2084,9 @@
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "7.0.1323.52007"
           }
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.Extensions.Identity.Core.dll": {}
         }
       },
       "Microsoft.Extensions.Identity.Stores/7.0.13": {
@@ -2092,6 +2100,9 @@
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "7.0.1323.52007"
           }
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.Extensions.Identity.Stores.dll": {}
         }
       },
       "Microsoft.Extensions.Localization.Abstractions/2.2.0": {},
@@ -2744,6 +2755,21 @@
           }
         }
       },
+      "SendGrid/9.28.1": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "starkbank-ecdsa": "1.3.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.dll": {
+            "assemblyVersion": "9.28.1.0",
+            "fileVersion": "9.28.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/SendGrid.dll": {}
+        }
+      },
       "Seq.Extensions.Logging/6.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
@@ -2859,6 +2885,17 @@
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
+        }
+      },
+      "starkbank-ecdsa/1.3.3": {
+        "runtime": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -3736,6 +3773,7 @@
           "Microsoft.Extensions.Configuration.Binder": "7.0.2",
           "Microsoft.VisualStudio.Web.CodeGeneration": "7.0.11",
           "NUlid": "1.7.0",
+          "SendGrid": "9.28.1",
           "System.Drawing.Common": "6.0.0",
           "ZXing.Net": "0.16.8"
         },
@@ -3747,6 +3785,9 @@
         }
       },
       "ASI.Basecode.Resources/1.0.0": {
+        "dependencies": {
+          "SendGrid": "9.28.1"
+        },
         "runtime": {
           "ASI.Basecode.Resources.dll": {}
         },
@@ -3769,7 +3810,8 @@
           "Microsoft.AspNetCore.Localization": "2.2.0",
           "Microsoft.Extensions.Configuration.Binder": "7.0.2",
           "Microsoft.Extensions.Http": "6.0.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration": "7.0.11"
+          "Microsoft.VisualStudio.Web.CodeGeneration": "7.0.11",
+          "SendGrid": "9.28.1"
         },
         "runtime": {
           "ASI.Basecode.Services.dll": {}
@@ -3871,18 +3913,6 @@
       "Microsoft.AspNetCore.Cors/7.0.0.0": {
         "compile": {
           "Microsoft.AspNetCore.Cors.dll": {}
-        },
-        "compileOnly": true
-      },
-      "Microsoft.AspNetCore.Cryptography.Internal.Reference/7.0.0.0": {
-        "compile": {
-          "Microsoft.AspNetCore.Cryptography.Internal.dll": {}
-        },
-        "compileOnly": true
-      },
-      "Microsoft.AspNetCore.Cryptography.KeyDerivation.Reference/7.0.0.0": {
-        "compile": {
-          "Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {}
         },
         "compileOnly": true
       },
@@ -4402,12 +4432,6 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.FileProviders.Embedded.Reference/7.0.0.0": {
-        "compile": {
-          "Microsoft.Extensions.FileProviders.Embedded.dll": {}
-        },
-        "compileOnly": true
-      },
       "Microsoft.Extensions.FileProviders.Physical/7.0.0.0": {
         "compile": {
           "Microsoft.Extensions.FileProviders.Physical.dll": {}
@@ -4435,18 +4459,6 @@
       "Microsoft.Extensions.Http.Reference/7.0.0.0": {
         "compile": {
           "Microsoft.Extensions.Http.dll": {}
-        },
-        "compileOnly": true
-      },
-      "Microsoft.Extensions.Identity.Core.Reference/7.0.0.0": {
-        "compile": {
-          "Microsoft.Extensions.Identity.Core.dll": {}
-        },
-        "compileOnly": true
-      },
-      "Microsoft.Extensions.Identity.Stores.Reference/7.0.0.0": {
-        "compile": {
-          "Microsoft.Extensions.Identity.Stores.dll": {}
         },
         "compileOnly": true
       },
@@ -6829,6 +6841,13 @@
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
+    "SendGrid/9.28.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LyIkgjd+svXuQxpqe5pvyOccyUdKcDqwnBNDPjyCngkKeVpXAOTAr3U1DBLWqHEbFHvu2UBFki3SJzDwxvJdfA==",
+      "path": "sendgrid/9.28.1",
+      "hashPath": "sendgrid.9.28.1.nupkg.sha512"
+    },
     "Seq.Extensions.Logging/6.0.0": {
       "type": "package",
       "serviceable": true,
@@ -6884,6 +6903,13 @@
       "sha512": "sha512-Vh8n0dTvwXkCGur2WqQTITvk4BUO8i8h9ucSx3wwuaej3s2S6ZC0R7vqCTf9TfS/I4QkXO6g3W2YQIRFkOcijA==",
       "path": "sqlitepclraw.core/2.0.6",
       "hashPath": "sqlitepclraw.core.2.0.6.nupkg.sha512"
+    },
+    "starkbank-ecdsa/1.3.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OblOaKb1enXn+dSp7tsx9yjwV+/BEKM9jFhshIkZTwCk7LuTFTp+wSon6rFzuPiIiTGtvVWQNUw2slHjGktJog==",
+      "path": "starkbank-ecdsa/1.3.3",
+      "hashPath": "starkbank-ecdsa.1.3.3.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",
@@ -7589,16 +7615,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.AspNetCore.Cryptography.Internal.Reference/7.0.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.AspNetCore.Cryptography.KeyDerivation.Reference/7.0.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Microsoft.AspNetCore.DataProtection.Abstractions/7.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
@@ -8029,11 +8045,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.FileProviders.Embedded.Reference/7.0.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Microsoft.Extensions.FileProviders.Physical/7.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
@@ -8055,16 +8066,6 @@
       "sha512": ""
     },
     "Microsoft.Extensions.Http.Reference/7.0.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.Extensions.Identity.Core.Reference/7.0.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.Extensions.Identity.Stores.Reference/7.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

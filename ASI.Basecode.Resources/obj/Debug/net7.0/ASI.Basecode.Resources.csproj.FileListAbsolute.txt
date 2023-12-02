@@ -55,3 +55,4 @@ C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Resources\obj
 C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\refint\ASI.Basecode.Resources.dll
 C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.pdb
 C:\Users\USER\Desktop\Alliance\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ref\ASI.Basecode.Resources.dll
+C:\Users\Aloys\Documents\College 4th Year\Alliance\Alliance-BookReviewApp\ASI.Basecode.Resources\obj\Debug\net7.0\ASI.Basecode.Resources.csproj.AssemblyReference.cache

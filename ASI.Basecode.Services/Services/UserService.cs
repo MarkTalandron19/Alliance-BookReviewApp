@@ -102,5 +102,6 @@ namespace ASI.Basecode.Services.Services
                 await _repository.DeleteUser(userId);
             }
         }
+
     }
 }
