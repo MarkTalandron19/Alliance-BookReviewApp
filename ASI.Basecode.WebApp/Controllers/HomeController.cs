@@ -9,6 +9,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using ASI.Basecode.Data.Models;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
@@ -56,13 +60,37 @@ namespace ASI.Basecode.WebApp.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Library(string bookId)
         {
-            var books = _bookService.GetBooks();
-            var genres = await _genreService.GetGenres().ToListAsync();
-            var reviews = await _reviewService.GetReviews().ToListAsync();
+            var books = _bookService.GetBooks().ToList();
+            var genres = _genreService.GetGenres().ToList();
+            var reviews = _reviewService.GetReviews().ToList();
+
+            foreach (var book in books)
+            {
+                book.BookGenres = AssignGenresToBook(book);
+            }
 
             ViewData["Genres"] = genres;
             ViewData["Reviews"] = reviews;
             return View(books);
+        }
+
+        private List<BookGenres> AssignGenresToBook(Book book)
+        {
+            List<Genre> genres = _bookService.GetGenresOfBook(book.bookId).ToList();
+            List<BookGenres> bookGenres = new();
+
+            foreach (var genre in genres)
+            {
+                BookGenres genresOfThisBook = new()
+                {
+                    genreId = genre.genreId,
+                    genre = genre,
+                    bookId = book.bookId
+                };
+                bookGenres.Add(genresOfThisBook);
+            }
+
+            return bookGenres;
         }
     }
 }
