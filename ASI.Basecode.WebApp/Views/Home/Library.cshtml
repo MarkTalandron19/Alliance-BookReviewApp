@@ -146,7 +146,6 @@
         }
 
         document.addEventListener("DOMContentLoaded", function () {
-            // Add event listener for genre links
             var genreLinks = document.querySelectorAll('.sidenav ul li a');
 
             genreLinks.forEach(function (link) {
@@ -156,6 +155,24 @@
                     filterBooksByGenre(genreId);
                 });
             });
+
+
+            function filterBooksByGenre(genreId) {
+                var allBooks = document.querySelectorAll('.book');
+
+                allBooks.forEach(function (book) {
+                    var bookId = book.getAttribute('data-book-id');
+                    var genres = book.getAttribute('data-genres');
+
+                    if (genres && genres.split(',').includes(genreId) && bookId) {
+                        book.style.display = 'block';
+                    } else {
+                        book.style.display = 'none';
+                    }
+                });
+
+
+            }
 
             document.getElementById('bookSearch').addEventListener('keyup', function (event) {
                 if (event.key === 'Enter') {
@@ -174,30 +191,10 @@
             document.querySelector('.dropdown-content').addEventListener('click', function (event) {
                 var sortOption = event.target.textContent.toLowerCase().trim();
                 handleSortOption(sortOption);
-            });
-
-
-            function filterBooksByGenre(genreId) {
-                var allBooks = document.querySelectorAll('.book');
-
-                allBooks.forEach(function (book) {
-                    var bookId = book.getAttribute('data-book-id');
-                    var genres = book.getAttribute('data-genres');
-
-                    if (genres && genres.split(',').includes(genreId) && bookId) {
-                        book.style.display = 'block'; // Show the book
-                    } else {
-                        book.style.display = 'none';  // Hide the book
-                    }
-                });
-
-                // Attach event listeners after updating the display
-                attachBookEventListeners();
-            }
+            })
 
             function searchBooks() {
-                var searchTerm = document.getElementById('bookSearch').value.toLowerCase().trim();
-
+                var searchTerm = document.getElementById('bookSearch').value.toLowerCase().trim()
                 var books = document.querySelectorAll('.book');
 
                 books.forEach(function (book) {
@@ -211,6 +208,8 @@
                     }
                 });
             }
+
+          
 
             function handleSortOption(sortOption) {
                 var sortingOptions = {
@@ -275,7 +274,6 @@
                     }
                 });
 
-                // Add mouseover event listener to change cursor style
                 bookList.addEventListener('mouseover', function (event) {
                     var book = event.target.closest('.book');
                     if (book) {
@@ -283,7 +281,6 @@
                     }
                 });
 
-                // Add mouseout event listener to revert cursor style
                 bookList.addEventListener('mouseout', function (event) {
                     var book = event.target.closest('.book');
                     if (book) {

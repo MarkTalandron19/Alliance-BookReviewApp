@@ -85,7 +85,8 @@ namespace ASI.Basecode.WebApp.Controllers
                 {
                     genreId = genre.genreId,
                     genre = genre,
-                    bookId = book.bookId
+                    bookId = book.bookId,
+                   
                 };
                 bookGenres.Add(genresOfThisBook);
             }
