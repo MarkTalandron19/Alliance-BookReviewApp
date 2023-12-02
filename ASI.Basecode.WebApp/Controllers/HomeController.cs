@@ -15,6 +15,8 @@ using System.Collections.Generic;
 using System.Linq;
 using ASI.Basecode.WebApp.Models;
 using ASI.Basecode.Services.ServiceModels;
+using System.Data.Entity;
+using System;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
@@ -62,10 +64,12 @@ namespace ASI.Basecode.WebApp.Controllers
 			//List<Book> books = await _bookService.GetBooks().ToListAsync();
 
 			List<Book> RecentBooks = _bookService.GetRecentBooks().ToList();
+            List<Book> TopRatedBooks = GetTopRatedBooks();
 
             var viewModel = new HomeViewModel
             {
-                NewlyReleasedBooks = RecentBooks
+                NewlyReleasedBooks = RecentBooks,
+                TopRatedBooks = TopRatedBooks
             };
 
 			return View(viewModel);
@@ -76,8 +80,8 @@ namespace ASI.Basecode.WebApp.Controllers
         public async Task<IActionResult> Library(string bookId)
         {
             var books = _bookService.GetBooks();
-            var genres = await _genreService.GetGenres().ToListAsync();
-            var reviews = await _reviewService.GetReviews().ToListAsync();
+            var genres = _genreService.GetGenres().ToList();
+            var reviews = _reviewService.GetReviews().ToList();
 
             ViewData["Genres"] = genres;
             ViewData["Reviews"] = reviews;
@@ -108,5 +112,71 @@ namespace ASI.Basecode.WebApp.Controllers
 			RecentBooks.Sort(DateComparer);
 			return RecentBooks;
 		}*/
-	}
+
+        struct BookRating
+        {
+            public BookRating(Book Book, double AvgRating)
+            {
+                this.AvgRating = AvgRating;
+                this.Book = Book;
+            }
+
+            public Book Book { get; set; }
+            public double AvgRating { get; set; }
+        }
+
+        private List<Book> GetTopRatedBooks()
+        {
+            const float AverageRatingCheck = 4.5f;
+            const int LimitNumberOfBooksToView = 5;
+
+            List<Book> AllBooks = _bookService.GetBooks().ToList(), TopBooks = new();
+            List<BookRating> TopRatedBooks = new();
+
+            foreach (var book in AllBooks)
+            {
+                List<Review> reviews = _reviewService.GetBookReview(book.bookId).ToList();
+
+                if(reviews.Count <= 0)
+                {
+                    continue;
+                }
+
+                int Count = reviews.Count;
+                float Sum = 0;
+
+                //Get the rating average of each book
+                //If the average is greater than Average Rating Check, then the book will be added to the List of Top Rated Books
+
+                foreach (Review review in reviews)
+                {
+                    Sum += review.rating;
+                }
+
+                double Avg = Sum / Count;
+                double RoundedAvg = Math.Round(Avg, 1);
+
+                if(RoundedAvg >= AverageRatingCheck)
+                {
+                    TopRatedBooks.Add(new(book, RoundedAvg));
+                }
+            }
+
+            IComparer<BookRating> RatingComparer = Comparer<BookRating>.Create((x,y) => y.AvgRating.CompareTo(x.AvgRating));
+            TopRatedBooks.Sort(RatingComparer);
+
+            foreach (var bookRating in TopRatedBooks)
+            {
+                TopBooks.Add(bookRating.Book);
+            }
+
+            if(TopBooks.Count >  LimitNumberOfBooksToView)
+            {
+                var Top5Books = TopBooks.Take(LimitNumberOfBooksToView);
+                return Top5Books.ToList();
+            }
+
+            return TopBooks;
+        }
+    }
 }

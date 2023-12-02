@@ -115,6 +115,7 @@
         </div>
         </div>
     </div>
+    <!-- Top Rated Books-->
     <div class="fourth-white-background">
         <div class="books-header">
             <div class="top-books-title">
@@ -122,9 +123,22 @@
         <text class="top-rated-books-line">From captivating tales to thought-provoking narratives, these stories are igniting conversations across Bibliobibuli.</text>
         </div>
         <div class="second-button-container-view-more">
-            <button class="second-button-view-more">VIEW MORE →</button>
+            <button class="second-button-view-more">
+                    <a asp-controller="Home" asp-action="Library">VIEW MORE →</a>
+            </button>
         </div>
         </div>
+        <section class="books-line">
+            @{
+                List<Book> TopRatedBooks = Model.TopRatedBooks;
+                foreach(var book in TopRatedBooks)
+                {
+                    <div class="book-item">
+                        <a asp-controller="Home" asp-action="BookDetail" asp-route-bookId="@book.bookId"><img src="@book.image" alt="@book.title"></a>
+                    </div>
+                }
+            }
+        </section>
     </div>
     <div class="contact-image-background-container">
         <img class="contact-info-image" src="~/img/contact section.png" alt="Contact Info Image" />
