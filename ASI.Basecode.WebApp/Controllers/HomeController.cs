@@ -17,6 +17,7 @@ using ASI.Basecode.WebApp.Models;
 using ASI.Basecode.Services.ServiceModels;
 using System.Data.Entity;
 using System;
+using Newtonsoft.Json;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
@@ -65,14 +66,62 @@ namespace ASI.Basecode.WebApp.Controllers
 
 			List<Book> RecentBooks = _bookService.GetRecentBooks().ToList();
             List<Book> TopRatedBooks = GetTopRatedBooks();
+            List<Genre> Genres = _genreService.GetGenres().ToList();
+            List<int> Years = SetupYears();
 
             var viewModel = new HomeViewModel
             {
                 NewlyReleasedBooks = RecentBooks,
-                TopRatedBooks = TopRatedBooks
+                TopRatedBooks = TopRatedBooks,
+                Genres = Genres,
+                Years = Years
             };
 
-			return View(viewModel);
+            try
+            {
+                if (HttpContext.Session != null && HttpContext.Session.GetString("SearchResult") != null)
+                {
+                    viewModel.SearchResults = JsonConvert.DeserializeObject<List<Book>>(HttpContext.Session.GetString("SearchResult"));
+                }
+            }
+            catch
+            {
+                viewModel.SearchResults = null;
+            }
+
+
+            return View(viewModel);
+        }
+
+        [HttpGet]
+        public IActionResult Search(string SearchText, string Year, string Genre)
+        {
+            List<Book> AllBooks = _bookService.GetBooks().ToList();
+            List<Book> SearchResults = new();
+
+            if (SearchText == null)
+            {
+                return RedirectToAction("Home");
+            }
+
+            foreach (Book book in AllBooks)
+            {
+                //Check if the book's title contains of the given search text
+
+                book.title = book.title.ToLower();
+
+                if (!book.title.Contains(SearchText)) continue;
+
+                SearchResults.Add(book);
+            }
+
+            string SearchResultJson = JsonConvert.SerializeObject(SearchResults, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+            });
+
+            HttpContext.Session.SetString("SearchResult", SearchResultJson);
+            return RedirectToAction("Home");
         }
 
         [HttpGet]
@@ -86,6 +135,48 @@ namespace ASI.Basecode.WebApp.Controllers
             ViewData["Genres"] = genres;
             ViewData["Reviews"] = reviews;
             return View(books);
+        }
+
+        public static List<Book> FilterSearchResultWithYear(List<Book> SearchResults, string Year)
+        {
+            List<Book> FilteredSearchResults = new();
+
+            foreach (var book in SearchResults)
+            {
+                //Check if the book's created year matches to the given year
+                if (book.CreatedTime.Year != int.Parse(Year)) continue;
+                FilteredSearchResults.Add(book);
+            }
+
+            return FilteredSearchResults;
+        }
+
+        public List<Book> FilterSearchResultWithGenre(List<Book> SearchResults, string Genre)
+        {
+            List<Book> FilteredSearchResult = new();
+
+            foreach (var book in SearchResults)
+            {
+                List<Genre> genresOfThisBook = _bookService.GetGenresOfBook(book.bookId).ToList();
+
+                bool IsBookHaveAnyOfGivenGenre = false;
+                foreach (var genre in genresOfThisBook)
+                {
+                    string genreName = genre.genreName.ToLower();
+
+                    if (genreName.Contains(Genre.ToLower()))
+                    {
+                        IsBookHaveAnyOfGivenGenre = true;
+                        break;
+                    }
+                }
+
+                if (IsBookHaveAnyOfGivenGenre == false) continue;
+
+               FilteredSearchResult.Add(book);
+            }
+
+            return FilteredSearchResult;
         }
 
         [HttpGet]
@@ -177,6 +268,25 @@ namespace ASI.Basecode.WebApp.Controllers
             }
 
             return TopBooks;
+        }
+
+        private List<int> SetupYears()
+        {
+            List<Book> books = _bookService.GetBooks().ToList();
+            int minYear = DateTime.Now.Year;
+
+            List<int> years = new() { minYear };
+
+            foreach (Book book in books)
+            {
+                if (minYear < book.CreatedTime.Year)
+                {
+                    minYear = book.CreatedTime.Year;
+                    years.Add(book.CreatedTime.Year);
+                }
+            }
+
+            return years;
         }
     }
 }

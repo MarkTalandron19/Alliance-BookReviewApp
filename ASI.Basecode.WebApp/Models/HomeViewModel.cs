@@ -7,5 +7,11 @@ namespace ASI.Basecode.WebApp.Models
 	{
 		public List<Book> NewlyReleasedBooks { get; set; }
 		public List<Book> TopRatedBooks { get; set; }
+
+		public List<Genre> Genres { get; set; }
+
+		public List<int> Years { get; set; }
+
+		public List<Book> SearchResults { get; set; }
 	}
 }
