@@ -131,6 +131,11 @@ namespace ASI.Basecode.WebApp.Controllers
             var books = _bookService.GetBooks();
             var genres = _genreService.GetGenres().ToList();
             var reviews = _reviewService.GetReviews().ToList();
+            
+            foreach (var book in books)
+             {
+                book.BookGenres = AssignGenresToBook(book);
+             }
 
             ViewData["Genres"] = genres;
             ViewData["Reviews"] = reviews;
@@ -288,5 +293,24 @@ namespace ASI.Basecode.WebApp.Controllers
 
             return years;
         }
+
+        private List<BookGenres> AssignGenresToBook(Book book)
+        {
+            List<Genre> genres = _bookService.GetGenresOfBook(book.bookId).ToList();
+            List<BookGenres> bookGenres = new();
+
+            foreach (var genre in genres)
+            {
+                BookGenres genresOfThisBook = new()
+                {
+                    genreId = genre.genreId,
+                    genre = genre,
+                    bookId = book.bookId
+                };
+                bookGenres.Add(genresOfThisBook);
+            }
+
+            return bookGenres;
+        }
     }
-}
+} 
