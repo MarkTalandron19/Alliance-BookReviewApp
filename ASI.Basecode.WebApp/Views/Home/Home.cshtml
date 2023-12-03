@@ -46,9 +46,9 @@
 
     </div>
     <div class="search">
-    <div class="center-container">
-        <div class="search-line-container">
-            <form method="get" asp-action="Search" class="search-elements">
+        <div class="center-container">
+            <div class="search-line-container d-flex flex-column container">
+                <form method="get" asp-action="Search" class="search-elements justify-content-center">
                     <select class="year-dropdown" name="Year" id="Year">
                         <option value="">Year</option>
                         @{
@@ -68,28 +68,29 @@
                         }
                     </select>
                     <div class="search-bar">
-                        <input type="text" name="SearchText" id="SearchText" placeholder="Enter Book Name here...">
+                        <input type="text" name="SearchText" id="SearchText" placeholder="Enter Book Name here..." class="form-control">
                         <div class="search-icon"><i class="fas fa-search"></i></div>
                         <button class="search-button" type="submit" style="background-color: #053B50; color: #FFFFFF;">Search ˃</button>
                     </div>
-            </form>
-                <div>
+                </form>
+                <div class="d-flex flex-column w-100 list-group">
                     @{
                         IEnumerable<Book> SearchResults = Model.SearchResults;
                         if (SearchResults != null && SearchResults.Count() > 0)
                         {
                             foreach (var bookSearchResult in SearchResults)
                             {
-                                <section>
-                                    <img src="@bookSearchResult.image" />
-                                    <strong>@bookSearchResult.title</strong>
-                                </section>
+                                <a asp-controller="Book" asp-action="BookDetail" asp-route-bookId="@bookSearchResult.bookId"
+                                   class="list-group-item list-group-item-action d-flex flex-row container pt-3 mt-2 rounded-lg w-100 justify-content-center" style="height: 85px">
+                                    <img src="@bookSearchResult.image" class="rounded p-0 mh-100" />
+                                    <h5 class="flex-grow-1 h5 text-center m-auto px-3">@bookSearchResult.title.ToUpper()</h5>
+                                </a>
                             }
                         }
                     }
                 </div>
         </div>
-        </div>
+    </div>
  
     <div class="white-background">
         <div class="text-container">
