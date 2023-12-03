@@ -27,7 +27,7 @@
             {
                 <li>
                     <a href="javascript:void(0);" data-genre-id="@genre.genreId">
-                        <i class="fas fa-check-circle"></i> @genre.genreName
+                        <i ></i> @genre.genreName
                     </a>
                 </li>
             }
@@ -147,10 +147,19 @@
 
         document.addEventListener("DOMContentLoaded", function () {
             var genreLinks = document.querySelectorAll('.sidenav ul li a');
+            var activeGenreLink = null;
 
             genreLinks.forEach(function (link) {
                 link.addEventListener('click', function (event) {
                     event.preventDefault();
+ 
+                    if (activeGenreLink) {
+                        activeGenreLink.classList.remove('active');
+                    }
+
+                    link.classList.add('active');
+                    activeGenreLink = link;
+
                     var genreId = link.getAttribute('data-genre-id');
                     filterBooksByGenre(genreId);
                 });
@@ -158,19 +167,35 @@
 
             document.getElementById('bookSearch').addEventListener('keyup', function (event) {
                 if (event.key === 'Enter') {
+                    if (activeGenreLink) {
+                        activeGenreLink.classList.remove('active');
+                        activeGenreLink = null;
+                    }
                     searchBooks();
                 }
             });
 
             document.querySelector('.search-button').addEventListener('click', function () {
+                if (activeGenreLink) {
+                    activeGenreLink.classList.remove('active');
+                    activeGenreLink = null;
+                }
                 searchBooks();
             });
 
             document.querySelector('.search-icon').addEventListener('click', function () {
+                if (activeGenreLink) {
+                    activeGenreLink.classList.remove('active');
+                    activeGenreLink = null;
+                }
                 searchBooks();
             });
 
             document.querySelector('.dropdown-content').addEventListener('click', function (event) {
+                if (activeGenreLink) {
+                    activeGenreLink.classList.remove('active');
+                    activeGenreLink = null;
+                }
                 var sortOption = event.target.textContent.toLowerCase().trim();
                 handleSortOption(sortOption);
             });
@@ -191,8 +216,8 @@
                 });
 
 
-                attachBookEventListeners();
             }
+
 
             function searchBooks() {
                 var searchTerm = document.getElementById('bookSearch').value.toLowerCase().trim();
