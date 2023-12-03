@@ -8,3 +8,4 @@ ASI.Basecode.Resources/bin/*
 ASI.Basecode.Resources/obj/*
 ASI.Basecode.Services/bin/*
 ASI.Basecode.Services/obj/*
+ASI.Basecode.Data/Migrations/*
