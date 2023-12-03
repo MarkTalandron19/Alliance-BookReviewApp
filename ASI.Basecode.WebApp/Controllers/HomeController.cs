@@ -110,7 +110,7 @@ namespace ASI.Basecode.WebApp.Controllers
 
                 book.title = book.title.ToLower();
 
-                if (!book.title.Contains(SearchText)) continue;
+                if (!book.title.Contains(SearchText.ToLower())) continue;
 
                 SearchResults.Add(book);
             }
