@@ -75,6 +75,7 @@ namespace ASI.Basecode.WebApp
             app.UseAuthentication();        // Enables the ConfigureAuth service.
             app.UseMvc();
             app.UseAuthorization();
+            app.UseSession();
 
             this.ConfigureRoutes(app);      // Configuration for API controller routing
             this.ConfigureAuth(app);        // Configuration for Token Authentication
