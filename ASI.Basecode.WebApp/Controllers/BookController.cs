@@ -11,6 +11,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using ASI.Basecode.WebApp.Models;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
@@ -19,11 +20,13 @@ namespace ASI.Basecode.WebApp.Controllers
 	public class BookController : Controller
     {
         private readonly IBookService _bookService;
+        private readonly IGenreService _genreService;
         private readonly IMapper _mapper;
 
-        public BookController(IBookService bookService, IMapper mapper)
+        public BookController(IBookService bookService, IGenreService genreService, IMapper mapper)
         {
             _bookService = bookService;
+            _genreService = genreService;
             _mapper = mapper;
         }
 
@@ -38,8 +41,19 @@ namespace ASI.Basecode.WebApp.Controllers
         [HttpGet("get")]
         public IActionResult GetBooks()
         {
-            var books =_bookService.GetBooks();
-            return RedirectToAction("BookList", "Book");
+            var books =_bookService.GetBooks().ToList();
+            var genres = _genreService.GetGenres().ToList();
+            var bookModel = new BookViewModel()
+            {
+                genres = genres
+            };
+            var commonViewModel = new BookViewStorageModel()
+            {
+                ViewModel = bookModel,
+                Books = books,
+            };
+            //return RedirectToAction("BookList", "Book");
+            return View("Views/Book/BookList.cshtml", commonViewModel);
         }
 
         [HttpGet("get/{bookId}")]
@@ -73,8 +87,22 @@ namespace ASI.Basecode.WebApp.Controllers
         [HttpGet]
         public IActionResult BookList()
         {
-            var books = _bookService.GetBooks();
-            return View(books);
+            /*var books = _bookService.GetBooks();
+            return View(books);*/
+
+            var books = _bookService.GetBooks().ToList();
+            var genres = _genreService.GetGenres().ToList();
+            var bookModel = new BookViewModel()
+            {
+                genres = genres
+            };
+            var commonViewModel = new BookViewStorageModel()
+            {
+                ViewModel = bookModel,
+                Books = books,
+            };
+            //return RedirectToAction("BookList", "Book");
+            return View("Views/Book/BookList.cshtml", commonViewModel);
         }
 
         [HttpGet("getGenresOfBooks")]

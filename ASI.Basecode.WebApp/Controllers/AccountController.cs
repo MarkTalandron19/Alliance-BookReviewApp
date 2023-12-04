@@ -238,44 +238,48 @@ namespace ASI.Basecode.WebApp.Controllers
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(model.UserId, model.Password, Input.RememberMe, lockoutOnFailure: false);
 				var user = await _userManager.FindByEmailAsync(model.Email);
-				var roles = await _userManager.GetRolesAsync(user);
-				if (result.Succeeded)
+                if(user != null)
                 {
-                    _logger.LogInformation("User logged in.");
-					if (roles.Contains("Superadmin"))
-						return RedirectToAction("UserList", "Account");
-					if (roles.Contains("Bookmaster"))
-						return RedirectToAction("BookList", "Book");
-					if (roles.Contains("Genremaster"))
-						return RedirectToAction("GenreList", "Genre");
-				}
-                if (result.RequiresTwoFactor)
-                {
-                    return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
+                    var roles = await _userManager.GetRolesAsync(user);
+                    if (result.Succeeded)
+                    {
+                        _logger.LogInformation("User logged in.");
+                        if (roles.Contains("Superadmin"))
+                            return RedirectToAction("UserList", "Account");
+                        if (roles.Contains("Bookmaster"))
+                            return RedirectToAction("BookList", "Book");
+                        if (roles.Contains("Genremaster"))
+                            return RedirectToAction("GenreList", "Genre");
+                    }
+                    if (result.RequiresTwoFactor)
+                    {
+                        return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
+                    }
+                    if (result.IsLockedOut)
+                    {
+                        //_logger.LogWarning("User account locked out.");
+                        return RedirectToPage("./Lockout");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                        foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            _logger.LogInformation(error.ErrorMessage);
+                        }
+                        return RedirectToPage(returnUrl);
+                    }
                 }
-                if (result.IsLockedOut)
+
+                if (!ModelState.IsValid)
                 {
-                    //_logger.LogWarning("User account locked out.");
-                    return RedirectToPage("./Lockout");
-                }
-                else
-                {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                     foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
                     {
                         _logger.LogInformation(error.ErrorMessage);
                     }
-                    return RedirectToPage(returnUrl);
                 }
             }
-
-            if (!ModelState.IsValid)
-            {
-                foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
-                {
-                    _logger.LogInformation(error.ErrorMessage);
-                }
-            }
+				
 
             // If we got this far, something failed, redisplay form
             return RedirectToPage(returnUrl);

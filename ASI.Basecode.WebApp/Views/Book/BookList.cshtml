@@ -1,4 +1,5 @@
-﻿@model IEnumerable<ASI.Basecode.Data.Models.Book>
+﻿@*@model IEnumerable<ASI.Basecode.Data.Models.Book>*@
+@model BookViewStorageModel
 @section styles {
 	<link rel="stylesheet" href="~/css/admindashboard.css" />
 }
@@ -104,7 +105,7 @@
 								</tr>
 							</thead>
 							<tbody id="tableBody">
-								@foreach (var book in Model)
+								@foreach (var book in Model.Books)
 								{
 									<tr>
 										<td><img src="@book.image" alt="Book Image" style="max-width: 100px; max-height: 100px;" /></td>
@@ -126,9 +127,9 @@
 				</div>
 			</div>
 		</div>
-		@await Html.PartialAsync("_AddBookPopup", new ASI.Basecode.Services.ServiceModels.BookViewModel())
-		@await Html.PartialAsync("_EditBookPopup", new ASI.Basecode.Services.ServiceModels.BookViewModel())
-		@await Html.PartialAsync("_DeleteBookPopup", new ASI.Basecode.Services.ServiceModels.BookViewModel())
+		@await Html.PartialAsync("_AddBookPopup", Model.ViewModel)
+		@await Html.PartialAsync("_EditBookPopup", Model.ViewModel)
+		@await Html.PartialAsync("_DeleteBookPopup", Model.ViewModel)
 	</div>
 }
 

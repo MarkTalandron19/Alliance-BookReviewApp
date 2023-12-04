@@ -71,5 +71,22 @@ namespace ASI.Basecode.Data.Repositories
         {
             return this.GetDbSet<Genre>().Any(x => x.genreId == genreId);
         }
+
+        public void AddBookGenre(BookGenres bookGenres)
+        {
+            this.GetDbSet<BookGenres>().Add(bookGenres);
+            UnitOfWork.SaveChanges();
+        }
+
+        public void RemoveBookGenre(BookGenres bookGenre)
+        {
+            this.GetDbSet<BookGenres>().Remove(bookGenre);
+            UnitOfWork.SaveChanges();
+        }
+
+        public IQueryable<BookGenres> GetBookGenres(string bookId)
+        {
+           return this.GetDbSet<BookGenres>().Where(bg => bg.bookId == bookId);
+        }
     }
 }
