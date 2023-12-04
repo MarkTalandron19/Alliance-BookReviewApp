@@ -18,6 +18,7 @@ using ASI.Basecode.Services.ServiceModels;
 using System.Data.Entity;
 using System;
 using Newtonsoft.Json;
+using System.Globalization;
 
 namespace ASI.Basecode.WebApp.Controllers
 {
@@ -126,20 +127,59 @@ namespace ASI.Basecode.WebApp.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public async Task<IActionResult> Library(string bookId)
+        public async Task<IActionResult> Library(string bookId, int page = 1, int pageSize = 10, string sortBy = null)
         {
             var books = _bookService.GetBooks();
             var genres = _genreService.GetGenres().ToList();
             var reviews = _reviewService.GetReviews().ToList();
-            
+
+            var bookAverageRatings = new Dictionary<string, decimal>();
+
             foreach (var book in books)
              {
                 book.BookGenres = AssignGenresToBook(book);
-             }
+
+                var bookReviews = reviews.Where(r => r.bookId == book.bookId).ToList();
+                if (bookReviews.Any())
+                {
+                    decimal totalRatings = bookReviews.Sum(r => r.rating);
+                    decimal averageRating = totalRatings / bookReviews.Count;
+                    bookAverageRatings[book.bookId] = Math.Round(averageRating, 1);
+                }
+                else
+                {
+                    bookAverageRatings[book.bookId] = 0;
+                }
+            }
+
+            var sortedBooksList = books.ToList();
+
+
+            if (!string.IsNullOrEmpty(sortBy))
+            {
+                if (sortBy.Equals("title", StringComparison.OrdinalIgnoreCase))
+                {
+                    sortedBooksList = sortedBooksList.OrderBy(b => b.title).ToList();
+                }
+                else if (sortBy.Equals("rating", StringComparison.OrdinalIgnoreCase))
+                {
+                    sortedBooksList = sortedBooksList.OrderByDescending(b => bookAverageRatings.ContainsKey(b.bookId) ? bookAverageRatings[b.bookId] : 0).ToList();
+                }
+            }
+
+
+            var paginatedBooks = sortedBooksList.Skip((page - 1) * pageSize).Take(pageSize).ToList();
 
             ViewData["Genres"] = genres;
             ViewData["Reviews"] = reviews;
-            return View(books);
+            ViewData["CurrentPage"] = page;
+            ViewData["TotalPages"] = (int)Math.Ceiling((double)sortedBooksList.Count() / pageSize);
+            ViewData["SortBy"] = sortBy;
+
+
+            ViewBag.Page = page;
+
+            return View(paginatedBooks);
         }
 
         public static List<Book> FilterSearchResultWithYear(List<Book> SearchResults, string Year)
