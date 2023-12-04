@@ -1,66 +1,66 @@
 ﻿@using ASI.Basecode.Data.Models
 @model IEnumerable<ASI.Basecode.Data.Models.Book>
-    @{
+@{
     ViewBag.LoginView = true;
     ViewData["Title"] = "BiblioBibuli - Library";
-    }
-    @section styles {
-        <link rel="stylesheet" href="~/css/userbookcatalog.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+}
+@section styles {
+    <link rel="stylesheet" href="~/css/userbookcatalog.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     }
-    <div class="navbar">
-        <img class="bibliobibuli-logo" src="~/img/bibliobibuli logo 2.png" />
-        <div class="navbar-right">
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/Home/Library">Library</a></li>
-            </ul>
-        </div>
+<div class="navbar">
+    <img class="bibliobibuli-logo" src="~/img/bibliobibuli logo 2.png" />
+    <div class="navbar-right">
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/Home/Library">Library</a></li>
+        </ul>
     </div>
-    <div class="body-two-section">
-        <div class="sidenav">
-            <h2>Filter</h2>
-            <h3>Categories</h3>
-            <ul>
-                @foreach (var genre in (IEnumerable<Genre>)ViewData["Genres"])
+</div>
+<div class="body-two-section">
+    <div class="sidenav">
+        <h2>Filter</h2>
+        <h3>Categories</h3>
+        <ul>
+            @foreach (var genre in (IEnumerable<Genre>)ViewData["Genres"])
             {
                 <li>
                     <a href="javascript:void(0);" data-genre-id="@genre.genreId">
-                        <i ></i> @genre.genreName
+                        <i></i> @genre.genreName
                     </a>
                 </li>
             }
-            </ul>
-        </div>
+        </ul>
+    </div>
 
-        <div class="content">
-            <div class="content-header">
-                <div class="content-header-search">
-                    <h1>Books</h1>
-                    <div class="search-area">
-                        <div class="search-bar">
-                            <input type="text" id="bookSearch" placeholder="Search here..." />
-                            <button class="search-icon"><i class="fas fa-search"></i></button>
-                        </div>
-                        <div class="searches-button">
-                            <button class="search-button" style="background-color: #053B50; color: #FFFFFF;">Search</button>
-                        </div>
+    <div class="content">
+        <div class="content-header">
+            <div class="content-header-search">
+                <h1>Books</h1>
+                <div class="search-area">
+                    <div class="search-bar">
+                        <input type="text" id="bookSearch" placeholder="Search here..." />
+                        <button class="search-icon"><i class="fas fa-search"></i></button>
                     </div>
-                </div>
-                <div class="second-para">
-                    <p class="number-books-desc">Over 475+ books available here, find it now!</p>
-                    <div class="dropdown">
-                        <button class="dropdown-button">Sort by ▼</button>
-                        <div class="dropdown-content">
-                            <a href="#">Title(A-Z)</a>
-                            <a href="#">Rating(Highest)</a>
-                        </div>
+                    <div class="searches-button">
+                        <button class="search-button" style="background-color: #053B50; color: #FFFFFF;">Search</button>
                     </div>
                 </div>
             </div>
-            <div class="book-list">
-                @foreach (var book in Model)
+            <div class="second-para">
+                <p class="number-books-desc">Over 475+ books available here, find it now!</p>
+                <div class="dropdown">
+                    <button class="dropdown-button" id="sortButton">Sort by ▼</button>
+                    <div class="dropdown-content">
+                        <a href="?sortBy=title">Title(A-Z)</a>
+                        <a href="?sortBy=rating">Rating(Highest)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="book-list">
+            @foreach (var book in Model)
             {
                 var reviews = ((IEnumerable<ASI.Basecode.Data.Models.Review>)ViewData["Reviews"]).Where(r => r.bookId == book.bookId);
                 var bookgenres = ViewData["BookGenres"] as IEnumerable<ASI.Basecode.Data.Models.BookGenres>;
@@ -106,40 +106,78 @@
                     </div>
                 </a>
             }
-            </div>
         </div>
-    </div>
-    <div class="contact-image-background-container">
-        <img class="contact-info-image" src="~/img/contact section.png" alt="Contact Info Image" />
-    </div>
-    <div class="fifth-white-background">
-        <div class="footer-first-col">
-            <div class="logo-title">
-                <img class="logo" src="~/img/bibliobibuli logo 3.png" />
-                <h1>Bibliobibuli.</h1>
-            </div>
-            <div class="text-line">
-                <p>Where Authors and Readers </p>
-                <p>Toast to the Art of Literary </p>
-                <p>Feasts!</p>
+        <div class="paginations">
+            @if (ViewData["TotalPages"] != null && int.TryParse(ViewData["CurrentPage"].ToString(), out int currentPage) && int.TryParse(ViewData["TotalPages"].ToString(), out int totalPages) && totalPages > 1)
+            {
+                <nav aria-label="Books Pagination">
+                    <ul class="pagination">
+                        <!-- First and Previous -->
+                        <li class="page-item @(currentPage == 1 ? "disabled" : "")">
+                            <a class="page-link" href="?page=1@(ViewData["SortBy"] != null ? $"&sortBy={ViewData["SortBy"]}" : "")" aria-label="First">
+                                <span aria-hidden="true">&laquo;&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item @(currentPage == 1 ? "disabled" : "")">
+                            <a class="page-link" href="?page=@(currentPage - 1)@(ViewData["SortBy"] != null ? $"&sortBy={ViewData["SortBy"]}" : "")" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
 
-                <div class="contact-info">
-                    <p><i class="fas fa-envelope"></i> bibliobibuli_inquire@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> +63 912 3456 789</p>
-                </div>
-            </div>
+                        @for (int i = 1; i <= totalPages; i++)
+                        {
+                            <li class="page-item @(i == currentPage ? "active" : "")">
+                                <a class="page-link" href="?page=@i@(ViewData["SortBy"] != null ? $"&sortBy={ViewData["SortBy"]}" : "")">@i</a>
+                            </li>
+                        }
+
+                        <li class="page-item @(currentPage == totalPages ? "disabled" : "")">
+                            <a class="page-link" href="?page=@(currentPage + 1)@(ViewData["SortBy"] != null ? $"&sortBy={ViewData["SortBy"]}" : "")" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item @(currentPage == totalPages ? "disabled" : "")">
+                            <a class="page-link" href="?page=@totalPages@(ViewData["SortBy"] != null ? $"&sortBy={ViewData["SortBy"]}" : "")" aria-label="Last">
+                                <span aria-hidden="true">&raquo;&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            }
         </div>
-        <div class="quick-links">
-            <p class="text-quick-links">Quick Links</p>
-            <div class="second-nav-links">
-                <a href="/">Home</a>
-                <a href="/Home/Library">Library</a>
+    </div>
+</div>
+<div class="contact-image-background-container">
+    <img class="contact-info-image" src="~/img/contact section.png" alt="Contact Info Image" />
+</div>
+<div class="fifth-white-background">
+    <div class="footer-first-col">
+        <div class="logo-title">
+            <img class="logo" src="~/img/bibliobibuli logo 3.png" />
+            <h1>Bibliobibuli.</h1>
+        </div>
+        <div class="text-line">
+            <p>Where Authors and Readers </p>
+            <p>Toast to the Art of Literary </p>
+            <p>Feasts!</p>
+
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> bibliobibuli_inquire@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +63 912 3456 789</p>
             </div>
         </div>
     </div>
+    <div class="quick-links">
+        <p class="text-quick-links">Quick Links</p>
+        <div class="second-nav-links">
+            <a href="/">Home</a>
+            <a href="/Home/Library">Library</a>
+        </div>
+    </div>
+</div>
 
-    @section scripts {
-        <script>
+@section scripts {
+    <script>
         var errorMessage = '@TempData["ErrorMessage"]';
         if (errorMessage) {
             toastr.error(errorMessage);
@@ -152,7 +190,7 @@
             genreLinks.forEach(function (link) {
                 link.addEventListener('click', function (event) {
                     event.preventDefault();
- 
+
                     if (activeGenreLink) {
                         activeGenreLink.classList.remove('active');
                     }
@@ -236,83 +274,83 @@
                 });
             }
 
-            function handleSortOption(sortOption) {
-                var sortingOptions = {
-                    'title(a-z)': 'title',
-                    'rating(highest)': 'rating'
-                };
+            // function handleSortOption(sortOption) {
+            //     var sortingOptions = {
+            //         'title(a-z)': 'title',
+            //         'rating(highest)': 'rating'
+            //     };
 
-                var criteria = sortingOptions[sortOption];
+            //     var criteria = sortingOptions[sortOption];
 
-                if (criteria) {
-                    sortBooksBy(criteria);
-                }
-            }
+            //     if (criteria) {
+            //         sortBooksBy(criteria);
+            //     }
+            // }
 
-            function sortBooksBy(criteria) {
-                var bookList = document.querySelector('.book-list');
-                var books = Array.from(bookList.querySelectorAll('.book'));
+            // function sortBooksBy(criteria) {
+            //     var bookList = document.querySelector('.book-list');
+            //     var books = Array.from(bookList.querySelectorAll('.book'));
 
-                books.sort(function (a, b) {
-                    var valueA, valueB;
+            //     books.sort(function (a, b) {
+            //         var valueA, valueB;
 
-                    if (criteria === 'title') {
-                        valueA = a.querySelector('.book-title').textContent.toLowerCase().trim();
-                        valueB = b.querySelector('.book-title').textContent.toLowerCase().trim();
-                    } else if (criteria === 'rating') {
-                        valueA = parseFloat(a.querySelector('.book-rating').textContent.replace('★', '').trim());
-                        valueB = parseFloat(b.querySelector('.book-rating').textContent.replace('★', '').trim());
-                    }
+            //         if (criteria === 'title') {
+            //             valueA = a.querySelector('.book-title').textContent.toLowerCase().trim();
+            //             valueB = b.querySelector('.book-title').textContent.toLowerCase().trim();
+            //         } else if (criteria === 'rating') {
+            //             valueA = parseFloat(a.querySelector('.book-rating').textContent.replace('★', '').trim());
+            //             valueB = parseFloat(b.querySelector('.book-rating').textContent.replace('★', '').trim());
+            //         }
 
-                    return criteria === 'title' ? valueA.localeCompare(valueB) : valueB - valueA;
-                });
+            //         return criteria === 'title' ? valueA.localeCompare(valueB) : valueB - valueA;
+            //     });
 
-                var fragment = document.createDocumentFragment();
+            //     var fragment = document.createDocumentFragment();
 
-                books.forEach(function (book) {
-                    fragment.appendChild(book);
-                });
+            //     books.forEach(function (book) {
+            //         fragment.appendChild(book);
+            //     });
 
-                bookList.replaceChildren(fragment);
+            //     bookList.replaceChildren(fragment);
 
-                books.forEach(function (book) {
-                    book.style.display = 'block';
-                });
+            //     books.forEach(function (book) {
+            //         book.style.display = 'block';
+            //     });
 
-                attachBookEventListeners();
-            }
-            function attachBookEventListeners() {
-                var bookList = document.querySelector('.book-list');
-                console.log('Book List:', bookList);
+            //     attachBookEventListeners();
+            // }
+            // function attachBookEventListeners() {
+            //     var bookList = document.querySelector('.book-list');
+            //     console.log('Book List:', bookList);
 
-                bookList.addEventListener('click', function (event) {
-                    var target = event.target.closest('.book');
+            //     bookList.addEventListener('click', function (event) {
+            //         var target = event.target.closest('.book');
 
-                    if (!target && event.target.classList.contains('book')) {
-                        target = event.target;
-                    }
+            //         if (!target && event.target.classList.contains('book')) {
+            //             target = event.target;
+            //         }
 
-                    if (target) {
-                        var bookId = target.getAttribute('data-book-id');
-                        console.log('Book ID:', bookId);
-                        window.location.href = '/books/BookDetail?bookId=' + bookId;
-                    }
-                });
+            //         if (target) {
+            //             var bookId = target.getAttribute('data-book-id');
+            //             console.log('Book ID:', bookId);
+            //             window.location.href = '/books/BookDetail?bookId=' + bookId;
+            //         }
+            //     });
 
-                bookList.addEventListener('mouseover', function (event) {
-                    var book = event.target.closest('.book');
-                    if (book) {
-                        book.style.cursor = 'pointer';
-                    }
-                });
+            //     bookList.addEventListener('mouseover', function (event) {
+            //         var book = event.target.closest('.book');
+            //         if (book) {
+            //             book.style.cursor = 'pointer';
+            //         }
+            //     });
 
-                bookList.addEventListener('mouseout', function (event) {
-                    var book = event.target.closest('.book');
-                    if (book) {
-                        book.style.cursor = 'default';
-                    }
-                });
-            }
+            //     bookList.addEventListener('mouseout', function (event) {
+            //         var book = event.target.closest('.book');
+            //         if (book) {
+            //             book.style.cursor = 'default';
+            //         }
+            //     });
+            // }
         });
-        </script>
+    </script>
     }
