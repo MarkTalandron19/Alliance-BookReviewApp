@@ -45,8 +45,10 @@ namespace ASI.Basecode.Services.ServiceModels
         public string language { get; set; }
 
         [JsonPropertyName("genre")]
-        [Required(ErrorMessage = "Genre is required.")]
-        public string genre { get; set; }
+        [Required(ErrorMessage = "At least one genre is required.")]
+        public string[] selectedGenres { get; set; }
+
+        public List<Genre> genres { get; set; }
 
         [JsonPropertyName("image")]
         public IFormFile image { get; set; }

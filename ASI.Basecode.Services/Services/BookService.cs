@@ -39,7 +39,7 @@ namespace ASI.Basecode.Services.Services
                 book.CreatedBy = System.Environment.UserName;
                 book.UpdatedBy = System.Environment.UserName;
 
-                // Handle genre
+                /*// Handle genre
                 var genreName = model.genre!;
 
                 // Check if the genre already exists
@@ -70,7 +70,7 @@ namespace ASI.Basecode.Services.Services
 
                     // Genre already exists, use existing genre
                     book.BookGenres.Add(new BookGenres { genre = existingGenre, bookId = book.bookId, genreId = existingGenre.genreId });
-                }
+                }*/
 
                 // Handle image upload
                 if (model.image != null && model.image.Length > 0)
@@ -103,10 +103,17 @@ namespace ASI.Basecode.Services.Services
                     book.image = "/uploads/" + uniqueFileName; // Adjust the path as per your project's structure
                 }
 
-
-
-
                 _repository.AddBook(book);
+
+                foreach (var genre in model.selectedGenres)
+                {
+                    var bookGenre = new BookGenres()
+                    {
+                        bookId = book.bookId,
+                        genreId = genre
+                    };
+                    _genreRepository.AddBookGenre(bookGenre);
+                }
             }
         }
 
@@ -158,7 +165,7 @@ namespace ASI.Basecode.Services.Services
                 existingBook.UpdatedTime = DateTime.Now;
                 existingBook.UpdatedBy = System.Environment.UserName;
 
-                // Ensure that BookGenres is initialized
+                /*// Ensure that BookGenres is initialized
                 if (existingBook.BookGenres == null)
                 {
                     existingBook.BookGenres = new List<BookGenres>();
@@ -197,7 +204,7 @@ namespace ASI.Basecode.Services.Services
 
                     // Genre already exists, use existing genre
                     existingBook.BookGenres.Add(new BookGenres { genre = existingGenre, bookId = existingBook.bookId, genreId = existingGenre.genreId });
-                }
+                }*/
 
                 // Handle image upload
                 if (book.image != null && book.image.Length > 0)
@@ -244,6 +251,22 @@ namespace ASI.Basecode.Services.Services
 
                 // Update the book in the repository
                 _repository.UpdateBook(existingBook);
+                var existingGenres = _genreRepository.GetBookGenres(existingBook.bookId).ToList();
+                foreach (var genre in existingGenres)
+                {
+                    _genreRepository.RemoveBookGenre(genre);
+                }
+                    
+                foreach (var genre in book.selectedGenres)
+                {
+                    var bookGenre = new BookGenres()
+                    {
+                        bookId = book.bookId,
+                        genreId = genre
+                    };
+                    _genreRepository.AddBookGenre(bookGenre);
+                }
+
 
                 Console.WriteLine("Book updated successfully!");
 
