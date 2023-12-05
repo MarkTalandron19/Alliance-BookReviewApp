@@ -110,7 +110,7 @@
 									<tr>
 										<td><img src="@book.image" alt="Book Image" style="max-width: 100px; max-height: 100px;" /></td>
 										<td>
-											<a href="@Url.Action("GetGenresOfBook", "Book", new { bookId = @book.bookId, title = book.title, synopsis = book.synopsis, pubYear = book.pubYear, publisher = book.publisher, isbn = book.isbn, language = book.language })">@book.title</a>
+											<a href="@Url.Action("GetGenresOfBook", "Book", new { bookId = @book.bookId, image = book.image, @book.author ,title = book.title, synopsis = book.synopsis, pubYear = book.pubYear, publisher = book.publisher, isbn = book.isbn, language = book.language })">@book.title</a>
 										</td>
 										<td>@book.synopsis</td>
 										<td>@book.publisher</td>
