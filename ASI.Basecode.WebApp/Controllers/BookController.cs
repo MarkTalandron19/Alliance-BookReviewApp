@@ -106,13 +106,14 @@ namespace ASI.Basecode.WebApp.Controllers
         }
 
         [HttpGet("getGenresOfBooks")]
-        public async Task<IActionResult> GetGenresOfBook(string bookId, string image, string title, string synopsis, string pubYear, string publisher, string isbn, string language)
+        public async Task<IActionResult> GetGenresOfBook(string bookId, string image, string author, string title, string synopsis, string pubYear, string publisher, string isbn, string language)
         {
             var genres = _bookService.GetGenresOfBook(bookId).ToList();
             var reviews = _bookService.GetReviewsOfBook(bookId);
 
             ViewBag.image = image;
             ViewBag.title = title;
+            ViewBag.author = author;
             ViewBag.synopsis = synopsis;
             ViewBag.pubYear = pubYear;
             ViewBag.publisher = publisher;
