@@ -1,5 +1,5 @@
 ﻿@using ASI.Basecode.Data.Models
-@model List<Genre>  
+@model List<Genre>
 @section styles {
     <link rel="stylesheet" href="~/css/admindashboard.css" />
 }
@@ -26,10 +26,10 @@
                         </a>
                         <button class="leftmenu-items">
                             <a asp-controller="Genre" asp-action="Index" class="leftmenu-items">
-                            <div class="leftmenu-item">
-                                <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
-                                Genre List
-                            </div>
+                                <div class="leftmenu-item">
+                                    <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+                                    Genre List
+                                </div>
                             </a>
                         </button>
                     </div>
@@ -93,7 +93,13 @@
                 </div>
 
                 <p class="dashboard-subtitle">Book Details</p>
-                <div class="dashboard-card">
+                <div class="dashboard-card-1">
+                    <div class="bookdetail-img">
+                        <div class="bookdetail-title">
+                            <strong>Book Cover</strong>
+                        </div>
+                        <img src="@ViewBag.image" alt="Book Image" style="max-width: 300px; max-height: 300px; padding: 20px;" />
+                    </div>
                     <table class="dashboard-table">
                         <thead class="dashboard-table-header">
                             <tr class="header-row">
@@ -101,7 +107,7 @@
                                     Title
                                 </th>
                                 <th style="width: 2%;">
-                                    
+
                                 </th>
                                 <th style="width: 73%;">
                                     Details
@@ -109,11 +115,11 @@
                             </tr>
                         </thead>
                         <tbody id="tableBody">
-                                <tr>
+                            <tr>
                                 <td><strong>Book Title</strong></td>
                                 <td><strong>:</strong></td>
                                 <td>@ViewBag.title</td>
-                                </tr>
+                            </tr>
                             <tr>
                                 <td><strong>Book Synopsis</strong></td>
                                 <td><strong>:</strong></td>
@@ -141,6 +147,168 @@
                             </tr>
                         </tbody>
                     </table>
+                </div>
+
+                <p class="dashboard-subtitle">Book Reviews</p>
+                <div class="dashboard-card">
+                    @if (ViewData["Reviews"] != null)
+                    {
+                        var reviews = (IEnumerable<ASI.Basecode.Data.Models.Review>)ViewData["Reviews"];
+                        var totalRatings = 0;
+                        var totalReviews = reviews.Count();
+                        var ratingsCount = new int[5];
+
+                        foreach (var review in reviews)
+                        {
+                            totalRatings += review.rating;
+                            if (review.rating >= 1 && review.rating <= 5)
+                            {
+                                ratingsCount[review.rating - 1]++;
+                            }
+                            else
+                            {
+                                int defaultRating = 1;
+                                ratingsCount[defaultRating - 1]++;
+                            }
+                        }
+
+                        double[] percentages = new double[5];
+                        decimal averageRating = totalRatings > 0 ? (decimal)totalRatings / totalReviews : 0;
+                        decimal averageRatingRounded = Math.Round(averageRating, 1);
+                        int roundedRating = (int)Math.Round(averageRating);
+
+
+                        for (int i = 0; i < 5; i++)
+                        {
+                            percentages[i] = totalReviews > 0 ? ((double)ratingsCount[i] / totalReviews) * 100 : 0;
+                        }
+
+                        <div class="review-details-row">
+                            <table class="dashboard-table">
+                                <thead class="dashboard-table-header">
+                                    <tr class="header-row">
+                                        <th style="width: 20%;">
+                                            Average Rating
+                                        </th>
+                                        <th style="width: 20%;">
+
+                                        </th>
+                                        <th style="width: 30%;">
+                                            Total Reviews
+                                        </th>
+                                        <th style="width: 30%;">
+
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody">
+                                    <tr>
+                                        <td>
+                                            <div class="average-rating-num">@averageRatingRounded</div>
+                                        </td>
+                                        <td>
+                                            <p class="summary-text">
+                                                @{
+                                                    for (var i = 1; i <= 5; i++)
+                                                    {
+                                                        if (i <= roundedRating)
+                                                        {
+                                                            <span class="starGlowN"></span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span class="starFadeN"></span>
+                                                        }
+                                                    }
+                                                }
+
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p class="summary-text">@totalReviews</p>
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br />
+
+                            <table class="dashboard-table">
+                                <thead class="dashboard-table-header">
+                                    <tr class="header-row">
+                                        <th style="width: 20%;">
+                                            Full Name
+                                        </th>
+                                        <th style="width: 20%;">
+                                            Email
+                                        </th>
+                                        <th style="width: 40%;">
+                                            Review
+                                        </th>
+                                        <th style="width: 20%;">
+                                            Rating
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody">
+                                    @if (ViewData["Reviews"] != null && ((IEnumerable<ASI.Basecode.Data.Models.Review>)ViewData["Reviews"]).Any())
+                                    {
+                                        @foreach (var c in ((IEnumerable<ASI.Basecode.Data.Models.Review>)ViewData["Reviews"]).OrderByDescending(c => c.dateReviewed)
+                                       )
+                                        {
+
+
+                                            <tr>
+                                                <td>
+                                                    <span class="reviewer-name">@c.reviewerLastName, @c.reviewerFirstName</span>
+                                                </td>
+
+                                                <td>
+                                                    <div class="reviewer-email">
+                                                        @c.reviewerEmail
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div class="review-info">
+                                                        @Html.Raw(c.content.Replace("\n", "<br />"))
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        @for (var i = 1; i <= c.rating; i++)
+                                                        {
+                                                            <span class="starGlowN"></span>
+                                                        }
+                                                        @for (var i = c.rating + 1; i <= 5; i++)
+                                                        {
+                                                            <span class="starFadeN"></span>
+                                                        }
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <div class="user-review-empty">
+                                                <div class="review-info">
+                                                    • • • • • No Reviews yet. Be the first to review!
+                                                </div>
+                                            </div>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <div class="review-contents">
+                                <div class="user-reviews">
+                                </div>
+                            </div>
+                        </div>
+                    }
+
                 </div>
             </div>
         </div>

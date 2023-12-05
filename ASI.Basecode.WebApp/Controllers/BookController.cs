@@ -106,10 +106,12 @@ namespace ASI.Basecode.WebApp.Controllers
         }
 
         [HttpGet("getGenresOfBooks")]
-        public IActionResult GetGenresOfBook(string bookId, string title, string synopsis, string pubYear, string publisher, string isbn, string language)
+        public async Task<IActionResult> GetGenresOfBook(string bookId, string image, string title, string synopsis, string pubYear, string publisher, string isbn, string language)
         {
             var genres = _bookService.GetGenresOfBook(bookId).ToList();
+            var reviews = _bookService.GetReviewsOfBook(bookId);
 
+            ViewBag.image = image;
             ViewBag.title = title;
             ViewBag.synopsis = synopsis;
             ViewBag.pubYear = pubYear;
@@ -117,16 +119,15 @@ namespace ASI.Basecode.WebApp.Controllers
             ViewBag.isbn = isbn;
             ViewBag.language = language;
 
+            ViewData["Reviews"] = await reviews.ToListAsync();
+
             if (genres != null)
             {
 
-                // Return the view
                 return View("GetGenresOfBook", genres);
-                //return Json(new { Genres = genres });
             }
             else
             {
-                // Handle the case where the book with the given ID was not found.
                 return NotFound();
             }
         }

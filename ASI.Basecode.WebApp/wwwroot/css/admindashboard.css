@@ -81,6 +81,26 @@ footer {
     padding: 30px;
 }
 
+.dashboard-card-1 {
+    display: flex;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.10));
+    background-color: white;
+    min-height: 300px;
+    border-left: solid 8px #176B87;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.bookdetail-img {
+    padding: 10px 0;
+}
+
+.bookdetail-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .dashboard-title-div {
     display: flex;
     gap: 20px;
@@ -315,7 +335,22 @@ td {
     padding: 20px 10px 0 10px;
     font-weight: 600;
 }
-    
+
+.starFadeN {
+    background-image: url('/img/starEmpty.png');
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+}
+
+.starGlowN {
+    background-image: url('/img/starFilled.png');
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+}
 
 
 

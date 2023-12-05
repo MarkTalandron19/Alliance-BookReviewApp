@@ -13,6 +13,7 @@ $(document).ready(function () {
         var name = $(this).data('user-name');
         var email = $(this).data('user-email');
         var password = $(this).data('user-password');
+        var selectedRoles = $(this).data('user-role').split(',');
 
         $('#edituserId').val(userId);
         $('#editname').val(name);
@@ -20,6 +21,10 @@ $(document).ready(function () {
         $('#originalemail').val(email);
         $('#editpassword').val(password);
         $('#editconfirmpassword').val(password);
+        selectedRoles.forEach(function (role) {
+            $('#EditUserModal').find(':checkbox[value="' + role + '"]').prop('checked', true);
+        });
+
         $('#EditUserModal').modal('show');
         console.log("Button clicked");
     });
