@@ -43,13 +43,9 @@
                                     <button class="login-btn" type="submit">
                                         @Login
                                     </button>
-                                    <div>
+                                    <div class="forgot-password">
                                         <a asp-controller="Account" asp-action="ForgotPasswordEmail" class="text-muted">Forgot Password</a>
                                     </div>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-center pb-4">
-                                    <p class="mb-0 me-2 mr-1">@DontHaveAcc</p>
-                                    <a asp-controller="Account" asp-action="Register" class="btn btn-outline-danger">@CreateNew</a>
                                 </div>
                             </form>
                         </div>

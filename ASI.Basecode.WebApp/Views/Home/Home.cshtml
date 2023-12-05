@@ -107,14 +107,21 @@
         </div>
     </div>
     </div>
+
     <!-- Recent Books or New Release-->
     <div class="second-background">
-        <h2 class="trends-text">New releases</h2>
-        <p class="text-trends">Dive into our selection of trending books this week, where every page tells a story worth sharing.</p>
-        <div class="button-container-view-more">
-            <button class="button-view-more">
-                <a asp-controller="Home" asp-action="Library">VIEW MORE</a>
-            </button>
+        <div class="content-container">
+            <div class="top-section">
+                <h2 class="trends-text">New releases</h2>
+                <div class="button-container-view-more">
+                    <button class="button-view-more">
+                        <a asp-controller="Home" asp-action="Library">VIEW MORE</a>
+                    </button>
+                </div>
+            </div>
+            <div class="bottom-section">
+                <p class="text-trends">Dive into our selection of trending books this week, where every page tells a story worth sharing.</p>
+            </div>
         </div>
         <section class="books-line">
             @{
@@ -128,17 +135,9 @@
             }
         </section>
     </div>
-    <div class="third-white-background">
-        <div class="books-header">
-            <div class="featured-books-title">
-        <h3 class="featured-text">Featured Book</h3>
-        <text class="featured-line">Unearth the literary gems making waves this week!</text>
-            </div>
-        <div class="button-container-view-more">
-            <button class="button-view-more">VIEW MORE →</button>
-        </div>
-        </div>
-    </div>
+
+
+
     <!-- Top Rated Books-->
     <div class="fourth-white-background">
         <div class="books-header">
@@ -148,7 +147,7 @@
         </div>
         <div class="second-button-container-view-more">
             <button class="second-button-view-more">
-                    <a asp-controller="Home" asp-action="Library">VIEW MORE →</a>
+                    <a asp-controller="Home" asp-action="Library">VIEW MORE</a>
             </button>
         </div>
         </div>
