@@ -14,17 +14,17 @@
                     <input type="hidden" name="bookId" asp-for="bookId"/>
                     <input type="hidden" asp-for="reviewId" value="0" />
                     <div>
-                        <label class="input-label" asp-for="reviewerFirstName"></label>
+                        <label class="input-label" asp-for="reviewerFirstName">First Name</label>
                         <input type="text" asp-for="reviewerFirstName" class="form-control" placeholder="First Name..." />
                         <span asp-validation-for="reviewerFirstName" class="text-danger"></span>
                     </div>
                     <div>
-                        <label class="input-label" asp-for="reviewerLastName"></label>
+                        <label class="input-label" asp-for="reviewerLastName"> Last Name</label>
                         <input type="text" asp-for="reviewerLastName" class="form-control" placeholder="Last Name..." />
                         <span asp-validation-for="reviewerLastName" class="text-danger"></span>
                     </div>
                     <div>
-                        <label class="input-label" asp-for="reviewerEmail"></label>
+                        <label class="input-label" asp-for="reviewerEmail">Email Address</label>
                         <input type="email" asp-for="reviewerEmail" class="form-control" placeholder="Email Address..." />
                         <span asp-validation-for="reviewerEmail" class="text-danger"></span>
                     </div>
@@ -44,7 +44,7 @@
                         <span asp-validation-for="rating" class="text-danger"></span>
                     </div>
                     <div>
-                        <label class="input-label" asp-for="content"></label>
+                        <label class="input-label" asp-for="content">Review Comment</label>
                         <input type="text" asp-for="content" class="form-control" placeholder="Review..." />
                         <span asp-validation-for="content" class="text-danger"></span>
                     </div> 

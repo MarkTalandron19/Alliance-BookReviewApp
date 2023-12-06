@@ -243,6 +243,13 @@ footer {
         border-radius: 5px;
     }
 
+.leftmenu-item-userlist {
+    display: flex;
+    padding: 5px 0;
+    justify-content: start;
+    align-items: center;
+}
+
 .menu-divider {
     border: none;
     height: 1px;
