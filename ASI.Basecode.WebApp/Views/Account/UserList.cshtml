@@ -89,22 +89,22 @@
 						<table class="dashboard-table">
 							<thead class="dashboard-table-header">
 								<tr class="header-row">
-									<th style="width: 25%;">
+									<th style="width: 16%;">
 										User Name
 									</th>
-									<th style="width: 50%;">
+									<th style="width: 16%;">
 										Email
 									</th>
-									<th style="width: 50%;">
+									<th style="width: 16%;">
 										Role
 									</th>
-									<th style="width: 50%;">
+									<th style="width: 16%;">
 										Created By
 									</th>
-									<th style="width: 50%;">
+									<th style="width: 16%;">
 										Created Time
 									</th>
-									<th style="width: 50%;">
+									<th style="width: 20%;">
 										Operations
 									</th>
 								</tr>
@@ -115,7 +115,7 @@
 									@if(!user.UserRoles.Contains("Superadmin"))
 									{
 										<tr>
-											<td><a href="">@user.User.Name</a></td>
+											<td>@user.User.Name</td>
 											<td>@user.User.Email</td>
 											<td>
 												@foreach (var role in user.UserRoles)

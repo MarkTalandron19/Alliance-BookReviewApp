@@ -247,7 +247,7 @@ namespace ASI.Basecode.WebApp.Controllers
                         if (roles.Contains("Superadmin"))
                             return RedirectToAction("UserList", "Account");
                         if (roles.Contains("Bookmaster"))
-                            return RedirectToAction("BookList", "Book");
+                            return RedirectToAction("BooksDashboard", "Book");
                         if (roles.Contains("Genremaster"))
                             return RedirectToAction("GenreList", "Genre");
                     }

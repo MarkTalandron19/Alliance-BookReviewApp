@@ -1,160 +1,162 @@
 ﻿@*@model IEnumerable<ASI.Basecode.Data.Models.Book>*@
 @model BookViewStorageModel
 @section styles {
-	<link rel="stylesheet" href="~/css/admindashboard.css" />
+    <link rel="stylesheet" href="~/css/admindashboard.css" />
 }
 @{
-	ViewData["Title"] = "Book List";
+    ViewData["Title"] = "Book List";
 }
 @if (User.IsInRole("Bookmaster"))
 {
-	<div class="body-main">
-		<div class="body-two-section">
-			<div class="left-space">
-				<div class="left-menu">
-					<div>
-						<img class="bibliobibuli-logo" src="~/img/logo-leftaligned.png" />
-						<div class="menu-items">
-							<div class="leftmenu-item-title">
-								<div class="leftmenu-item">
-									<img class="leftmenu-icons" src="~/img/dashboard-icon.png" />
-									Book Management<br />Dashboard
-								</div>
-							</div>
-							<hr class="menu-divider" />
-							@if (User.IsInRole("Bookmaster"))
-							{
-								<a asp-controller="Book" asp-action="BookList" class="leftmenu-items">
-									<div class="leftmenu-item">
-										<img class="leftmenu-icons" src="~/img/booklist-icon.png" />
-										Book List
-									</div>
-								</a>
-							}
-							@if (User.IsInRole("Genremaster"))
-							{
-								<a asp-controller="Genre" asp-action="GenreList" class="leftmenu-items">
-									<div class="leftmenu-item">
-										<img class="leftmenu-icons" src="~/img/booklist-icon.png" />
-										Genre List
-									</div>
-								</a>
-							}
-							@if (User.IsInRole("Superadmin"))
-							{
-								<a asp-controller="Account" asp-action="UserList" class="leftmenu-items">
-									<div class="leftmenu-item">
-										<img class="leftmenu-icons" src="~/img/booklist-icon.png" />
-										User List
-									</div>
-								</a>
-							}
-						</div>
-					</div>
-					<div>
-						<button class="logout-button">
-							<a asp-controller="Account" asp-action="SignOutUser">
-								<div class="logout-text">
-									<img class="leftmenu-icons" src="~/img/logout-icon.png" />
-									Logout
-								</div>
-							</a>
-						</button>
-					</div>
-				</div>
-			</div>
-			<div class="admin-dashboard-list">
-				<div class="admin-header">
-					<div class="logosec">
-						@*Welcome, @HttpContextAccessor.HttpContext.Session.GetString("UserName")!*@
-						<div class="mr-20 hover-pointer" style="position: relative">
-							<div class="dp">
-								<img src="~/img/profile-logo.png"
-									 class="dpicn hover-pointer"
-									 alt="dp">
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="dashboard">
-					<div class="dashboard-title-div">
-						<p class="dashboard-title">Book List Management</p>
-						<button class="add-button" id="AddBookBtn"><p class="button-text">+</p></button>
-					</div>
-					<hr class="divider" />
-					<p class="dashboard-subtitle">Book List</p>
-					<div class="dashboard-card">
-						<table class="dashboard-table">
-							<thead class="dashboard-table-header">
-								<tr class="header-row">
-									<th style="width: 10%;">
-										Book Cover
-									</th>
-									<th style="width: 15%;">
-										Book Name
-									</th>
-									<th style="width: 35%;">
-										Synopsis
-									</th>
-									<th style="width: 20%;">
-										Publisher
-									</th>
-									<th style="width: 20%;">
+    <div class="body-main">
+        <div class="body-two-section">
+            <div class="left-space">
+                <div class="left-menu">
+                    <div>
+                        <img class="bibliobibuli-logo" src="~/img/logo-leftaligned.png" />
+                        <div class="menu-items">
+                            <div class="leftmenu-item-title">
+                                <a asp-controller="Book" asp-action="BooksDashboard" class="leftmenu-items">
+                                    <div class="leftmenu-item">
+                                        <img class="leftmenu-icons" src="~/img/dashboard-icon.png" />
+                                        Book Management<br />Dashboard
+                                    </div>
+                                </a>
+                            </div>
+                            <hr class="menu-divider" />
+                            @if (User.IsInRole("Bookmaster"))
+                            {
+                                <a asp-controller="Book" asp-action="BookList" class="leftmenu-items">
+                                    <div class="leftmenu-item active">
+                                        <img class="leftmenu-icons" src="~/img/booklist-icon-active.png" />
+                                        Book List
+                                    </div>
+                                </a>
+                            }
+                            @if (User.IsInRole("Genremaster"))
+                            {
+                                <a asp-controller="Genre" asp-action="GenreList" class="leftmenu-items">
+                                    <div class="leftmenu-item">
+                                        <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+                                        Genre List
+                                    </div>
+                                </a>
+                            }
+                            @if (User.IsInRole("Superadmin"))
+                            {
+                                <a asp-controller="Account" asp-action="UserList" class="leftmenu-items">
+                                    <div class="leftmenu-item">
+                                        <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+                                        User List
+                                    </div>
+                                </a>
+                            }
+                        </div>
+                    </div>
+                    <div>
+                        <button class="logout-button">
+                            <a asp-controller="Account" asp-action="SignOutUser">
+                                <div class="logout-text">
+                                    <img class="leftmenu-icons" src="~/img/logout-icon.png" />
+                                    Logout
+                                </div>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="admin-dashboard-list">
+                <div class="admin-header">
+                    <div class="logosec">
+                        @*Welcome, @HttpContextAccessor.HttpContext.Session.GetString("UserName")!*@
+                        <div class="mr-20 hover-pointer" style="position: relative">
+                            <div class="dp">
+                                <img src="~/img/profile-logo.png"
+                                     class="dpicn hover-pointer"
+                                     alt="dp">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard">
+                    <div class="dashboard-title-div">
+                        <p class="dashboard-title">Book List Management</p>
+                        <button class="add-button" id="AddBookBtn"><p class="button-text">+</p></button>
+                    </div>
+                    <hr class="divider" />
+                    <p class="dashboard-subtitle">Book List</p>
+                    <div class="dashboard-card">
+                        <table class="dashboard-table">
+                            <thead class="dashboard-table-header">
+                                <tr class="header-row">
+                                    <th style="width: 10%;">
+                                        Book Cover
+                                    </th>
+                                    <th style="width: 15%;">
+                                        Book Name
+                                    </th>
+                                    <th style="width: 35%;">
+                                        Synopsis
+                                    </th>
+                                    <th style="width: 20%;">
+                                        Publisher
+                                    </th>
+                                    <th style="width: 20%;">
 
-									</th>
-								</tr>
-							</thead>
-							<tbody id="tableBody">
-								@foreach (var book in Model.Books)
-								{
-									<tr>
-										<td><img src="@book.image" alt="Book Image" style="max-width: 100px; max-height: 100px;" /></td>
-										<td>
-											<a href="@Url.Action("GetGenresOfBook", "Book", new { bookId = @book.bookId, image = book.image, @book.author ,title = book.title, synopsis = book.synopsis, pubYear = book.pubYear, publisher = book.publisher, isbn = book.isbn, language = book.language })">@book.title</a>
-										</td>
-										<td>@book.synopsis</td>
-										<td>@book.publisher</td>
-										<td>
-											<button class="edit-button" id="Update" data-book-id="@book.bookId" data-book-title="@book.title" data-book-synopsis="@book.synopsis" data-book-publisher="@book.publisher" data-book-isbn="@book.isbn" data-book-language="@book.language">Edit</button>
-											<button class="delete-button" data-book-id="@book.bookId">Delete</button>
-										</td>
-									</tr>
-								}
-							</tbody>
-						</table>
-					</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                @foreach (var book in Model.Books)
+                                {
+                                    <tr>
+                                        <td><img src="@book.image" alt="Book Image" style="max-width: 100px; max-height: 100px;" /></td>
+                                        <td>
+                                            <a href="@Url.Action("GetGenresOfBook", "Book", new { bookId = @book.bookId, image = book.image, @book.author ,title = book.title, synopsis = book.synopsis, pubYear = book.pubYear, publisher = book.publisher, isbn = book.isbn, language = book.language })">@book.title</a>
+                                        </td>
+                                        <td>@book.synopsis</td>
+                                        <td>@book.publisher</td>
+                                        <td>
+                                            <button class="edit-button" id="Update" data-book-id="@book.bookId" data-book-title="@book.title" data-book-synopsis="@book.synopsis" data-book-publisher="@book.publisher" data-book-isbn="@book.isbn" data-book-language="@book.language">Edit</button>
+                                            <button class="delete-button" data-book-id="@book.bookId">Delete</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
 
-				</div>
-			</div>
-		</div>
-		@await Html.PartialAsync("_AddBookPopup", Model.ViewModel)
-		@await Html.PartialAsync("_EditBookPopup", Model.ViewModel)
-		@await Html.PartialAsync("_DeleteBookPopup", Model.ViewModel)
-	</div>
+                </div>
+            </div>
+        </div>
+        @await Html.PartialAsync("_AddBookPopup", Model.ViewModel)
+        @await Html.PartialAsync("_EditBookPopup", Model.ViewModel)
+        @await Html.PartialAsync("_DeleteBookPopup", Model.ViewModel)
+    </div>
 }
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="~/js/Book.js"></script>
 <script>
-	$(document).ready(function () {
-		$(".book-title-link").on("click", function (e) {
-			e.preventDefault();
-			var bookId = $(this).attr("id").replace("book-", "");
+    $(document).ready(function () {
+        $(".book-title-link").on("click", function (e) {
+            e.preventDefault();
+            var bookId = $(this).attr("id").replace("book-", "");
 
-			// Make an AJAX request to fetch and display genres
-			$.get("/BookController/GetGenresOfBook?bookId=" + bookId, function (data) {
-				if (data.genres) {
-					var genreList = data.genres.join(", "); // Convert the array of genres to a string
+            // Make an AJAX request to fetch and display genres
+            $.get("/BookController/GetGenresOfBook?bookId=" + bookId, function (data) {
+                if (data.genres) {
+                    var genreList = data.genres.join(", "); // Convert the array of genres to a string
 
-					// Update the third column with the genre information
-					$(`#book-${bookId}`).closest("tr").find("td:eq(2)").html(genreList);
-				} else {
-					// Handle the case where there are no genres or an error occurred
-					console.log("No genres found or an error occurred.");
-				}
-			});
-		});
-	});
+                    // Update the third column with the genre information
+                    $(`#book-${bookId}`).closest("tr").find("td:eq(2)").html(genreList);
+                } else {
+                    // Handle the case where there are no genres or an error occurred
+                    console.log("No genres found or an error occurred.");
+                }
+            });
+        });
+    });
 </script>
 
