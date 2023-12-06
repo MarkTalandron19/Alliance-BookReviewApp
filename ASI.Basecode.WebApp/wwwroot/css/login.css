@@ -91,6 +91,10 @@
         transition: ease .2s;
     }
 
+.forgot-password {
+    margin-top: 15px;
+}
+
 .back {
     display: flex;
     justify-content: center;
@@ -109,5 +113,9 @@
 
 .form-footer {
     justify-content: center;
+}
+
+.form-title {
+    color:white
 }
 

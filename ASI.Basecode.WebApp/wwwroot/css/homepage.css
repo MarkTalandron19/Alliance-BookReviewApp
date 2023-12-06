@@ -338,37 +338,43 @@ p {
     padding: 50px;
     background-image: url("/img/lines 2.png");
     background-size: cover;
-}
-
-
-.second-line-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    background-color: transparent;
-    pointer-events: none;
 }
 
-.second-line {
-    width: 400%;
-    height: 220%;
-    object-fit: cover;
-    max-width: none;
-    max-height: 100%;
+.content-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
 }
 
-h2 {
-    text-align: center;
+.top-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
-.text-trends {
-    text-align: center;
+.trends-text {
+    margin-right: 20px;
 }
+
+.bottom-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-container-view-more {
+    display: flex;
+}
+
+
+
 
 /*Third background*/
 .third-white-background {
@@ -392,14 +398,7 @@ h2 {
     width: 50%;
 }
 
-.featured-text {
-}
-
-.featured-line {
-}
-
 .button-container-view-more {
-    top: 50px;
     background-color: none;
 }
 
@@ -424,6 +423,7 @@ h2 {
     padding: 10px;
     margin: 0;
     position: relative;
+    padding-top: 50px;
 }
 
 .top-books-title {
@@ -454,6 +454,13 @@ h2 {
     border: none;
 }
 
+.top-trends {
+    color: #FFFFFF;
+}
+
+.top-text {
+    color: #FFFFFF;
+}
 /*Fourth background*/
 .contact-image-background-container {
     width: 100%;
