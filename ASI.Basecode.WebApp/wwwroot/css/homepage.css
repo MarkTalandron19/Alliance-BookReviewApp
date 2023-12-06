@@ -355,18 +355,18 @@ p {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center; /* Center the items */
+    justify-content: center;
 }
 
 .trends-text {
-    margin-right: 20px; /* Adjust space between title and button */
+    margin-right: 20px;
 }
 
 .bottom-section {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the text */
-    margin-top: 20px; /* Provide space between the sections */
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .button-container-view-more {
@@ -423,6 +423,7 @@ p {
     padding: 10px;
     margin: 0;
     position: relative;
+    padding-top: 50px;
 }
 
 .top-books-title {
@@ -453,6 +454,13 @@ p {
     border: none;
 }
 
+.top-trends {
+    color: #FFFFFF;
+}
+
+.top-text {
+    color: #FFFFFF;
+}
 /*Fourth background*/
 .contact-image-background-container {
     width: 100%;

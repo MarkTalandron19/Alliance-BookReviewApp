@@ -22,19 +22,22 @@
                             </div>
                             <form method="post" action="/Account/Login" id="loginForm">
                                 <div class="form-outline mb-4">
-                                    <label class="form-label" for="form2Example11">@UserId</label>
+                                    @* <label class="form-label" for="form2Example11">@UserId</label> *@
+                                    <p class="form-title">UserId</p>
                                     <input type="text" id="form2Example11" class="form-control"
                                            asp-for="UserId" placeholder="Enter userid" />
                                     <span asp-validation-for="UserId" class="text-danger"></span>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label" for="form2Example11">@Email</label>
+                                    @* <label class="form-label" for="form2Example11">@Email</label> *@
+                                    <p class="form-title">Email</p>
                                     <input type="text" id="form2Example11" class="form-control"
                                            asp-for="Email" placeholder="Enter Email" />
                                     <span asp-validation-for="Email" class="text-danger"></span>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label" for="form2Example22">@Password</label>
+                                    @* <label class="form-label" for="form2Example22">@Password</label> *@
+                                    <p class="form-title">Password</p>
                                     <input type="password" id="form2Example22" class="form-control"
                                            asp-for="Password" placeholder="Enter password" />
                                     <span asp-validation-for="Password" class="text-danger"></span>
