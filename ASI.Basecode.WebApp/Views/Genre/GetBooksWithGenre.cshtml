@@ -11,27 +11,45 @@
                 <div>
                     <img class="bibliobibuli-logo" src="~/img/logo-leftaligned.png" />
                     <div class="menu-items">
-                        <div class="leftmenu-item-title">
-                            <div class="leftmenu-item">
-                                <img class="leftmenu-icons" src="~/img/dashboard-icon.png" />
-                                Book Management<br />Dashboard
-                            </div> 
-                        </div>
+                        @if (User.IsInRole("Bookmaster"))
+                        {
+                            <div class="leftmenu-item-title">
+                                <a asp-controller="Book" asp-action="BooksDashboard" class="leftmenu-items">
+                                    <div class="leftmenu-item">
+                                        <img class="leftmenu-icons" src="~/img/dashboard-icon.png" />
+                                        Book Management<br />Dashboard
+                                    </div>
+                                </a>
+                            </div>
+                        }
+                        @if (User.IsInRole("Genremaster"))
+                        {
+                            <div class="leftmenu-item-title">
+                                <div class="leftmenu-item">
+                                    <img class="leftmenu-icons" src="~/img/dashboard-icon.png" />
+                                    Book Management<br />Dashboard
+                                </div>
+                            </div>
+                        }
                         <hr class="menu-divider" />
-                        <a asp-controller="Book" asp-action="BookList" class="leftmenu-items">
-                            <div class="leftmenu-item">
-                                <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
-                                Book List
-                            </div>
-                        </a>
-                        <button class="leftmenu-items">
-                            <a asp-controller="Genre" asp-action="Index" class="leftmenu-items">
-                            <div class="leftmenu-item">
-                                <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
-                                Genre List
-                            </div>
+                        @if (User.IsInRole("Bookmaster"))
+                        {
+                            <a asp-controller="Book" asp-action="BookList" class="leftmenu-items">
+                                <div class="leftmenu-item">
+                                    <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+                                    Book List
+                                </div>
                             </a>
-                        </button>
+                        }
+                        @if (User.IsInRole("Genremaster"))
+                        {
+                            <a asp-controller="Genre" asp-action="Index" class="leftmenu-items">
+                                <div class="leftmenu-item">
+                                    <img class="leftmenu-icons" src="~/img/booklist-icon.png" />
+                                    Genre List
+                                </div>
+                            </a>
+                        }
                     </div>
                 </div>
                 <div>
