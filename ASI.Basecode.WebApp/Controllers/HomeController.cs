@@ -94,8 +94,37 @@ namespace ASI.Basecode.WebApp.Controllers
 
             return View(viewModel);
         }
+        [HttpGet]
+        public IActionResult Search(string SearchText, string Year, string Genre)
+        {
+            List<Book> AllBooks = _bookService.GetBooks().ToList();
+            List<Book> SearchResults = new();
 
- 
+            if (SearchText == null)
+            {
+                return RedirectToAction("Home");
+            }
+
+            foreach (Book book in AllBooks)
+            {
+                //Check if the book's title contains of the given search text
+
+                book.title = book.title.ToLower();
+
+                if (!book.title.Contains(SearchText.ToLower())) continue;
+
+                SearchResults.Add(book);
+            }
+
+            string SearchResultJson = JsonConvert.SerializeObject(SearchResults, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+            });
+
+            HttpContext.Session.SetString("SearchResult", SearchResultJson);
+            return RedirectToAction("Home");
+        }
+
 
         [HttpGet]
         [AllowAnonymous]
