@@ -197,18 +197,22 @@ namespace ASI.Basecode.WebApp.Controllers
         }
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult FilterByGenre(string searchTerm, int page = 1, int pageSize = 10, string sortBy = null)
+        public IActionResult FilterByGenre(string searchTerm, string selectedGenre, int page = 1, int pageSize = 10, string sortBy = null)
         {
-           
             var allBooks = _bookService.GetBooks();
 
             var filteredBooks = allBooks
                 .Where(book =>
                     string.IsNullOrEmpty(searchTerm) ||
                     book.title.ToLower().Contains(searchTerm) ||
-                    book.publisher.ToLower().Contains(searchTerm)
+                    book.publisher.ToLower().Contains(searchTerm) ||
+                    book.BookGenres.Any(genre => genre.genre.genreName.ToLower().Contains(searchTerm.ToLower()))
                 );
 
+            if (!string.IsNullOrEmpty(selectedGenre))
+            {
+                 filteredBooks = allBooks.Where(book => book.BookGenres.Any(genre => genre.genre.genreId.Equals(selectedGenre)));
+            }
             var sortedBooksList = filteredBooks.OrderBy(b => b.title);
 
             var paginatedBooks = sortedBooksList.Skip((page - 1) * pageSize).Take(pageSize).ToList();
@@ -219,21 +223,17 @@ namespace ASI.Basecode.WebApp.Controllers
             ViewData["Genres"] = genres;
             ViewData["Reviews"] = reviews;
 
-     
             ViewData["CurrentPage"] = page;
             ViewData["TotalPages"] = (int)Math.Ceiling((double)sortedBooksList.Count() / pageSize);
             ViewData["SortBy"] = sortBy;
 
-         
             ViewBag.Page = page;
 
-          
+            ViewData["SelectedGenre"] = selectedGenre;
             ViewData["SearchTerm"] = searchTerm;
 
-        
             return View("Library", paginatedBooks);
         }
-
 
         [HttpGet]
         public IActionResult BookDetail(string bookId) => RedirectToAction("BookDetail", "Book", new { bookId });
