@@ -5,58 +5,65 @@
     <link rel="stylesheet" href="~/css/admindashboard.css" />
 }
 <div class="modal" id="EditBookModal">
-    <div class="modal-dialog">
+    <div class="modal-dialog-book">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 id="modalTitle">Edit Book Details</h4>
             </div>
             <form method="post" asp-action="UpdateBook" asp-controller="Book" id="EditBookForm" enctype="multipart/form-data">
                 <div class="modal-body">
-                    <div>
-                        <input type="hidden" id="editBookId" asp-for="bookId" />
-                        <label class="input-label" asp-for="title"></label>
-                        <input type="text" id="editTitle" asp-for="title" class="form-control" placeholder="Title" />
-                    </div>
-                    <div>
-                        <label class="input-label" asp-for="author"></label>
-                        <input type="text" id="editAuthor" asp-for="author" class="form-control" placeholder="Author" />
-                    </div>
-                    <div>
-                        <label class="input-label" asp-for="synopsis"></label>
-                        <input type="text" id="editSynopsis" asp-for="synopsis" class="form-control" placeholder="Synopsis" />
-                    </div>
-                    <div>
-                        <label class="input-label" asp-for="publisher"></label>
-                        <input type="text" id="editPublisher" asp-for="publisher" class="form-control" placeholder="Publisher" />
-                    </div>
-                    <div>
-                        <label class="input-label" asp-for="pubYear"></label>
-                        <input type="text" id="editPubYear" asp-for="pubYear" class="form-control" placeholder="Publication Year" />
-                    </div>
-                    <div>
-                        <label class="input-label" asp-for="isbn"></label>
-                        <input type="text" id="editIsbn" asp-for="isbn" class="form-control" placeholder="Isbn" />
-                    </div>
-                    <div>
-                        <label class="input-label" asp-for="language"></label>
-                        <input type="text" id="editLanguage" asp-for="language" class="form-control" placeholder="Language" />
-                    </div>
-                    <div style="height: 200px; overflow-y: auto;">
-                        <label asp-for="selectedGenres" class="control-label">Genre</label>
-                        @foreach (var genre in Model.genres)
-                        {
-                            <div class="form-control">
-                                <input type="checkbox" id="@($"genre_{genre}")" name="selectedGenres" value="@genre.genreId" />
-                                <label for="@($"role_{genre}")">@genre.genreName</label>
+                    <div class="add-book-container">
+                        <div class="add-book-col">
+                            <div>
+                                <input type="hidden" id="editBookId" asp-for="bookId" />
+                                <label class="input-label" asp-for="title">Book Title</label>
+                                <input type="text" id="editTitle" asp-for="title" class="form-control" placeholder="Title" />
                             </div>
-                        }
-                        <span asp-validation-for="selectedGenres" class="text-danger"></span>
-                    </div>
-                    <div>
-                        <label class="input-label">Book Cover</label>
-                        <input type="file" name="image" />
-                    </div>
+                            <div>
+                                <label class="input-label" asp-for="author">Author</label>
+                                <input type="text" id="editAuthor" asp-for="author" class="form-control" placeholder="Author" />
+                            </div>
+                            <div>
+                                <label class="input-label" asp-for="synopsis">Book Synopsis</label>
+                                <input type="text" id="editSynopsis" asp-for="synopsis" class="form-control" placeholder="Synopsis" />
+                            </div>
+                            <div>
+                                <label class="input-label" asp-for="publisher">Book Publisher</label>
+                                <input type="text" id="editPublisher" asp-for="publisher" class="form-control" placeholder="Publisher" />
+                            </div>
+                            <div>
+                                <label class="input-label" asp-for="pubYear">Publication Year</label>
+                                <input type="text" id="editPubYear" asp-for="pubYear" class="form-control" placeholder="Publication Year" />
+                            </div>
+                            <div>
+                                <label class="input-label" asp-for="isbn">Book ISBN</label>
+                                <input type="text" id="editIsbn" asp-for="isbn" class="form-control" placeholder="Isbn" />
+                            </div>
+                        </div>
+                        <div class="add-book-col">
+                            <div>
+                                <label class="input-label" asp-for="language">Language</label>
+                                <input type="text" id="editLanguage" asp-for="language" class="form-control" placeholder="Language" />
+                            </div>
+                            <br />
+                            <label asp-for="selectedGenres" class="control-label">Genre</label>
+                            <div style="height: 200px; overflow-y: auto;">
 
+                                @foreach (var genre in Model.genres)
+                                {
+                                    <div class="form-control">
+                                        <input type="checkbox" id="@($"genre_{genre}")" name="selectedGenres" value="@genre.genreId" />
+                                        <label for="@($"role_{genre}")">@genre.genreName</label>
+                                    </div>
+                                }
+                                <span asp-validation-for="selectedGenres" class="text-danger"></span>
+                            </div>
+                            <div>
+                                <label class="input-label">Book Cover</label>
+                                <input type="file" id="editImage" name="image" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button class="modal-button-close" id="Close" type="button" data-dismiss="modal">Close</button>

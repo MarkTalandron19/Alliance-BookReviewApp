@@ -15,6 +15,7 @@ $(document).ready(function () {
         var author = $(this).data('book-author');
         var synopsis = $(this).data('book-synopsis');
         var publisher = $(this).data('book-publisher');
+        var pubYear = $(this).data('book-pubyear');
         var isbn = $(this).data('book-isbn');
         var language = $(this).data('book-language');
 
@@ -23,6 +24,7 @@ $(document).ready(function () {
         $('#editAuthor').val(author);
         $('#editSynopsis').val(synopsis);
         $('#editPublisher').val(publisher);
+        $('#editPubYear').val(pubYear);
         $('#editIsbn').val(isbn);
         $('#editLanguage').val(language);
         $('#EditBookModal').modal('show');

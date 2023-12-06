@@ -335,23 +335,37 @@ td {
 .modal.show {
     display: flex!important;
     align-items: center;
+    justify-content: center;
 }
 
-.modal.show .modal-dialog {
-    min-width: 500px;
+    .modal.show .modal-dialog {
+        min-width: 500px;
+    }
+
+    .modal.show .modal-dialog-book {
+        min-width: 800px;
+    }
+
+.add-book-container {
+    display: flex;
+    justify-content: space-between;
 }
 
-.edit-button {
-    background-color: #176B87;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    height: 30px;
-    padding: 0 20px;
-    cursor: pointer;
-    outline: none;
-    transition: ease .2s;
-}
+    .add-book-col {
+        width: 48%;
+    }
+
+    .edit-button {
+        background-color: #176B87;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        height: 30px;
+        padding: 0 20px;
+        cursor: pointer;
+        outline: none;
+        transition: ease .2s;
+    }
 
     .edit-button:hover {
         background-color: #0D5066;
@@ -402,6 +416,7 @@ td {
 
 .admin-dashboard-books {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
