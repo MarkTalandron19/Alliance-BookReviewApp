@@ -76,6 +76,7 @@ namespace ASI.Basecode.WebApp.Controllers
                 TopRatedBooks = TopRatedBooks,
                 Genres = Genres,
                 Years = Years
+
             };
 
             try
@@ -94,36 +95,7 @@ namespace ASI.Basecode.WebApp.Controllers
             return View(viewModel);
         }
 
-        [HttpGet]
-        public IActionResult Search(string SearchText, string Year, string Genre)
-        {
-            List<Book> AllBooks = _bookService.GetBooks().ToList();
-            List<Book> SearchResults = new();
-
-            if (SearchText == null)
-            {
-                return RedirectToAction("Home");
-            }
-
-            foreach (Book book in AllBooks)
-            {
-                //Check if the book's title contains of the given search text
-
-                book.title = book.title.ToLower();
-
-                if (!book.title.Contains(SearchText.ToLower())) continue;
-
-                SearchResults.Add(book);
-            }
-
-            string SearchResultJson = JsonConvert.SerializeObject(SearchResults, Formatting.Indented, new JsonSerializerSettings
-            {
-                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-            });
-
-            HttpContext.Session.SetString("SearchResult", SearchResultJson);
-            return RedirectToAction("Home");
-        }
+ 
 
         [HttpGet]
         [AllowAnonymous]
@@ -223,6 +195,45 @@ namespace ASI.Basecode.WebApp.Controllers
 
             return FilteredSearchResult;
         }
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult FilterByGenre(string searchTerm, int page = 1, int pageSize = 10, string sortBy = null)
+        {
+           
+            var allBooks = _bookService.GetBooks();
+
+            var filteredBooks = allBooks
+                .Where(book =>
+                    string.IsNullOrEmpty(searchTerm) ||
+                    book.title.ToLower().Contains(searchTerm) ||
+                    book.publisher.ToLower().Contains(searchTerm)
+                );
+
+            var sortedBooksList = filteredBooks.OrderBy(b => b.title);
+
+            var paginatedBooks = sortedBooksList.Skip((page - 1) * pageSize).Take(pageSize).ToList();
+
+            var genres = _genreService.GetGenres().ToList();
+            var reviews = _reviewService.GetReviews().ToList();
+
+            ViewData["Genres"] = genres;
+            ViewData["Reviews"] = reviews;
+
+     
+            ViewData["CurrentPage"] = page;
+            ViewData["TotalPages"] = (int)Math.Ceiling((double)sortedBooksList.Count() / pageSize);
+            ViewData["SortBy"] = sortBy;
+
+         
+            ViewBag.Page = page;
+
+          
+            ViewData["SearchTerm"] = searchTerm;
+
+        
+            return View("Library", paginatedBooks);
+        }
+
 
         [HttpGet]
         public IActionResult BookDetail(string bookId) => RedirectToAction("BookDetail", "Book", new { bookId });
@@ -257,7 +268,7 @@ namespace ASI.Basecode.WebApp.Controllers
                 this.Book = Book;
             }
 
-            public Book Book { get; set; }
+            public Book Book { get; set; }  
             public double AvgRating { get; set; }
         }
 
@@ -352,5 +363,7 @@ namespace ASI.Basecode.WebApp.Controllers
 
             return bookGenres;
         }
+
+
     }
 } 

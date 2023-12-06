@@ -172,9 +172,10 @@
 
 .search-icon {
     background: none;
-    border: none;
+    border: none;  
     padding: 5px;
     cursor: pointer;
+    margin-right: 0; 
 }
 
 .search-button {
