@@ -22,15 +22,6 @@
                                 </a>
                             </div>
                         }
-                        @if (User.IsInRole("Genremaster"))
-                        {
-                            <div class="leftmenu-item-title">
-                                <div class="leftmenu-item">
-                                    <img class="leftmenu-icons" src="~/img/dashboard-icon.png" />
-                                    Book Management<br />Dashboard
-                                </div>
-                            </div>
-                        }
                         <hr class="menu-divider" />
                         @if (User.IsInRole("Bookmaster"))
                         {
