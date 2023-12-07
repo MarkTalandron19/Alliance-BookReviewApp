@@ -21,7 +21,7 @@
 
 <div class="content">
     <div class="button-container-arrow-up">
-        <button class="button-arrow-up">˄</button>
+        <button class="button-arrow-up"><img src="~/img/up-arrow.png" style="width: 15px; height: 20px;"/></button>
     </div>
     <div class="hero-section">
         <div class="hero-left">
@@ -52,7 +52,7 @@
                     <div class="search-bar">
                         <input type="text" name="SearchText" id="SearchText" placeholder="Enter Book Name here..." class="form-control">
                         <div class="search-icon"><i class="fas fa-search"></i></div>
-                        <button class="search-button" type="submit" style="background-color: #053B50; color: #FFFFFF;">Search ˃</button>
+                        <button class="search-button" type="submit" style="background-color: #053B50; color: #FFFFFF;">Search</button>
                     </div>
                 </form>
                 <div class="d-flex flex-column w-100 list-group">
@@ -187,3 +187,17 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var button = document.querySelector('.button-arrow-up');
+
+        button.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' 
+            });
+        });
+    });
+
+</script>

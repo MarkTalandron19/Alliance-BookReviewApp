@@ -178,7 +178,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     border-radius: 20px;
 }
@@ -332,10 +332,10 @@ p {
 /*Second background*/
 .second-background {
     background-color: #64CCC5;
-    height: 700px;
+    height: fit-content;
     width: 100%;
     text-align: start;
-    padding: 50px;
+    padding: 80px 50px;
     background-image: url("/img/lines 2.png");
     background-size: cover;
     display: flex;
@@ -379,10 +379,10 @@ p {
 /*Third background*/
 .third-white-background {
     background-color: white;
-    height: 700px;
+    height: fit-content;
     width: 100%;
     text-align: start;
-    padding: 10px;
+    padding: 80px 50px;
     margin: 0;
     position: relative;
 }
@@ -417,10 +417,10 @@ p {
 /*Fourth background*/
 .fourth-white-background {
     background-color: #053B50;
-    height: 700px;
+    height: fit-content;
     width: 100%;
     text-align: start;
-    padding: 10px;
+    padding: 80px 50px;
     margin: 0;
     position: relative;
     padding-top: 50px;
@@ -543,8 +543,7 @@ p {
 }
 
     .book-item img {
-        width: 100%;
-        height: auto;
+        height: 300px;
         border-radius: 5px;
     }
 

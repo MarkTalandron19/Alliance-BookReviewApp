@@ -36,6 +36,9 @@
     </div>
 
     <div class="content">
+        <div class="button-container-arrow-up">
+            <button class="button-arrow-up"><img src="~/img/up-arrow.png" style="width: 15px; height: 20px;" /></button>
+        </div>
         <div class="content-header">
             <div class="content-header-search">
                 <h1>Books</h1>
@@ -211,5 +214,16 @@
         if (errorMessage) {
             toastr.error(errorMessage);
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var button = document.querySelector('.button-arrow-up');
+
+            button.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
     }

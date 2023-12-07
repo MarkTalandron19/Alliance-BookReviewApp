@@ -484,7 +484,7 @@ namespace ASI.Basecode.WebApp.Controllers
             try
             {
                 // Initialize the SendGrid API key
-                var apiKey = "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";
+                var apiKey = "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";
 
                 // Create a SendGrid client
                 var client = new SendGridClient(apiKey);

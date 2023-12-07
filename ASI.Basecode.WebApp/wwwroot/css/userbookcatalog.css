@@ -144,6 +144,21 @@
         font-weight: bold;
     }
 
+.button-container-arrow-up {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+.button-arrow-up {
+    background-color: #EEEEEE;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+}
+
 .content-header-search {
     display: flex;
     justify-content: space-between;
