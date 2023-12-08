@@ -9,6 +9,7 @@
     ViewBag.LoginView = true;
     ViewData["Title"] = "BiblioBibuli - Where Pages come Alive.";
 }
+
 <div class="navbar">
     <img class="bibliobibuli-logo" src="~/img/bibliobibuli logo 2.png" />
     <div class="navbar-right">
@@ -26,49 +27,55 @@
     <div class="hero-section">
         <div class="hero-left">
             <div class="hero-left-content">
-    <div class="logo-title">
-        <img class="logo" src="~/img/bibliobibuli logo 3.png" />
-        <h1>Bibliobibuli.</h1>
-    </div>
-        <div class="square-container">
-            <h2>Where Pages<br /> Come Alive.</h2>
-            <p class="hero-subtitle">Authors and Readers Toast to the Art of Literary Feasts!</p>
-        </div>
-        </div>
+                <div class="logo-title">
+                    <img class="logo" src="~/img/bibliobibuli logo 3.png" />
+                    <h1>Bibliobibuli.</h1>
+                </div>
+                <div class="square-container">
+                    <h2>Where Pages<br /> Come Alive.</h2>
+                    <p class="hero-subtitle">Authors and Readers Toast to the Art of Literary Feasts!</p>
+                </div>
+            </div>
         </div>
         <div class="hero-right">
-    <div class="line-container">
-        <div class="image-container">
-            <img class="image-book-reading" src="~/img/book reading.png" />
-        </div>
-    </div>
+            <div class="line-container">
+                <div class="image-container">
+                    <img class="image-book-reading" src="~/img/book reading.png" />
+                </div>
+            </div>
         </div>
 
     </div>
     <div class="search">
         <div class="center-container">
             <div class="search-line-container d-flex flex-column container">
-                <form method="get" asp-action="Search" class="search-elements justify-content-center">
+                <form method="get" asp-action="Search" class="search-elements justify-content-center" id="search">
                     <select class="year-dropdown" name="Year" id="Year">
                         <option value="">Year</option>
                         @{
                             foreach (var year in Model.Years)
                             {
-                                <option value="@year">@year</option>
+                                                                        <option value="@year">@year</option>
                             }
                         }
                     </select>
-                    <select class="category-dropdown" name="Genre" id="Genre">
-                        <option value="">Category</option>
+                    <select class="category-dropdown" name="Genre" id="Genre" onchange="OnGenreChange()">
+                        <option value="" onclick="OnGenreChange()">Category</option>
                         @{
                             foreach (var genre in Model.Genres)
                             {
-                                <option value="@genre.genreName">@genre.genreName</option>
+                                var genreName = genre.genreName.ToLower();
+                                if(Model.SelectedGenre != null && genreName.Contains(Model.SelectedGenre.ToLower()))
+                                {
+                                                <option value="@genre.genreName" selected="selected" onclick="OnGenreChange()">@genre.genreName</option>
+                                    continue;
+                                }
+                                            <option value="@genre.genreName" onclick="OnGenreChange()">@genre.genreName</option>
                             }
                         }
                     </select>
                     <div class="search-bar">
-                        <input type="text" name="SearchText" id="SearchText" placeholder="Enter Book Name here..." class="form-control">
+                        <input type="text" name="SearchText" id="SearchText" placeholder="Enter Book Name here..." value="@Model.SearchText" class="form-control">
                         <div class="search-icon"><i class="fas fa-search"></i></div>
                         <button class="search-button" type="submit" style="background-color: #053B50; color: #FFFFFF;">Search ˃</button>
                     </div>
@@ -80,32 +87,32 @@
                         {
                             foreach (var bookSearchResult in SearchResults)
                             {
-                                <a asp-controller="Book" asp-action="BookDetail" asp-route-bookId="@bookSearchResult.bookId"
-                                   class="list-group-item list-group-item-action d-flex flex-row container pt-3 mt-2 rounded-lg w-100 justify-content-center" style="height: 85px">
-                                    <img src="@bookSearchResult.image" class="rounded p-0 mh-100" />
-                                    <h5 class="flex-grow-1 h5 text-center m-auto px-3">@bookSearchResult.title.ToUpper()</h5>
-                                </a>
-                            }
+                                                                <a asp-controller="Book" asp-action="BookDetail" asp-route-bookId="@bookSearchResult.bookId"
+                                                                   class="list-group-item list-group-item-action d-flex flex-row container pt-3 mt-2 rounded-lg w-100 justify-content-center" style="height: 85px">
+                                                                    <img src="@bookSearchResult.image" class="rounded p-0 mh-100" />
+                                                                    <h5 class="flex-grow-1 h5 text-center m-auto px-3">@bookSearchResult.title.ToUpper()</h5>
+                                                                </a>
+                            }                            
                         }
                     }
                 </div>
             </div>
         </div>
- 
-    <div class="white-background">
-        <div class="text-container">
-            <div class="about-title">
-            <h1 class="team-name">Bibliobibuli</h1>
+
+        <div class="white-background">
+            <div class="text-container">
+                <div class="about-title">
+                    <h1 class="team-name">Bibliobibuli</h1>
                     <a href="https://en.wiktionary.org/wiki/bibliobibuli" class="link">https://en.wiktionary.org</a>
                 </div>
-            <div class="text-info">
-                <p class="definition">
-                    <text class="text-noun">Noun</text><text class="text-meaning">[bib·lio·bibu·li]</text><text class="plurals-text">(plural only)</text>
-                <p>1. The sort of <u>people</u> who <u>read</u> too much.</p>        
-                <p>"There are people who read too much: bibliobibuli. I know some who are constantly drunk on books, as other men are drunk on whiskey or religion. They wander through this most diverting and stimulating of worlds in a haze, seeing nothing and hearing nothing."</p>
+                <div class="text-info">
+                    <p class="definition">
+                        <text class="text-noun">Noun</text><text class="text-meaning">[bib·lio·bibu·li]</text><text class="plurals-text">(plural only)</text>
+                        <p>1. The sort of <u>people</u> who <u>read</u> too much.</p>        
+                        <p>"There are people who read too much: bibliobibuli. I know some who are constantly drunk on books, as other men are drunk on whiskey or religion. They wander through this most diverting and stimulating of worlds in a haze, seeing nothing and hearing nothing."</p>
+                </div>
             </div>
         </div>
-    </div>
     </div>
     <!-- Recent Books or New Release-->
     <div class="second-background">
@@ -121,9 +128,9 @@
                 List<Book> NewBooks = Model.NewlyReleasedBooks;
                 foreach (var book in NewBooks)
                 {
-                    <div class="book-item">
-                        <a asp-controller="Home" asp-action="BookDetail" asp-route-bookId="@book.bookId"><img src="@book.image" alt="@book.title"></a>
-                    </div>
+                        <div class="book-item">
+                             <a asp-controller="Home" asp-action="BookDetail" asp-route-bookId="@book.bookId"><img src="@book.image" alt="@book.title"></a>
+                        </div>
                 }
             }
         </section>
@@ -131,35 +138,35 @@
     <div class="third-white-background">
         <div class="books-header">
             <div class="featured-books-title">
-        <h3 class="featured-text">Featured Book</h3>
-        <text class="featured-line">Unearth the literary gems making waves this week!</text>
+                <h3 class="featured-text">Featured Book</h3>
+                <text class="featured-line">Unearth the literary gems making waves this week!</text>
             </div>
-        <div class="button-container-view-more">
-            <button class="button-view-more">VIEW MORE →</button>
-        </div>
+            <div class="button-container-view-more">
+                <button class="button-view-more">VIEW MORE →</button>
+            </div>
         </div>
     </div>
     <!-- Top Rated Books-->
     <div class="fourth-white-background">
         <div class="books-header">
             <div class="top-books-title">
-        <h4 class="top-rated-books-text">Top-rated Books</h4>
-        <text class="top-rated-books-line">From captivating tales to thought-provoking narratives, these stories are igniting conversations across Bibliobibuli.</text>
-        </div>
-        <div class="second-button-container-view-more">
-            <button class="second-button-view-more">
+                <h4 class="top-rated-books-text">Top-rated Books</h4>
+                <text class="top-rated-books-line">From captivating tales to thought-provoking narratives, these stories are igniting conversations across Bibliobibuli.</text>
+            </div>
+            <div class="second-button-container-view-more">
+                <button class="second-button-view-more">
                     <a asp-controller="Home" asp-action="Library">VIEW MORE →</a>
-            </button>
-        </div>
+                </button>
+            </div>
         </div>
         <section class="books-line">
             @{
                 List<Book> TopRatedBooks = Model.TopRatedBooks;
-                foreach(var book in TopRatedBooks)
+                foreach (var book in TopRatedBooks)
                 {
-                    <div class="book-item">
-                        <a asp-controller="Home" asp-action="BookDetail" asp-route-bookId="@book.bookId"><img src="@book.image" alt="@book.title"></a>
-                    </div>
+                        <div class="book-item">
+                            <a asp-controller="Home" asp-action="BookDetail" asp-route-bookId="@book.bookId"><img src="@book.image" alt="@book.title"></a>
+                        </div>
                 }
             }
         </section>
@@ -193,3 +200,16 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        event.preventDefault();
+        document.getElementById("Genre").addEventListener('change', OnGenreChange);
+    });
+
+    function OnGenreChange() {
+        $("#Genre").change(() => {
+            $(this).parents("form").submit();
+        });
+    }
+</script>
