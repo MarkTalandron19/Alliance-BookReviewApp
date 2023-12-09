@@ -144,15 +144,12 @@
             e.preventDefault();
             var bookId = $(this).attr("id").replace("book-", "");
 
-            // Make an AJAX request to fetch and display genres
             $.get("/BookController/GetGenresOfBook?bookId=" + bookId, function (data) {
                 if (data.genres) {
-                    var genreList = data.genres.join(", "); // Convert the array of genres to a string
+                    var genreList = data.genres.join(", "); 
 
-                    // Update the third column with the genre information
                     $(`#book-${bookId}`).closest("tr").find("td:eq(2)").html(genreList);
                 } else {
-                    // Handle the case where there are no genres or an error occurred
                     console.log("No genres found or an error occurred.");
                 }
             });

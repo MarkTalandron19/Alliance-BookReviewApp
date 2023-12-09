@@ -3,6 +3,7 @@
 @{
     ViewBag.LoginView = true;
     ViewData["Title"] = "BiblioBibuli - Library";
+    string selectedGenres = ViewData["SelectedGenre"] as string;
 }
 @section styles {
     <link rel="stylesheet" href="~/css/userbookcatalog.css" />
@@ -14,7 +15,7 @@
     <div class="navbar-right">
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
-            <li><a href="/Home/Library">Library</a></li>
+            <li><a class="active" href="/Home/Library">Library</a></li>
         </ul>
     </div>
 </div>
@@ -25,8 +26,9 @@
         <ul>
             @foreach (var genre in (IEnumerable<Genre>)ViewData["Genres"])
             {
+                string activeClass = (selectedGenres == genre.genreId.ToString()) ? "active" : "";
                 <li>
-                    <a href="@Url.Action("FilterByGenre",  new { selectedGenre = genre.genreId })" class="genre-link" data-genre-id="@genre.genreId">
+                    <a href="@Url.Action("FilterByGenre",  new { selectedGenre = genre.genreId })" class="genre-link @activeClass" data-genre-id="@genre.genreId">
                         <i></i> @genre.genreName
                     </a>
                 </li>
@@ -144,7 +146,6 @@
             {
                 <nav aria-label="Books Pagination">
                     <ul class="pagination">
-                        <!-- First and Previous -->
                         <li class="page-item @(currentPage == 1 ? "disabled" : "")">
                             <a class="page-link" href="?page=1@(ViewData["SortBy"] != null ? $"&sortBy={ViewData["SortBy"]}" : "")" aria-label="First">
                                 <span aria-hidden="true">&laquo;&laquo;</span>

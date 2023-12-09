@@ -52,7 +52,11 @@
     }
 
         .navbar-right ul li a:hover {
-            background: linear-gradient(to top, transparent 90%, #176B87);
+            background: linear-gradient(to top, transparent 85%, #176B87);
+        }
+
+        .navbar-right ul li a.active {
+            background: linear-gradient(to top, transparent 85%, #176B87);
         }
 
 .dp {

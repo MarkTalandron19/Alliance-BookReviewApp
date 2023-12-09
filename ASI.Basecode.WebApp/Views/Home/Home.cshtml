@@ -13,7 +13,7 @@
     <img class="bibliobibuli-logo" src="~/img/bibliobibuli logo 2.png" />
     <div class="navbar-right">
         <ul class="nav-links">
-            <li><a href="/">Home</a></li>
+            <li><a class="active" href="/">Home</a></li>
             <li><a asp-controller="Home" asp-action="Library">Library</a></li>
         </ul>
     </div>
@@ -21,27 +21,27 @@
 
 <div class="content">
     <div class="button-container-arrow-up">
-        <button class="button-arrow-up"><img src="~/img/up-arrow.png" style="width: 15px; height: 20px;"/></button>
+        <button class="button-arrow-up"><img src="~/img/up-arrow.png" style="width: 15px; height: 20px;" /></button>
     </div>
     <div class="hero-section">
         <div class="hero-left">
             <div class="hero-left-content">
-    <div class="logo-title">
-        <img class="logo" src="~/img/bibliobibuli logo 3.png" />
-        <h1>Bibliobibuli.</h1>
-    </div>
-        <div class="square-container">
-            <h2>Where Pages<br /> Come Alive.</h2>
-            <p class="hero-subtitle">Authors and Readers Toast to the Art of Literary Feasts!</p>
-        </div>
-        </div>
+                <div class="logo-title">
+                    <img class="logo" src="~/img/bibliobibuli logo 3.png" />
+                    <h1>Bibliobibuli.</h1>
+                </div>
+                <div class="square-container">
+                    <h2>Where Pages<br /> Come Alive.</h2>
+                    <p class="hero-subtitle">Authors and Readers Toast to the Art of Literary Feasts!</p>
+                </div>
+            </div>
         </div>
         <div class="hero-right">
-    <div class="line-container">
-        <div class="image-container">
-            <img class="image-book-reading" src="~/img/book reading.png" />
-        </div>
-    </div>
+            <div class="line-container">
+                <div class="image-container">
+                    <img class="image-book-reading" src="~/img/book reading.png" />
+                </div>
+            </div>
         </div>
 
     </div>
@@ -73,21 +73,21 @@
                 </div>
             </div>
         </div>
- 
-    <div class="white-background">
-        <div class="text-container">
-            <div class="about-title">
-            <h1 class="team-name">Bibliobibuli</h1>
+
+        <div class="white-background">
+            <div class="text-container">
+                <div class="about-title">
+                    <h1 class="team-name">Bibliobibuli</h1>
                     <a href="https://en.wiktionary.org/wiki/bibliobibuli" class="link">https://en.wiktionary.org</a>
                 </div>
-            <div class="text-info">
-                <p class="definition">
-                    <text class="text-noun">Noun</text><text class="text-meaning">[bib·lio·bibu·li]</text><text class="plurals-text">(plural only)</text>
-                <p>1. The sort of <u>people</u> who <u>read</u> too much.</p>        
-                <p>"There are people who read too much: bibliobibuli. I know some who are constantly drunk on books, as other men are drunk on whiskey or religion. They wander through this most diverting and stimulating of worlds in a haze, seeing nothing and hearing nothing."</p>
+                <div class="text-info">
+                    <p class="definition">
+                        <text class="text-noun">Noun</text><text class="text-meaning">[bib·lio·bibu·li]</text><text class="plurals-text">(plural only)</text>
+                    <p>1. The sort of <u>people</u> who <u>read</u> too much.</p>
+                    <p>"There are people who read too much: bibliobibuli. I know some who are constantly drunk on books, as other men are drunk on whiskey or religion. They wander through this most diverting and stimulating of worlds in a haze, seeing nothing and hearing nothing."</p>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 
     <!-- Recent Books or New Release-->
@@ -111,7 +111,13 @@
                 foreach (var book in NewBooks)
                 {
                     <div class="book-item">
-                        <a asp-controller="Home" asp-action="BookDetail" asp-route-bookId="@book.bookId"><img src="@book.image" alt="@book.title"></a>
+                        <a asp-controller="Home" asp-action="BookDetail" asp-route-bookId="@book.bookId">
+                            <img src="@book.image" alt="@book.title">
+                            <span class="tooltip">
+                                <strong>Title:</strong> @book.title <br /><br />
+                                <strong>Synopsis:</strong> <span class="synopsis">@book.synopsis</span>
+                            </span>
+                        </a>
                     </div>
                 }
             }
@@ -123,14 +129,14 @@
     <!-- Top Rated Books-->
     <div class="fourth-white-background">
         @* <div class="books-header">
-            <div class="top-books-title">
+        <div class="top-books-title">
         <h4 class="top-rated-books-text">Top-rated Books</h4>
         <text class="top-rated-books-line">From captivating tales to thought-provoking narratives, these stories are igniting conversations across Bibliobibuli.</text>
         </div>
         <div class="second-button-container-view-more">
-            <button class="second-button-view-more">
-                    <a asp-controller="Home" asp-action="Library">VIEW MORE</a>
-            </button>
+        <button class="second-button-view-more">
+        <a asp-controller="Home" asp-action="Library">VIEW MORE</a>
+        </button>
         </div>
         </div> *@
         <div class="content-container">
@@ -149,10 +155,16 @@
         <section class="books-line">
             @{
                 List<Book> TopRatedBooks = Model.TopRatedBooks;
-                foreach(var book in TopRatedBooks)
+                foreach (var book in TopRatedBooks)
                 {
                     <div class="book-item">
-                        <a asp-controller="Home" asp-action="BookDetail" asp-route-bookId="@book.bookId"><img src="@book.image" alt="@book.title"></a>
+                        <a asp-controller="Home" asp-action="BookDetail" asp-route-bookId="@book.bookId">
+                        <img src="@book.image" alt="@book.title">
+                            <span class="tooltip">
+                                <strong>Title:</strong> @book.title <br /><br />
+                                <strong>Synopsis:</strong> <span class="synopsis">@book.synopsis</span>
+                            </span>
+                        </a>
                     </div>
                 }
             }
@@ -195,7 +207,7 @@
         button.addEventListener('click', function () {
             window.scrollTo({
                 top: 0,
-                behavior: 'smooth' 
+                behavior: 'smooth'
             });
         });
     });

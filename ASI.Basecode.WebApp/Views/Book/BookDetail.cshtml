@@ -2,7 +2,7 @@
 @model ASI.Basecode.Data.Models.Book
 @{
     ViewBag.LoginView = true;
-    ViewData["Title"] = "BiblioBibuli - Library";
+    ViewData["Title"] = "BiblioBibuli - Book Detail";
 }
 @section styles {
     <link rel="stylesheet" href="~/css/bookdetail.css" />
@@ -31,7 +31,11 @@
                 <div class="book-genres">
                     @foreach (var genre in (IEnumerable<Genre>)ViewData["Genres"])
                     {
-                        <div class="book-genre">@genre.genreName</div>
+                        <div class="book-genre">@genre.genreName
+                            <span class="tooltip">
+                                <strong>Description:</strong> @genre.description
+                            </span>
+                        </div>
                     }
                 </div>
                 <div class="book-synopsis">@Model.synopsis</div>

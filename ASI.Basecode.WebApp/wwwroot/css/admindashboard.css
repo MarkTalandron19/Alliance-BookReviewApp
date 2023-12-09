@@ -424,13 +424,45 @@ td {
 .book-item {
     margin: 10px;
     max-width: 200px;
+    position: relative;
 }
 
     .book-item img {
+        max-width: 200px;
         max-height: 300px;
         height: auto;
         border-radius: 5px;
     }
+
+    .book-item:hover .tooltip {
+        visibility: visible;
+        opacity: 1;
+    }
+
+.tooltip {
+    visibility: hidden;
+    width: 250px;
+    background-color: #efefef;
+    color: #176B87;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    top: 102%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.synopsis {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
 
 .view-more-button {
     display: flex;
@@ -596,7 +628,9 @@ td {
         color: inherit;
     }
 
-
+.review-info {
+    word-break: break-all;
+}
 
 
 

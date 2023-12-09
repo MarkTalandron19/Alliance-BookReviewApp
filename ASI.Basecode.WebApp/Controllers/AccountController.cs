@@ -484,7 +484,7 @@ namespace ASI.Basecode.WebApp.Controllers
             try
             {
                 // Initialize the SendGrid API key
-                var apiKey = "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";
+                var apiKey = "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";
 
                 // Create a SendGrid client
                 var client = new SendGridClient(apiKey);
@@ -500,12 +500,10 @@ namespace ASI.Basecode.WebApp.Controllers
                 // Send the email asynchronously
                 var response = await client.SendEmailAsync(msg);
 
-                // Log the success message
                 Console.WriteLine($"Verification code successfully sent. Response: {response.StatusCode}");
             }
             catch (System.Exception ex)
             {
-                // Handle any exception related to email sending (e.g., log the error)
                 Console.WriteLine($"Failed to send email: {ex.Message}");
             }
         }
@@ -528,7 +526,6 @@ namespace ASI.Basecode.WebApp.Controllers
 
                 await SendEmailWithToken(user.Email, originalToken);
 
-                // Create a view model to hold email and originalToken
                 var viewModel = new ForgotPasswordCodeViewModel
                 {
                     Email = email,
@@ -549,17 +546,16 @@ namespace ASI.Basecode.WebApp.Controllers
         [AllowAnonymous]
         public IActionResult ForgotPasswordNew(string token, string originalToken, string email)
         {
-            // Compare the input token with the original token
             if (token == originalToken)
             {
                 var viewModel = new ForgotPasswordNewViewModel
                 {
-                    Email = email, // Assign the email to the view model
-                    OriginalToken = originalToken // Assign the original token to the view model
+                    Email = email,
+                    OriginalToken = originalToken 
                 };
 
                 ViewBag.ResetToken = originalToken;
-                // Tokens match, allow password reset
+
                 return View("Views/Account/ForgotPasswordNew.cshtml", viewModel);
             }
             else
@@ -567,8 +563,8 @@ namespace ASI.Basecode.WebApp.Controllers
                 ViewBag.TokenMismatch = "Token is incorrect";
                 var viewModel = new ForgotPasswordCodeViewModel
                 {
-                    Email = email, // Assign the email to the view model
-                    OriginalToken = originalToken // Assign the original token to the view model
+                    Email = email,
+                    OriginalToken = originalToken 
                 };
                 return View("Views/Account/ForgotPasswordCode.cshtml", viewModel);
             }
@@ -595,8 +591,8 @@ namespace ASI.Basecode.WebApp.Controllers
                 ViewBag.PasswordMismatch = "Passwords do not match";
                 var viewModel = new ForgotPasswordNewViewModel
                 {
-                    Email = email, // Assign the email to the view model
-                    OriginalToken = originalToken // Assign the original token to the view model
+                    Email = email, 
+                    OriginalToken = originalToken 
                 };
                 return View("Views/Account/ForgotPasswordNew.cshtml", viewModel);
             }

@@ -1,3 +1,31 @@
 ﻿@page
 
-<h2>Access Denied!</h2>
+<style>
+    .error-main {
+        width: 100%;
+        margin-top: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .error-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border-radius: 10px;
+        width: 500px;
+        height: fit-content;
+        padding: 50px;
+        gap: 30px;
+    }
+</style>
+
+<div class="error-main">
+    <div class="error-container">
+        <img src="~/img/error.png" style="width: 150px;" alt="error">
+        <h2>Access Denied!</h2>
+    </div>
+</div>

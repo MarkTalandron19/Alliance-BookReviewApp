@@ -107,7 +107,6 @@ namespace ASI.Basecode.WebApp.Controllers
 
             foreach (Book book in AllBooks)
             {
-                //Check if the book's title contains of the given search text
 
                 book.title = book.title.ToLower();
 
@@ -189,7 +188,6 @@ namespace ASI.Basecode.WebApp.Controllers
 
             foreach (var book in SearchResults)
             {
-                //Check if the book's created year matches to the given year
                 if (book.CreatedTime.Year != int.Parse(Year)) continue;
                 FilteredSearchResults.Add(book);
             }
@@ -320,9 +318,6 @@ namespace ASI.Basecode.WebApp.Controllers
 
                 int Count = reviews.Count;
                 float Sum = 0;
-
-                //Get the rating average of each book
-                //If the average is greater than Average Rating Check, then the book will be added to the List of Top Rated Books
 
                 foreach (Review review in reviews)
                 {

@@ -48,8 +48,11 @@
     }
 
         .navbar-right ul li a:hover {
-            background: linear-gradient(to top, transparent 90%, #176B87);
+            background: linear-gradient(to top, transparent 85%, #176B87);
 
+        }
+        .navbar-right ul li a.active {
+            background: linear-gradient(to top, transparent 85%, #176B87);
         }
 
 .dp {
@@ -540,10 +543,44 @@ p {
 .book-item {
     margin: 10px;
     max-width: 200px;
+    position: relative;
 }
 
     .book-item img {
+        max-width: 200px;
         height: 300px;
         border-radius: 5px;
     }
+
+    .book-item:hover .tooltip {
+        visibility: visible;
+        opacity: 1;
+    }
+
+.tooltip {
+    visibility: hidden;
+    width: 250px;
+    background-color: #E3E3E3;
+    color: #176B87;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    top: 102%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.synopsis {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+
 
